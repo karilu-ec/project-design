@@ -184,6 +184,13 @@ $footer-bottom-size: rem-calc(11);
   }
 }
 
+/* Events styles */
+.events {
+  .event-date-day {
+    background-color: #999;
+  }
+}
+
 @media (max-width: 64em) {
   header {
     
