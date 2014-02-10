@@ -9,7 +9,7 @@ $action-color: #c1ce25;
 $header-footer-color: #0f223a;
 
 header {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   padding-top:10px;
   background: $header-footer-color url('../img/background.png') !important;
   
@@ -41,6 +41,16 @@ header {
      }
    }
    
+  }
+  
+  .audience-menu  {
+    
+   li.divider {
+    border-bottom: none;
+    border-top: none;
+    border-right: 1px solid #276BA7;
+    clear: none;
+    }
   }
   
   .logo-text {
