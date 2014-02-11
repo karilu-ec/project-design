@@ -29,7 +29,7 @@ header {
     
    .has-form {
       input {       
-        height: 2.2em;
+        height: 2.15em;
       }
       
      .button {
@@ -90,14 +90,14 @@ header {
       text-transform: uppercase;
       margin-bottom: 0;
       padding: 0;
-      line-height: 1em;
+      line-height: 1.2em;
     }
     
     h2 {
       font-size: $header-h2-size;
       color:#fff;
       margin:0;
-      line-height: 0.65em;
+      line-height: 0.75em;
       font-family: serif;
     }
   }
@@ -164,6 +164,52 @@ $footer-bottom-size: rem-calc(11);
   }
 }
 
+/* Events styles */
+.event-list {
+  > li:first-child {
+  width:70px;
+  padding-bottom: 0;
+  padding-left:0;
+  }
+  > li:last-child {
+    width:75%;
+    padding: 0;
+  }
+  
+  .description {  
+    margin-top:0 !important;
+    
+    h5.title {
+      margin-top:0 !important;
+      margin-bottom: 0 !important;
+    }
+    p {
+      margin-bottom: 0;
+      font-size:14px;
+    }
+  }
+}
+.events {
+  width: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: 1px solid $primary-color;
+  
+  a {
+    color: #fff;
+  }
+  
+  .event-date-month {
+    background-color: $primary-color;
+  }
+  .event-date-day {
+    background-color: $header-footer-color;
+    padding-top:5px;
+    padding-bottom:5px;
+  }
+}
+
 /* media queries*/
 @media (max-width: 40em) {
   header {
@@ -181,13 +227,6 @@ $footer-bottom-size: rem-calc(11);
       font-size: $header-h2-size-small;
      }
     }
-  }
-}
-
-/* Events styles */
-.events {
-  .event-date-day {
-    background-color: #999;
   }
 }
 
