@@ -14,12 +14,14 @@
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
 // $base-font-size: 100%;
+   $base-font-size: 14px;
 
 // The $base-line-height is 100% while $base-font-size is 150%
 // $base-line-height: 150%;
 
 // This is the default html and body font-size for the base rem value.
 // $rem-base: 16px;
+   $rem-base: $base-font-size;
 
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
@@ -35,9 +37,10 @@
 // $total-columns: 12;
 
 // We use these to control various global styles
-// $body-bg: #fff;
+   $body-bg:  #F8F8F8 url('../img/pattern.png');
+
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+ $body-font-family: "Helvetica", Helvetica Neue, Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -564,7 +567,7 @@ $secondary-color: #fbc42b;
 // $orbit-timer-show-progress-bar: true;
 
 // We use these to control the bullet nav styles
-// $orbit-bullet-nav-color: #ccc;
+ $orbit-bullet-nav-color: $secondary-color;
 // $orbit-bullet-nav-color-active: #999;
 // $orbit-bullet-radius: rem-calc(9);
 
@@ -937,12 +940,12 @@ $secondary-color: #fbc42b;
 
 // Height and margin
 // $topbar-height: 45px;
- $topbar-margin-bottom: 5px;
+ $topbar-margin-bottom: 3px;
 
 // Control Input height for top bar
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: normal;
+ $topbar-title-weight: bold;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
@@ -979,8 +982,8 @@ $topbar-dropdown-link-bg: $primary-color;
 // $topbar-menu-link-weight: bold;
 // $topbar-menu-link-color: #fff;
 // $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
+$topbar-menu-link-color-toggled: #fff;
+$topbar-menu-icon-color-toggled: #fff;
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
