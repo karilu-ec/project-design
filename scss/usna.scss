@@ -5,13 +5,27 @@
 }
 
 .newshr {
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
+  width: 95%;
+  margin-left: 15px;
 }
 
 .orbit-bullets {
-  margin-bottom:20px;
+  margin-bottom: 20px;
+}
+.breadcrumbs {
+  margin-bottom: 0;
+}
+
+/* Site name styles*/
+.site-name {
+  background-color: #f4f4f4;
+  border: 3px solid #E6E6E6;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  
+  h1 {    
+    margin-left: 10px;
+  }
 }
 
 /* Header Styles */
@@ -33,6 +47,7 @@ header {
   
   .utility-menu {
     float: right;
+    margin-bottom:0;
     
     li {
       margin-bottom: 0;
@@ -63,6 +78,7 @@ header {
   
   .audience-menu  {
     float: right;
+    margin-bottom: 0;
     
     li {      
       font-size: $header-navlinks-size;
@@ -149,6 +165,7 @@ footer {
       font-size: $footer-size;
       text-align: left;
       padding: 0 10px;
+      line-height: 1.2em;
     }
     a {
       color: #fff;
@@ -179,9 +196,14 @@ $footer-bottom-size: rem-calc(11);
       list-style: none;
       margin-left: 10px;
       margin-bottom: 5px;
-      float: left;
+      float: left;        
     }
+    
   }
+  
+  a {
+      color: #fff;
+    } 
 }
 
 
@@ -272,6 +294,7 @@ $footer-bottom-size: rem-calc(13);
       font-size:80%;
       display: block;
       margin-left: 30px;
+      margin-top: -8px;
       }
     }    
     
