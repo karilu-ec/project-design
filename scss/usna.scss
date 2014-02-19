@@ -319,7 +319,7 @@ $footer-bottom-size: rem-calc(13);
 /* Top bar padding media queries for Large Size screens */
 @media only screen and (min-width: 64.063em) {
   .top-bar-section li:not(.has-form) a:not(.button) {
-    padding-left:50px;
-    padding-right:50px;
+    padding-left:53px;
+    padding-right:53px;
   }
 }
