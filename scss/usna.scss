@@ -25,6 +25,16 @@
   
   h1 {    
     margin-left: 10px;
+    margin-bottom: 0;
+  }
+}
+
+.site-name2 {
+  background-color: #f4f4f4;
+  padding: 10px 0;
+  
+  h1 { 
+    margin-bottom: 0;
   }
 }
 
@@ -190,6 +200,7 @@ $footer-bottom-size: rem-calc(11);
   
   ul.social-media  {
     display: block;
+    float: right;
     
     li {
       display: block;
@@ -203,7 +214,12 @@ $footer-bottom-size: rem-calc(11);
   
   a {
       color: #fff;
-    } 
+    }
+    
+  .url-bottom {
+    margin-top:1.4em;
+    text-align: center;
+  }
 }
 
 
@@ -263,7 +279,7 @@ $footer-bottom-size: rem-calc(11);
 
 
 /* Social media content block*/
-$footer-bottom-size: rem-calc(13);
+$social-media-box-font-size: rem-calc(13);
 .social-media-box {
   margin-top: 1.2em;
   margin-bottom:1em;
@@ -299,7 +315,7 @@ $footer-bottom-size: rem-calc(13);
     }    
     
     p {
-      font-size: $footer-bottom-size;
+      font-size: $social-media-box-font-size;
       margin-bottom: 0;
     }
   }
