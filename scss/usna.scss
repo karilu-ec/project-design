@@ -25,16 +25,6 @@
   
   h1 {    
     margin-left: 10px;
-    margin-bottom: 0;
-  }
-}
-
-.site-name2 {
-  background-color: #f4f4f4;
-  padding: 10px 0;
-  
-  h1 { 
-    margin-bottom: 0;
   }
 }
 
@@ -47,12 +37,13 @@ $header-navlinks-size: rem-calc(13);
 /*Colors for links in header*/
 $primary-color: #1e5282;
 $secondary-color: #fbc42b;
-$header-footer-color: #0f223a;
+$header-footer-color: #153a5e;
 
 header {
-  padding-bottom: 5px;
+  padding-bottom: 0;
   padding-top:5px;
-  background: $header-footer-color url('../img/background.png') !important;
+  background: $header-footer-color url('../img/Top.jpg') no-repeat center center !important;
+  border-top: 5px solid $secondary-color;
   
   
   .utility-menu {
@@ -61,6 +52,7 @@ header {
     
     li {
       margin-bottom: 0;
+      margin-left: 1em;
     }
     
     a {
@@ -69,19 +61,20 @@ header {
     }
     
    .has-form {
-      input {       
-        height: 2.10em;
-      }
+      height: 30px;
+      padding: 0  0 0 15px;
+      margin: 0;
       
-     .button {
-      padding-left: rem-calc(10);
-      padding-right: rem-calc(10);
-      padding-top: rem-calc(7);
-      padding-bottom: rem-calc(7);
-      margin-bottom: 0;
-      background-color: $secondary-color;
-      color:#222;
-     }
+      input {
+        font-size: $header-navlinks-size;
+        position: relative;
+        top: 0;
+        height: auto;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        background: #fff url('../img/search-icon.png') no-repeat right;
+        border-radius: 5px;
+      }
    }
    
   }
@@ -199,8 +192,10 @@ $footer-bottom-size: rem-calc(11);
 
   
   ul.social-media  {
-    display: block;
-    float: right;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    float: none;
     
     li {
       display: block;
@@ -217,7 +212,7 @@ $footer-bottom-size: rem-calc(11);
     }
     
   .url-bottom {
-    margin-top:1.4em;
+    padding-top:1em;
     text-align: center;
   }
 }
@@ -360,5 +355,12 @@ $social-media-box-font-size: rem-calc(13);
   .top-bar-section li:not(.has-form) a:not(.button) {
     padding-left:53px;
     padding-right:53px;
+  }
+  
+  .footer-bottom {
+    ul.social-media  {
+      float: right;
+    }
+    
   }
 }
