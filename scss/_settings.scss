@@ -1129,7 +1129,7 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 
 // Background color for the top bar
  $topbar-bg-color: $primary-color;
- $topbar-bg: $topbar-bg-color;
+ $topbar-bg: transparentize($topbar-bg-color, 0.4);
 
 // Height and margin
 // $topbar-height: 45px;
@@ -1159,7 +1159,7 @@ $topbar-dropdown-link-bg: $primary-color;
  $topbar-link-weight: bold;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
- $topbar-link-bg-hover: #467aaa;
+ $topbar-link-bg-hover: scale-color($primary-color, $lightness: 10%);
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
