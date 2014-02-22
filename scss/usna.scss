@@ -155,7 +155,15 @@ header {
   box-shadow: none;
 }
 
+.top-bar {
+  background: none;
+}
 
+.top-bar-section {
+  ul, li:not(.has-form) a:not(.button)  {
+    background:  none;
+  }
+}
 
 /* Footer Styles */
 $footer-size: rem-calc(13);
@@ -176,7 +184,7 @@ footer {
     
     div,p {
       font-size: $footer-size;
-      text-align: left;
+      text-align: right;
       padding: 0 10px;
       line-height: 1.2em;
     }
