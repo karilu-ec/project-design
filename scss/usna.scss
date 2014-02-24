@@ -18,9 +18,6 @@
 
 /* Site name styles*/
 .site-name {
-  background-color: #f4f4f4;
-  border: 3px solid #E6E6E6;
-  border-radius: 3px;
   margin-bottom: 10px;
   
   h1 {    
@@ -28,7 +25,7 @@
     margin-bottom: 0;
   }
 }
-
+/*testing of the other about page.*/
 .site-name2 {
   background-color: #f4f4f4;
   padding: 10px 0;
@@ -37,6 +34,24 @@
     margin-bottom: 0;
    }
 }
+
+/* Sidebar styles*/
+.sidebar {
+  padding: 0 0 0 10px;
+
+}
+
+/* Off-canvas styles */
+.offcanvas-title {  
+  text-align: left;  
+}
+
+/* Left content styles */
+.left-nav-content {
+  margin: 20px 0 40px;
+}
+
+
 
 /* Header Styles */
 $header-h1-size: rem-calc(31);
@@ -309,7 +324,7 @@ $social-media-box-font-size: rem-calc(13);
 @media (max-width: 40em) {
   header {
     .logo-container {
-    background-image: url('../img/USNA-Logo.png');
+    background-image: url('../img/Mobile-logo.png');
     background-position: left;
     background-repeat: no-repeat;
     height: 105px;
@@ -344,7 +359,7 @@ $social-media-box-font-size: rem-calc(13);
 @media (max-width: 45em) { 
   .top-bar-section {
   ul, li:not(.has-form) a:not(.button)  {
-    background:  transparentize($primary-color, 0.5);;
+    background:  transparentize($primary-color, 0.4);;
    }
   }
 }

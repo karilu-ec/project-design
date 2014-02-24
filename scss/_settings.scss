@@ -636,10 +636,10 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 
 // Off-canvas
 
-// $tabbar-bg: #333;
+ $tabbar-bg: #fff;
 // $tabbar-height: rem-calc(45);
 // $tabbar-line-height: $tabbar-height;
-// $tabbar-color: #FFF;
+ $tabbar-color: #333;
 // $tabbar-middle-padding: 0 rem-calc(10);
 
 // Off Canvas Divider Styles
@@ -647,14 +647,14 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 // $tabbar-left-section-border: solid 1px scale-color($tabbar-bg, $lightness: -50%);
 
 // Off Canvas Tab Bar Headers
-// $tabbar-header-color: #FFF;
+ $tabbar-header-color: #333;
 // $tabbar-header-weight: bold;
 // $tabbar-header-line-height: $tabbar-height;
 // $tabbar-header-margin: 0;
 
 // Off Canvas Menu Variables
 // $off-canvas-width: 250px;
-// $off-canvas-bg: #333;
+ $off-canvas-bg: #fff;
 
 // Off Canvas Menu List Variables
 // $off-canvas-label-padding: 0.3rem rem-calc(15);
@@ -666,12 +666,12 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 // $off-canvas-link-padding: rem-calc(10, 15);
-// $off-canvas-link-color: rgba(#FFF, 0.7);
+// $off-canvas-link-color: rgba(#333, 0.7);
 // $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
 
 // Off Canvas Menu Icon Variables
-// $tabbar-menu-icon-color: #FFF;
-// $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: -30%);
+ $tabbar-menu-icon-color: $primary-color;
+ $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: 30%);
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);
 // $tabbar-menu-icon-width: $tabbar-height;
@@ -686,7 +686,7 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 // Off Canvas Back-Link Overlay
 // $off-canvas-overlay-transition: background 300ms ease;
 // $off-canvas-overlay-cursor: pointer;
-// $off-canvas-overlay-box-shadow: -4px 0 4px rgba(#000, 0.5), 4px 0 4px rgba(#000, 0.5);
+$off-canvas-overlay-box-shadow: -4px 0 4px rgba(#fff, 0.5), 4px 0 4px rgba(#fff, 0.5);
 // $off-canvas-overlay-background: rgba(#FFF, 0.2);
 // $off-canvas-overlay-background-hover: rgba(#FFF, 0.05);
 
@@ -897,16 +897,17 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 // $include-html-nav-classes: $include-html-classes;
 
 // We use this to control padding.
-// $side-nav-padding: rem-calc(14 0);
+ $side-nav-padding: rem-calc(5 0);
 
 // We use these to control list styles.
 // $side-nav-list-type: none;
 // $side-nav-list-position: inside;
-// $side-nav-list-margin: rem-calc(0 0 7 0);
+ $side-nav-list-margin: rem-calc(0 0 14 0);
 
 // We use these to control link styles.
 // $side-nav-link-color: $primary-color;
 // $side-nav-link-color-active: scale-color($side-nav-link-color, $lightness: 30%);
+// $side-nav-link-color-hover: scale-color($side-nav-link-color, $lightness: 30%);
 // $side-nav-link-color-hover: scale-color($side-nav-link-color, $lightness: 30%);
 // $side-nav-font-size: rem-calc(14);
 // $side-nav-font-weight: normal;
@@ -916,9 +917,9 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 
 
 // We use these to control border styles
-// $side-nav-divider-size: 1px;
-// $side-nav-divider-style: solid;
-// $side-nav-divider-color: scale-color(#fff, $lightness: -10%);
+ $side-nav-divider-size: 1px;
+ $side-nav-divider-style: solid;
+ $side-nav-divider-color: scale-color(#ebebeb, $lightness: -10%);
 
 // Split Buttons
 
@@ -1139,7 +1140,7 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 
 // Controlling the styles for the title in the top bar
  $topbar-title-weight: bold;
- $topbar-title-font-size: rem-calc(14);
+ $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
 $topbar-dropdown-bg: transparentize($topbar-bg-color, 0.4);
@@ -1189,6 +1190,7 @@ $topbar-menu-icon-color-toggled: #fff;
 // Divider Styles
 // $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
 // $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
+
 
 // Sticky Class
 // $topbar-sticky-class: ".sticky";
