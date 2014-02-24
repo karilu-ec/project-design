@@ -897,12 +897,12 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 // $include-html-nav-classes: $include-html-classes;
 
 // We use this to control padding.
-// $side-nav-padding: rem-calc(14 0);
+ $side-nav-padding: rem-calc(10 0);
 
 // We use these to control list styles.
 // $side-nav-list-type: none;
 // $side-nav-list-position: inside;
-// $side-nav-list-margin: rem-calc(0 0 7 0);
+ $side-nav-list-margin: rem-calc(0 0 13 0);
 
 // We use these to control link styles.
 // $side-nav-link-color: $primary-color;
@@ -916,9 +916,9 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 
 
 // We use these to control border styles
-// $side-nav-divider-size: 1px;
-// $side-nav-divider-style: solid;
-// $side-nav-divider-color: scale-color(#fff, $lightness: -10%);
+ $side-nav-divider-size: 1px;
+ $side-nav-divider-style: solid;
+ $side-nav-divider-color: scale-color(#DDDBDB, $lightness: -10%);
 
 // Split Buttons
 
