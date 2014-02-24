@@ -52,13 +52,13 @@ $header-footer-color: #153a5e;
 header {
   padding-bottom: 0;
   padding-top:5px;
-  background: $header-footer-color url('../img/Top.jpg') no-repeat center center !important;
+  background: $header-footer-color url('../img/Top.jpg') no-repeat center top !important;
   border-top: 5px solid $secondary-color;
   
   
   .utility-menu {
     float: right;
-    margin-bottom:0;
+    margin:0;
     
     li {
       margin-bottom: 0;
@@ -114,38 +114,8 @@ header {
     }
   }
   
-  #logo-container {
-    background-image: url('../img/USNA-Logo.png');
-    background-position: left;
-    background-repeat: no-repeat;
-    height: 115px;
-  }
-  .logo-text {
-      
-      position: absolute;
-      right: 45px;
-      top: 2.4em;
-      width: 55%;
-      text-align: center;
-    
-    h1 {
-      font-size: $header-h1-size;
-      color: #fff;
-      font-weight: 800;      
-      text-transform: uppercase;
-      margin-bottom: 0;
-      padding: 0;
-      line-height: 1.2em;
-    }
-    
-    h2 {
-      font-size: $header-h2-size;
-      color:#fff;
-      margin:0;
-      line-height: 0.75em;
-      font-family:  TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
-    }
-  }
+
+
 }
 
 
@@ -184,7 +154,7 @@ footer {
     
     div,p {
       font-size: $footer-size;
-      text-align: right;
+      text-align: none;
       padding: 0 10px;
       line-height: 1.2em;
     }
@@ -338,9 +308,12 @@ $social-media-box-font-size: rem-calc(13);
 /* media queries*/
 @media (max-width: 40em) {
   header {
-    #logo-container {
-      background-position: center center;
-    }   
+    .logo-container {
+    background-image: url('../img/USNA-Logo.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 105px;
+  }  
   }  
 }
 
@@ -365,6 +338,14 @@ $social-media-box-font-size: rem-calc(13);
   .top-bar-section li:not(.has-form) a:not(.button) {
     padding-left:30px;
     padding-right:30px;
+  }
+
+}
+@media (max-width: 45em) { 
+  .top-bar-section {
+  ul, li:not(.has-form) a:not(.button)  {
+    background:  transparentize($primary-color, 0.5);;
+   }
   }
 }
 
