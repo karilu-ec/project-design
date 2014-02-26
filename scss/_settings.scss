@@ -670,7 +670,7 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 // $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
 
 // Off Canvas Menu Icon Variables
- $tabbar-menu-icon-color: $primary-color;
+ $tabbar-menu-icon-color: #333;
  $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: 30%);
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);
@@ -686,9 +686,10 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 // Off Canvas Back-Link Overlay
 // $off-canvas-overlay-transition: background 300ms ease;
 // $off-canvas-overlay-cursor: pointer;
-$off-canvas-overlay-box-shadow: -4px 0 4px rgba(#fff, 0.5), 4px 0 4px rgba(#fff, 0.5);
-// $off-canvas-overlay-background: rgba(#FFF, 0.2);
-// $off-canvas-overlay-background-hover: rgba(#FFF, 0.05);
+//$off-canvas-overlay-box-shadow: -4px 0 4px rgba(#fff, 0.5), 4px 0 4px rgba(#fff, 0.5);
+$off-canvas-overlay-box-shadow: 0px 0 0px rgba(#e9e9e9, 0.5), 0px 0 0px rgba(#e9e9e9, 0.5);
+ $off-canvas-overlay-background: rgba(#f4f4f4, 0.2);
+ $off-canvas-overlay-background-hover: rgba(#f4f4f4, 0.05);
 
 // Transition Variables
 // $menu-slide: "transform 500ms ease";
