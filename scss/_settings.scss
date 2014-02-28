@@ -121,7 +121,7 @@ $secondary-color: #fbc42b;
 // $header-font-family: $body-font-family;
 // $header-font-weight: 300;
 // $header-font-style: normal;
-// $header-font-color: #222;
+ $header-font-color: #222;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -131,20 +131,20 @@ $secondary-color: #fbc42b;
 $h1-font-size: rem-calc(31);
 $h2-font-size: rem-calc(29);
 $h3-font-size: rem-calc(25);
-$h4-font-size: rem-calc(21);
+$h4-font-size: rem-calc(22);
 $h5-font-size: rem-calc(17);
 $h6-font-size: 1rem;
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
-// $subheader-font-color: scale-color($header-font-color, $lightness: 35%);
+ $subheader-font-color: scale-color($header-font-color, $lightness: 20%);
 // $subheader-font-weight: 300;
 // $subheader-top-margin: .2rem;
 // $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
 // $small-font-size: 60%;
-// $small-font-color: scale-color($header-font-color, $lightness: 35%);
+ $small-font-color: scale-color($header-font-color, $lightness: 10%);
 
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
@@ -288,8 +288,8 @@ $h6-font-size: 1rem;
 $crumb-bg: scale-color(#fff, $lightness: 55%);
 
 // We use these to set the padding around the breadcrumbs.
-// $crumb-padding: rem-calc(9 14 9);
-// $crumb-side-padding: rem-calc(12);
+ $crumb-padding: rem-calc(8 14 8);
+ $crumb-side-padding: rem-calc(9);
 
 // We use these to control border styles.
 // $crumb-function-factor: -10%;
@@ -640,7 +640,7 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 // $tabbar-height: rem-calc(45);
 // $tabbar-line-height: $tabbar-height;
  $tabbar-color: #333;
-// $tabbar-middle-padding: 0 rem-calc(10);
+ $tabbar-middle-padding: 0 rem-calc(10) 0 0;
 
 // Off Canvas Divider Styles
 // $tabbar-right-section-border: solid 1px scale-color($tabbar-bg, $lightness: 13%);
@@ -665,7 +665,7 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 // $off-canvas-label-border-top: 1px solid scale-color(#444, $lightness: 14%);
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
-// $off-canvas-link-padding: rem-calc(10, 15);
+ $off-canvas-link-padding: rem-calc(11 5);
 // $off-canvas-link-color: rgba(#333, 0.7);
 // $off-canvas-link-border-bottom: 1px solid scale-color($off-canvas-bg, $lightness: -25%);
 
@@ -686,8 +686,7 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 // Off Canvas Back-Link Overlay
 // $off-canvas-overlay-transition: background 300ms ease;
 // $off-canvas-overlay-cursor: pointer;
-//$off-canvas-overlay-box-shadow: -4px 0 4px rgba(#fff, 0.5), 4px 0 4px rgba(#fff, 0.5);
-$off-canvas-overlay-box-shadow: 0px 0 0px rgba(#e9e9e9, 0.5), 0px 0 0px rgba(#e9e9e9, 0.5);
+ $off-canvas-overlay-box-shadow: 0px 0 0px rgba(#e9e9e9, 0.5), 0px 0 0px rgba(#e9e9e9, 0.5);
  $off-canvas-overlay-background: rgba(#f4f4f4, 0.2);
  $off-canvas-overlay-background-hover: rgba(#f4f4f4, 0.05);
 
@@ -898,12 +897,13 @@ $off-canvas-overlay-box-shadow: 0px 0 0px rgba(#e9e9e9, 0.5), 0px 0 0px rgba(#e9
 // $include-html-nav-classes: $include-html-classes;
 
 // We use this to control padding.
- $side-nav-padding: rem-calc(0 0 5 0);
+ $side-nav-padding: rem-calc(0 0 6 0);
+ 
 
 // We use these to control list styles.
 // $side-nav-list-type: none;
 // $side-nav-list-position: inside;
- $side-nav-list-margin: rem-calc(0 0 14 0);
+ $side-nav-list-margin: rem-calc(0 0 0 0);
 
 // We use these to control link styles.
 // $side-nav-link-color: $primary-color;
@@ -911,7 +911,7 @@ $off-canvas-overlay-box-shadow: 0px 0 0px rgba(#e9e9e9, 0.5), 0px 0 0px rgba(#e9
 // $side-nav-link-color-hover: scale-color($side-nav-link-color, $lightness: 30%);
 // $side-nav-link-color-hover: scale-color($side-nav-link-color, $lightness: 30%);
 // $side-nav-font-size: rem-calc(14);
-// $side-nav-font-weight: normal;
+ $side-nav-font-weight: bold;
 // $side-nav-font-family: $body-font-family;
 // $side-nav-active-font-family: $side-nav-font-family;
 
@@ -1141,7 +1141,7 @@ $off-canvas-overlay-box-shadow: 0px 0 0px rgba(#e9e9e9, 0.5), 0px 0 0px rgba(#e9
 
 // Controlling the styles for the title in the top bar
  $topbar-title-weight: bold;
- $topbar-title-font-size: rem-calc(17);
+ $topbar-title-font-size: rem-calc(16);
 
 // Style the top bar dropdown elements
 $topbar-dropdown-bg: transparentize($topbar-bg-color, 0.5);
@@ -1158,8 +1158,8 @@ $topbar-dropdown-link-bg: transparentize($topbar-bg-color, 0.5);
  $topbar-link-color-hover: $secondary-color;
  $topbar-link-color-active: $secondary-color;
  // $topbar-link-color-active-hover: #fff;
- $topbar-link-weight: bold;
-// $topbar-link-font-size: rem-calc(13);
+ $topbar-link-weight: normal;
+ $topbar-link-font-size: rem-calc(15);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
  $topbar-link-bg-hover: scale-color($topbar-bg-color, $lightness: 10%, $alpha: 40%);
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);

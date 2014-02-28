@@ -40,12 +40,24 @@
 /* Sidebar styles*/
 .sidebar {
   padding: 0 0 0 10px;
-
+  
+  .side-nav {
+    li:not(.divider) {
+      padding: rem-calc(10);
+    }
+  }
+  
+  .off-canvas-list {
+    li:not(.divider) {
+      padding: 0;
+    }
+  }
 }
 
 /* Off-canvas styles */
 .offcanvas-title {  
-  text-align: left;  
+  text-align: left;
+  padding-left: rem-calc(10);
 }
 
 /* Left content styles */
@@ -89,7 +101,7 @@ header {
     
    .has-form {
       height: 30px;
-      padding: 0  0 0 15px;
+      padding: 0 0 0 15px;
       margin: 0;
       
       input {
@@ -130,11 +142,8 @@ header {
       color:#fff;
     }
   }
-  
-
 
 }
-
 
 
 /* TopBar overrides*/
@@ -142,15 +151,6 @@ header {
   box-shadow: none;
 }
 
-.top-bar {
-  background: none;
-}
-
-.top-bar-section {
-  ul, li:not(.has-form) a:not(.button)  {
-    background:  none;
-  }
-}
 
 /* Footer Styles */
 $footer-size: rem-calc(13);
@@ -351,32 +351,28 @@ $social-media-box-font-size: rem-calc(13);
 }
 
 /* Top bar padding media queries for Medium Size screens */
-@media only screen  and (min-width: 40.063em) and (max-width:64em) {
+@media only screen  and (min-width: 40.063em) {
   .top-bar-section li:not(.has-form) a:not(.button) {
-    padding-left:30px;
-    padding-right:30px;
+    padding-left:38px;
+    padding-right:38px;
+    background: transparent;
+  }
+  .top-bar {
+  background: transparent;
   }
 
-}
-@media (max-width: 45em) { 
-  .top-bar-section {
-  ul, li:not(.has-form) a:not(.button)  {
-    background:  transparentize($primary-color, 0.4);;
-   }
-  }
 }
 
 /* Top bar padding media queries for Large Size screens */
-@media only screen and (min-width: 64.063em) {
-  .top-bar-section li:not(.has-form) a:not(.button) {
-    padding-left:53px;
-    padding-right:53px;
-  }
-  
+@media only screen and (min-width: 64.063em) {  
   .footer-bottom {
     ul.social-media  {
       float: right;
     }
     
+  }
+  .top-bar-section li:not(.has-form) a:not(.button) {
+    padding-left:64px;
+    padding-right:63px;   
   }
 }
