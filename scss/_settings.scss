@@ -129,7 +129,7 @@ $secondary-color: #fbc42b;
 
 // We use these to control header font sizes
 $h1-font-size: rem-calc(31);
-$h2-font-size: rem-calc(29);
+$h2-font-size: rem-calc(28);
 $h3-font-size: rem-calc(25);
 $h4-font-size: rem-calc(22);
 $h5-font-size: rem-calc(17);
@@ -288,8 +288,8 @@ $h6-font-size: 1rem;
 $crumb-bg: scale-color(#fff, $lightness: 55%);
 
 // We use these to set the padding around the breadcrumbs.
- $crumb-padding: rem-calc(8 14 8);
- $crumb-side-padding: rem-calc(9);
+ $crumb-padding: rem-calc(11 14 11);
+ $crumb-side-padding: rem-calc(8);
 
 // We use these to control border styles.
 // $crumb-function-factor: -10%;
@@ -300,8 +300,8 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 
 // We use these to set various text styles for breadcrumbs.
 // $crumb-font-size: rem-calc(11);
-// $crumb-font-color: $primary-color;
-// $crumb-font-color-current: #333;
+ $crumb-font-color: #999999;
+ $crumb-font-color-current: #707070;
 // $crumb-font-color-unavailable: #999;
 // $crumb-font-transform: uppercase;
 // $crumb-link-decor: underline;
@@ -647,7 +647,7 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 // $tabbar-left-section-border: solid 1px scale-color($tabbar-bg, $lightness: -50%);
 
 // Off Canvas Tab Bar Headers
- $tabbar-header-color: #333;
+ $tabbar-header-color: $primary-color;
 // $tabbar-header-weight: bold;
 // $tabbar-header-line-height: $tabbar-height;
 // $tabbar-header-margin: 0;

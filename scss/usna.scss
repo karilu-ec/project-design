@@ -18,23 +18,13 @@
 
 /* Site name styles*/
 .site-name {
-  margin-bottom: 10px;
+  margin-bottom: rem-calc(10);
   
-  h1 {    
-    margin-left: 10px;
-    margin-bottom: 0;
+  h1 {
+    margin-top: 0;
+    border-bottom: 2px solid $secondary-color;
+    color: $primary-color;
   }
-}
-/*testing of the other about page.*/
-.site-name2 {
-  background-color: #CEBA82;
- // background: linear-gradient(#333333, #E2e2e2);
-  padding: 10px 0;
-  
-  
-  h1 { 
-    margin-bottom: 0;
-   }
 }
 
 /* Sidebar styles*/
@@ -55,9 +45,10 @@
 }
 
 /* Off-canvas styles */
-.offcanvas-title {  
+h1.offcanvas-title {  
   text-align: left;
   padding-left: rem-calc(10);
+  
 }
 
 /* Left content styles */
@@ -89,9 +80,13 @@ header {
     float: right;
     margin:0;
     
+    li:first-child {
+    margin-left: 0;  
+    }
+    
     li {
       margin-bottom: 0;
-      margin-left: 1em;
+      margin-left: rem-calc(8);
     }
     
     a {
@@ -101,8 +96,9 @@ header {
     
    .has-form {
       height: 30px;
-      padding: 0 0 0 15px;
+      padding: 0 0 0 rem-calc(7);
       margin: 0;
+      float: right;
       
       input {
         font-size: $header-navlinks-size;
