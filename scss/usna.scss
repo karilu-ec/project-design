@@ -325,7 +325,7 @@ $social-media-box-font-size: rem-calc(13);
     background-image: url('../img/Mobile-logo.png');
     background-position: left;
     background-repeat: no-repeat;
-    height: 105px;
+    height: 60px;
   }  
   }  
 }
@@ -349,8 +349,8 @@ $social-media-box-font-size: rem-calc(13);
 /* Top bar padding media queries for Medium Size screens */
 @media only screen  and (min-width: 40.063em) {
   .top-bar-section li:not(.has-form) a:not(.button) {
-    padding-left:38px;
-    padding-right:38px;
+    padding-left:34px;
+    padding-right:34px;
     background: transparent;
   }
   .top-bar {
