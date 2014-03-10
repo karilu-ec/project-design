@@ -8,6 +8,7 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
+    <a id="top"></a>
     <!-- Header and Top Main Navigation -->
     <header class="contain-to-grid">
       <div class="row collapse">
@@ -18,7 +19,7 @@
 	      </div>
 	    </div>
 	    <div class="small-9 large-8 columns">	      
-	      <div class="row">
+	      <div class="row collapse">
 		<div class="small-12 columns">		
 		  <ul class="utility-menu inline-list">
 		    <li><a href="#">Events</a></li>
@@ -111,7 +112,7 @@
     
     <!-- News section -->
     <div class="large-8 columns">
-      <h2>News</h2>
+      <h1>News</h1>
       <div class="row">
 	<div class="small-3 columns">
 	  <img src="http://placehold.it/137x130" />
@@ -156,7 +157,7 @@
     <div class="large-4 columns">
       
       <!-- Events section -->      
-      <h2>Events</h2>
+      <h1>Events</h1>
       <div class="row">
 	<div class="small-12 columns event-column">
 	  <ul class="event-list small-block-grid-2">
@@ -268,7 +269,7 @@
   </div>  
   <!-- End Main content -->
   
-  <!-- Footer -->
+  <!-- Footer: Home Page contains Navy mandated logos-->
   <footer>
     <div class="row collapse">
       <div class="medium-10 columns">
@@ -322,39 +323,42 @@
 	    </div>
 	  </div>
       </div>
-      <div class="medium-2 columns">
-	  <div class="footer-seal">
+      <div class="medium-2 small-12 columns">
+	  <div class="footer-seal small-text-center medium-text-left">
 	    <img src="img/logo-footer.png" alt="U.S. Naval Academy Seal" />
 	    <p>
 	      U.S. Naval Academy<br>
 	      121 Blake Road, Annapolis, MD 21402<br>
 	      <a href="mailto:webmaster@usna.edu">Contact USNA</a>
 	    </p>
+	    <ul class="social-media">
+	      <li><a href="http://www.facebook.com/USNavalAcademy"><img src="img/facebook.png" /></a></li>
+	      <li><a href="https://twitter.com/#!/NavalAcademy"><img src="img/twitter.png" /></a></li>
+	      <li><a href="http://www.flickr.com/photos/unitedstatesnavalacademy"><img src="img/flickr.png" /></a></li>
+	      <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
+	    </ul>
 	  </div>
       </div>	    
     </div>
   </footer>
   <div class="footer-bottom">
-    <div class="row">
-      <div class="medium-4 medium-push-8 columns">
-	<ul class="social-media">
-	  <li><a href="http://www.facebook.com/USNavalAcademy"><img src="img/facebook.png" /></a></li>
-	  <li><a href="https://twitter.com/#!/NavalAcademy"><img src="img/twitter.png" /></a></li>
-	  <li><a href="http://www.flickr.com/photos/unitedstatesnavalacademy"><img src="img/flickr.png" /></a></li>
-	  <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
-	</ul>
-      </div>
-      <div class="medium-8 medium-pull-4 columns">
-	<div class="url-bottom">
-	    This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>
+    <div class="row collapse">
+      <div class="small-12 medium-6 columns">	
+	<div class="url-bottom medium-text-left">
+	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>		
 	</div>
       </div>
-      
+      <div class="small-12 medium-6 columns">
+	<div class="navy-images medium-text-right">
+	    <img src="img/life.png" alt="Suicidal" />
+	    <img src="img/atfp_seal.png" alt="ATFP" />
+	</div>
+      </div>
     </div>
   </div>
   <!-- End Footer  and footer-bottom-->
 
-    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
     <script src="js/app.js"></script>
   </body>
