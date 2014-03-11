@@ -36,7 +36,7 @@
 
   
   .side-nav {
-    line-height: 1.4;
+    line-height: rem-calc(18);
     
     li:not(.divider) {
       padding: rem-calc(10);
@@ -47,6 +47,14 @@
     li:not(.divider) {
       padding: 0;
     }
+  }
+  
+  .arrow {
+    background: url('../img/bullet.png') no-repeat;
+    height: 9px;
+    width: 6px;
+    float: right;
+    margin-top:5px;
   }
 }
 
