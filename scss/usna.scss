@@ -8,9 +8,11 @@
   width: 95%;
   margin-left: 15px;
 }
-
+.orbit-container {
+  margin-bottom: rem-calc(10);
+}
 .orbit-bullets {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .breadcrumbs {
   margin-bottom: 0;
@@ -47,6 +49,17 @@
     li:not(.divider) {
       padding: 0;
     }
+    
+    .navFly {
+     li:not(.divider) {
+        padding: 0;
+      }
+    }
+    
+    a:hover {
+      background: #fff;
+    }
+    
   }
   
   .arrow {
@@ -54,7 +67,19 @@
     height: 9px;
     width: 6px;
     float: right;
-    margin-top:5px;
+    margin-top:6px;
+  }
+  
+  .navFly {
+    list-style: none;
+    margin-left: rem-calc(2);
+    margin-top: rem-calc(4);
+    
+    li:not(.divider) {
+      font-size: rem-calc(14);
+      text-transform: none;
+      padding: rem-calc(7 10);
+    }    
   }
 }
 
