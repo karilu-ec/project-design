@@ -40,8 +40,8 @@
   .side-nav {
     line-height: rem-calc(18);
     
-    li:not(.divider) {
-      padding: rem-calc(10);
+    li >a {
+      padding: rem-calc(13) rem-calc(10);
     }
   }
   
@@ -72,14 +72,38 @@
   
   .navFly {
     list-style: none;
-    margin-left: rem-calc(2);
+<<<<<<< Updated upstream
+    margin-left: 0;
     margin-top: rem-calc(4);
+    background: #f9f9f9;
     
-    li:not(.divider) {
-      font-size: rem-calc(13);
+    li {
+      &:not(.divider) {
       text-transform: none;
-      padding: rem-calc(7 10);
+      font-variant: small-caps;
+      border-left: 4px solid scale-color($primary-color, $lightness: 10%);
+      }
+      &.divider {
+        border-color: #ffffff;
+      }
+      &:hover {
+        background: #ffffff;
+        border-left: 4px solid scale-color($primary-color, $lightness: 30%);        
+      }
+      a {
+        padding: rem-calc(10);
+      }
+    }
+=======
+    margin-left: rem-calc(10);
+    margin-top: rem-calc(4);
+    background: #f9f9f9;
+    
+    li:not(.divider) {      
+      text-transform: none;
+      font-variant: small-caps;
     }    
+>>>>>>> Stashed changes
   }
 }
 
@@ -265,7 +289,7 @@ footer {
     
     ul.social-media  {
     display: inline-block;
-    margin: 0;
+    margin: 10px 0 0;
     float: none;
     
       li {
@@ -281,6 +305,14 @@ footer {
  
   h5 {
     color:#fff;
+  }
+ 
+  .navy-images {
+    margin-top:rem-calc(14);
+    
+    .orbit-bullets {
+      margin-bottom: 5px;      
+    }
   }
 }
 
@@ -303,9 +335,7 @@ $footer-bottom-size: rem-calc(11);
     text-align: center;
     padding:0.5em 0 0.5em;  
   }
-  .navy-images{
-    text-align: center;
-  }
+
 }
 
 
