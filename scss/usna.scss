@@ -72,7 +72,6 @@
   
   .navFly {
     list-style: none;
-<<<<<<< Updated upstream
     margin-left: 0;
     margin-top: rem-calc(4);
     background: #f9f9f9;
@@ -94,16 +93,6 @@
         padding: rem-calc(10);
       }
     }
-=======
-    margin-left: rem-calc(10);
-    margin-top: rem-calc(4);
-    background: #f9f9f9;
-    
-    li:not(.divider) {      
-      text-transform: none;
-      font-variant: small-caps;
-    }    
->>>>>>> Stashed changes
   }
 }
 
