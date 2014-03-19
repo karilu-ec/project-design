@@ -18,6 +18,7 @@
   margin-bottom: 0;
 }
 
+
 /* Site name styles*/
 .site-name {  
   h1 {
@@ -31,9 +32,9 @@
   }
 }
 
+
 /* Sidebar styles*/
 .sidebar {
-  padding: 0 0 0 10px;
   text-transform: uppercase;
 
   
@@ -96,6 +97,7 @@
   }
 }
 
+
 /* Off-canvas styles */
 h1.offcanvas-title {  
   text-align: left;
@@ -103,14 +105,82 @@ h1.offcanvas-title {
   
 }
 
+
 /* Left content styles */
 .left-nav-content {
-  margin: 20px 0 40px;
+  margin: 20px 0 40px 10px;
+  
+  .event-list {
+    .events {
+      width:40px;
+      font-size: rem-calc(13);
+    }
+    .description h5{
+      font-size: rem-calc(14);
+    }
+  }
 }
+
 
 /* Featured box*/
 .featured-column {
   img {margin-bottom: rem-calc(14); }
+}
+
+
+/*  Right callouts  */
+/* Custom side nav for news-categories */
+.news-categories-side-nav {
+  @include side-nav(
+    // Border color of divider
+    $divider-color: #ebebeb,
+    // Font size of nav items
+    $font-size:0.9em,
+    // Color of navigation links
+    $link-color:#fff,
+    // Color of navigation links on hover
+    $link-color-hover: $secondary-color
+  );
+  a {
+    padding: rem-calc(5);
+  }
+}
+h5.right-callout-heading5 {
+  font-size: rem-calc(15);
+  font-weight: bold;
+}
+
+/* Custom side nav for right callouts */
+.right-callout-side-nav {
+  @include side-nav(
+    // Border color of divider
+    //$divider-color: #ebebeb,
+    // Font size of nav items
+    $font-size:0.9em
+    // Color of navigation links
+    //$link-color:#fff,
+    // Color of navigation links on hover
+    //$link-color-hover: $secondary-color
+  );
+  a {
+    padding: rem-calc(5);
+  }
+}
+
+/* Custom panel in primary color*/
+.primary-color-panel {
+  @include panel(
+    // Sets the panel background color. Default: $panel-pg
+    $bg:$primary-color,
+    // Sets the panel padding amount. Default: $panel-padding
+    $padding:17px,
+    // Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
+    $adjust:true
+  );
+  &.radius {
+        @include panel($bg:false);
+        @include radius;
+  }
 }
 
 
@@ -160,6 +230,7 @@ h1.offcanvas-title {
     
   }
 }
+
 
 /* Header Styles */
 $header-h1-size: rem-calc(31);
@@ -288,16 +359,31 @@ footer {
         margin-bottom: 5px;
         float: left;        
       }
+      img {
+        width:35px;
+      }
     
     }
   }
  
   h5 {
     color:#fff;
+    border-top: 1px dotted scale-color($primary-color, $lightness: 30%);
+    padding-top:rem-calc(14);  
+  }
+  
+  .mobile-footer {
+    li {
+      &:first-child {
+        h5 {
+          border-top:none;
+        }
+      }
+    }
   }
  
   .navy-images {
-    margin-top:rem-calc(14);
+    margin: 5px auto 0;
     width: 133px;
     
     .orbit-bullets {
@@ -305,6 +391,7 @@ footer {
     }
   }
 }
+
 
 /*Footer bottom styles*/
 $footer-bottom-size: rem-calc(11);
@@ -337,20 +424,19 @@ $footer-bottom-size: rem-calc(11);
   }
 
   .event-list {
-  padding-left: 11px;
   
   > li:first-child {
-  width:70px;
-  padding-bottom: 0;
-  padding-left:0;
+  width:20%;
+  padding-bottom: rem-calc(8);
   }
   > li:last-child {
-    width:75%;
+    width:80%;
     padding: 0;
   }
   
   .description {
     margin-top:0 !important;
+    width: 100%;
     
     h5.title {
       margin-top:0 !important;
@@ -362,7 +448,7 @@ $footer-bottom-size: rem-calc(11);
   }
  }
 .events {
-  width: 60px;
+  width: 50px;
   text-align: center;
   text-transform: uppercase;
   border-radius: 3px;
@@ -461,6 +547,14 @@ $social-media-box-font-size: rem-calc(13);
   }
   .top-bar {
   background: transparent;
+  }
+  footer {
+    h5 {
+      border-top: none;
+    }
+    .navy-images {
+      margin:  0;
+    }
   }
 
 }
