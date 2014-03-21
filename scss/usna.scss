@@ -8,24 +8,18 @@
   width: 95%;
   margin-left: 15px;
 }
-.shareFBbutton {
-  @include button(
-    $padding: rem-calc(11),
-    $bg: #3B5998,
-    $radius: true      
-  )
-}
-.shareTwitterbutton {
-  @include button(
-    $padding: rem-calc(11),
-    $bg: #3A92C8,
-    $radius: true      
-  )
-}
 .news-date-posted {
   color: #999;
   font-size: 85%;
   text-transform: uppercase;
+  margin-bottom: rem-calc(10);
+}
+.share-buttons {
+  margin-bottom: rem-calc(10);
+  .fb-share-button {
+    margin-bottom: 5px;
+  }
+  
 }
 .orbit-container {
   margin-bottom: rem-calc(10);

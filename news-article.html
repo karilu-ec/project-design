@@ -8,6 +8,14 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <a id="top"></a>
     <!-- Header and Top Main Navigation -->
     <header class="contain-to-grid">
@@ -18,9 +26,9 @@
 		 
 	      </div>
 	    </div>
-	    <div class="small-9 large-8 columns">	      
+	    <div class="small-9 large-8 columns">
 	      <div class="row collapse">
-		<div class="small-12 columns">		
+		<div class="small-12 columns">
 		  <ul class="utility-menu inline-list">
 		    <li><a href="#">Events</a></li>
 		    <li><a href="#">Maps</a></li>
@@ -64,7 +72,7 @@
         </ul>
         <section class="top-bar-section">
 	  <!-- Left Nav -->
-		<ul class="left">		   
+		<ul class="left">
 		  <li class="divider"></li>
 		  <li><a href="#">ABOUT</a></li>
 		  <li class="divider"></li>
@@ -91,7 +99,7 @@
       <ul class="breadcrumbs">
 	<li><a href="#">Home</a></li>
 	<li><a href="#">Public Affairs Office</a></li>
-	<li><a href="#">USNA News</a></li>	
+	<li><a href="#">USNA News</a></li>
 	<li class="current"><a href="#">News Article</a></li>
       </ul>
     </div>
@@ -112,7 +120,7 @@
        <aside class="left-off-canvas-menu">
        <!-- Navigation small screens -->
 	 <div class="sidebar">
-	   <ul class="side-nav off-canvas-list">	    
+	   <ul class="side-nav off-canvas-list">
 	     <li class="active"><a href="#">Public Affairs Office</a></li>
 	     <li><a href="#">USNA News</a></li>
 	     <li><a href="#">Community Relations</a></li>
@@ -132,12 +140,12 @@
        
        <section class="main-section">
 	
-        <!-- main content goes here -->  
+        <!-- main content goes here -->
 	<div class="row bgwhite">
 	  <!-- Side nav medium up screens-->
 	  <div class="large-3 medium-4 columns">
 	    <div class="hide-for-small">
-	      <div class="sidebar">		
+	      <div class="sidebar">
 		<nav>
 		  <ul class="side-nav">
 		    <li><a href="#">Public Affairs Office</a></li>
@@ -161,7 +169,7 @@
 		    <li><a href="#">Contact Us</a></li>
 		  </ul>
 		</nav>
-	      </div>	     	      
+	      </div>
 	    </div>
 
 	  </div>
@@ -176,7 +184,7 @@
 		<div class="site-name">
 		  <h1>Public Affairs Office</h1>
 		</div>
-	      </div>      
+	      </div>
 	    </div>
 	    
 	    <!-- Masthead Slider -->
@@ -198,18 +206,25 @@
 		</ul>
 		
 	      </div>
-	    </div>            
+	    </div>
 	    <!-- End Masthead -->
 	    
 	  
 	    <div class="row">
-	      <div class="large-12 columns">		
-		<!-- News article -->		
-		<h2>U.S. Naval Academy Midshipmen View Premiere of “300: Rise of an Empire”</h2>
-		<p class="news-date-posted"><strong>POSTED ON:</strong> March 05, 2014 09:00 by Naval Academy PUblic Affairs</p>		
-		<div class="social-share-buttons">
-		  <a href="#" class="shareFBbutton large">Share on Facebook</a>
-		  <a href="#" class="shareTwitterbutton">Share on Twitter</a>
+	      <div class="large-12 columns">
+		<!-- News article -->
+		<div class="row">
+		  <div class="large-9 columns">
+		    <h2>U.S. Naval Academy Midshipmen View Premiere of “300: Rise of an Empire”</h2>
+		    <p class="news-date-posted"><strong>POSTED ON:</strong> March 05, 2014 09:00 by Naval Academy PUblic Affairs</p>
+		  </div>
+		  <div class="large-3 columns">
+		    <div class="share-buttons">
+		      <div class="fb-share-button" data-href="https://www.facebook.com/USNavalAcademy" data-width="100" data-type="button_count"></div>
+		      <a href="https://twitter.com/share" class="twitter-share-button" data-via="NavalAcademy" data-size="large" data-related="NavalAcademy" data-hashtags="NavalAcademy">Tweet</a>		      
+		      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		    </div>
+		  </div>
 		</div>
 		<p>U.S. Naval Academy Midshipmen received a special treat March 2 when they were invited to view a premiere of the new film “300: Rise of an Empire” at the Bowtie Cinemas in Annapolis, Md.</p>
 		<p>The film’s release date in the U.S. is March 7.</p>
@@ -220,9 +235,9 @@
 		
 		<hr>
 		<p>Category: <a href="#">Midshipmen</a></p>
-	      <!-- End News -->		
-	      </div>	      
-	    </div>	    
+	      <!-- End News -->
+	      </div>
+	    </div>
 	    
 	    <!-- Arrow go to top for small screens-->
 	    <a href="#top" class="show-for-small-only right"><img src="img/arrow.png" alt="go to Top"></a>
@@ -276,7 +291,7 @@
 			<li><a href="#">Registrar</a></li>
 		      </ul>
 		    </li>
-		    <li>			    
+		    <li>
 		      <ul class="no-bullet">
 			<h5>Site maintained by</h5>
 			<li><a href="#">PAO Webmaster</a></li>
@@ -302,16 +317,16 @@
 	      <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
 	    </ul>
 	  </div>
-      </div>	    
+      </div>
     </div>
   </footer>
   <div class="footer-bottom">
     <div class="row collapse">
-      <div class="small-12 columns">	
+      <div class="small-12 columns">
 	<div class="url-bottom small-text-center">
-	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>		
+	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>
 	</div>
-      </div>      
+      </div>
     </div>
   </div>
   <!-- End Footer and footer-bottom-->

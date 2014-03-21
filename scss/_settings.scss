@@ -408,14 +408,14 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 
 // We use these to style the triangle pip.
 // $f-dropdown-triangle-size: 6px;
-// $f-dropdown-triangle-color: #fff;
+ $f-dropdown-triangle-color: $primary-color;
 // $f-dropdown-triangle-side-offset: 10px;
 
 // We use these to control styles for the list elements.
 // $f-dropdown-list-style: none;
 // $f-dropdown-font-color: #555;
 // $f-dropdown-font-size: rem-calc(14);
- $f-dropdown-list-padding: rem-calc(0, 10);
+// $f-dropdown-list-padding: rem-calc(10);
  $f-dropdown-line-height: rem-calc(14);
  $f-dropdown-list-hover-bg: #fff;
 // $dropdown-mobile-default-float: 0;
