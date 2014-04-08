@@ -128,8 +128,11 @@ h1.offcanvas-title {
       width:40px;
       font-size: rem-calc(13);
     }
-    .description h5{
-      font-size: rem-calc(14);
+    .description {
+      margin-left: 10px;
+      h5{
+        font-size: rem-calc(14);
+      }
     }
   }
 }
@@ -143,21 +146,33 @@ h1.offcanvas-title {
 
 /*  Right callouts  */
 /* Custom side nav for news-categories */
-.news-categories-side-nav {
-  @include side-nav(
-    // Border color of divider
-    $divider-color: #ebebeb,
-    // Font size of nav items
-    $font-size:0.9em,
-    // Color of navigation links
-    $link-color:#fff,
-    // Color of navigation links on hover
-    $link-color-hover: $secondary-color
-  );
-  a {
-    padding: rem-calc(5);
+
+.news-categories-container {
+	padding-left: rem-calc(10);
+	padding-right: rem-calc(10);
+	background-color:#EEE;
+	border:1px solid #CCC;
+	margin-bottom:rem-calc(10);
+	
+	h4 {
+	background: url(../img/background.png) repeat scroll 0 0 #153A5E;
+	color: #FFFFFF; 
+	padding-left:rem-calc(7); 
+	padding-top:rem-calc(3);
+	padding-bottom:rem-calc(4);
+	margin-left:rem-calc(-10);
+	margin-right:rem-calc(-10);
+	margin-top:0;
   }
 }
+
+.side-nav-indent {
+	padding-left: rem-calc(10);
+}
+.side-nav-caps {
+	text-transform:uppercase;
+}
+
 h5.right-callout-heading5 {
   font-size: rem-calc(15);
   font-weight: bold;
@@ -402,7 +417,8 @@ footer {
     width: 133px;
     
     .orbit-bullets {
-      margin-bottom: 5px;      
+      margin-bottom: 5px;
+      margin-top:-12px;
     }
   }
 }
