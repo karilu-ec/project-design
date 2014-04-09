@@ -14,6 +14,17 @@
   text-transform: uppercase;
   margin-bottom: rem-calc(10);
 }
+.news-listing {
+  h5 {
+    margin-left: rem-calc(10);
+    line-height: 1.2;
+  }
+  .news-item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: rem-calc(10);
+  }
+}
 .share-buttons {
   margin-bottom: rem-calc(10);
   .fb-share-button {
@@ -30,7 +41,11 @@
 .breadcrumbs {
   margin-bottom: 0;
 }
-
+a {
+    &:hover, &:focus {
+      color: scale-color($primary-color, $lightness: 30%);
+    }
+}
 
 /* Site name styles*/
 .site-name {  
