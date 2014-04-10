@@ -46,6 +46,23 @@ a {
       color: scale-color($primary-color, $lightness: 30%);
     }
 }
+/*Accordion customization*/
+.accordion {
+  dd {
+  border-bottom: 1px dotted #ccc;
+  &:not(.active) {
+    .expand {
+      background: url('../img/plus.png') no-repeat left center transparent
+    }
+  }
+  &.active {
+    .expand {
+      background: url('../img/minus.png') no-repeat left center transparent;
+    } 
+  }  
+  }
+}
+
 
 /* Site name styles*/
 .site-name {  
