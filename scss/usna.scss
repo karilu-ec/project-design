@@ -32,6 +32,18 @@
   }
   
 }
+.read-more {
+  text-align:right;
+  font-size: 85%;
+  text-transform:uppercase;
+  }
+ .read-more-arrow {
+  font-size: 150%;
+ }
+ .title-over-hr{
+ margin-bottom:-20px;
+ }
+
 .orbit-container {
   margin-bottom: rem-calc(10);
 }
@@ -46,23 +58,19 @@ a {
       color: scale-color($primary-color, $lightness: 30%);
     }
 }
+
 /*Accordion customization*/
 .accordion {
   dd {
   border-bottom: 1px dotted #ccc;
-  &:not(.active) {
-    .expand {
-      background: url('../img/plus.png') no-repeat left center transparent
-    }
+  &:not(.active) .expand {
+    background: url('../img/plus.png') no-repeat left center transparent
   }
-  &.active {
-    .expand {
-      background: url('../img/minus.png') no-repeat left center transparent;
+  &.active .expand {
+    background: url('../img/minus.png') no-repeat left center transparent;
     } 
-  }  
   }
 }
-
 
 /* Site name styles*/
 .site-name {  
@@ -77,407 +85,10 @@ a {
   }
 }
 
-
-/* Sidebar styles*/
-.sidebar {
-  text-transform: uppercase;
-
-  
-  .side-nav {
-    line-height: rem-calc(18);
-    
-    li >a {
-      padding: rem-calc(13) rem-calc(10);
-    }
-  }
-  
-  .off-canvas-list {
-    li:not(.divider) {
-      padding: 0;
-    }
-    
-    .navFly {
-     li:not(.divider) {
-        padding: 0;
-      }
-    }
-    
-    a:hover {
-      background: #fff;
-    }
-    
-  }
-  
-  .arrow {
-    background: url('../img/bullet.png') no-repeat;
-    height: 9px;
-    width: 6px;
-    float: right;
-    margin-top:6px;
-  }
-  
-  .navFly {
-    list-style: none;
-    margin-left: 0;
-    margin-top: rem-calc(4);
-    background: #f9f9f9;
-    
-    li {
-      &:not(.divider) {
-      text-transform: none;
-      font-variant: small-caps;
-      border-left: 4px solid scale-color($primary-color, $lightness: 10%);
-      }
-      &.divider {
-        border-color: #ffffff;
-      }
-      &:hover {
-        background: #ffffff;
-        border-left: 4px solid scale-color($primary-color, $lightness: 30%);        
-      }
-      a {
-        padding: rem-calc(10);
-      }
-    }
-  }
-}
-
-
-/* Off-canvas styles */
-h1.offcanvas-title {  
-  text-align: left;
-  padding-left: rem-calc(10);
-  
-}
-
-
-/* Left content styles */
-.left-nav-content {
-  margin: 20px 0 40px 10px;
-  
-  .event-list {
-    .events {
-      width:40px;
-      font-size: rem-calc(13);
-    }
-    .description {
-      margin-left: 10px;
-      h5{
-        font-size: rem-calc(14);
-      }
-    }
-  }
-}
-
-
-/* Featured box*/
+/* Featured - a column featuring images*/
 .featured-column {
   img {margin-bottom: rem-calc(14); }
 }
-
-
-/*  Right callouts  */
-/* Custom side nav for news-categories */
-
-.news-categories-container {
-	padding-left: rem-calc(10);
-	padding-right: rem-calc(10);
-	background-color:#EEE;
-	border:1px solid #CCC;
-	margin-bottom:rem-calc(10);
-	
-	h4 {
-	background: url(../img/background.png) repeat scroll 0 0 #153A5E;
-	color: #FFFFFF; 
-	padding-left:rem-calc(7); 
-	padding-top:rem-calc(3);
-	padding-bottom:rem-calc(4);
-	margin-left:rem-calc(-10);
-	margin-right:rem-calc(-10);
-	margin-top:0;
-  }
-}
-
-.side-nav-indent {
-	padding-left: rem-calc(10);
-}
-.side-nav-caps {
-	text-transform:uppercase;
-}
-
-h5.right-callout-heading5 {
-  font-size: rem-calc(15);
-  font-weight: bold;
-}
-
-/* Custom side nav for right callouts */
-.right-callout-side-nav {
-  @include side-nav(
-    // Border color of divider
-    //$divider-color: #ebebeb,
-    // Font size of nav items
-    $font-size:0.9em
-    // Color of navigation links
-    //$link-color:#fff,
-    // Color of navigation links on hover
-    //$link-color-hover: $secondary-color
-  );
-  a {
-    padding: rem-calc(5);
-  }
-}
-
-/* Custom panel in primary color*/
-.primary-color-panel {
-  @include panel(
-    // Sets the panel background color. Default: $panel-pg
-    $bg:$primary-color,
-    // Sets the panel padding amount. Default: $panel-padding
-    $padding:17px,
-    // Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
-    $adjust:true
-  );
-  &.radius {
-        @include panel($bg:false);
-        @include radius;
-  }
-}
-
-
-/* Mobile Sub-navigation*/
-.mobile-sub-navigation {
- 
-  
-  .subsection-navigation {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background: #f9f9f9;
-    line-height: rem-calc(14);
-  
-    li {
-      &:not(.divider) {
-       padding: rem-calc(10);
-       border-bottom: 1px solid scale-color(#fff, $lightness: -20%);
-      }
-      &:first-child {
-        background: #fff;
-      }
-      a {
-        display: block;
-        &:hover, &:active {color: scale-color($primary-color, $lightness: 30%); }
-      }
-      &.active > a:first-child:not(.button) {
-          font-weight: bold;
-          color: scale-color($primary-color, $lightness: 30%);
-          &:active {
-            font-weight: bold;
-            color: scale-color($primary-color, $lightness: 30%);
-          }
-          &:hover {
-            font-weight: bold;
-            color: scale-color($primary-color, $lightness: 30%);
-          }
-      }
-      &:hover {
-        background: #fff;
-      }
-      label {
-        text-transform: uppercase;
-        font-weight: bold;
-      }
-    }
-    
-  }
-}
-
-
-/* Header Styles */
-$header-h1-size: rem-calc(31);
-$header-h2-size: rem-calc(22);
-$header-h2-size-small: rem-calc(20);
-$header-navlinks-size: rem-calc(13);
-/*Colors for links in header*/
-$primary-color: #1e5282;
-$secondary-color: #fbc42b;
-$header-footer-color: #153a5e;
-
-header {
-  padding-bottom: 0;
-  padding-top:5px;
-  background: $header-footer-color url('../img/Top.jpg') no-repeat center top !important;
-  border-top: 5px solid $secondary-color;
-  
-  
-  .utility-menu {
-    float: right;
-    margin:0;
-    padding-right: 4px;
-    
-    li:first-child {
-    margin-left: 0;  
-    }
-    
-    li {
-      margin-bottom: 0;
-      margin-left: rem-calc(8);
-    }
-    
-    a {
-    font-size: $header-navlinks-size;
-    color: $secondary-color;
-    }
-    
-   .has-form {
-      height: 30px;
-      padding: 0 0 0 rem-calc(7);
-      margin: 0;
-      float: right;
-      
-      input {
-        font-size: $header-navlinks-size;
-        position: relative;
-        top: 0;
-        height: auto;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        background: #fff url('../img/search-icon.png') no-repeat right;
-        border-radius: 5px;
-      }
-   }
-   
-  }
-  
-  .audience-menu  {
-    float: right;
-    margin-bottom: 0;
-    
-    li {      
-      font-size: $header-navlinks-size;
-      margin-left: 0.8em;
-    }
-    
-   li.divider {
-    border-bottom: none;
-    border-top: none;
-    border-right: 1px solid #276BA7;
-    clear: none;
-    height: 16px;
-    margin-left: 0.5em;
-    margin-top: 3px;
-    width: 0;
-    }
-    
-    a {
-      color:#fff;
-    }
-  }
-
-}
-
-
-/* TopBar overrides*/
-.top-bar.expanded .toggle-topbar a span {
-  box-shadow: none;
-}
-
-
-/* Footer Styles */
-$footer-size: rem-calc(13);
-
-footer {
-  background: $primary-color !important;
-  padding-top:20px;
-  
-  .footer-links a {
-    color: $secondary-color;
-    font-size: $footer-size;
-  }
-  
-  .footer-seal {
-    color: #fff;
-    
-    div,p {
-      font-size: $footer-size;     
-      padding: 0 10px;
-      line-height: 1.2em;
-      margin-bottom: 0.2em;
-    }
-    a {
-      color: #fff;
-    }
-    
-    ul.social-media  {
-    display: inline-block;
-    margin: 10px 0 0;
-    float: none;
-    
-      li {
-        display: block;
-        list-style: none;
-        margin-left: 5px;
-        margin-bottom: 5px;
-        float: left;        
-      }
-      img {
-        width:35px;
-      }
-    
-    }
-  }
- 
-  h5 {
-    color:#fff;
-    border-top: 1px dotted scale-color($primary-color, $lightness: 30%);
-    padding-top:rem-calc(14);  
-  }
-  
-  .mobile-footer {
-    li {
-      padding-bottom: 0;
-      
-      &:first-child {
-        h5 {
-          border-top:none;
-        }
-      }
-    }
-  }
- 
-  .navy-images {
-    margin: 5px auto 0;
-    width: 133px;
-    
-    .orbit-bullets {
-      margin-bottom: 5px;
-      margin-top:-12px;
-    }
-  }
-}
-
-
-/*Footer bottom styles*/
-$footer-bottom-size: rem-calc(11);
-
-.footer-bottom {
-  background: $header-footer-color url('../img/background.png');
-  padding: 10px 0 10px;
-  color: #fff;
-  font-size: $footer-bottom-size;
-  border-bottom: 5px solid $secondary-color;
-  
-  a {
-      color: #fff;
-      font-weight: bold;
-    }
-    
-  .url-bottom {
-    text-align: center;
-    padding:0.5em 0 0.5em;  
-  }
-
-}
-
 
 /* Events styles */
 .event-column {
@@ -532,100 +143,40 @@ $footer-bottom-size: rem-calc(11);
 }
 }
 
-
-/* Social media content block*/
-$social-media-box-font-size: rem-calc(13);
-.social-media-box {
-  margin-top: 1.2em;
-  margin-bottom:1em;
-  border: 1px solid #ccc;
-  border-top: 1px solid $secondary-color;
-  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.33);
-  border-radius: 5px;
+/* Left content styles */
+.left-nav-content {
+  margin: 20px 0 40px 10px;
   
-  .feed-container {
-    margin:0;
-    border-top: 10px solid $secondary-color;
-    padding: 15px 20px 0;
-    
-    .title {
-      margin-bottom: 5px;
-      
-      h4 {
-      margin-bottom: 0;
-      margin-top: 0;
-      font-weight: bold;     
+  /* Events on left side bar*/
+  .event-list {
+    .events {
+      width:40px;
+      font-size: rem-calc(13);
+    }
+    .description {
+      margin-left: 10px;
+      h5{
+        font-size: rem-calc(14);
       }
-      
-      img {
-        display: inline;
-      }
-      
-      span.timestamp {
-      font-size:80%;
-      display: block;
-      margin-left: 30px;
-      margin-top: -8px;
-      }
-    }    
-    
-    p {
-      font-size: $social-media-box-font-size;
-      margin-bottom: 0;
     }
   }
 }
 
-
 /* Media queries*/
 /* Small screens*/
-@media (max-width: 40em) {
+@media #{$small-only} {
   /*Typography needs to stays consistent in all screen sizes*/
   h1 { font-size: $h1-font-size - rem-calc(4); }
   h2 { font-size: $h2-font-size - rem-calc(4); }
   h3 { font-size: rem-calc(19);}
-  h4 { font-size: rem-calc(18);}
-  
-  header {
-    .logo-container {
-    background-image: url('../img/Mobile-logo.png');
-    background-position: left;
-    background-repeat: no-repeat;
-    height: 60px;
-  }  
-  }  
+  h4 { font-size: rem-calc(18);} 
 }
 
 /* Medium Size screens */
-@media only screen  and (min-width: 40.063em) {
+@media #{$medium-up} {
   /*Typography needs to stays consistent in all screen sizes*/
   h1 { font-size: rem-calc(23);}
   h2 { font-size: rem-calc(20);}
   h3 { font-size: rem-calc(19);}
   h4 { font-size: rem-calc(18);}
-  .top-bar-section li:not(.has-form) a:not(.button) {
-    padding-left:34px;
-    padding-right:34px;
-    background: transparent;
-  }
-  .top-bar {
-  background: transparent;
-  }
-  footer {
-    h5 {
-      border-top: none;
-    }
-    .navy-images {
-      margin:  0;
-    }
-  }
-
-}
-
-/*  Large Size screens */
-@media only screen and (min-width: 64.063em) {  
-  .top-bar-section li:not(.has-form) a:not(.button) {
-    padding-left:64px;
-    padding-right:63px;   
-  }
 }

@@ -1,3 +1,13 @@
 @import "settings";
 @import "foundation";
+
+// import our mixins
+// currently none
+
+// importanting our partials
+@import "components/header";
+@import "components/footer";
+@import "components/nav-side";
+@import "components/nav-second-level-mobile";
+@import "components/callouts";
 @import "usna";

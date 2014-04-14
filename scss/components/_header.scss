@@ -1,0 +1,117 @@
+/* Header Styles */
+$header-h1-size: rem-calc(31);
+$header-h2-size: rem-calc(22);
+$header-h2-size-small: rem-calc(20);
+$header-navlinks-size: rem-calc(13);
+/*Colors for links in header*/
+$header-footer-color: #153a5e;
+
+header {
+  padding-bottom: 0;
+  padding-top:5px;
+  background: $header-footer-color url('../img/Top.jpg') no-repeat center top !important;
+  border-top: 5px solid $secondary-color;
+  
+  
+  .utility-menu {
+    float: right;
+    margin:0;
+    padding-right: 4px;
+    
+    li:first-child {
+    margin-left: 0;  
+    }
+    
+    li {
+      margin-bottom: 0;
+      margin-left: rem-calc(8);
+    }
+    
+    a {
+    font-size: $header-navlinks-size;
+    color: $secondary-color;
+    }
+    
+   .has-form {
+      height: 30px;
+      padding: 0 0 0 rem-calc(7);
+      margin: 0;
+      float: right;
+      
+      input {
+        font-size: $header-navlinks-size;
+        position: relative;
+        top: 0;
+        height: auto;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        background: #fff url('../img/search-icon.png') no-repeat right;
+        border-radius: 5px;
+      }
+   }
+   
+  }
+  
+  .audience-menu  {
+    float: right;
+    margin-bottom: 0;
+    
+    li {      
+      font-size: $header-navlinks-size;
+      margin-left: 0.8em;
+    }
+    
+   li.divider {
+    border-bottom: none;
+    border-top: none;
+    border-right: 1px solid #276BA7;
+    clear: none;
+    height: 16px;
+    margin-left: 0.5em;
+    margin-top: 3px;
+    width: 0;
+    }
+    
+    a {
+      color:#fff;
+    }
+  }
+
+}
+
+/* TopBar overrides*/
+.top-bar.expanded .toggle-topbar a span {
+  box-shadow: none;
+}
+
+/* Media queries*/
+/* Small screens*/
+@media #{$small-only}{  
+  header {
+    .logo-container {
+    background-image: url('../img/mobile-logo.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 60px;
+    }
+  }  
+}
+/* Medium Size screens */
+@media #{$medium-up} {  
+  .top-bar-section li:not(.has-form) a:not(.button) {
+    padding-left:34px;
+    padding-right:34px;
+    background: transparent;
+  }
+  .top-bar {
+  background: transparent;
+  }
+}
+/*  Large Size screens */
+
+@media #{$large-up} {  
+  .top-bar-section li:not(.has-form) a:not(.button) {
+    padding-left:64px;
+    padding-right:63px;   
+  }
+}

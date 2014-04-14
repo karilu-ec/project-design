@@ -1,0 +1,70 @@
+/* Left Side navigation bar styles*/
+.sidebar {
+  text-transform: uppercase;
+  
+  .side-nav {
+    line-height: rem-calc(18);
+    
+    li >a {
+      padding: rem-calc(13) rem-calc(10);
+    }
+  }
+  
+  .off-canvas-list {
+    li:not(.divider) {
+      padding: 0;
+    }
+    
+    .navFly {
+     li:not(.divider) {
+        padding: 0;
+      }
+    }
+    
+    a:hover {
+      background: #fff;
+    }
+    
+  }
+  
+  .arrow {
+    background: url('../img/bullet.png') no-repeat;
+    height: 9px;
+    width: 6px;
+    float: right;
+    margin-top:6px;
+  }
+  
+  /* Flyout menu for second level navigation*/
+  .navFly {
+    list-style: none;
+    margin-left: 0;
+    margin-top: rem-calc(4);
+    background: #f9f9f9;
+    
+    li {
+      &:not(.divider) {
+      text-transform: none;
+      font-variant: small-caps;
+      border-left: 4px solid scale-color($primary-color, $lightness: 10%);
+      }
+      &.divider {
+        border-color: #ffffff;
+      }
+      &:hover {
+        background: #ffffff;
+        border-left: 4px solid scale-color($primary-color, $lightness: 30%);        
+      }
+      a {
+        padding: rem-calc(10);
+      }
+    }
+  }
+}
+
+/* Off-canvas styles */
+h1.offcanvas-title {  
+  text-align: left;
+  padding-left: rem-calc(10);
+  
+}
