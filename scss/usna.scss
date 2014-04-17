@@ -48,7 +48,7 @@
   margin-bottom: rem-calc(10);
 }
 .orbit-bullets {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 .breadcrumbs {
   margin-bottom: 0;
@@ -63,15 +63,27 @@ a {
 .accordion {
   dd {
   border-bottom: 1px dotted #ccc;
-  &:not(.active) .expand {
-    background: url('../img/plus.png') no-repeat left center transparent
-  }
-  &.active .expand {
-    background: url('../img/minus.png') no-repeat left center transparent;
-    } 
+  
+    a {     
+      &:hover {	
+	color: scale-color($primary-color, $lightness: 20%);
+      }
+      
+    }
+    .plus-minus-icon:before {
+      display: inline;
+      font-family: "foundation-icons";
+      padding-right: 10px;
+      color: scale-color($primary-color, $lightness: 20%);
+    }
+    &:not(.active) .plus-minus-icon:before {
+      content: "\f199";    
+    }
+    &.active .plus-minus-icon:before {
+      content: "\f176"; 
+    }
   }
 }
-
 /* Site name styles*/
 .site-name {  
   h1 {

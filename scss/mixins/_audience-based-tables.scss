@@ -1,0 +1,61 @@
+/* Customizing tables for using in the Parents and Prospective students Audience
+*  based tables. Based on the Foundation pricing tables
+*/
+
+// We use these to control the title styles
+$price-title-bg: scale-color($primary-color, $lightness:-14%);
+$price-title-padding: rem-calc(15 20);
+$price-title-align: center;
+$price-title-color: #f3f3f3;
+$price-title-weight: bold;
+$price-title-size: rem-calc(16);
+
+// We use these to control the price/subtitle styles
+$price-money-bg: #eee;
+$price-money-padding: rem-calc(10 15);
+$price-money-align: left;
+$price-money-color: #333;
+$price-money-weight: bold;
+$price-money-size: rem-calc(15);
+
+// We use these to control the description styles
+$price-bg: #fff;
+$price-desc-color: #777;
+$price-desc-padding: rem-calc(15);
+$price-desc-align: left;
+$price-desc-font-size: rem-calc(12);
+$price-desc-weight: normal;
+$price-desc-line-height: 1.4;
+$price-desc-bottom-border: dotted 1px #ddd;
+
+// We use these to control the list item styles
+$price-item-color: #333;
+$price-item-padding: rem-calc(10 20);
+$price-item-align: left;
+$price-item-font-size: rem-calc(14);
+$price-item-weight: normal;
+$price-item-bottom-border: dotted 1px #ddd;
+
+// We use these to control the CTA area styles
+$price-cta-bg: #fff;
+$price-cta-align: center;
+$price-cta-padding: rem-calc(20 20 0);
+
+.audience-based-tables {
+  @include pricing-table-container;
+  .audience-table-title {
+    @include pricing-table-title;
+  }
+  .audience-table-subtitle {
+    @include pricing-table-price;
+  }
+  .audience-table-desc {
+    @include pricing-table-description;
+  }
+  .audience-table-bullet {
+    @include pricing-table-bullet;
+  }
+  .audience-table-cta {
+    @include pricing-table-cta;
+  }
+}

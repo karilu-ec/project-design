@@ -2,7 +2,7 @@
 @import "foundation";
 
 // import our mixins
-// currently none
+@import "mixins/audience-based-tables";
 
 // importanting our partials
 @import "components/header";

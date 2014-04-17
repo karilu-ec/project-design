@@ -38,13 +38,12 @@ $social-media-box-font-size: rem-calc(13);
   margin-top: 1.2em;
   margin-bottom:1em;
   border: 1px solid #ccc;
-  border-top: 1px solid $secondary-color;
+  border-top: 10px solid $secondary-color;
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.33);
   border-radius: 5px;
   
   .feed-container {
-    margin:0;
-    border-top: 10px solid $secondary-color;
+    margin:5px 0 0;
     padding: 15px 20px 0;
     
     .title {

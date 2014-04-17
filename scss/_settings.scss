@@ -221,8 +221,8 @@ $h6-font-size: 1rem;
 
 // $include-html-accordion-classes: $include-html-classes;
 
-   $accordion-navigation-padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(22);
-// $accordion-navigation-bg-color: #efefef  ;
+   $accordion-navigation-padding: rem-calc(16) rem-calc(16) rem-calc(16) rem-calc(12);
+   $accordion-navigation-bg-color: #fff  ;
 // $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
 // $accordion-navigation-font-color: #222;
@@ -714,7 +714,7 @@ $crumb-bg: scale-color(#fff, $lightness: 55%);
 
 // We use these to control the timer styles
 // $orbit-timer-bg: rgba(255,255,255,0.3);
-// $orbit-timer-show-progress-bar: true;
+ $orbit-timer-show-progress-bar: false;
 
 // We use these to control the bullet nav styles
  $orbit-bullet-nav-color: #ccc;
