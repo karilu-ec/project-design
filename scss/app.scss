@@ -2,7 +2,8 @@
 @import "foundation";
 
 // import our mixins
-@import "mixins/audience-based-tables";
+@import "mixins/audience-based-price-tables";
+@import "mixins/featured-panel";
 
 // importanting our partials
 @import "components/header";
