@@ -3,6 +3,9 @@
   background-image: none;
   background-color: #fff;
 }
+.audience-title{
+margin-top: rem-calc(10);
+}
 
 .newshr {
   width: 95%;
@@ -55,6 +58,7 @@ a {
       color: scale-color($primary-color, $lightness: 30%);
     }
 }
+/* Home page slogan */
 .home-featured-heading {
   margin: 30px 0 40px ;
 }
@@ -102,90 +106,37 @@ a {
   img {margin-bottom: rem-calc(14); }
 }
 
-/* Events styles */
-.event-column {
-  hr {
-    margin-top:3px;
-    margin-bottom:10px;
-  }
-
-  .event-list {
-  
-  > li:first-child {
-  width:20%;
-  padding-bottom: rem-calc(8);
-  }
-  > li:last-child {
-    width:80%;
-    padding: 0;
-  }
-  
-  .description {
-    margin-top:0 !important;
-    width: 100%;
-    
-    h5.title {
-      margin-top:0 !important;
-      margin-bottom: 0 !important;
-    }
-    p {
-      margin-bottom: 0;
-    }
-  }
- }
-.events {
-  width: 50px;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 3px;
-  border: 1px solid $primary-color;
-  font-size: rem-calc(13);
-  
-  a {
-    color: #fff;
-  }
-  
-  .event-date-month {
-    background-color: $primary-color;
-  }
-  .event-date-day {
-    background-color: $header-footer-color;
-    padding-top:5px;
-    padding-bottom:5px;
-  }
-}
-}
-
 /* Left content styles */
 .left-nav-content {
   margin: 20px 0 40px 10px;
-  
-  /* Events on left side bar*/
-  .event-list {
-    .events {
-      width:40px;
-    }
-    .description {
-      margin-left: 10px;
-    }
+}
+
+/* Faculty styles */
+.img-padding {
+  img.left {
+    margin: 5px 15px 15px 0;
+    border:solid 1px #c5c5c7;
   }
+}
+ 
+.departmenthr {
+  margin: 5px 0px 5px 0px;
 }
 
 /* Media queries*/
-/* Small screens*/
+/* Small screens only*/
 @media #{$small-only} {
   /*Typography needs to stays consistent in all screen sizes*/
   h1 { font-size: $h1-font-size - rem-calc(4); }
   h2 { font-size: $h2-font-size - rem-calc(4); }
   h3 { font-size: rem-calc(19);}
-  h4 { font-size: rem-calc(18);} 
+  h4 { font-size: rem-calc(18);}
 }
-
 /* Medium Size screens */
 @media #{$medium-up} {
   /*Typography needs to stays consistent in all screen sizes*/
   h1 { font-size: rem-calc(23);}
   h2 { font-size: rem-calc(20);}
   h3 { font-size: rem-calc(19);}
-  h4 { font-size: rem-calc(18);}
+  h4 { font-size: rem-calc(18);}  
 }

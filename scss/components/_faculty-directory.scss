@@ -1,0 +1,54 @@
+/* Faculty Directory*/
+.faculty-directory {
+  hr {
+    margin-top:3px;
+    margin-bottom:10px;
+  }
+  
+  .faculty-list { 
+    > li:first-child {
+    width:20%;
+    padding-right: 0;
+    padding-bottom: rem-calc(3);
+    }
+    > li:last-child {
+      width:80%;
+      padding-bottom: rem-calc(3);
+    }
+    .faculty-image {
+      margin: 5px 10px 10px 0;
+    }
+    .description {
+      span {
+	display:block;
+	line-height: 1.3;        
+      }
+      .title {
+	font-size: rem-calc(15);
+	font-weight: bold;
+      }
+      ul {
+	margin-top:10px;
+      }
+      i {
+	font-size: 16px;
+      }
+    }
+  }  
+}
+
+/* Media queries*/
+/* Small screens only*/
+@media #{$small-only} {
+    /* Faculty Directory*/
+  .faculty-directory {
+    .faculty-list {
+    > li:first-child {
+      width:100px;
+      }
+    > li:last-child {
+      width:65%;
+      }
+    }
+  }
+}
