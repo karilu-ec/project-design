@@ -31,45 +31,12 @@ h5.right-callout-heading5 {
   font-size: rem-calc(15);
   font-weight: bold;
 }
-
-/* Social media content block*/
-$social-media-box-font-size: rem-calc(13);
+/* Box for the social media feeds. Uses Orbit*/
 .social-media-box {
-  margin-top: 1.2em;
-  margin-bottom:1em;
-  border: 1px solid #ccc;
-  border-top: 10px solid $secondary-color;
-  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.33);
-  border-radius: 5px;
-  
-  .feed-container {
-    margin:5px 0 0;
-    padding: 15px 20px 0;
-    
-    .title {
-      margin-bottom: 5px;
-      
-      h4 {
-      margin-bottom: 0;
-      margin-top: 0;
-      font-weight: bold;     
-      }
-      
-      img {
-        display: inline;
-      }
-      
-      span.timestamp {
-      font-size:80%;
-      display: block;
-      margin-left: 30px;
-      margin-top: -8px;
-      }
-    }    
-    
-    p {
-      font-size: $social-media-box-font-size;
-      margin-bottom: 0;
-    }
-  }
+  @include  social-media-box;
+}
+/* Box for other text. Not social media yellow top border style. Uses Orbit */
+.text-orbit-box {
+  @include social-media-box;
+  border-top: 1px solid #ccc;;
 }

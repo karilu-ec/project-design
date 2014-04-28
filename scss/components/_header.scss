@@ -96,22 +96,20 @@ header {
     }
   }  
 }
-/* Medium Size screens */
-@media #{$medium-up} {  
-  .top-bar-section li:not(.has-form) a:not(.button) {
-    padding-left:34px;
-    padding-right:34px;
-    background: transparent;
-  }
-  .top-bar {
-  background: transparent;
-  }
-}
-/*  Large Size screens */
 
-@media #{$large-up} {  
-  .top-bar-section li:not(.has-form) a:not(.button) {
-    padding-left:64px;
-    padding-right:63px;   
+/*  Medium Size screens and Large Size screens */
+@media #{$medium-up} {  
+  .top-bar-section ul {
+    width: 100%;
+  }
+  .top-bar-section li:not(.divider) {
+    width: 20%;
+    a:not(.button){
+      text-align: center;
+    }
+    
+  }
+  .top-bar-section li:nth-last-child(2) {
+    width: 19.3%;
   }
 }

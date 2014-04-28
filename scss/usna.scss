@@ -91,7 +91,7 @@ a {
 /* Site name styles*/
 .site-name {  
   h1 {
-    margin-top: 0;
+    margin-top: rem-calc(10);
     border-bottom: 5px solid $secondary-color;
     color: $primary-color;
     margin-bottom:rem-calc(5);
@@ -122,6 +122,28 @@ a {
 .departmenthr {
   margin: 5px 0px 5px 0px;
 }
+
+/* Flat button panel - clickable panel in audience students */
+.flat-button-panel {
+  display: block;
+  cursor: pointer;
+  border-bottom: 4px solid scale-color(#fff, $lightness: -5%);
+  &:hover {
+    background-color: scale-color($primary-color, $lightness: 95%);
+    border-bottom: 4px solid scale-color($primary-color, $lightness: -5%);
+  }
+}
+/* Different Sizes to use in Foundation icons*/
+.size-12 { font-size: 12px; }
+.size-14 { font-size: 14px; }
+.size-16 { font-size: 16px; }
+.size-18 { font-size: 18px; }
+.size-21 { font-size: 21px; }
+.size-24 { font-size: 24px; }
+.size-36 { font-size: 36px; }
+.size-48 { font-size: 48px; }
+.size-60 { font-size: 60px; }
+.size-72 { font-size: 72px; }
 
 /* Media queries*/
 /* Small screens only*/
