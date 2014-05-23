@@ -5,6 +5,10 @@
 @import "mixins/social-media-box";
 @import "mixins/audience-based-price-tables";
 @import "mixins/featured-panel";
+@import "mixins/admissions";
+@import "mixins/alumni";
+@import "mixins/divisions";
+@import "mixins/athletics";
 
 // importanting our partials
 @import "components/header";
@@ -14,4 +18,5 @@
 @import "components/callouts";
 @import "components/faculty-directory";
 @import "components/events";
+@import "components/news";
 @import "usna";

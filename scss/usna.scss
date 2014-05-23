@@ -7,27 +7,6 @@
 margin-top: rem-calc(10);
 }
 
-.newshr {
-  width: 95%;
-  margin-left: 15px;
-}
-.news-date-posted {
-  color: #999;
-  font-size: 85%;
-  text-transform: uppercase;
-  margin-bottom: rem-calc(10);
-}
-.news-listing {
-  h6 {
-    margin-left: rem-calc(10);
-    line-height: 1.2;
-  }
-  .news-item {
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 1rem;
-    padding-bottom: rem-calc(10);
-  }
-}
 .share-buttons {
   margin-bottom: rem-calc(10);
   .fb-share-button {
@@ -37,7 +16,7 @@ margin-top: rem-calc(10);
 }
 .read-more {
   text-align:right;
-  font-size: 85%;
+  font-size: 85% !important;
   text-transform:uppercase;
   }
  .title-over-hr{
@@ -58,9 +37,32 @@ a {
       color: scale-color($primary-color, $lightness: 30%);
     }
 }
-/* Home page slogan */
-.home-featured-heading {
-  margin: 30px 0 40px ;
+/* Home page ads (About 3 news items on top of ads)*/
+.home-featured-ads {
+  margin: 50px 0 20px;
+  padding-top: 50px;
+}
+
+/* Home page featured article */
+.featured-article-home {
+  border-top: 1px solid #E3E3E3;
+  border-bottom: 1px solid #E3E3E3;
+  padding-top: 20px;
+  
+  img.left {
+    height:100px;
+    margin:5px 5px 5px 0;
+  }
+  img.right {
+    height:100px;
+    margin:5px 0 5px 5px;
+  }
+  p {
+    font-size: $social-media-box-font-size;
+  }
+}
+.circular-image{
+  border-radius:200px;
 }
 
 /*Accordion customization*/
@@ -92,14 +94,21 @@ a {
 .site-name {  
   h1 {
     margin-top: rem-calc(10);
-    border-bottom: 5px solid $secondary-color;
-    color: $primary-color;
-    margin-bottom:rem-calc(5);
+    margin-bottom:rem-calc(3);
+    color: $primary-color;  
     line-height: 1;
     font-size: rem-calc(23);
     text-transform: uppercase;
-  }
+     }
+  border-bottom: 5px solid $secondary-color;
+  margin-bottom:rem-calc(5);
 }
+/* Site name for full width pages*/
+.full-title .site-name h1
+  {
+  padding-left: rem-calc(15);
+  padding-right: rem-calc(15);
+  }
 
 /* Featured - a column featuring images*/
 .featured-column {
@@ -123,15 +132,20 @@ a {
   margin: 5px 0px 5px 0px;
 }
 
-/* Flat button panel - clickable panel in audience students */
+/* Flat button panel - clickable panel in audience students page */
 .flat-button-panel {
   display: block;
   cursor: pointer;
   border-bottom: 4px solid scale-color(#fff, $lightness: -5%);
+  color: scale-color($primary-color, $lightness: 30%);
   &:hover {
     background-color: scale-color($primary-color, $lightness: 95%);
-    border-bottom: 4px solid scale-color($primary-color, $lightness: -5%);
+    border-bottom: 4px solid scale-color($primary-color, $lightness: 30%);
   }
+}
+/* Margins left and right in social icons in audience students page*/
+.social-icons-margins i {
+  margin: 0 7px;
 }
 /* Different Sizes to use in Foundation icons*/
 .size-12 { font-size: 12px; }

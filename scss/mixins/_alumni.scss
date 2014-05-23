@@ -1,0 +1,37 @@
+/* Mixin Alumni */
+
+.alumni-records 
+	{
+
+		background-image:url(../img/file.jpg); 
+		background-size:70%; 
+		background-repeat:no-repeat; 
+		background-position:50% 100%; 
+		padding:10px; 
+		height:155px;
+
+
+		h2
+			{
+				text-align:center; 
+				position:relative; 
+				top:80%;
+			}
+
+
+	}
+	
+.panel-primary-bottom-stripe
+	{
+		border-bottom:$primary-color 10px solid; 
+		border-radius:5px; 
+		border-left:1px solid lightgrey; 
+		border-right:1px solid lightgrey;  
+		border-top:1px solid lightgrey; 
+		padding:10px;
+		
+		h2
+			{
+				color:$primary-color;
+			}
+	}

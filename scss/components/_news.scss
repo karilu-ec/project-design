@@ -1,0 +1,21 @@
+/* News styles*/
+.news-date-posted {
+  color: #999;
+  font-size: 85%;
+  text-transform: uppercase;
+  margin-bottom: rem-calc(10);
+}
+.news-listing {  
+  h6 {
+    margin-left: rem-calc(10);
+    line-height: 1.2;
+  }
+  .news-item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: rem-calc(10);
+  }
+  dl {
+    margin-left: rem-calc(10);
+  }
+}
