@@ -18,6 +18,12 @@
   margin-right:rem-calc(-10);
   margin-top:0;
   }
+  
+  .side-nav {
+      li >a {
+        padding:0;
+      }
+    }
 }
 
 .side-nav-indent {
@@ -26,11 +32,17 @@
 .side-nav-caps {
   text-transform:uppercase;
 }
+/* Box uses the social media box style but without the Orbit component.*/
+.admin-announce
+	{
+		margin:4px 0px 20px 0px;
+		border: 1px solid #ccc;
+		border-top: 10px solid $secondary-color;
+		box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.33);
+		border-radius: 0px;
+		padding:10px;
+	}
 
-h5.right-callout-heading5 {
-  font-size: rem-calc(15);
-  font-weight: bold;
-}
 /* Box for the social media feeds. Uses Orbit*/
 .social-media-box {
   @include  social-media-box;
@@ -40,3 +52,19 @@ h5.right-callout-heading5 {
   @include social-media-box;
   border-top: 1px solid #ccc;;
 }
+
+/*Box with border bottom in blue as seen in PAO and Alumni*/
+.panel-primary-bottom-stripe
+	{
+		border-bottom:$primary-color 10px solid; 
+		border-radius:5px; 
+		border-left:1px solid lightgrey; 
+		border-right:1px solid lightgrey;  
+		border-top:1px solid lightgrey; 
+		padding:10px;
+		
+		h2
+			{
+				color:$primary-color;
+			}
+	}

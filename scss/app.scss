@@ -3,12 +3,7 @@
 
 // import our mixins
 @import "mixins/social-media-box";
-@import "mixins/audience-based-price-tables";
-@import "mixins/featured-panel";
-@import "mixins/admissions";
-@import "mixins/alumni";
-@import "mixins/divisions";
-@import "mixins/athletics";
+
 
 // importanting our partials
 @import "components/header";
@@ -19,4 +14,10 @@
 @import "components/faculty-directory";
 @import "components/events";
 @import "components/news";
+@import "components/featured-panel";
+@import "components/divisions";
+@import "components/audience-based-price-tables";
+@import "components/alumni";
+@import "components/admissions";
+@import "components/athletics";
 @import "usna";

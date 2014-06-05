@@ -21,17 +21,3 @@
 
 	}
 	
-.panel-primary-bottom-stripe
-	{
-		border-bottom:$primary-color 10px solid; 
-		border-radius:5px; 
-		border-left:1px solid lightgrey; 
-		border-right:1px solid lightgrey;  
-		border-top:1px solid lightgrey; 
-		padding:10px;
-		
-		h2
-			{
-				color:$primary-color;
-			}
-	}

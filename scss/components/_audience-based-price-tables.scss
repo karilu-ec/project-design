@@ -4,7 +4,7 @@
 
 // We use these to control the title styles
 $price-title-bg: scale-color($primary-color, $lightness:-14%);
-$price-title-padding: rem-calc(15 20);
+$price-title-padding: rem-calc(13 20);
 $price-title-align: center;
 $price-title-color: #f3f3f3;
 $price-title-weight: bold;
@@ -41,21 +41,26 @@ $price-cta-bg: #fff;
 $price-cta-align: center;
 $price-cta-padding: rem-calc(20 20 0);
 
-.audience-based-tables {
-  @include pricing-table-container;
-  .audience-table-title {
-    @include pricing-table-title;
-  }
-  .audience-table-subtitle {
-    @include pricing-table-price;
-  }
-  .audience-table-desc {
-    @include pricing-table-description;
-  }
-  .audience-table-bullet {
-    @include pricing-table-bullet;
-  }
-  .audience-table-cta {
-    @include pricing-table-cta;
-  }
-}
+.audience-heading-title
+	{
+		@include pricing-table-title;
+		margin-bottom:0px;
+	}
+.audience-heading-subtitle
+	{
+		@include pricing-table-price;
+		margin-bottom:0px;
+		margin-top:-21px;
+	}
+.audience-based-tables
+	{
+          @include pricing-table-container;
+                li
+                  {
+                  @include pricing-table-bullet;                  
+                 
+                  
+                  line-height: 1.2;
+                    
+                  }
+	}
