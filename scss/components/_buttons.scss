@@ -1,0 +1,21 @@
+/* Buttons styles*/
+
+.share-buttons {
+  margin-bottom: rem-calc(10);
+  .fb-share-button {
+    margin-bottom: 5px;
+  } 
+}
+
+/* Flat button panel - clickable panel in audience students page */
+a.flat-button-panel {
+  display: block;
+  cursor: pointer;
+  border-bottom: 4px solid scale-color(#fff, $lightness: -5%);
+  color: scale-color($primary-color, $lightness: 30%);
+  &:hover {
+    background-color: scale-color($primary-color, $lightness: 95%);
+    border-bottom: 4px solid scale-color($primary-color, $lightness: 30%);
+	
+  }
+}

@@ -1,14 +1,15 @@
 /*  Right callouts  */
 
-/* Custom side nav for news-categories */
+// Custom side nav for news-categories
 .news-categories-container {
   padding-left: rem-calc(10);
   padding-right: rem-calc(10);
   background-color:#EEE;
   border:1px solid #CCC;
-  margin-bottom:rem-calc(10);
+  margin-bottom: 1rem;
+  border-radius: 5px;
   
-  h4 {
+  h5,h4,h3,h2 {
   background: url(../img/background.png) repeat scroll 0 0 #153A5E;
   color: #FFFFFF; 
   padding-left:rem-calc(7); 
@@ -17,13 +18,21 @@
   margin-left:rem-calc(-10);
   margin-right:rem-calc(-10);
   margin-top:0;
-  }
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   
-  .side-nav {
-      li >a {
-        padding:0;
-      }
+  }
+  ul {
+    @extend .side-nav;
+    li {
+      @extend .side-nav;
+      border-bottom: 1px solid #d3d3d3;
+      padding:rem-calc(4);
     }
+    li:last-child {
+      border-bottom: none;
+    }
+  }
 }
 
 .side-nav-indent {
@@ -32,39 +41,106 @@
 .side-nav-caps {
   text-transform:uppercase;
 }
-/* Box uses the social media box style but without the Orbit component.*/
+// Box uses the social media box style but without the Slider component.
 .admin-announce
-	{
-		margin:4px 0px 20px 0px;
-		border: 1px solid #ccc;
-		border-top: 10px solid $secondary-color;
-		box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.33);
-		border-radius: 0px;
-		padding:10px;
-	}
+  {
+    @include announcement-boxes;
+    border-top: 10px solid $secondary-color;
+    border-radius: 5px;
+  }
 
-/* Box for the social media feeds. Uses Orbit*/
+// blue version of the social media box. Blue border on top.
+.admin-announce-primary
+  {
+    @include announcement-boxes;
+    border-top: 10px solid $primary-color;
+    border-radius: 5px;
+  }
+
+// Box for the social media feeds.
 .social-media-box {
   @include  social-media-box;
 }
-/* Box for other text. Not social media yellow top border style. Uses Orbit */
-.text-orbit-box {
+// Box for other text. Not yellow top border style like in social media.
+.text-slicker-box {
   @include social-media-box;
-  border-top: 1px solid #ccc;;
+  border-top: 1px solid #ccc;
 }
 
-/*Box with border bottom in blue as seen in PAO and Alumni*/
+//Box with border bottom in blue as seen in PAO and Alumni
 .panel-primary-bottom-stripe
 	{
-		border-bottom:$primary-color 10px solid; 
+          @include panel-stripe;
+	  border-bottom:$primary-color 10px solid; 
+	}
+.panel-secondary-bottom-stripe
+	{
+          @include panel-stripe;
+	  border-bottom:$secondary-color 10px solid;
+          h2 {
+            color:$header-font-color;
+          }
+	}
+
+// Dark Blue panel as seen in Intranet Home page - Personnel Lookup box/
+.panel-dark
+	{
+		background-color:$primary-color;
 		border-radius:5px; 
-		border-left:1px solid lightgrey; 
-		border-right:1px solid lightgrey;  
-		border-top:1px solid lightgrey; 
-		padding:10px;
-		
-		h2
+		padding:20px;
+		margin-bottom:rem-calc(10);
+		color:white;
+		h2, h3, h4
 			{
-				color:$primary-color;
+				color:white;
 			}
 	}
+	
+/* Flex Video. Automatically scale video objects in webpage. Youtube, Vimeo, or any site that uses iframes.*/	
+	.custom-flex-video {
+  @include flex-video-container();
+}
+
+
+.events-box
+	{
+		
+		border:1px solid #CCCCCC; 
+		padding:0px; 
+		height:100%; 
+		width:100%;
+
+	.events-header
+		{
+			/*background-color:#25669e; */
+			background-color:$primary-color;
+			color:white; 
+			font-size:1.5em; 
+			padding:5px
+		}
+	.events-header + div
+		{
+			padding:10px;
+		}
+	}
+/* Featured person */
+.featured-article-home {
+  border-top: 1px solid #E3E3E3;
+  border-bottom: 1px solid #E3E3E3;
+  padding-top: 20px;
+  img {
+	border-radius: 200px;
+  }
+  
+  img.left {
+    height:100px;
+    margin:5px 5px 5px 0;
+  }
+  img.right {
+    height:100px;
+    margin:5px 0 5px 5px;
+  }
+  p {
+    font-size: $social-media-box-font-size;
+  }
+}

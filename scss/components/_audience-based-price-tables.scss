@@ -4,7 +4,7 @@
 
 // We use these to control the title styles
 $price-title-bg: scale-color($primary-color, $lightness:-14%);
-$price-title-padding: rem-calc(13 20);
+$price-title-padding: rem-calc(10 20);
 $price-title-align: center;
 $price-title-color: #f3f3f3;
 $price-title-weight: bold;
@@ -45,6 +45,14 @@ $price-cta-padding: rem-calc(20 20 0);
 	{
 		@include pricing-table-title;
 		margin-bottom:0px;
+		font-weight: normal;
+		span {
+			float:right;
+			font-size: 21px;
+		}
+		span:before {
+			color:#fff !important;
+		}
 	}
 .audience-heading-subtitle
 	{

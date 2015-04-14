@@ -1,0 +1,29 @@
+[33mcommit 8195c13bf04b5f305ae9b109c5db2e4e7f737465[m
+Author: Ryan Reese <rreese@usna.edu>
+Date:   Mon Oct 20 14:34:41 2014 -0400
+
+    mobile modal fix
+
+[33mcommit f48cf613adf6ed4afbde8b43882530ad5e8a028e[m
+Author: Ryan Reese <rreese@usna.edu>
+Date:   Mon Oct 20 14:26:57 2014 -0400
+
+    lightbox modal height fix
+
+[33mcommit 7dfd04612de98625db690662b3ef24a629c26e66[m
+Author: Karina Simpson <ksimpson@usna.edu>
+Date:   Mon Oct 20 14:07:03 2014 -0400
+
+    Basic style to remove the background of the body for the basic page
+
+[33mcommit e42219e34f716f943ed0fc87844c63ffcd17a5d3[m
+Author: Karina Simpson <ksimpson@usna.edu>
+Date:   Mon Oct 20 12:44:10 2014 -0400
+
+    Changes in prettyphoto styles for medium screens. Added the social media configuration to pretty photo js
+
+[33mcommit 26ae70385d8533d95d90f10ab0b24a7930e73140[m
+Author: Karina Simpson <ksimpson@usna.edu>
+Date:   Mon Oct 20 10:13:52 2014 -0400
+
+    Implement Foundation's Reveal

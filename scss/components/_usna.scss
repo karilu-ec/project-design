@@ -1,0 +1,169 @@
+/* Global */
+.bgwhite {
+  background-image: none;
+  background-color: #fff;
+}
+.audience-title{
+margin-top: rem-calc(10);
+}
+
+.read-more {
+  text-align:right;
+  font-size: 85% !important;
+  text-transform:uppercase;
+  a.fi-arrow-right:before {
+    display: none;
+  }
+  
+  a.fi-arrow-right:after {
+      @include fi-arrow-right($primary-color, 20%);      
+  }
+  a.fi-arrow-right-white:after {
+      @include fi-arrow-right(#fff, 0%);
+  }
+}
+// Pages main content for images floated left or right
+.page-main-content {
+  margin-bottom: 1rem;
+  
+  img.float-left, img.left {
+    margin-right: 5px;
+  }
+  img.float-right, img.right {
+    margin-left: 5px;
+  }
+  ul:not(.audience-based-tables, .faculty-list) > li {
+    padding-left: rem-calc(4);
+  }
+}
+ //.title-over-hr{
+ //margin-bottom:-20px;
+ //}
+
+a {
+    &:hover, &:focus {
+      color: scale-color($primary-color, $lightness: 30%);
+    }
+}
+//Used in home page
+.circular-image{
+  border-radius:200px;
+}
+// Used in Faculty audience page
+ul.stacking-lists {
+	margin-top:0rem !important;
+	margin-bottom:0rem !important;
+}
+
+/* Margins left and right in social icons in audience students page*/
+.social-icons-margins i {
+  margin: 0 7px;
+}
+/* Different Sizes to use in Foundation icons*/
+.size-12 { font-size: 12px; }
+.size-14 { font-size: 14px; }
+.size-16 { font-size: 16px; }
+.size-18 { font-size: 18px; }
+.size-21 { font-size: 21px; }
+.size-24 { font-size: 24px; }
+.size-36 { font-size: 36px; }
+.size-48 { font-size: 48px; }
+.size-60 { font-size: 60px; }
+.size-72 { font-size: 72px; }
+
+.wrap-line {
+  word-wrap: break-word;
+}
+/*read by Galleria to define the gallery height: */
+#galleria{height:500px;}
+
+//Remove background
+body.basic-page {
+  background: #fff;
+  background-image: none;
+}
+.reveal-modal {
+  max-height:80%;
+  overflow:auto;
+}
+//Tables width 100%
+table {
+  width: 100%;
+}
+//scroll table
+.scroll-table {
+  overflow: auto;
+  width:100%;
+}
+code {
+  background-color: #fafafa;
+  border-color: #dfdfdf;
+  padding: 5px;
+  margin: 10px 0;
+  display:block;
+  font-size:rem-calc(12);
+}
+.error label {
+  background: #fff;
+}
+/* Media queries*/
+/* Small screens only*/
+@media #{$small-only} {
+  /*Typography needs to stays consistent in all screen sizes*/
+  h1 { font-size: $h1-font-size - rem-calc(4); }
+  h2 { font-size: $h2-font-size - rem-calc(3);}
+  h3 { font-size: $h3-font-size - rem-calc(2);}
+  h4 { font-size: rem-calc(16);}
+  .reveal-modal
+  {
+    width:auto;
+    max-width:100%;
+  }
+}
+/* Medium Size screens */
+@media #{$medium-only} {
+  /*Typography needs to stays consistent in all screen sizes*/
+  h1 { font-size: rem-calc(22);}
+  h2 { font-size: rem-calc(20);}
+  h3 { font-size: rem-calc(18);}
+  h4 { font-size: rem-calc(17);}  
+}
+
+/* Print Setting */
+/* Treat Print Media as Medium-width */
+@media print {
+	@for $i from 1 through $total-columns {
+		.medium-#{$i} {
+			width: grid-calc($i, $total-columns);
+		}
+	}
+	/* Header sizes are "screen only, let's be consistent */
+      h1,h2,h3,h4,h5,h6 { line-height: $header-line-height; }
+      h1 { font-size: $h1-font-size; }
+      h2 { font-size: $h2-font-size; }
+      h3 { font-size: $h3-font-size; }
+      h4 { font-size: $h4-font-size; }
+      h5 { font-size: $h5-font-size; }
+      h6 { font-size: $h6-font-size; }
+	/* Hide Menus, Utility links, & Footer */
+	footer, header>div.top-navigation.contain-to-grid,
+	header.contain-to-grid div.row.collapse div.small-9.large-8.columns,
+	aside.left-off-canvas-menu,
+	div.row.bgwhite>div.large-3.medium-4.columns,
+	.tabs .tab-title:not(.active),
+	.show-for-small-only, .show-for-small { display:none; }
+	/* Have to expand the rest of the stuff */
+	div.row.bgwhite>div.large-3.medium-4.columns+div { width: 100%; }
+		/* No header or breadcrumb links displayed */
+	header a[href]:after, 
+	.breadcrumbs a[href]:after,
+	.footer-bottom a[href]:after { content: none; }
+}
+@media print and (orientation: landscape) {
+    /* landscape styles are treated as Large */
+	@for $i from 1 through $total-columns {
+		.large-#{$i} {
+			width: grid-calc($i, $total-columns);
+		}
+	}
+}

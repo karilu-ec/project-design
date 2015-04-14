@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Division of Engineering and Weapons</title>
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/foundation-icons.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   
@@ -16,42 +16,53 @@
       <div class="row collapse">
 	    <div class="small-3 large-4 columns">
 	      <div class="logo-container">
-		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up">
-		 
+		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up" />		 
 	      </div>
 	    </div>
 	    <div class="small-9 large-8 columns">	      
 	      <div class="row collapse">
-		<div class="small-12 columns">		
+		<div class="small-12 columns">
+		  <ul class="utility-menu inline-list">
+		    <li class="has-form">
+		    <form action="http://wasp-new.usna.edu/texis/search/" method="get">
+		      <input name="dropXSL" type="HIDDEN" />
+		      <input name="pr" value="External Meta" type="hidden" />
+		      <input name="prox" value="page" type="hidden" />
+		      <input name="rorder" value="500" type="hidden" />
+		      <input name="rprox" value="500" type="hidden" />
+		      <input name="rdfreq" value="500" type="hidden" />
+		      <input name="rwfreq" value="500" type="hidden" />
+		      <input name="rlead" value="500" type="hidden" />
+		      <input name="sufs" value="3" type="hidden" />
+		      <input name="order" value="r" type="hidden" />
+		      <input name="rdepth" value="62" type="hidden" />
+		      <input class="queryAutocomplete" id="siteSearch" maxlength="2033" name="query" type="text" placeholder="Search USNA" />  
+		      <input type="submit" style="position: absolute; left: -9999px"/> 
+		    </form>
+		    </li>
+		  </ul>
 		  <ul class="utility-menu inline-list">
 		    <li><a href="#">Events</a></li>
 		    <li><a href="#">Maps</a></li>
 		    <li><a href="#">Directory</a></li>
-		    <li><a href="#">A-Z Index</a></li>
-		    <li class="has-form">
-		      
-			
-			  <input type="text" placeholder="Search USNA">
-			
-		    </li>
-		  </ul>
+		    <li><a href="#">A-Z Index</a></li>		    
+		  </ul>		  
 		</div>
 	      </div>
 	      <div class="row">
-		<div class="small-12 columns">
-		  <ul class="audience-menu inline-list show-for-medium-up">
-		    <li><a href="#">Parents</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Prospective Students</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Faculty/Staff</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Alumni</a></li>
-		  </ul>
-		  </div>
+	      <div class="small-12 columns">
+		<ul class="audience-menu inline-list show-for-medium-up">
+		  <li><a href="#">Parents</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Prospective Students</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Faculty/Staff</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Alumni</a></li>
+		</ul>
+		</div>
 	      </div>
-	    </div>
-	    
+	    </div>	    
       </div>
 
     <!-- Top Main Navigation -->
@@ -67,24 +78,18 @@
         <section class="top-bar-section">
 	  <!-- Left Nav -->
 		<ul class="left">		   
-		  <li class="divider"></li>
 		  <li><a href="#">ABOUT</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ACADEMICS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ADMISSIONS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ATHLETICS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">VISIT</a></li>
-		  <li class="divider"></li>
 		</ul>
         </section>
       </nav>    
     </div>
     <!-- End Top Main Navigation -->
   </header>  
-  <!-- End Header and Top Main Navigation -->
+  <!-- End Header and Top Main Navigation --> 
   
   
   <!-- Main Content Section -->
@@ -116,22 +121,28 @@
   <!-- End Site name Full width pages-->
    
   <!-- Masthead Slider -->
-  <div class="row collapse bgwhite">
-    <div class="small-12 columns">
-      <ul class="example-orbit" data-orbit data-options="bullets: true;">
-	<li>
-	  <img src="img/1-Slider.png" alt="slide 1" />
-	  <div class="orbit-caption"> Caption One. </div>
-	</li>
-	<li>
-	  <img src="img/2-Slider.png" alt="slide 2" />
-	  <div class="orbit-caption"> Caption Two. </div>
-	</li>
-	<li>
-	  <img src="img/3-Slider.png" alt="slide 3" />
-	  <div class="orbit-caption"> Caption Three. </div>
-	</li>
-      </ul>
+ <div class="row collapse bgwhite">
+    <div class="small-12 columns masthead-slider-full-width">
+      <div class="masthead-slider hide-for-small">
+	<div>
+	  <a href="http://www.usna.edu/PlebeParentsWeekend/">
+	    <img src="img/1-Slider.png" alt="slide 1" />
+	    <span class="slick-slider-captions">Plebe Parents' Weekend, will run August 7th-10th. For schedules and information, please see the Plebe Parents' Weekend website.</span>
+	  </a>
+        </div>
+	<div>
+	  <a href="http://www.usna.edu/PlebeParentsWeekend/">
+	    <img src="img/2-Slider.png" alt="slide 2" />
+	    <span class="slick-slider-captions">Plebe Parents' Weekend, will run August 7th-10th. For schedules and information, please see the Plebe Parents' Weekend website</span>
+	  </a>
+	</div>
+	<div>
+	  <a href="http://www.usna.edu/PlebeParentsWeekend/">
+	    <img src="img/3-Slider.png" alt="slide 3" />
+	    <span class="slick-slider-captions">As part of Plebe Summer, the Naval Academy's newest plebes learn to sail in the Severn River. View the gallery.</span>
+	  </a>
+	</div>
+      </div>
     </div>
   </div>
   <!-- End Masthead -->
@@ -192,11 +203,13 @@
 		
 		
 			<div class="row">
-				<div class="large-3 small-12 columns">
+				<div class="large-3 medium-5 small-12 columns">
 				
 			<h2>Contact Information</h2>
 			<div class="row">
-				<div class="large-12 medium-4 small-6 columns">
+				<div class="small-12 columns">
+				<div class="row">
+				<div class="small-12 columns">
 					<p>
 				
 					
@@ -208,56 +221,52 @@
 				
 					</p>
 					</div>
-				
-					<div class="large-12 medium-8 small-6 columns">
-						<div class="row">
-							<div class="large-12 medium-6 small-12 columns">
-								<p>
-									<i class="fi-telephone"></i> (410) 293-6310
+					
+					<div class="small-12 columns">
+								<p class="no-margin fi-telephone">
+									(410) 293-6310
 								</p>
-								<p>
+								<p class="no-margin">
 									<b>Fax:</b> (410) 293-2591
 								</p>
-							</div>
-							<div class="large-12 medium-6 small-12 columns">
-								<p>
+								<p class="no-margin">
 									<b>Department Office:</b><br>307 Rickover Hall
 								</p>
-								<p>
-									<i class="fi-mail"></i> ewdiv@usna.edu
+								<p class="no-margin fi-mail">
+									ewdiv@usna.edu
 								</p>
-							</div>
-						</div>
+								
+					</div></div>
 					</div>
 					
 				<br><br>
 				</div>
 				</div>
-				<div class="large-9 small-12 columns">
-					<br><br>
+				<div class="large-9 medium-7 small-12 columns">
+					<br>
 				
 						<div class="row">
 							<div class="medium-4 columns">
 							<div class="row">
 							<div class="small-6 medium-12  columns">
-								<div class="large-icon-spot"><br><i class="fi-book white-icon"> </i></div>
-								<p class="text-center  large-icon-spot-caption">Academics</p>
+								<div class="large-icon-spot fi-book white-icon"></div>
+								<p class="text-center large-icon-spot-caption">Academics</p>
 								</div>
-								<div class="small-6 medium-12  columns">
-									<div class="large-icon-spot"><br><i class="fi-torsos-all white-icon"> </i></div>
+								<div class="small-6 medium-12 columns">
+									<div class="large-icon-spot fi-torsos-all white-icon"></div>
 									<p class="text-center large-icon-spot-caption">Prospective<br>Students</p>
-				</div>
+								</div>
 								</div>
 									</div>
 								
 							<div class="medium-4 columns">
 							<div class="row">
-							<div class="small-6 medium-12  columns">
-								<div class="large-icon-spot"><br><i class="fi-video white-icon"> </i></div>
+							<div class="small-6 medium-12 columns">
+								<div class="large-icon-spot fi-video white-icon"></div>
 								<p class="text-center large-icon-spot-caption" >Facilities</p>
 								</div>
 								<div class="small-6 medium-12  columns">
-								<div class="large-icon-spot"><br><i class="fi-lightbulb white-icon"> </i></div>
+								<div class="large-icon-spot fi-lightbulb white-icon"></div>
 								<p class="text-center large-icon-spot-caption" >Capstone<br>Day</p>
 							</div>
 								</div>
@@ -266,11 +275,11 @@
 							<div class="medium-4 columns">
 							<div class="row">
 							<div class="small-6 medium-12 columns">
-								<div class="large-icon-spot"><br><i class="fi-book-bookmark white-icon"> </i></div>
+								<div class="large-icon-spot fi-book-bookmark white-icon"></div>
 								<p class="text-center large-icon-spot-caption" >Research</p>
 								</div>
 								<div class="small-6 medium-12  columns">
-								<div class="large-icon-spot"><br><i class="fi-laptop white-icon"> </i></div>
+								<div class="large-icon-spot fi-laptop white-icon"></div>
 								<p class="text-center large-icon-spot-caption">USNA<br>STEM</p>
 							</div>
 						</div>
@@ -293,7 +302,7 @@
 	
   </div>
     	</div>
-   <!-- Footer -->
+<!-- Footer-->
   <footer>
     <div class="row collapse">
       <div class="medium-12 large-10 columns">
@@ -304,41 +313,37 @@
 		    <li>
 		      <h5>About USNA</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Mission</a></li>
-			<li><a href="#">Honor Concept</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li><a href="#">Public Affairs Office</a></li>
-                        <li><a href="#">Chapel</a></li>
-			<li><a href="#">Employment Opportunities</a></li>
-			<li><a href="#">Inspector General Hotline</a></li>
-			<li><a href="mailto:webmaster@usna.edu">Contact USNA</a></li>			
-		      </ul>
-		    </li>
-		    <li>
-		      <h5>Student Life</h5>
-		      <ul class="no-bullet">
+			<li><a href="#">USNA Mission</a></li>
+			<li><a href="#">USNA News Center</a></li>
 			<li><a href="#">Commandant</a></li>
-			<li><a href="#">Athletic's Calendar</a></li>
-			<li><a href="#">Navy Sports</a></li>
-			<li><a href="#">Special Events</a></li>
-			<li><a href="#">Life in the Brigade</a></li>
+			<li><a href="#">Public Affairs Office</a></li>
+			<li><a href="#">FAQ</a></li>
 		      </ul>
 		    </li>
 		    <li>
 		      <h5>Academics</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Divisions and Departments</a></li>
+			<li><a href="#">Majors</a></li>
+			<li><a href="#">Divisions & Departments</a></li>
+                        <li><a href="#">Academics Calendar</a></li>
+			<li><a href="#">NAPS</a></li>
 			<li><a href="#">Library</a></li>
-			<li><a href="#">Academic Calendar</a></li>
-			<li><a href="#">Summer Programs</a></li>
-			<li><a href="#">Admissions</a></li>
-			<li><a href="#">Registrar</a></li>
 		      </ul>
 		    </li>
-		    <li>			    
+		    <li>
+		      <h5>Learn More</h5>
 		      <ul class="no-bullet">
-			<h5>Site Maintained by</h5>						
-			<li><a href="#">USNA Webmaster</a></li>			
+			<li><a href="#">Steps for Admission</a></li>
+			<li><a href="#">Student Life</a></li>
+			<li><a href="#">Summer Programs</a></li>
+			<li><a href="#">Chapel</a></li>
+			<li><a href="#">Employment Opportunities</a></li>
+		      </ul>
+		    </li>
+		    <li>
+		      <ul class="no-bullet">
+			<h5>Site Maintained by</h5>
+			<li><a href="#">Webmaster</a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -348,10 +353,11 @@
       </div>
       <div class="large-2 small-12 columns">
 	  <div class="footer-seal small-text-center">
-	    <img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" />
+	     <a href="#"><img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" /></a>
 	    <p>
 	      U.S. Naval Academy<br>
-	      121 Blake Road, Annapolis, MD 21402<br>	    
+	      121 Blake Road, Annapolis, MD 21402<br>
+	      <a href="#">Contact USNA</a>
 	    </p>
 	    <ul class="social-media">
 	      <li><a href="http://www.facebook.com/USNavalAcademy"><img src="img/facebook.png" /></a></li>
@@ -359,21 +365,27 @@
 	      <li><a href="http://www.flickr.com/photos/unitedstatesnavalacademy"><img src="img/flickr.png" /></a></li>
 	      <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
 	    </ul>
+	    <p><a href="#">Social media Index</a></p>
 	  </div>
-      </div>	    
+      </div>
     </div>
   </footer>
-<div class="footer-bottom">
-  <div class="row collapse">
-    <div class="small-12 columns">
-      <div class="url-bottom small-text-center"> This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a> </div>
+  <div class="footer-bottom">
+    <div class="row collapse">
+      <div class="small-12 columns">
+	<div class="url-bottom small-text-center">
+	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>
+	</div>
+      </div>
     </div>
   </div>
-</div>
-<!-- End Footer and footer-bottom--> 
+  <!-- End Footer  and footer-bottom-->
 
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script> 
+<script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/slick-carousel.js"></script>
   </body>
 </html>

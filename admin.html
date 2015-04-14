@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Links</title>
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/foundation-icons.css" />
+<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
@@ -15,42 +15,53 @@
       <div class="row collapse">
 	    <div class="small-3 large-4 columns">
 	      <div class="logo-container">
-		  <img src="img/logointranet.svg" alt="The U.S. Naval Academy" class="show-for-medium-up">
-		 
+		  <img src="img/logointranet.svg" alt="The U.S. Naval Academy" class="show-for-medium-up" />		 
 	      </div>
 	    </div>
 	    <div class="small-9 large-8 columns">	      
 	      <div class="row collapse">
-		<div class="small-12 columns">		
+		<div class="small-12 columns">
+		  <ul class="utility-menu inline-list">
+		    <li class="has-form">
+		    <form action="http://wasp-new.usna.edu/texis/search/" method="get">
+		      <input name="dropXSL" type="HIDDEN" />
+		      <input name="pr" value="External Meta" type="hidden" />
+		      <input name="prox" value="page" type="hidden" />
+		      <input name="rorder" value="500" type="hidden" />
+		      <input name="rprox" value="500" type="hidden" />
+		      <input name="rdfreq" value="500" type="hidden" />
+		      <input name="rwfreq" value="500" type="hidden" />
+		      <input name="rlead" value="500" type="hidden" />
+		      <input name="sufs" value="3" type="hidden" />
+		      <input name="order" value="r" type="hidden" />
+		      <input name="rdepth" value="62" type="hidden" />
+		      <input class="queryAutocomplete" id="siteSearch" maxlength="2033" name="query" type="text" placeholder="Search USNA" />  
+		      <input type="submit" style="position: absolute; left: -9999px"/> 
+		    </form>
+		    </li>
+		  </ul>
 		  <ul class="utility-menu inline-list">
 		    <li><a href="#">Events</a></li>
 		    <li><a href="#">Maps</a></li>
 		    <li><a href="#">Directory</a></li>
-		    <li><a href="#">A-Z Index</a></li>
-		    <li class="has-form">
-		      
-			
-			  <input type="text" placeholder="Search USNA">
-			
-		    </li>
-		  </ul>
+		    <li><a href="#">A-Z Index</a></li>		    
+		  </ul>		  
 		</div>
 	      </div>
 	      <div class="row">
-		<div class="small-12 columns">
-		  <ul class="audience-menu inline-list show-for-medium-up">
-		    <li><a href="#">Administrative</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Midshipmen</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Faculty/Staff</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Alumni</a></li>
-		  </ul>
-		  </div>
+	      <div class="small-12 columns">
+		<ul class="audience-menu inline-list show-for-medium-up">
+		  <li><a href="#">Admin</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Midshipmen</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Faculty/Staff</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Support Activities</a></li>
+		</ul>
+		</div>
 	      </div>
-	    </div>
-	    
+	    </div>	    
       </div>
 
     <!-- Top Main Navigation -->
@@ -59,24 +70,18 @@
         <ul class="title-area">
           <!-- Title Area -->
           <li class="name show-for-small-only">
-            <h1><a href="#">U.S. Naval Academy</a></h1>
+            <h1><a href="#">USNA Intranet</a></h1>
           </li>
           <li class="toggle-topbar menu-icon"><a href="#"><span>MAIN MENU</span></a></li>
         </ul>
         <section class="top-bar-section">
 	  <!-- Left Nav -->
 		<ul class="left">		   
-		  <li class="divider"></li>
-		  <li><a href="#">ABOUT</a></li>
-		  <li class="divider"></li>
+		  <li><a href="#">DEPARTMENTS</a></li>
 		  <li><a href="#">ACADEMICS</a></li>
-		  <li class="divider"></li>
-		  <li><a href="#">ADMISSIONS</a></li>
-		  <li class="divider"></li>
+		  <li><a href="#">COMMANDANT</a></li>
 		  <li><a href="#">ATHLETICS</a></li>
-		  <li class="divider"></li>
-		  <li><a href="#">VISIT</a></li>
-		  <li class="divider"></li>
+		  <li><a href="#">LIBRARY</a></li>
 		</ul>
         </section>
       </nav>    
@@ -101,7 +106,7 @@
   <!-- Site name Full width pages-->
   <div class="row hide-for-small bgwhite full-title">
     <div class="site-name">
-      <h1>Administration</h1>
+      <div>Administration</div>
     </div>
   </div>
   <div class="row bgwhite show-for-small">
@@ -314,7 +319,7 @@
   
   <!-- End Main content -->
   
-  <!-- Footer -->
+<!-- Footer-->
   <footer>
     <div class="row collapse">
       <div class="medium-12 large-10 columns">
@@ -323,43 +328,38 @@
 	      <div class="large-12 columns">
 		  <ul class="mobile-footer small-block-grid-1 small-text-center medium-block-grid-4 medium-text-left large-block-grid-4">
 		    <li>
-		      <h5>About USNA</h5>
+		      <h5>USNA Annapolis</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Mission</a></li>
 			<li><a href="#">Honor Concept</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li><a href="#">Public Affairs Office</a></li>
-			<li><a href="#">Chapel</a></li>
-			<li><a href="#">Employment Opportunities</a></li>
-			<li><a href="#">Inspector General Hotline</a></li>
-			<li><a href="mailto:webmaster@usna.edu">Contact USNA</a></li>			
+			<li><a href="#">USNA News Center</a></li>
+			<li><a href="#">Emergency Info</a></li>
+			<li><a href="#">Site map</a></li>		      
 		      </ul>
 		    </li>
 		    <li>
-		      <h5>Student Life</h5>
+		      <h5>Resources</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Commandant</a></li>
-			<li><a href="#">Athletics Calendar</a></li>
-			<li><a href="#">Navy Sports</a></li>
-			<li><a href="#">Special Events</a></li>
-			<li><a href="#">Life in the Brigade</a></li>
-		      </ul>
-		    </li>
-		    <li>
-		      <h5>Academics</h5>
-		      <ul class="no-bullet">
-			<li><a href="#">Divisions and Departments</a></li>
-			<li><a href="#">Library</a></li>
 			<li><a href="#">Academic Calendar</a></li>
-			<li><a href="#">Summer Programs</a></li>
-			<li><a href="#">Admissions</a></li>
-			<li><a href="#">Registrar</a></li>
+			<li><a href="#">Mid Regulations</a></li>
+                        <li><a href="#">Master Schedule</a></li>
+			<li><a href="#">Annual Training</a></li>
+			<li><a href="#">Barber Cam</a></li>
 		      </ul>
 		    </li>
-		    <li>			    
+		    <li>
+		      <h5>Support Offices</h5>
 		      <ul class="no-bullet">
-			<h5>Site Maintained by</h5>						
-			<li><a href="#">USNA Webmaster</a></li>			
+			<li><a href="#">SAPRO</a></li>
+			<li><a href="#">Human Resources</a></li>
+			<li><a href="#">Scheduling Office</a></li>
+			<li><a href="#">IT Help Desk (IRC)</a></li>
+			<li><a href="#">Public Affairs Office</a></li>
+		      </ul>
+		    </li>
+		    <li>
+		      <ul class="no-bullet">
+			<h5>Site Maintained by</h5>
+			<li><a href="#">Webmaster</a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -369,10 +369,11 @@
       </div>
       <div class="large-2 small-12 columns">
 	  <div class="footer-seal small-text-center">
-	    <img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" />
+	     <a href="#"><img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" /></a>
 	    <p>
 	      U.S. Naval Academy<br>
-	      121 Blake Road, Annapolis, MD 21402<br>	    
+	      121 Blake Road, Annapolis, MD 21402<br>
+	      <a href="#">Contact USNA</a>
 	    </p>
 	    <ul class="social-media">
 	      <li><a href="http://www.facebook.com/USNavalAcademy"><img src="img/facebook.png" /></a></li>
@@ -380,22 +381,24 @@
 	      <li><a href="http://www.flickr.com/photos/unitedstatesnavalacademy"><img src="img/flickr.png" /></a></li>
 	      <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
 	    </ul>
+	    <p><a href="#">Social media Index</a></p>
 	  </div>
-      </div>	    
+      </div>
     </div>
   </footer>
   <div class="footer-bottom">
     <div class="row collapse">
-      <div class="small-12 columns">	
+      <div class="small-12 columns">
 	<div class="url-bottom small-text-center">
-	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>		
+	  This is an official U.S. Navy Web Site. URL: <a href="http://intranet.usna.edu">http://intranet.usna.edu</a>
 	</div>
-      </div>      
+      </div>
     </div>
   </div>
-  <!-- End Footer and footer-bottom-->
+  <!-- End Footer  and footer-bottom-->
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
     <script src="js/app.js"></script>
   </body>

@@ -1,0 +1,19 @@
+/* Site name styles*/
+.site-name {  
+  div {
+    margin-top: rem-calc(10);
+    margin-bottom:rem-calc(3);
+    color: $primary-color;  
+    line-height: 1;
+    font-size: rem-calc(23);
+    text-transform: uppercase;
+     }
+  border-bottom: 5px solid $secondary-color;
+  margin-bottom:rem-calc(5);
+}
+/* Site name for full width pages*/
+.full-title .site-name div
+  {
+  padding-left: rem-calc(15);
+  padding-right: rem-calc(15);
+  }

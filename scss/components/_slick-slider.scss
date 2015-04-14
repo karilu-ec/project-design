@@ -1,0 +1,52 @@
+// Overrides slick default CSS.
+.masthead-slider {
+    button {
+        background: none;
+    }
+}
+.slick-prev {
+    left: 0px !important;
+}
+.slick-next {
+    right: 0px !important;
+}
+.slick-prev:before, .slick-next:before {
+     color: #E8E8E8 !important;
+}
+
+// Dots
+.slick-dots {
+    margin-left:auto;
+    margin-right: auto;    
+    li {
+        button {            
+            &:before {
+            font-size: 11px !important;
+            color: #fbc42b !important;
+            }        
+        }
+         &.slick-active button:before{
+            color: #fbc42b !important;
+         }
+    }
+}
+
+// Captions
+.slick-slider-captions {
+    background-color: transparentize(#000, 0.4);
+    position: absolute;
+    bottom: 0;
+    width: inherit;
+    padding: rem-calc(10 14);
+    font-size: rem-calc(13);
+    color: #fff;	
+}
+
+// Slider 
+.slick-slider {
+    margin-bottom: 1rem;
+}
+.slick-slider a
+{
+	width:inherit;
+}

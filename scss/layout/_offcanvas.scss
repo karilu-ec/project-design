@@ -1,0 +1,14 @@
+/* Large Size only*/
+@media #{$medium-up} {
+  /* This fix is to correct cases where the dropdown navigation is at the
+     bottom of the off-canvas-wrap container and it was being hidden.*/
+  .off-canvas-wrap {
+    overflow: visible;
+  }
+}
+/* Small screens only*/
+@media #{$small-only} {
+    .off-canvas-wrap {
+        background-color: #fff;
+    }
+}

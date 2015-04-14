@@ -1,0 +1,580 @@
+/* Styles for Admissions landing page*/
+@import "../helpers/settings";
+$primary-block-color: #25669e;
+$low-impact-color:#5d82a3;
+$medium-grey:#808080;
+$high-visibility:#a72c27;
+$medium-visibility:#3a7c2b;
+
+.event-column {
+  hr {
+    margin-top:3px;
+    margin-bottom:10px;
+  }
+
+  .event-list {
+  
+  > li:first-child {
+  width:26%;
+  padding-bottom: rem-calc(8);
+  }
+  > li:last-child {
+    width:70%;
+    padding: 0;
+	  }
+  }
+  
+    }
+	
+  .events {
+  width: 39px !important;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: 1px solid $primary-color;
+  font-size: rem-calc(13);
+}
+  
+.discover-usna
+	{
+		background-color:$primary-color;  
+		color:white; 
+		padding:10px;
+	}
+.discover-usna-icon
+	{
+		text-align:right; 
+		position:absolute; 
+		top:145px; 
+		left:215px; 
+		font-size:1.5em; 
+		color:white;
+	}
+	
+.discover-usna-facebook, .friday-first
+	{
+		color:white; 
+		background-color:$primary-color; 
+		padding:10px; 
+		height:174px; 
+		position:relative;
+		cursor:pointer;
+	}
+	
+	.friday-first:hover
+	{
+	background-color:$primary-block-color;  
+	}
+
+.discover-usna-facebook p
+	{
+		color:white; 
+		font-size:0.9em; 
+		letter-spacing:1px; 
+		line-height:1.2em; 
+		display:block;
+	}
+	
+.discover-usna-facebook:hover
+	{
+			
+	background-color:$primary-block-color;
+		
+		.fi-social-facebook::before
+		{
+			color:$secondary-color;
+			content:"Read More On Facebook";
+			position:relative;
+			left:-200px;
+			font-size:12px;
+			width:200px;
+			font-family:"Helvetica",Helvetica Neue,Helvetica,Arial,sans-serif;
+			text-transform:uppercase;
+			letter-spacing:0.0em;
+		}
+		
+		
+	}
+
+
+.friday-first h4
+	{
+		color:white;
+	}
+.friday-first img
+	{
+	border-radius:200px; 
+	height:100px; 
+	float:left; 
+	margin-right:10px;
+	}
+.friday-first p
+	{
+	color:white; 
+	font-size:0.8em;
+	}
+.friday-first a
+	{
+		color:$secondary-color;
+	}
+.friday-first a:hover
+	{
+		color:white;
+	}
+	
+.breadparent .breadcrumbs
+{
+border-bottom:0px solid #F9F9F9;
+/*background-color: #F9F9F9;*/
+padding-bottom:8px;
+border-bottom:1px solid #EEEEEE;
+border-top:0px solid #F9F9F9;
+border-radius:0px;
+background-color:#f2f2f2; 
+
+}	
+
+.breadparent
+{
+margin-top:5px;
+padding-left:0px;
+padding-right:0px;
+
+
+}
+
+
+.apply-button 
+	{
+		margin-bottom:27px;
+		div
+			{
+				/*background-color:#25669e; */
+				background-color:$primary-color;
+				color:white; height:100%; 
+				text-align:right; 
+				padding:20px; 
+				min-height:110px;
+			}
+		.apply-icon
+			{
+			
+			}
+		.apply-icon:before
+			{
+				color:#FFFFFF;
+			}
+
+			
+	}
+.connect-button
+		{
+			div
+				{
+					background-color:$primary-color;
+					height:100%; 
+					color:white; 
+					align:left; 
+					padding:20px; 
+					min-height:110px;
+				}
+			.conn-icon
+			{
+			
+			}
+		.conn-icon:before
+			{
+				color:#FFFFFF;
+			}
+		}
+		
+.apply-title
+		{
+			font-size:2em;
+		}
+		
+.photo-block-Green
+			{
+				background-color:$medium-visibility;
+			}
+		
+.photo-block-Blue
+			{
+				background-color:$primary-color;
+			}
+		
+.photo-block-Red
+			{
+				background-color:$high-visibility;
+			}
+		
+.photo-block-Yellow
+			{
+				background-color:$secondary-color;
+			}			
+	
+	.PBL1
+	{
+		background-image:url(../img/admissions/7b.jpg)!important;
+	}
+	
+	.PBL2
+	{
+		background-image:url(../img/admissions/00.jpg)!important;
+		}
+		
+	.PBL3
+	{
+		background-image:url(../img/admissions/0.jpg)!important;
+		}
+		
+	.PBS1
+		{
+			background-image:url(../img/admissions/6.jpg);
+			background-color:$high-visibility;
+		}
+	.PBS2
+		{
+			background-image:url(../img/admissions/4.jpg);
+			background-color:$medium-visibility;
+		}
+	.PBS2:hover
+		{
+			background-image:url(../fonts/svgs/fi-anchor.svg);
+		}	
+	.PBS3
+		{
+			background-image:url(../img/admissions/2.jpg);
+			background-color:$medium-visibility;
+		}
+	.PBS4
+		{
+			background-image:url(../img/admissions/3b.jpg);
+			background-color:$secondary-color;
+		}
+	.PBS5
+		{
+			background-image:url(../img/admissions/1.jpg);
+			background-color:$primary-color;
+		}
+	.PBS6
+		{
+			background-image:url(../img/admissions/5.jpg);
+			background-color:$high-visibility;
+		}
+		
+	.PBS1:hover, .PBS3:hover,  .PBS4:hover,  .PBS5:hover,  .PBS6:hover
+		{
+			background-image:none;
+		}
+		
+		
+	.photo-block-L
+	{
+	
+	width:485px;
+	height:348px;
+	background-size: 490px;
+	
+	
+		.photo-block-title
+		{
+			
+			color:rgba(255,255,255,0);
+			font-size:1.4em;
+			background-color:rgba(0,0,0,0);
+			position:relative;
+			top:348px;
+			padding:10px;
+			height:0px;
+			overflow:hidden;
+		}
+		p.longform
+		{
+		color:rgba(255,255,255,0);
+		}
+			
+	}
+	
+	
+	.photo-block-L:hover
+	{
+		transition: all 0.6s ease;
+		.photo-block-title
+		{
+		color:white;
+		transition: all 0.6s ease;
+			display:block;
+			top:240px;
+			margin-left:0%;
+			width:100%;
+			background-color:rgba(0,0,0,0.8);
+			border-left:$secondary-color solid 0px;
+			border-top:$secondary-color solid 0px;
+			height:103px;
+		}
+		p.longform
+		{
+		transition: all 0.6s ease;
+		color:white;
+		font-size:0.7em;
+		display:block;
+		}
+	}
+	
+	
+	.photo-block-S
+	{
+	
+	width:242px;
+	height:174px;
+	background-size: 243px;
+	cursor:pointer;
+	
+		.photo-block-title
+		{
+			display:none;
+			color:white;
+			font-size:1.4em;
+			padding:10px;
+		
+		}
+		p.longform
+		{
+		display:none;
+		}
+	}
+
+	
+	.photo-block-S:hover
+	{
+	width:243px;
+	height:174px;
+	background-size: 243px;
+	background-image:none;
+	
+	
+		.photo-block-title
+		{
+		display:block;
+			color:white;
+			font-size:1.4em;
+			
+		}
+		p.longform
+		{
+		display:block;
+		margin-top:85px;
+	
+			a
+			{
+				color:$secondary-color;
+				font-size:0.7em;
+			}
+		
+		}
+		.grad-name
+		{
+		font-size:1em;
+		line-height:0.5em;
+		padding-top:10px;
+		}
+		.grad-oc
+		{
+		font-size:1em;
+		text-align:right;
+		margin-right:5px;
+		line-height:0.5em;
+		}
+		.section
+		{
+		text-align:center;
+		font-size:1.2em;
+		padding-top:2em;
+		padding-left:50px;
+		}
+		.grad-spot
+		{
+		background-image:url(../img/admissions/6.jpg);
+		height:90px;
+		width:90px;
+		border-radius:200px;
+		float:left;
+		margin-left:20px;
+		margin-top:-30px;
+		border:3px solid white;
+		background-size:150px;
+		background-position:top center;
+		}
+		
+		.block-icon
+		{
+		font-size:3em;
+		position:relative;
+		top:55px;
+		float:left;
+		left:17px;
+		}
+		.fi-social-dribbble
+		{
+		left:7px;
+		}
+		.fi-book
+		{
+		left:27px;
+		}
+		.fi-book + .section
+		{
+		left:30px;
+		}
+	}
+	
+	.social-block-caption
+	{
+		height:174px;
+		width:243px;
+		background-color:$secondary-color;
+		cursor:pointer;
+	p
+		{
+			padding:10px; 
+			font-weight:bold; 
+			color:$primary-color; 
+			font-size:1em;
+		}
+	}
+	
+.social-block-caption:hover
+	{
+	background-color:$secondary-color;
+	font-size:1.1em;
+	padding:0px 10px; 
+		img
+			{
+				transition: all 0.6s ease;
+				height:0px;
+			}
+		p	
+			{
+				padding:10px; 
+			}
+		p::after
+			{
+				content:"\A\A \00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0 Read More \2192 ";
+				line-height:2em;
+				white-space: pre;
+				font-weight:bold;
+			}
+	}
+	
+	
+
+	
+	
+/* Media queries*/
+/* Small only*/
+@media #{$small-only} {
+  .admissions-row-spacing {
+	margin-bottom:27px;
+	}
+
+}
+
+@media #{$medium-only} {
+  .apply-button div, .connect-button div
+		{
+			min-height:182px;
+		}
+	.events-box
+		{
+			min-height:262px;
+		}
+
+}
+
+@media #{$medium-up} {
+.apply-button 
+	{
+		div
+			{
+				padding-left:55px;
+			}	
+	}	
+	
+.connect-button
+	{
+		div
+			{
+				padding-right:35px;
+			}	
+	}	
+}
+
+@media #{$large-only} {
+	.admissions-top-row
+		{
+			min-height:261px;
+		}
+	}
+	
+.admissions-bottom-row
+	{
+		 min-height:470px;
+	}
+.admissions-photobook
+	.admissions-photo-block
+		{
+			border-right:5px solid white;
+			border-bottom:5px solid white;
+		}
+
+		
+		
+	
+@media #{$large-up} {
+ 
+	.breadparent
+	{
+	width:1010px !important;
+	margin-left:-5px;
+	}	
+	
+	.breadparent .breadcrumbs::before
+{
+	display: block;
+	width: 10px;
+	height: 0px;
+	position: absolute;
+	bottom: -10px;
+	left: 0px;
+	content: "";
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid #CCC;
+}
+
+	.breadparent .breadcrumbs::after
+{
+	/*display: block;
+	width: 10px;
+	height: 0px;
+	position: absolute;
+	bottom: 0px;
+	left: 990px;
+	content: "";
+	border-width: 15px 10px 15px 0;
+	border-color: transparent #FFFFFF transparent;
+	border-style:solid;*/
+	
+	display: block;
+	width: 10px;
+	height: 0px;
+	position: absolute;
+	bottom: -10px;
+	left: 1000px;
+	content: "";
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #CCC;
+	
+}
+
+}

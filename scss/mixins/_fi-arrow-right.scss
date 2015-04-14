@@ -1,0 +1,7 @@
+@mixin fi-arrow-right($color, $lightness-porcentage) {
+    display: inline;
+    font-family: "foundation-icons";
+    content: "\f10b";      
+    padding-left: 5px;
+    color: scale-color($color, $lightness: $lightness-porcentage);
+}

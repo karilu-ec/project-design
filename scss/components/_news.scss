@@ -3,7 +3,7 @@
   color: #999;
   font-size: 85%;
   text-transform: uppercase;
-  margin-bottom: rem-calc(10);
+  margin-bottom: rem-calc(5);
 }
 .news-listing {  
   h6 {
@@ -13,9 +13,27 @@
   .news-item {
     border-bottom: 1px solid #ccc;
     margin-bottom: 1rem;
-    padding-bottom: rem-calc(10);
   }
+  dl {
+    margin-left: 0;
+  }
+}
+
+.fb-icon {
+padding-top: 7px;
+padding-bottom: 5px;
+//margin-left: 45px;
+}
+
+.twitter-icon {
+//margin-left: 45px;
+vertical-align:middle;
+}
+/* Large Size screens */
+@media #{$large-up} {
+ .news-listing {
   dl {
     margin-left: rem-calc(10);
   }
+ }
 }

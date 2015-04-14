@@ -1,0 +1,25 @@
+/*Accordion customization*/
+.accordion {
+  dd {
+  border-bottom: 1px dotted #ccc;
+  
+    a {     
+      &:hover {	
+	color: scale-color($primary-color, $lightness: 20%);
+      }
+      
+    }
+    .plus-minus-icon:before {
+      display: inline;
+      font-family: "foundation-icons";
+      padding-right: 10px;
+      color: scale-color($primary-color, $lightness: 20%);
+    }
+    &:not(.active) .plus-minus-icon:before {
+      content: "\f199";    
+    }
+    &.active .plus-minus-icon:before {
+      content: "\f176"; 
+    }
+  }
+}

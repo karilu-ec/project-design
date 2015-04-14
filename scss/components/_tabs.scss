@@ -1,0 +1,44 @@
+/* Mixin Tabs */
+$tabborder2: scale-color($primary-color, $lightness: 40%);
+
+		.tabs {
+			dd ,li { width: 100%; }
+		}
+		
+		.tabs dd > a, .tabs .tab-title > a 
+			{
+				margin-right:3px;
+				margin-top:3px;
+				padding-left:15px !important;
+				padding-right:15px !important;
+			}
+			//.tabs dd > a:hover, .tabs .tab-title > a:hover	{}
+			//.tabs dd.active a, .tabs .tab-title.active a {}
+			//.tabs dd.active a:hover, .tabs .tab-title.active a:hover {}
+			//.tabs-content{}
+	
+
+
+		//.tabs .vertical dd > a, .tabs .vertical .tab-title > a 
+		//	{
+		//		margin-right:3px;
+		//		border-bottom:2px solid white;
+
+			//}
+			//.tabs .vertical dd > a:hover, .tabs .vertical .tab-title > a:hover {}
+			//.tabs dd.active a, .tabs .tab-title.active a {}
+			//.tabs dd.active a:hover, .tabs .tab-title.active a:hover {}					
+		.tabs.vertical {
+			margin-bottom: 1.25rem !important;
+		}
+		
+
+@media #{$large-up} {
+	.tabs {
+		dd,li { width: auto; }
+	}
+	.tabs-content:not(.vertical) {
+	  border-top: 3px solid $tabborder2 !important;
+	}
+}
+

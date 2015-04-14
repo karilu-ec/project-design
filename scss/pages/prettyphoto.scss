@@ -1,0 +1,58 @@
+	/* prettyPhoto styling for small screens */
+@media (max-width: 64em)
+{
+	#pp_full_res
+	{
+		padding:2% 2% 0;
+	}
+	.pp_pic_holder.pp_default
+	{
+		width: 90%!important;
+		margin-top:-100px;
+		left: 5%!important;
+		right:5%;
+		overflow: hidden;
+	}
+	div.pp_default .pp_content_container .pp_left
+	{
+		padding-left: 0;
+	}
+	div.pp_default .pp_content_container .pp_right
+	{
+		padding-right: 0;
+	}
+	.pp_content
+	{
+		width: 100%!important;
+		height: auto!important;
+	}
+	.pp_fade
+	{
+		width: 100%;
+		height: 100%;
+	}
+	a.pp_expand, a.pp_contract, .pp_hoverContainer, .pp_gallery, .pp_top, .pp_bottom
+	{
+		display: none;
+	}
+	#pp_full_res img
+	{
+		width: 100%;
+		height: auto;
+	}
+	.pp_details
+	{
+		width: 100%!important;
+		padding-left: 3%;
+		padding-right: 4%;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background-color: #fff;
+		margin-top: -20px!important;
+	}
+	a.pp_close
+	{
+		right: 10px;
+		top: 10px;
+	}
+}

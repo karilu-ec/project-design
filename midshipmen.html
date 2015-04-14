@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Midshipmen</title>
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/foundation-icons.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
@@ -15,42 +15,53 @@
       <div class="row collapse">
 	    <div class="small-3 large-4 columns">
 	      <div class="logo-container">
-		  <img src="img/logointranet.svg" alt="The U.S. Naval Academy" class="show-for-medium-up">
-		 
+		  <img src="img/logointranet.svg" alt="The U.S. Naval Academy" class="show-for-medium-up" />		 
 	      </div>
 	    </div>
 	    <div class="small-9 large-8 columns">	      
 	      <div class="row collapse">
-		<div class="small-12 columns">		
+		<div class="small-12 columns">
+		  <ul class="utility-menu inline-list">
+		    <li class="has-form">
+		    <form action="http://wasp-new.usna.edu/texis/search/" method="get">
+		      <input name="dropXSL" type="HIDDEN" />
+		      <input name="pr" value="External Meta" type="hidden" />
+		      <input name="prox" value="page" type="hidden" />
+		      <input name="rorder" value="500" type="hidden" />
+		      <input name="rprox" value="500" type="hidden" />
+		      <input name="rdfreq" value="500" type="hidden" />
+		      <input name="rwfreq" value="500" type="hidden" />
+		      <input name="rlead" value="500" type="hidden" />
+		      <input name="sufs" value="3" type="hidden" />
+		      <input name="order" value="r" type="hidden" />
+		      <input name="rdepth" value="62" type="hidden" />
+		      <input class="queryAutocomplete" id="siteSearch" maxlength="2033" name="query" type="text" placeholder="Search USNA" />  
+		      <input type="submit" style="position: absolute; left: -9999px"/> 
+		    </form>
+		    </li>
+		  </ul>
 		  <ul class="utility-menu inline-list">
 		    <li><a href="#">Events</a></li>
 		    <li><a href="#">Maps</a></li>
 		    <li><a href="#">Directory</a></li>
-		    <li><a href="#">A-Z Index</a></li>
-		    <li class="has-form">
-		      
-			
-			  <input type="text" placeholder="Search USNA">
-			
-		    </li>
-		  </ul>
+		    <li><a href="#">A-Z Index</a></li>		    
+		  </ul>		  
 		</div>
 	      </div>
 	      <div class="row">
-		<div class="small-12 columns">
-		  <ul class="audience-menu inline-list show-for-medium-up">
-		    <li><a href="#">Administrative</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Midshipmen</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Faculty/Staff</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Alumni</a></li>
-		  </ul>
-		  </div>
+	      <div class="small-12 columns">
+		<ul class="audience-menu inline-list show-for-medium-up">
+		  <li><a href="#">Admin</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Midshipmen</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Faculty/Staff</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Support Activities</a></li>
+		</ul>
+		</div>
 	      </div>
-	    </div>
-	    
+	    </div>	    
       </div>
 
     <!-- Top Main Navigation -->
@@ -66,17 +77,11 @@
         <section class="top-bar-section">
 	  <!-- Left Nav -->
 		<ul class="left">		   
-		  <li class="divider"></li>
-		  <li><a href="#">ABOUT</a></li>
-		  <li class="divider"></li>
+		  <li><a href="#">DEPARTMENTS</a></li>
 		  <li><a href="#">ACADEMICS</a></li>
-		  <li class="divider"></li>
-		  <li><a href="#">ADMISSIONS</a></li>
-		  <li class="divider"></li>
+		  <li><a href="#">COMMANDANT</a></li>
 		  <li><a href="#">ATHLETICS</a></li>
-		  <li class="divider"></li>
-		  <li><a href="#">VISIT</a></li>
-		  <li class="divider"></li>
+		  <li><a href="#">LIBRARY</a></li>
 		</ul>
         </section>
       </nav>    
@@ -97,13 +102,12 @@
   <!-- End Breadcrumbs -->
   
   <!-- Main Content Section -->
-  </header>  
   <!-- End Header and Top Main Navigation -->
 
    <!-- Site name Full width pages-->
   <div class="row hide-for-small full-title bgwhite">      
     <div class="site-name" >
-      <h1>Midshipmen Interests</h1>
+      <div>Midshipmen Interests</div>
     </div>      
   </div>
    <div class="row bgwhite show-for-small">
@@ -112,244 +116,204 @@
     </div>
   </div> 
   <!-- End Site name Full width pages-->
-  <div class="row bgwhite" style="padding-bottom:20px;">
-    <div class="small-12 columns"></div>
-  </div>
-
-  
-  <div class="row bgwhite">
-    <div class="medium-4 columns">
-    	 <h2 class="audience-heading-title">
-	Leadership
-	</h2>
+<div class="row bgwhite">
+  <div class="page-main-content large-12 columns">
+  <div id="audience-container">
+    <div class="row">
+      <div class="audience-box small-12 medium-6 large-4 columns">
+    	<h2 class="audience-heading-title">Leadership</h2>
 	<ul class="audience-based-tables">
-	<li class="box-name"><a href="#">Office of the Superintendent</a></li>
-<li><a href="#">Commandant of Midshipmen</a></li>
-<li><a href="">Academic Dean's Office</a></li>
-      </ul>
-      <h3 class="audience-heading-subtitle">
-	Battalion Pages</h3>
-		<ul class="audience-based-tables">
-	 <li><a href="#">1st Battalion</a></li>
-<li><a href="#">2nd Battalion</a></li>
-<li><a href="#">3rd Battalion</a></li>
-<li><a href="#">4th Battalion</a></li>
-<li><a href="#">5th Battalion</a></li>
-<li><a href="#">6th Battalion</a></li>
-	  </ul>
-	  <h2 class="audience-heading-title">
-	    Academic
-	  </h2>
+	  <li class="box-name"><a href="#">Office of the Superintendent</a></li>
+	  <li><a href="#">Commandant of Midshipmen</a></li>
+	  <li><a href="">Academic Dean's Office</a></li>
+	</ul>
+	<h3 class="audience-heading-subtitle">Battalion Pages</h3>
 	<ul class="audience-based-tables">
-<li>Academic Center<em> (Formerly called Center for Academic Excellence)</em><br>
-  (
-<a href="#">Public Site</a> &bull; <a href="">Intranet Site</a> )</li>
-<li><a href="">Academics</a></li>
+	  <li><a href="#">1st Battalion</a></li>
+	  <li><a href="#">2nd Battalion</a></li>
+	  <li><a href="#">3rd Battalion</a></li>
+	  <li><a href="#">4th Battalion</a></li>
+	  <li><a href="#">5th Battalion</a></li>
+	  <li><a href="#">6th Battalion</a></li>
+	</ul>
+      </div>
+      <div class="audience-box small-12 medium-6 large-4 columns">
+	<h2 class="audience-heading-title">Schedules</h2>
+	<ul class="audience-based-tables">
+	  <li><a href="#">Master Schedule</a></li>
+	  <li><a href="#">Plan of the Day</a></li>
+	  <li><a href="#">Plan of the Week</a></li>
+	  <li><a href="#">The Week at USNA</a></li>
+	  <li><a href="#">King Hall Menu</a></li>
+	  <li>Events at USNA<br>(<a href="#"> Public Site</a> &bull; <a href="">Intranet Site </a>)</li>
+	  <li><a href="#">Scheduling Office</a></li>
+        </ul>
+      </div>
+      <div class="audience-box small-12 medium-6 large-4 columns">
+	<div class="row">
+	  <div class="large-12 columns">
+	    <div class="featured-panel">	  
+	      <h4>Announcements</h4>
+	      <p>A spot for an announcement, or other information like info about the CFC, or that certain paperwork needs to be filed by a certain date, etc.</p>
+	      <p>This is a second line for details because we tend to write fairly long announcements when we have enough space and we might need to tell people where to go or what to do.</p>
+	    </div>
+	  </div>
+	</div>
+      </div>
+      <div class="audience-box small-12 medium-6 large-4 columns">
+	<h2 class="audience-heading-title">Midshipmen Life</h2>
+	<ul class="audience-based-tables">
+	  <li><a href="#">Alumni Association</a></li>
+ 	  <li><a href="#">Chaplain's Center</a></li>
+      	  <li><a href="#">ECAs - Extracurricular Activities</a></li>
+	  <li>Midshipman Action Group<br>(<a href="#"> Public Site</a> &bull; <a href="">Intranet Site </a>)</li>
+	  <li><a href="#">News Groups/Bulletin Board</a></li>
+        </ul>
+      </div>
+      <div class="audience-box small-12 medium-6 large-4 columns">
+	<h2 class="audience-heading-title">Academic</h2>
+	<ul class="audience-based-tables">
+	  <li>Academic Center<em> (Formerly called Center for Academic Excellence)</em><br> (<a href="#">Public Site</a> &bull; <a href="">Intranet Site</a> )</li>
+	  <li><a href="">Academics</a></li>
 	  <li><a href="#">Academic Scheduling Office</a></li>
-      <li><a href="#">Blackboard</a></li>
-       <li><a href="#">Library</a></li>
-<li><a href="">Bowman Scholar Program</a></li>
-    <li><a href="">Graduate Education Opportunities</a></li>
-<li><a href="">Midshipmen Group Study Program</a></li>
-<li>Midshipman Research<br>
-(<a href="#"> Public Site</a> &bull; <a href="">Intranet Site </a>)</li>
- <li><a href="#">Starfish Academic Success System</a></li>
-<li><a href="">Trident Scholar Program</a></li>
-       <li><a href="#">Service Academy Exchange Program</a></li>
-<li><a href="">Writing Center</a></li>
-      </ul>  
-
-	  
- 	 
-  <h2 class="audience-heading-title"> 
-	  Professional</h2>
-	<ul class="audience-based-tables">
-     <li><a href="#">Brigade Training Information</a></li>
-      <li><a href="#">Stockdale Center for Ethical Leadership</a></li>
-      <li><a href="#">Character Development and Training Department</a></li>
-      <li><a href="#">Conduct</a></li>
-       <li><a href="#">Ethics Center</a></li>
-      <li><a href="#">Honor Concept</a></li>
-      <li><a href="#">Marine Corps Information</a></li>
- </ul>   
-    
-  <h2 class="audience-heading-title">
-	Physical Mission
-	</h2>
-	<ul class="audience-based-tables">
-     <li><a href="#">Physical Education Department</a></li>
-   <li><a href="#">PE Facilities</a></li>
-    <li><a href="#">Marking Office</a></li>
-    <li><a href="#">Intramurals</a></li>
-    <li><a href="#">PE Facilities Button</a></li>
+          <li><a href="#">Blackboard</a></li>
+          <li><a href="#">Library</a></li>
+	  <li><a href="">Bowman Scholar Program</a></li>
+	  <li><a href="">Graduate Education Opportunities</a></li>
+	  <li><a href="">Midshipmen Group Study Program</a></li>
+	  <li>Midshipman Research<br>(<a href="#"> Public Site</a> &bull; <a href="">Intranet Site </a>)</li>
+	  <li><a href="#">Starfish Academic Success System</a></li>
+	  <li><a href="">Trident Scholar Program</a></li>
+          <li><a href="#">Service Academy Exchange Program</a></li>
+	  <li><a href="">Writing Center</a></li>
+        </ul>  
+      </div>
+      <div class="audience-box small-12 medium-6 large-4 columns">
+	<h2 class="audience-heading-title">Safety & Security</h2>
+	  <ul class="audience-based-tables">
+	    <li><a href="#">Bancroft Hall Anti-Terrorism Force Protection (ATFP)</a></li>
+	    <li><a href="#">Safety Information</a></li>
+	    <li>Base Operations<br>( <a href="http://www.usna.edu/BaseOps/">Public Site</a> &bull; <a href="http://intranet.usna.edu/BaseOps/">Intranet Site</a> )</li>
 	  </ul>
-    </div>     
-        
-    <div class="medium-4 columns">
-<h2 class="audience-heading-title">
-	Schedules
-	</h2>
+      </div>
+      <div class="audience-box small-12 medium-6 large-4 columns">
+	<a href="#"><img src="img/sapro.jpg" alt="SAPRO" ></a>
+      </div>
+      <div class="audience-box small-12 medium-6 large-4 columns">  
+ 	<h2 class="audience-heading-title">Professional</h2>
 	<ul class="audience-based-tables">
-     <li><a href="#">Master Schedule</a></li>
-      <li><a href="#">Plan of the Day</a></li>
-      <li><a href="#">Plan of the Week</a></li>
-     <li><a href="#">The Week at USNA</a></li>
-	 <li><a href="#">King Hall Menu</a></li>
-     <li>Events at USNA<br>
-(<a href="#"> Public Site</a> &bull; <a href="">Intranet Site </a>)</li>
-      <li><a href="#">Scheduling Office</a></li>
-	  </ul>
-<h2 class="audience-heading-title">
-	Safety & Security
-	</h2>
-		<ul class="audience-based-tables">
-<li><a href="#">Bancroft Hall Anti-Terrorism Force Protection (ATFP)</a></li>
-<li><a href="#">Safety Information</a></li><li>Base Operations<br>( <a href="http://www.usna.edu/BaseOps/">Public Site</a> &bull; <a href="http://intranet.usna.edu/BaseOps/">Intranet Site</a> )</li>
-</ul>
-
-<h2 class="audience-heading-title"> 
-	  Administrative</h2>
+	  <li><a href="#">Brigade Training Information</a></li>
+	  <li><a href="#">Stockdale Center for Ethical Leadership</a></li>
+	  <li><a href="#">Character Development and Training Department</a></li>
+	  <li><a href="#">Conduct</a></li>
+	  <li><a href="#">Ethics Center</a></li>
+	  <li><a href="#">Honor Concept</a></li>
+	  <li><a href="#">Marine Corps Information</a></li>
+	</ul>
+      </div>      
+      <div class="audience-box small-12 medium-6 large-4 columns">
+	<h2 class="audience-heading-title">Administrative</h2>
 	<ul class="audience-based-tables">
-      <li><a href="#">Midshipman Regulations Manual (MIDREGS)</a></li>
-       <li><a href="#">MISLO Home Page</a></li>
-      <li><a href="#">Military Personnel </a><em><br>(Formerly called Officer Personnel)</em></li>
-      <li><a href="#">Uniform Regulations</a></li>
- </ul>
-<h2 class="audience-heading-title">
-	Services
-	</h2>
+	  <li><a href="#">Midshipman Regulations Manual (MIDREGS)</a></li>
+	  <li><a href="#">MISLO Home Page</a></li>
+	  <li><a href="#">Military Personnel </a><em><br>(Formerly called Officer Personnel)</em></li>
+          <li><a href="#">Uniform Regulations</a></li>
+	</ul>
+      </div>
+      <div class="audience-box small-12 medium-6 large-4 columns">
+	<h2 class="audience-heading-title">Health and Welfare</h2>
+	<ul class="audience-based-tables">
+	  <li><a href="#">Sexual Assault Prevention Office - SAPRO</a></li> <li><a href="#">Midshipmen Development Center</a></li>
+	  <li><a href="#">Alcohol and Drug Education Officer</a></li>
+	  <li><a href="#">Midshipmen Self-Care Guide</a></li>
+     	  <li><a href="#">Morale, Welfare and Recreation - MWR</a></li>
+	  <li><a href="#">Naval Health Clinic</a></li>
+  	</ul>
+      </div>
+      <div class="audience-box small-12 medium-6 large-4 columns">
+	<h2 class="audience-heading-title">Physical Mission</h2>
+	<ul class="audience-based-tables">
+	  <li><a href="#">Physical Education Department</a></li>
+	  <li><a href="#">PE Facilities</a></li>
+	  <li><a href="#">Marking Office</a></li>
+          <li><a href="#">Intramurals</a></li>
+          <li><a href="#">PE Facilities Button</a></li>
+	</ul>
+      </div>     
+      <div class="audience-box small-12 medium-6 large-4 columns">
+	<h2 class="audience-heading-title">Services</h2>
 	<ul class="audience-based-tables">
 	 <li><a href="#">Bancroft Hall 1st LT</a></li>
-     <li><a href="#">Midshipmen Financial Advisor Web Site</a></li>
-     <li><a href="#">Naval Academy Store</a></li>
-     <li><a href="#"> Business Services Division</a></li>
-    <li><a href="#">Information Resource Center/
-Software Downloads</a></li>
- <li><a href="#">MFSD Midshipman Food Services Division</a></li>
+	 <li><a href="#">Midshipmen Financial Advisor Web Site</a></li>
+	 <li><a href="#">Naval Academy Store</a></li>
+	 <li><a href="#"> Business Services Division</a></li>
+	 <li><a href="#">Information Resource Center/Software Downloads</a></li>
+	 <li><a href="#">MFSD Midshipman Food Services Division</a></li>
 	 <li><a href="#">Midshipmen Supply Department</a></li>
-     <li><a href="#">Yard Card</a></li>
-     <li><a href="#">Steerage Cam</a></li>
-     </ul>
-     
-
-<h3 class="audience-heading-subtitle">
-	Barber Shop
-	</h3>	
-		<ul class="audience-based-tables">
-		<li><a href="#">Barber Cam</a></li>
-		<li><a href="#">Barber Scheduler</a></li>
-        <li><a href="#">Beauty Shop Scheduler</a></li>
+         <li><a href="#">Yard Card</a></li>
+         <li><a href="#">Steerage Cam</a></li>
+        </ul>
+	<h3 class="audience-heading-subtitle">Barber Shop</h3>	
+	<ul class="audience-based-tables">
+          <li><a href="#">Barber Cam</a></li>
+	  <li><a href="#">Barber Scheduler</a></li>
+	  <li><a href="#">Beauty Shop Scheduler</a></li>
+	</ul>	
+	<h3 class="audience-heading-subtitle">Laundry</h3>
+	<ul class="audience-based-tables">
+	  <li><a href="#">Laundry View</a></li>
+	  <li><a href="#">Laundry Room 4th Wing Cam</a></li>
+	  <li><a href="#">Laundry Room 5th Wing Cam A</a></li>
+	  <li><a href="#">Laundry Room 5th Wing Cam B</a></li>
 	</ul>
-	
-	<h3 class="audience-heading-subtitle">
-		Laundry
-	</h3>
+      </div>
+      <div class="audience-box small-12 medium-6 large-4 columns">
+	<h2 class="audience-heading-title">Media</h2>
 	<ul class="audience-based-tables">
-		<li><a href="#">Laundry View</a></li>
-		<li><a href="#">Laundry Room 4th Wing Cam</a></li>
-        <li><a href="#">Laundry Room 5th Wing Cam A</a></li>
-        <li><a href="#">Laundry Room 5th Wing Cam B</a></li>
-	</ul>
-
-  
-
-    </div>
-
-    <div class="medium-4 columns">
-      <div class="row">
-	<div class="large-12 columns">
-
-	  <div class="featured-panel">	    	    
-	  
-	    <h4>Announcements</h4>
-
-	    <p>A spot for an announcement, or other information like info about the CFC, or that certain paperwork needs to be filed by a certain date, etc.</p>
-		<p>This is a second line for details because we tend to write fairly long announcements when we have enough space and we might need to tell people where to go or what to do.</p>
-	  </div> 
-      
-     
-      
-      <h2 class="audience-heading-title">
-		Midshipmen 
-	Life</h2>
-	<ul class="audience-based-tables">
-    <li><a href="#">Alumni Association</a></li>
-     <li><a href="#">Chaplain's Center</a></li>
-		  <li><a href="#">ECAs - Extracurricular Activities</a></li>
-      <li>Midshipman Action Group<br>
-(<a href="#"> Public Site</a> &bull; <a href="">Intranet Site </a>)</li>
-      <li><a href="#">News Groups/Bulletin Board</a>
-	    </ul>
-    <a href="#"><img src="img/sapro.jpg" alt="SAPRO" ></a>
-	<h2 class="audience-heading-title">
-		Health and Welfare</h2>
-	<ul class="audience-based-tables">
-     <li><a href="#">Sexual Assault Prevention Office - SAPRO</a></li> <li><a href="#">Midshipmen Development Center</a></li>
-      <li><a href="#">Alcohol and Drug Education Officer</a></li>
-      <li><a href="#">Midshipmen Self-Care Guide</a></li>
-     	  <li><a href="#">Morale, Welfare and Recreation - MWR</a></li>
-      <li><a href="#">Naval Health Clinic</a></li>
-			</ul>
-    
-<h2 class="audience-heading-title">
-	Media
-	</h2>
-	<ul class="audience-based-tables">
-    <li><a href="#">CHINFO</a></li>
-    <li><a href="#">Early Bird News</a></li>
-     <li><a href="#">eTrident Newspaper</a></li>
-	 <li><a href="#">LOG Magazine, The</a></li>
-     <li><a href="#">Navy News Stand</a></li>
-	 <li><a href="#">WRNV 89.7 FM</a></li>
-<li><a href="#">Weekly Maritime News Survey</a></li>
-	  </ul>
-    
-        <!-- Social media box -->
+	  <li><a href="#">CHINFO</a></li>
+	  <li><a href="#">Early Bird News</a></li>
+	  <li><a href="#">eTrident Newspaper</a></li>
+	  <li><a href="#">LOG Magazine, The</a></li>
+	  <li><a href="#">Navy News Stand</a></li>
+	  <li><a href="#">WRNV 89.7 FM</a></li>
+	  <li><a href="#">Weekly Maritime News Survey</a></li>
+        </ul>
+      </div>
+      <div class="audience-box small-12 medium-6 large-4 columns">
+      <!-- Social media box -->
       <div class="row">	
 	<div class="small-12 columns">
 	  <div class="social-media-box">		
-	    <ul class="social-feeds-list" data-orbit data-options="bullets: true; timer_speed: 30000">
-	      <li>
-		<div class="feed-container">
-		  <div class="title">
-		    <h4><img src="img/facebook-color.png" />USNA Facebook</h4>
-		    <span class="timestamp">2 hours ago</span>
-		  </div>		      
-		  <p>Commandant of the Marine Corps Gen. James F. Amos and Medal of Honor recipient Sgt. Dakota Meyer attended the dinner at USNA earlier
+	    <div class="feed-container wrap-line">
+		<div class="title">
+		  <h4><img src="img/facebook-color.png" />USNA Facebook</h4>
+		  <span class="timestamp">2 hours ago</span>
+		</div>		      
+		<p>Commandant of the Marine Corps Gen. James F. Amos and Medal of Honor recipient Sgt. Dakota Meyer attended the dinner at USNA earlier
 		   this week honoring the midshipmen of the Class of 2014. here: <a href="http://www.navy.mil/submit/display.asp?story_id=79024">http://www.navy.mil/submit/display.asp?story_id=79024</a>
-		  </p>		      
-		</div>
-	      </li>
-	      <li>
-		<div class="feed-container">
-		  <div class="title">
-		    <h4><img src="img/twitter-color.png" />USNA Twitter</h4>
-		    <span class="timestamp">19 hours ago</span>
-		  </div>
-		  <p>Historian Jan Herman will speak at the USNA Museum tomorrow at 12:30 p.m. Part of the Shifley Lecture series. Free and open to the public.</a>
-		  </p>
-		</div>
-	      </li>
-	    </ul>
+		</p>
+	    </div>
+	    <div class="feed-container wrap-line">
+	      <div class="title">
+	        <h4><img src="img/twitter-color.png" />USNA Twitter</h4>
+	        <span class="timestamp">19 hours ago</span>
+	      </div>
+	      <p>Historian Jan Herman will speak at the USNA Museum tomorrow at 12:30 p.m. Part of the Shifley Lecture series. Free and open to the public.</p>
+	    </div>
 	  </div>
 	</div>
-      </div>               
-      
-	  
-	</div>
       </div>
-          
-
     </div>
-    
-      </div>
+    </div>
   </div>
+  </div>
+</div>
   
   
   <!-- End Main content -->
   
-  <!-- Footer -->
-  <footer>
+ <!-- Footer-->
+ <footer>
     <div class="row collapse">
       <div class="medium-12 large-10 columns">
 	  <div class="footer-links">
@@ -357,43 +321,38 @@ Software Downloads</a></li>
 	      <div class="large-12 columns">
 		  <ul class="mobile-footer small-block-grid-1 small-text-center medium-block-grid-4 medium-text-left large-block-grid-4">
 		    <li>
-		      <h5>About USNA</h5>
+		      <h5>USNA Annapolis</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Mission</a></li>
 			<li><a href="#">Honor Concept</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li><a href="#">Public Affairs Office</a></li>
-			<li><a href="#">Chapel</a></li>
-			<li><a href="#">Employment Opportunities</a></li>
-			<li><a href="#">Inspector General Hotline</a></li>
-			<li><a href="mailto:webmaster@usna.edu">Contact USNA</a></li>			
+			<li><a href="#">USNA News Center</a></li>
+			<li><a href="#">Emergency Info</a></li>
+			<li><a href="#">Site map</a></li>		      
 		      </ul>
 		    </li>
 		    <li>
-		      <h5>Student Life</h5>
+		      <h5>Resources</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Commandant</a></li>
-			<li><a href="#">Athletic's Calendar</a></li>
-			<li><a href="#">Navy Sports</a></li>
-			<li><a href="#">Special Events</a></li>
-			<li><a href="#">Life in the Brigade</a></li>
-		      </ul>
-		    </li>
-		    <li>
-		      <h5>Academics</h5>
-		      <ul class="no-bullet">
-			<li><a href="#">Divisions and Departments</a></li>
-			<li><a href="#">Library</a></li>
 			<li><a href="#">Academic Calendar</a></li>
-			<li><a href="#">Summer Programs</a></li>
-			<li><a href="#">Admissions</a></li>
-			<li><a href="#">Registrar</a></li>
+			<li><a href="#">Mid Regulations</a></li>
+                        <li><a href="#">Master Schedule</a></li>
+			<li><a href="#">Annual Training</a></li>
+			<li><a href="#">Barber Cam</a></li>
 		      </ul>
 		    </li>
-		    <li>			    
+		    <li>
+		      <h5>Support Offices</h5>
 		      <ul class="no-bullet">
-			<h5>Site Maintained by</h5>						
-			<li><a href="#">USNA Webmaster</a></li>			
+			<li><a href="#">SAPRO</a></li>
+			<li><a href="#">Human Resources</a></li>
+			<li><a href="#">Scheduling Office</a></li>
+			<li><a href="#">IT Help Desk (IRC)</a></li>
+			<li><a href="#">Public Affairs Office</a></li>
+		      </ul>
+		    </li>
+		    <li>
+		      <ul class="no-bullet">
+			<h5>Site Maintained by</h5>
+			<li><a href="#">Webmaster</a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -403,10 +362,11 @@ Software Downloads</a></li>
       </div>
       <div class="large-2 small-12 columns">
 	  <div class="footer-seal small-text-center">
-	    <img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" />
+	     <a href="#"><img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" /></a>
 	    <p>
 	      U.S. Naval Academy<br>
-	      121 Blake Road, Annapolis, MD 21402<br>	    
+	      121 Blake Road, Annapolis, MD 21402<br>
+	      <a href="#">Contact USNA</a>
 	    </p>
 	    <ul class="social-media">
 	      <li><a href="http://www.facebook.com/USNavalAcademy"><img src="img/facebook.png" /></a></li>
@@ -414,23 +374,29 @@ Software Downloads</a></li>
 	      <li><a href="http://www.flickr.com/photos/unitedstatesnavalacademy"><img src="img/flickr.png" /></a></li>
 	      <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
 	    </ul>
+	    <p><a href="#">Social media Index</a></p>
 	  </div>
-      </div>	    
+      </div>
     </div>
   </footer>
   <div class="footer-bottom">
     <div class="row collapse">
-      <div class="small-12 columns">	
+      <div class="small-12 columns">
 	<div class="url-bottom small-text-center">
-	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>		
+	  This is an official U.S. Navy Web Site. URL: <a href="http://intranet.usna.edu">http://intranet.usna.edu</a>
 	</div>
-      </div>      
+      </div>
     </div>
   </div>
-  <!-- End Footer and footer-bottom-->
+  <!-- End Footer  and footer-bottom-->
 
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script> 
+<script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/audience-pages.js"></script>
+<script src="js/slick-carousel.js"></script>
   </body>
 </html>

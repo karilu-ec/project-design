@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alumni</title>
     <link rel="stylesheet" href="css/app.css" />
-	<link rel="stylesheet" href="css/foundation-icons.css" />
+<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
+	<link rel="stylesheet" href="css/alumni.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
@@ -15,42 +16,53 @@
       <div class="row collapse">
 	    <div class="small-3 large-4 columns">
 	      <div class="logo-container">
-		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up">
-		 
+		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up" />		 
 	      </div>
 	    </div>
 	    <div class="small-9 large-8 columns">	      
 	      <div class="row collapse">
-		<div class="small-12 columns">		
+		<div class="small-12 columns">
+		  <ul class="utility-menu inline-list">
+		    <li class="has-form">
+		    <form action="http://wasp-new.usna.edu/texis/search/" method="get">
+		      <input name="dropXSL" type="HIDDEN" />
+		      <input name="pr" value="External Meta" type="hidden" />
+		      <input name="prox" value="page" type="hidden" />
+		      <input name="rorder" value="500" type="hidden" />
+		      <input name="rprox" value="500" type="hidden" />
+		      <input name="rdfreq" value="500" type="hidden" />
+		      <input name="rwfreq" value="500" type="hidden" />
+		      <input name="rlead" value="500" type="hidden" />
+		      <input name="sufs" value="3" type="hidden" />
+		      <input name="order" value="r" type="hidden" />
+		      <input name="rdepth" value="62" type="hidden" />
+		      <input class="queryAutocomplete" id="siteSearch" maxlength="2033" name="query" type="text" placeholder="Search USNA" />  
+		      <input type="submit" style="position: absolute; left: -9999px"/> 
+		    </form>
+		    </li>
+		  </ul>
 		  <ul class="utility-menu inline-list">
 		    <li><a href="#">Events</a></li>
 		    <li><a href="#">Maps</a></li>
 		    <li><a href="#">Directory</a></li>
-		    <li><a href="#">A-Z Index</a></li>
-		    <li class="has-form">
-		      
-			
-			  <input type="text" placeholder="Search USNA">
-			
-		    </li>
-		  </ul>
+		    <li><a href="#">A-Z Index</a></li>		    
+		  </ul>		  
 		</div>
 	      </div>
 	      <div class="row">
-		<div class="small-12 columns">
-		  <ul class="audience-menu inline-list show-for-medium-up">
-		    <li><a href="#">Parents</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Prospective Students</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Faculty/Staff</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Alumni</a></li>
-		  </ul>
-		  </div>
+	      <div class="small-12 columns">
+		<ul class="audience-menu inline-list show-for-medium-up">
+		  <li><a href="#">Parents</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Prospective Students</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Faculty/Staff</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Alumni</a></li>
+		</ul>
+		</div>
 	      </div>
-	    </div>
-	    
+	    </div>	    
       </div>
 
     <!-- Top Main Navigation -->
@@ -66,17 +78,11 @@
         <section class="top-bar-section">
 	  <!-- Left Nav -->
 		<ul class="left">		   
-		  <li class="divider"></li>
 		  <li><a href="#">ABOUT</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ACADEMICS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ADMISSIONS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ATHLETICS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">VISIT</a></li>
-		  <li class="divider"></li>
 		</ul>
         </section>
       </nav>    
@@ -84,6 +90,7 @@
     <!-- End Top Main Navigation -->
   </header>  
   <!-- End Header and Top Main Navigation -->
+  
      <!-- Breadcrumbs --> 
 <div class="row bgwhite">
   <div class="large-12 columns">
@@ -138,15 +145,35 @@
 		<h2>Class Reunions</h2>
 
 		<p>The Naval Academy Alumni Association coordinates all class reunions for alumni.  For more information about class reunions see the <a href="http://www.usna.com/page.aspx?pid=638">Alumni Association's Reunion's page</a>.</p><br/>
-		<h2>Notable Graduates</h2>
+	<!--	<h2>Notable Graduates</h2>
 
-		<p>Visit the <a href="http://www.usna.edu/Admissions/Notables">USNA Notable Graduates Web Site</a> for interesting information about famous graduates of the US Naval Academy.</p><br/>
+		<p>Visit the <a href="http://www.usna.edu/Admissions/Notables">USNA Notable Graduates Web Site</a> for interesting information about famous graduates of the US Naval Academy.</p><br/> -->
+		
 	  <h1>USNA Foundation</h1>
 
 		<p>The U.S. Naval Academy Foundation helps to advance the Naval Academy and the Naval Academy Alumni Association by providing private resources to achieve and maintain a broad range of mission-enhancing activities that support the nation's premier leadership institution and its graduates.</p>
 
 		<p>The Foundation's responsibilities in support of the Naval Academy include developing, promoting, and enhancing the programs and facilities of the Naval Academy and its Alumni; soliciting and providing private gifts and grants in support of the Academy's highest priorities within its Centers of Excellence – Leadership & Character, Academic, Athletic, and Admissions; receiving, managing, distributing and investing private contributions exclusively for the benefit of the Brigade of Midshipmen, the Naval Academy and its alumni; and advancing the admission of highly qualified candidates to the Naval Academy by providing scholarship opportunities to enable aspiring young men and women to attend private preparatory schools.</p>
-
+		<ul>
+		  <li><a href="#">The U.S. Naval Academy Foundation helps to advance the Naval Academy and the Naval Academy Alumni Association by providing private resources to achieve and maintain a broad range of mission-enhancing activities that support the nation's premier leadership institution and its graduates.</p></a></li>
+		  <li><a href="#">USNA 2</a>
+		    <ul>
+		      <li>The U.S. Naval Academy Foundation helps to advance the Naval Academy and the Naval Academy Alumni Association by providing private resources to achieve and maintain a broad range of mission-enhancing activities that support the nation's premier leadership institution and its graduates.</p></li>
+		      <li>Nested list item</li>
+		      <li>Nested list item</li>
+		    </ul>
+		  </li>
+		  <li><a href="#">USNA 3</a></li>
+		  <li><a href="#">Public Affairs Office</a></li>
+		  <li><a href="#">FAQ</a></li>
+		</ul>
+		<ol>
+		  <li><a href="#">USNA 1</a></li>
+		  <li><a href="#">USNA 2</a></li>
+		  <li><a href="#">USNA 3</a></li>
+		  <li><a href="#">Public Affairs Office</a></li>
+		  <li><a href="#">FAQ</a></li>
+		</ol>
 		<div class="row">
 		<div class="small-1 columns">&nbsp;</div>
 		<div class="small-5 columns">
@@ -167,73 +194,75 @@
     <!-- Side boxes and Social Media -->    
     <div class="large-4 medium-5 columns">
           
-     	<div class="panel-primary-bottom-stripe">
-		<h2>BUPERS</h2>
+     	<div class="panel-dark">
+		<h2>Look Up</h2>
+		
+		<input type="text" placeholder="Search Alumni">
+		
+		<!--<h2>BUPERS</h2>
 
 		<p class="clearfix">The BUPERS organization serves to provide administrative leadership, policy planning, and general oversight of the Command.<br/><br/>
 
-		<span class="left" style="padding-left:10px;"><i class="fi-telephone" alt="Phone"> </i>(703) 614-3155</span><span class="right" style="padding-right:25px;"><a href="">BUPERS Web Site</a></p>
+		<span class="left" style="padding-left:10px;"><i class="fi-telephone" alt="Phone"> </i>(703) 614-3155</span><span class="right" style="padding-right:25px;"><a href="">BUPERS Web Site</a></p>-->
 		</div>
-		<br/><br/>
+		
 		<div class="panel-primary-bottom-stripe">
-		<h2>CHINFO</h2>
+		<h2>Information About...</h2>
+		<ul>
+			<li>Midstore Access</li>
+			<li>Visiting USNA</li>
+			<li>Phone a Pass</li>
+			<li>Discounts</li>
+			<li>Membership Benefits</li>
+		</ul>
+		<!--<h2>CHINFO</h2>
 
 		<p>For information about ships and personnel, contact the Public Liaison Branch at CHINFO.<br/><br/>
 
 		<span class="left" style="padding-left:10px;"><i class="fi-telephone" alt="Phone"> </i> (703) 697-9020</span><span class="right" style="padding-right:45px;">
-		<i class="fi-mail" alt="Email"> </i> <a href="mailto:chinfo-pubinq@opnav-ehm.navy.mil">Email</a></span></p>
+		<i class="fi-mail" alt="Email"> </i> <a href="mailto:chinfo-pubinq@opnav-ehm.navy.mil">Email</a></span></p>-->
 		</div>
 	  
 	  
 	   <div class="row">
 	   <div class="medium-12 small-centered small-6 columns">
-	   <br/><br/><br/>
 	   
 	  <div class="alumni-records">
+	    <img src="img/file-less-shadow.jpg" alt="File" />
 	  	<h2><a href="http://www.usna.edu/Registrar/Transcripts.php">Obtaining Records</a></h2>
 	  </div><br/>
 	  </div>
 	  </div>
   
       <!-- Social media box -->
-      <div class="row">	
-	    <div class="small-12 columns">
-	      <div class="social-media-box">		
-		<ul class="social-feeds-list" data-orbit data-options="bullets: true; timer_speed: 30000">
-		  <li>
-		    <div class="feed-container">
+<div class="row">	
+  <div class="small-12 columns">
+		<div class="social-media-box">	
+		   <div class="feed-container">
 		      <div class="title">
-			<h4><img src="img/facebook-color.png" />USNA Facebook</h4>
-			<span class="timestamp">2 hours ago</span>
+				<h4><img src="img/facebook-color.png" />USNA Facebook</h4>
+				<span class="timestamp">2 hours ago</span>
 		      </div>		      
 		      <p>Commandant of the Marine Corps Gen. James F. Amos and Medal of Honor recipient Sgt. Dakota Meyer attended the dinner at USNA earlier
 		       this week honoring the midshipmen of the Class of 2014. here: <a href="http://www.navy.mil/submit/display.asp?story_id=79024">http://www.navy.mil/submit/display.asp?story_id=79024</a>
 		      </p>		      
-		    </div>
-		  </li>
-		  <li>
-		    <div class="feed-container">
+		   </div>
+		   <div class="feed-container">
 		      <div class="title">
-			<h4><img src="img/twitter-color.png" />USNA Twitter</h4>
-			<span class="timestamp">19 hours ago</span>
+				<h4><img src="img/twitter-color.png" />USNA Twitter</h4>
+				<span class="timestamp">19 hours ago</span>
 		      </div>
-		      <p>Historian Jan Herman will speak at the USNA Museum tomorrow at 12:30 p.m. Part of the Shifley Lecture series. Free and open to the public.</a>
+		      <p>Historian Jan Herman will speak at the USNA Museum tomorrow at 12:30 p.m. Part of the Shifley Lecture series. Free and open to the public.
 		      </p>
-		    </div>
-		  </li>
-		</ul>
-	    </div>
-	  </div>
-      </div>    
+		 </div>
+     </div>
+  </div>
+</div>    
       <!-- End Social media box -->
-      
-    </div>    
-    <!-- End side boxes and social media -->
-    
   </div>  
   <!-- End Main content -->
-  
-<!-- Footer -->
+  </div>    
+<!-- Footer-->
   <footer>
     <div class="row collapse">
       <div class="medium-12 large-10 columns">
@@ -244,41 +273,37 @@
 		    <li>
 		      <h5>About USNA</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Mission</a></li>
-			<li><a href="#">Honor Concept</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li><a href="#">Public Affairs Office</a></li>
-			<li><a href="#">Chapel</a></li>
-			<li><a href="#">Employment Opportunities</a></li>
-			<li><a href="#">Inspector General Hotline</a></li>
-			<li><a href="mailto:webmaster@usna.edu">Contact USNA</a></li>			
-		      </ul>
-		    </li>
-		    <li>
-		      <h5>Student Life</h5>
-		      <ul class="no-bullet">
+			<li><a href="#">USNA Mission</a></li>
+			<li><a href="#">USNA News Center</a></li>
 			<li><a href="#">Commandant</a></li>
-			<li><a href="#">Athletic's Calendar</a></li>
-			<li><a href="#">Navy Sports</a></li>
-			<li><a href="#">Special Events</a></li>
-			<li><a href="#">Life in the Brigade</a></li>
+			<li><a href="#">Public Affairs Office</a></li>
+			<li><a href="#">FAQ</a></li>
 		      </ul>
 		    </li>
 		    <li>
 		      <h5>Academics</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Divisions and Departments</a></li>
+			<li><a href="#">Majors</a></li>
+			<li><a href="#">Divisions & Departments</a></li>
+                        <li><a href="#">Academics Calendar</a></li>
+			<li><a href="#">NAPS</a></li>
 			<li><a href="#">Library</a></li>
-			<li><a href="#">Academic Calendar</a></li>
-			<li><a href="#">Summer Programs</a></li>
-			<li><a href="#">Admissions</a></li>
-			<li><a href="#">Registrar</a></li>
 		      </ul>
 		    </li>
-		    <li>			    
+		    <li>
+		      <h5>Learn More</h5>
 		      <ul class="no-bullet">
-			<h5>Site Maintained by</h5>						
-			<li><a href="#">Webmaster</a></li>			
+			<li><a href="#">Steps for Admission</a></li>
+			<li><a href="#">Student Life</a></li>
+			<li><a href="#">Summer Programs</a></li>
+			<li><a href="#">Chapel</a></li>
+			<li><a href="#">Employment Opportunities</a></li>
+		      </ul>
+		    </li>
+		    <li>
+		      <ul class="no-bullet">
+			<h5>Site Maintained by</h5>
+			<li><a href="#">Webmaster</a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -288,10 +313,11 @@
       </div>
       <div class="large-2 small-12 columns">
 	  <div class="footer-seal small-text-center">
-	    <img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" />
+	     <a href="#"><img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" /></a>
 	    <p>
 	      U.S. Naval Academy<br>
-	      121 Blake Road, Annapolis, MD 21402<br>	    
+	      121 Blake Road, Annapolis, MD 21402<br>
+	      <a href="#">Contact USNA</a>
 	    </p>
 	    <ul class="social-media">
 	      <li><a href="http://www.facebook.com/USNavalAcademy"><img src="img/facebook.png" /></a></li>
@@ -299,24 +325,27 @@
 	      <li><a href="http://www.flickr.com/photos/unitedstatesnavalacademy"><img src="img/flickr.png" /></a></li>
 	      <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
 	    </ul>
+	    <p><a href="#">Social media Index</a></p>
 	  </div>
-      </div>	    
+      </div>
     </div>
   </footer>
   <div class="footer-bottom">
     <div class="row collapse">
-      <div class="small-12 columns">	
+      <div class="small-12 columns">
 	<div class="url-bottom small-text-center">
-	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>		
+	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>
 	</div>
-      </div>      
+      </div>
     </div>
   </div>
-  <!-- End Footer and footer-bottom-->
+  <!-- End Footer  and footer-bottom-->
 
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="bower_components/foundation/js/foundation/foundation.interchange.js"></script>
-    <script src="js/app.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script> 
+<script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/slick-carousel.js"></script>
   </body>
 </html>

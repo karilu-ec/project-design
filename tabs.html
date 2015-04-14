@@ -1,0 +1,976 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tabs!</title>
+<link rel="stylesheet" href="css/app.css" />
+<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
+<script src="bower_components/modernizr/modernizr.js"></script>
+</head>
+<body>
+<a id="top"></a> 
+    <!-- Header and Top Main Navigation -->
+    <header class="contain-to-grid">
+      <div class="row collapse">
+	    <div class="small-3 large-4 columns">
+	      <div class="logo-container">
+		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up" />		 
+	      </div>
+	    </div>
+	    <div class="small-9 large-8 columns">	      
+	      <div class="row collapse">
+		<div class="small-12 columns">
+		  <ul class="utility-menu inline-list">
+		    <li class="has-form">
+		    <form action="http://wasp-new.usna.edu/texis/search/" method="get">
+		      <input name="dropXSL" type="HIDDEN" />
+		      <input name="pr" value="External Meta" type="hidden" />
+		      <input name="prox" value="page" type="hidden" />
+		      <input name="rorder" value="500" type="hidden" />
+		      <input name="rprox" value="500" type="hidden" />
+		      <input name="rdfreq" value="500" type="hidden" />
+		      <input name="rwfreq" value="500" type="hidden" />
+		      <input name="rlead" value="500" type="hidden" />
+		      <input name="sufs" value="3" type="hidden" />
+		      <input name="order" value="r" type="hidden" />
+		      <input name="rdepth" value="62" type="hidden" />
+		      <input class="queryAutocomplete" id="siteSearch" maxlength="2033" name="query" type="text" placeholder="Search USNA" />  
+		      <input type="submit" style="position: absolute; left: -9999px"/> 
+		    </form>
+		    </li>
+		  </ul>
+		  <ul class="utility-menu inline-list">
+		    <li><a href="#">Events</a></li>
+		    <li><a href="#">Maps</a></li>
+		    <li><a href="#">Directory</a></li>
+		    <li><a href="#">A-Z Index</a></li>		    
+		  </ul>		  
+		</div>
+	      </div>
+	      <div class="row">
+	      <div class="small-12 columns">
+		<ul class="audience-menu inline-list show-for-medium-up">
+		  <li><a href="#">Parents</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Prospective Students</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Faculty/Staff</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Alumni</a></li>
+		</ul>
+		</div>
+	      </div>
+	    </div>	    
+      </div>
+
+    <!-- Top Main Navigation -->
+    <div class="top-navigation contain-to-grid">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <!-- Title Area -->
+          <li class="name show-for-small-only">
+            <h1><a href="#">U.S. Naval Academy</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>MAIN MENU</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+	  <!-- Left Nav -->
+		<ul class="left">		   
+		  <li><a href="#">ABOUT</a></li>
+		  <li><a href="#">ACADEMICS</a></li>
+		  <li><a href="#">ADMISSIONS</a></li>
+		  <li><a href="#">ATHLETICS</a></li>
+		  <li><a href="#">VISIT</a></li>
+		</ul>
+        </section>
+      </nav>    
+    </div>
+    <!-- End Top Main Navigation -->
+  </header>  
+  <!-- End Header and Top Main Navigation -->
+  
+<!-- Breadcrumbs -->
+<div class="row bgwhite">
+  <div class="large-12 columns">
+    <ul class="breadcrumbs">
+      <li><a href="home.html">Home</a></li>
+      <li class="current"><a href="#">About USNA</a></li>
+    </ul>
+  </div>
+</div>
+<!-- End Breadcrumbs --> 
+
+<!-- Main Content Section --> 
+
+<!-- Side navigation for small screens in off-canvas -->
+<div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+    <nav class="tab-bar show-for-small">
+      <section class="left-small"> <a class="left-off-canvas-toggle menu-icon"><span></span></a> </section>
+      <section class="right tab-bar-section">
+        <h1 class="offcanvas-title">About USNA</h1>
+      </section>
+    </nav>
+    <aside class="left-off-canvas-menu"> 
+      <!-- Navigation small screens -->
+      <div class="sidebar">
+        <ul class="side-nav off-canvas-list">
+          <li class="active"><a href="#">ABOUT USNA</a></li>
+          <li><a href="#">MISSION AT USNA</a></li>
+          <li><a href="#">LEADERSHIP</a></li>
+          <li><a href="#">GUIDE TO USNA</a></li>
+          <li><a href="#">OFFICE & ADMINISTRATION</a></li>
+          <li><a href="#">HONOR CONCEPT</a></li>
+          <li><a href="#">NOTABLE GRADUATES</a></li>
+          <li><a href="#">CONTACT US</a></li>
+        </ul>
+      </div>
+      <div class="left-nav-content"> <img src="http://placehold.it/220x200&text=Viewbook" /> </div>
+      <div class="left-nav-content"> <img src="http://placehold.it/220x200&text=Class Portraits" /> </div>
+    </aside>
+    <!-- End Navigation small screens --> 
+    
+
+    <section class="main-section"> 
+      
+      <!-- main content goes here -->
+      <div class="row bgwhite"> 
+        <!-- Side nav medium up screens-->
+        <div class="large-3 medium-4 columns">
+          <div class="hide-for-small">
+            <div class="sidebar">
+              <nav>
+                <ul class="side-nav medium-list-up">
+                  <li class="active"><a href="#">ABOUT USNA</a></li>
+                  <li><a href="#">MISSION AT USNA</a></li>
+                  <li><a href="#">LEADERSHIP</a></li>
+                  <li><a href="#">GUIDE TO USNA</a></li>
+                  <li><a href="#">OFFICE & ADMINISTRATION</a></li>
+                  <li><a href="#">HONOR CONCEPT</a></li>
+                  <li><a href="#">NOTABLE GRADUATES</a></li>
+                  <li><a href="#">CONTACT US</a></li>
+                </ul>
+              </nav>
+            </div>
+      
+          </div>
+        </div>
+        <!-- End Side nav medium up screens--> 
+        
+        <!-- Content -->
+        <div class="large-9 medium-8 columns"> 
+          
+          <!-- Site name -->
+          <div class="row bgwhite hide-for-small">
+            <div class="small-12 columns">
+              <div class="site-name">
+                <h1>About USNA</h1>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Masthead Slider -->
+          <div class="row hide-for-small">
+            <div class="small-12 columns">
+              <ul class="masthead-slider-orbit" data-orbit>
+                <li> <img src="img/goat720x250.jpg" />
+                  <div class="orbit-caption"> Caption One. </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- End Masthead -->
+		  <div class="row">
+	<div class="large-12 columns">
+	
+	
+	<dl class="accordion" data-accordion> 
+		<dd class="accordion-navigation"> 
+			<a href="#panel1">Styles We Rejected Are Under This Acordian</a> 
+				<div id="panel1" class="content"> 
+					
+				<div class="tabset1">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content"> 
+			 <div class="content active" id="panel2-1"> 
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>
+		 
+		 <div class="tabset1b">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content"> 
+			 <div class="content active" id="panel2-1"> 
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>	
+					
+		<div class="tabset2">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content"> 
+			 <div class="content active" id="panel2-1"> 
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>			
+					
+		<div class="tabset5">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content"> 
+			 <div class="content active" id="panel2-1"> 
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>		
+		 
+		<div class="tabset6">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content"> 
+			 <div class="content active" id="panel2-1"> 
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>			
+					
+		<div class="tabset7">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content"> 
+			 <div class="content active" id="panel2-1"> 
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>		
+					
+					
+		<div class="tabset4">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content"> 
+			 <div class="content active" id="panel2-1"> 
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>		
+					
+		<div class="tabset8">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content"> 
+			 <div class="content active" id="panel2-1"> 
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>			
+				  <div class="row">
+	<div class="large-12 columns">		
+			<div class="vtabs1">
+		  <ul class="tabs vertical " data-tab> <li class="tab-title active"><a href="#panel1a">Our Tabs Have Long Names</a></li> <li class="tab-title"><a href="#panel2a">Department Help</a></li> <li class="tab-title"><a href="#panel3a">Tabby</a></li> <li class="tab-title"><a href="#panel4a">Instructions</a></li> </ul> <div class="tabs-content vertical"> <div class="content active" id="panel1a"> <p>Panel 1 content goes here.</p> </div> <div class="content" id="panel2a"> <p>Panel 2 content goes here.</p> </div> <div class="content" id="panel3a"> <p>Panel 3 content goes here.</p> </div> <div class="content" id="panel4a"> <p>Panel 4 content goes here.</p> </div> </div>
+		  </div>
+  </div>
+		  </div>		  
+					
+				  <div class="row">
+	<div class="large-12 columns">		
+					  <div class="vtabs2">
+		  <ul class="tabs vertical " data-tab> <li class="tab-title active"><a href="#panel1a">Our Tabs Have Long Names</a></li> <li class="tab-title"><a href="#panel2a">Department Help</a></li> <li class="tab-title"><a href="#panel3a">Tabby</a></li> <li class="tab-title"><a href="#panel4a">Instructions</a></li> </ul> <div class="tabs-content vertical"> <div class="content active" id="panel1a"> <p>Panel 1 content goes here.</p> </div> <div class="content" id="panel2a"> <p>Panel 2 content goes here.</p> </div> <div class="content" id="panel3a"> <p>Panel 3 content goes here.</p> </div> <div class="content" id="panel4a"> <p>Panel 4 content goes here.</p> </div> </div>
+		  </div>
+  </div>
+		  </div>		  
+					
+			  <div class="row">
+	<div class="large-12 columns">
+		
+		  <div class="vtabs4">
+		  <ul class="tabs vertical " data-tab> <li class="tab-title active"><a href="#panel1a">Our Tabs Have Long Names</a></li> <li class="tab-title"><a href="#panel2a">Department Help</a></li> <li class="tab-title"><a href="#panel3a">Tabby</a></li> <li class="tab-title"><a href="#panel4a">Instructions</a></li> </ul> <div class="tabs-content vertical"> <div class="content active" id="panel1a"> <p>Panel 1 content goes here.</p> </div> <div class="content" id="panel2a"> <p>Panel 2 content goes here.</p> </div> <div class="content" id="panel3a"> <p>Panel 3 content goes here.</p> </div> <div class="content" id="panel4a"> <p>Panel 4 content goes here.</p> </div> </div>
+		  </div>
+		  </div>
+		  </div>		
+					
+				</div> 
+		</dd> 
+	</dl>
+	
+	
+	
+	<br><br><br>
+
+		 
+
+		 
+		 	<div class="tabset3">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content tabs-border4"> 
+			 <div class="content active" id="panel2-1"> 
+			 <h4>Border 4 (yeah I know, out of order)</h4>
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>
+		 <div class="tabset3b">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content tabs-border"> 
+			 <div class="content active" id="panel2-1"> 
+				<h4>Border 1</h4>
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>
+		 
+		  <div class="tabset3c">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content tabs-border2"> 
+			 <div class="content active" id="panel2-1"> 
+			 <h4>Border 2</h4>
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>
+		 
+		<div class="tabset3d">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content tabs-border3"> 
+			 <div class="content active" id="panel2-1"> 
+			 <h4>Border 3</h4>
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>
+		 	 
+	<div class="tabset3d">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content tabs-border5"> 
+			 <div class="content active" id="panel2-1"> 
+			 <h4>Border 5</h4>
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>
+		 
+		 <div class="tabset3d">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content tabs-border6"> 
+			 <div class="content active" id="panel2-1"> 
+			 <h4>Border 6</h4>
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>
+		 
+		 <div class="tabset3d">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content tabs-border7"> 
+			 <div class="content active" id="panel2-1"> 
+			 <h4>Border 7</h4>
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>
+		 
+		 <div class="tabset3d">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content tabs-border8"> 
+		
+			 <div class="content active" id="panel2-1"> 
+			  <h4>Border 8</h4>
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>
+		 
+		 		 <div class="tabset3d">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content tabs-border9"> 
+			 <div class="content active" id="panel2-1"> 
+			  <h4>Border 9</h4>
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>
+          	 	
+					 <div class="tabset3d">
+		 <ul class="tabs" data-tab> 
+			 <li class="tab-title active">
+				<a href="#panel2-1">Our Tabs Have Long Names</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-2">Department Help</a>
+			 </li> 
+			 <li class="tab-title">
+				<a href="#panel2-3">Tabby</a>
+			 </li> <li class="tab-title">
+				<a href="#panel2-4">Instructions</a>
+			 </li>
+		 </ul> 
+		 <div class="tabs-content tabs-border10"> 
+			 <div class="content active" id="panel2-1"> 
+			  <h4>Border 10</h4>
+				<p>I don't know what you could say about a day in which you have seen four beautiful sunsets. For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.  It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small.</p> 
+			 </div> 
+			 <div class="content" id="panel2-2"> 
+				<p>Second panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-3"> 
+				<p>Third panel content goes here...</p> 
+			 </div> 
+			 <div class="content" id="panel2-4"> 
+				<p>Fourth panel content goes here...</p>
+			 </div> 
+		 </div>
+		 </div>
+		 
+		
+		 
+		
+		 
+		  
+		
+          
+		  
+		  
+		 
+		  
+	<div class="row">
+	<div class="large-12 columns">
+	<br><br>
+	</div>
+	</div>
+		  
+		  
+		  
+		
+		
+  
+	
+			  <div class="row">
+	<div class="large-12 columns">
+		
+		  <div class="vtabs3">
+		  <ul class="tabs vertical " data-tab> <li class="tab-title active wrap-line">
+		  <a href="#panel1a">Our Tabs Have Long Names</a></li> 
+		  <li class="tab-title wrap-line"><a href="#panel2a">Hydromechanical Help</a></li> 
+		  <li class="tab-title wrap-line"><a href="#panel3a">Tabby</a></li>
+		  <li class="tab-title wrap-line"><a href="#panel4a">Instructions</a></li>
+		  </ul> <div class="tabs-content vertical"> 
+		  <div class="content active" id="panel1a"> 
+		  <p>As an officer of the Continental Navy of the American Revolution, John Paul Jones helped establish the traditions of courage and professionalism that the Sailors of the United States Navy today proudly maintain. John Paul was born in a humble gardener's cottage in Kirkbean, Kirkcudbrightshire, Scotland, went to sea as a youth, and was a merchant shipmaster by the age of twenty-one. Having taken up residence in Virginia, he volunteered early in the War of Independence to serve in his adopted country's infant navy and raised with his own hands the Continental ensign on board the flagship of the Navy's first fleet. He took the war to the enemy's homeland with daring raids along the British coast and the famous victory of the Bonhomme Richard over HMS Serapis. After the Bonhomme Richard began taking on water and fires broke out on board, the British commander asked Jones if he had struck his flag. Jones replied, "I have not yet begun to fight!" In the end, it was the British commander who surrendered. Jones is remembered for his indomitable will, his unwillingness to consider surrender when the slightest hope of victory still burned. Throughout his naval career Jones promoted professional standards and training. Sailors of the United States Navy can do no better than to emulate the spirit behind John Paul Jones's stirring declaration: "I wish to have no connection with any ship that does not sail fast for I intend to go in harm's way."</p> 
+			</div> <div class="content" id="panel2a"> <p>Panel 2 content goes here.</p> </div> <div class="content" id="panel3a"> <p>Panel 3 content goes here.</p> </div> <div class="content" id="panel4a"> <p>Panel 4 content goes here.</p> </div> </div>
+		  </div>
+		  </div>
+		  </div>
+		  
+	<div class="row">
+	<div class="large-12 columns">
+	<br><br>
+	  <div class="vtabs3b">
+		  <ul class="tabs vertical " data-tab> <li class="tab-title active wrap-line">
+		  <a href="#panel1a">Our Tabs Have Long Names</a></li> 
+		  <li class="tab-title wrap-line"><a href="#panel2a">Department Help</a></li> 
+		  <li class="tab-title wrap-line"><a href="#panel3a">Tabby</a></li>
+		  <li class="tab-title wrap-line"><a href="#panel4a">Instructions</a></li>
+		  </ul> <div class="tabs-content vertical"> 
+		  <div class="content active" id="panel1a"> 
+		  <p>As an officer of the Continental Navy of the American Revolution, John Paul Jones helped establish the traditions of courage and professionalism that the Sailors of the United States Navy today proudly maintain. John Paul was born in a humble gardener's cottage in Kirkbean, Kirkcudbrightshire, Scotland, went to sea as a youth, and was a merchant shipmaster by the age of twenty-one. Having taken up residence in Virginia, he volunteered early in the War of Independence to serve in his adopted country's infant navy and raised with his own hands the Continental ensign on board the flagship of the Navy's first fleet. He took the war to the enemy's homeland with daring raids along the British coast and the famous victory of the Bonhomme Richard over HMS Serapis. After the Bonhomme Richard began taking on water and fires broke out on board, the British commander asked Jones if he had struck his flag. Jones replied, "I have not yet begun to fight!" In the end, it was the British commander who surrendered. Jones is remembered for his indomitable will, his unwillingness to consider surrender when the slightest hope of victory still burned. Throughout his naval career Jones promoted professional standards and training. Sailors of the United States Navy can do no better than to emulate the spirit behind John Paul Jones's stirring declaration: "I wish to have no connection with any ship that does not sail fast for I intend to go in harm's way."</p> 
+			</div> <div class="content" id="panel2a"> <p>Panel 2 content goes here.</p> </div> <div class="content" id="panel3a"> <p>Panel 3 content goes here.</p> </div> <div class="content" id="panel4a"> <p>Panel 4 content goes here.</p> </div> </div>
+		  </div>
+	
+	
+	
+	</div>
+	</div>	
+	
+			
+		  
+	<div class="row">
+	<div class="large-12 columns">
+	<br><br>
+	
+	  <div class="vtabs3c">
+		  <ul class="tabs vertical " data-tab> <li class="tab-title active">
+		  <a href="#panel1a">Our Tabs Have Long Names</a></li> 
+		  <li class="tab-title"><a href="#panel2a">Department Help</a></li> 
+		  <li class="tab-title"><a href="#panel3a">Tabby</a></li>
+		  <li class="tab-title"><a href="#panel4a">Instructions</a></li>
+		  </ul> <div class="tabs-content vertical"> 
+		  <div class="content active" id="panel1a"> 
+		  <p>As an officer of the Continental Navy of the American Revolution, John Paul Jones helped establish the traditions of courage and professionalism that the Sailors of the United States Navy today proudly maintain. John Paul was born in a humble gardener's cottage in Kirkbean, Kirkcudbrightshire, Scotland, went to sea as a youth, and was a merchant shipmaster by the age of twenty-one. Having taken up residence in Virginia, he volunteered early in the War of Independence to serve in his adopted country's infant navy and raised with his own hands the Continental ensign on board the flagship of the Navy's first fleet. He took the war to the enemy's homeland with daring raids along the British coast and the famous victory of the Bonhomme Richard over HMS Serapis. After the Bonhomme Richard began taking on water and fires broke out on board, the British commander asked Jones if he had struck his flag. Jones replied, "I have not yet begun to fight!" In the end, it was the British commander who surrendered. Jones is remembered for his indomitable will, his unwillingness to consider surrender when the slightest hope of victory still burned. Throughout his naval career Jones promoted professional standards and training. Sailors of the United States Navy can do no better than to emulate the spirit behind John Paul Jones's stirring declaration: "I wish to have no connection with any ship that does not sail fast for I intend to go in harm's way."</p> 
+			</div> <div class="content" id="panel2a"> <p>Panel 2 content goes here.</p> </div> <div class="content" id="panel3a"> <p>Panel 3 content goes here.</p> </div> <div class="content" id="panel4a"> <p>Panel 4 content goes here.</p> </div> </div>
+		  </div>
+	</div>
+	</div>	
+		  
+		  
+		  <div class="row">
+	<div class="large-12 columns">
+	<br><br>
+	
+	  <div class="vtabs3d">
+		  <ul class="tabs vertical " data-tab> <li class="tab-title active">
+		  <a href="#panel1a">Our Tabs Have Long Names</a></li> 
+		  <li class="tab-title"><a href="#panel2a">Department Help</a></li> 
+		  <li class="tab-title"><a href="#panel3a">Tabby</a></li>
+		  <li class="tab-title"><a href="#panel4a">Instructions</a></li>
+		  </ul> <div class="tabs-content vertical"> 
+		  <div class="content active" id="panel1a"> 
+		  <p>As an officer of the Continental Navy of the American Revolution, John Paul Jones helped establish the traditions of courage and professionalism that the Sailors of the United States Navy today proudly maintain. John Paul was born in a humble gardener's cottage in Kirkbean, Kirkcudbrightshire, Scotland, went to sea as a youth, and was a merchant shipmaster by the age of twenty-one. Having taken up residence in Virginia, he volunteered early in the War of Independence to serve in his adopted country's infant navy and raised with his own hands the Continental ensign on board the flagship of the Navy's first fleet. He took the war to the enemy's homeland with daring raids along the British coast and the famous victory of the Bonhomme Richard over HMS Serapis. After the Bonhomme Richard began taking on water and fires broke out on board, the British commander asked Jones if he had struck his flag. Jones replied, "I have not yet begun to fight!" In the end, it was the British commander who surrendered. Jones is remembered for his indomitable will, his unwillingness to consider surrender when the slightest hope of victory still burned. Throughout his naval career Jones promoted professional standards and training. Sailors of the United States Navy can do no better than to emulate the spirit behind John Paul Jones's stirring declaration: "I wish to have no connection with any ship that does not sail fast for I intend to go in harm's way."</p> 
+			</div> <div class="content" id="panel2a"> <p>Panel 2 content goes here.</p> </div> <div class="content" id="panel3a"> <p>Panel 3 content goes here.</p> </div> <div class="content" id="panel4a"> <p>Panel 4 content goes here.</p> </div> </div>
+		  </div>
+	</div>
+	</div>	
+		  
+		  
+		  
+          <!-- Arrow go to top for small screens--> 
+          <a href="#top" class="show-for-small-only right"><img src="img/arrow.png" alt="go to Top"></a> </div>
+        <!-- End Content --> 
+      </div>
+    </section>
+    <a class="exit-off-canvas"></a>
+    <!-- End section role=main for off-canvas --> 
+  </div>
+  <!-- End off canvas inner-wrap--> 
+</div>
+<!-- End off canvas wrap--> 
+  
+ <!-- Footer-->
+  <footer>
+    <div class="row collapse">
+      <div class="medium-12 large-10 columns">
+	  <div class="footer-links">
+	    <div class="row">
+	      <div class="large-12 columns">
+		  <ul class="mobile-footer small-block-grid-1 small-text-center medium-block-grid-4 medium-text-left large-block-grid-4">
+		    <li>
+		      <h5>About USNA</h5>
+		      <ul class="no-bullet">
+			<li><a href="#">USNA Mission</a></li>
+			<li><a href="#">USNA News Center</a></li>
+			<li><a href="#">Commandant</a></li>
+			<li><a href="#">Public Affairs Office</a></li>
+			<li><a href="#">FAQ</a></li>
+		      </ul>
+		    </li>
+		    <li>
+		      <h5>Academics</h5>
+		      <ul class="no-bullet">
+			<li><a href="#">Majors</a></li>
+			<li><a href="#">Divisions & Departments</a></li>
+                        <li><a href="#">Academics Calendar</a></li>
+			<li><a href="#">NAPS</a></li>
+			<li><a href="#">Library</a></li>
+		      </ul>
+		    </li>
+		    <li>
+		      <h5>Learn More</h5>
+		      <ul class="no-bullet">
+			<li><a href="#">Steps for Admission</a></li>
+			<li><a href="#">Student Life</a></li>
+			<li><a href="#">Summer Programs</a></li>
+			<li><a href="#">Chapel</a></li>
+			<li><a href="#">Employment Opportunities</a></li>
+		      </ul>
+		    </li>
+		    <li>
+		      <ul class="no-bullet">
+			<h5>Site Maintained by</h5>
+			<li><a href="#">Webmaster</a></li>
+		      </ul>
+		    </li>
+		  </ul>
+	      </div> 
+	    </div>
+	  </div>
+      </div>
+      <div class="large-2 small-12 columns">
+	  <div class="footer-seal small-text-center">
+	     <a href="#"><img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" /></a>
+	    <p>
+	      U.S. Naval Academy<br>
+	      121 Blake Road, Annapolis, MD 21402<br>
+	      <a href="#">Contact USNA</a>
+	    </p>
+	    <ul class="social-media">
+	      <li><a href="http://www.facebook.com/USNavalAcademy"><img src="img/facebook.png" /></a></li>
+	      <li><a href="https://twitter.com/#!/NavalAcademy"><img src="img/twitter.png" /></a></li>
+	      <li><a href="http://www.flickr.com/photos/unitedstatesnavalacademy"><img src="img/flickr.png" /></a></li>
+	      <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
+	    </ul>
+	    <p><a href="#">Social media Index</a></p>
+	  </div>
+      </div>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <div class="row collapse">
+      <div class="small-12 columns">
+	<div class="url-bottom small-text-center">
+	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>
+	</div>
+      </div>
+    </div>
+  </div>
+  <!-- End Footer  and footer-bottom-->
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script> 
+<script src="js/app.js"></script>
+</body>
+</html>

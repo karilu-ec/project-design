@@ -1,0 +1,70 @@
+/* Styles for Divisions Landing pages */
+
+$light-primary-color: #5d82a3;
+
+.large-icon-spot
+	{
+		background-color:$light-primary-color; 
+		border-radius:200px; 
+		height:95px; 
+		font-size:5em;
+		line-height:1.6em;
+		width:95px; 
+		color:#FFF; 
+		margin:auto; 
+		text-align:center;
+	}
+	
+.large-icon-spot-caption
+	{
+		color:$light-primary-color;  
+		font-size:1.3em; 
+		line-height:100%;
+	}
+	
+.large-icon-spot-caption::first-line
+	{
+		line-height:150%;
+	}
+	
+.icon-five
+	{
+		font-size:5em;
+	}
+	
+	
+	
+	
+.medium-icon-spot
+	{
+		background-color:$light-primary-color; 
+		border-radius:200px; 
+		height:70px; 
+		width:70px; 
+		color:#FFF; 
+		margin:auto; 
+		text-align:center;
+		padding-top:0.5em;
+	}
+.medium-icon-spot.white-icon
+	{
+		font-size:4em;
+		padding:0;
+		line-height:1.3;
+	}
+	
+.medium-icon-spot-caption
+	{
+		color:$light-primary-color;  
+		font-size:1.3em; 
+		line-height:100%;
+	}
+	
+.medium-icon-spot-caption::first-line
+	{
+		line-height:150%;
+	}
+.no-margin
+	{
+		margin-bottom:0;
+	}

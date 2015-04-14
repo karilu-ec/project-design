@@ -1,0 +1,136 @@
+/* Header Styles */
+$header-h1-size: rem-calc(31);
+$header-h2-size: rem-calc(22);
+$header-h2-size-small: rem-calc(20);
+$header-navlinks-size: rem-calc(13);
+$header-footer-color: #153a5e;
+
+header {
+  padding-bottom: 0;
+  padding-top:5px;
+  background: $header-footer-color url('../img/Top.jpg') no-repeat center top !important;
+  border-top: 5px solid $secondary-color;
+  
+  
+  .utility-menu {
+    float: right;
+    margin:0;
+    padding-right: 4px;
+    
+    li:first-child {
+    margin-left: 0;  
+    }
+    
+    li {
+      margin-bottom: 0;
+      margin-left: rem-calc(8);
+    }
+    li:last-child:not(.has-form) {      
+      margin-right: rem-calc(5);
+    }
+    
+    a {
+    font-size: $header-navlinks-size;
+    color: $secondary-color;
+    }
+    
+   .has-form {
+      height: 30px;
+      padding: 0 rem-calc(5) 0 0;
+      margin: 0;
+      float: right;
+      
+      input {
+        font-size: $header-navlinks-size;
+        position: relative;
+        top: 0;
+        height: auto;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        background: #fff url('../img/search-icon.png') no-repeat right;
+        border-radius: 5px;
+      }
+   }
+   
+  }
+  
+  .audience-menu  {
+    float: right;
+    margin-bottom: 0;
+    
+    li {      
+      font-size: $header-navlinks-size;
+      margin-left: 0.8em;
+    }
+    
+   li.divider {
+    border-bottom: none;
+    border-top: none;
+    border-right: 1px solid #276BA7;
+    clear: none;
+    height: 16px;
+    margin-left: 0.5em;
+    margin-top: 3px;
+    width: 0;
+    }
+    
+    a {
+      color:#fff;
+    }
+  }
+
+}
+
+/* TopBar overrides*/
+.top-bar.expanded .toggle-topbar a span {
+  box-shadow: none;
+}
+.top-bar-section li:not(.divider)  {
+  border-bottom:solid 1px scale-color($topbar-bg-color, $lightness: -50%);
+  &:first-child {
+    border-top:solid 1px scale-color($topbar-bg-color, $lightness: -50%);
+  }
+  a:not(.button) {
+    text-transform: uppercase;
+  }
+}
+/* Media queries*/
+/* Small screens*/
+@media #{$small-only}{  
+  header {
+    .logo-container {
+    background-image: url('../img/mobile-logo.png');
+    background-position: 15% 50%;
+    background-repeat: no-repeat;
+    height: 60px;
+    }
+  }  
+}
+
+/*  Medium Size screens and Large Size screens */
+@media #{$medium-up} {
+  header {
+    .top-navigation {
+        background-color: transparentize($topbar-bg-color, 0.5);
+    }
+  }
+  .top-bar-section ul {
+    width: 100%;
+  }
+  .top-bar-section>ul li:not(.divider) {
+    border:0;
+    border-right:solid 1px scale-color($topbar-bg-color, $lightness: 13%);
+    position:relative;
+    width:20%!important;
+    left:-1px;
+    
+    &:first-child {
+      border:0;
+      border-left:1px solid scale-color($topbar-bg-color, $lightness: 13%);
+      border-right:1px solid scale-color($topbar-bg-color, $lightness: 13%);
+    }
+    a:not(.button){
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import "../helpers/settings";
+ 
+ body {
+  background: #1e5282;
+ }
+
+.blue-box {
+  background-color: transparentize(#5679a5, 0.1);
+  color: #ffffff;
+  padding-top: 25px;
+  padding-bottom: 40px;
+   p {
+ padding-top: 10px;
+ }
+   ul  {
+    padding-left: 15px;
+     li a{
+      color: #fff;
+      &:hover {
+         color: $secondary-color;
+      }
+     }     
+  }
+
+}
+.page-main-content {
+  margin-bottom:0!important;
+}
+.bgwhite {
+  background: none;
+}
+a.sitemapLink  {
+  color:$secondary-color;
+  &:hover {
+    color: scale-color($secondary-color, $lightness: -20%);  
+  }
+}
+/*  Medium Size screens and Large Size screens */
+@media #{$medium-up} {  
+body {
+background: #1e5282 url("../img/sea.jpg") no-repeat fixed top left !important;
+}
+.row.blue-box {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 5px;
+ p {
+ padding-top: 10px;
+   padding-left: 30px;
+ //  padding-right: 30px;
+  }
+  ul  {
+    padding-left: 40px;
+     li a{
+      color: #fff;
+      &:hover {
+         color: $secondary-color;
+      }
+     }     
+  }
+}
+}

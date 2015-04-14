@@ -1,0 +1,477 @@
+/* Mixin Styles*/ 
+$basic-colors-red:#C00;
+$basic-colors-orange:#FF6600;
+$basic-colors-yellow:#CC0;
+$basic-colors-green:#3C0;
+$basic-colots-blue:#0066FF;
+$basic-colors-indigo:#5D76DB;
+$basic-colors-violet:#4040C2;
+$basic-colors-white:#FFF;
+$basic-colors-black:#000;
+.red, .red[class^="fi-"]:before, .red[class*=" fi-"]:before
+	{
+		 color: $basic-colors-red;
+	}
+.fill-red
+	{
+		 background-color: $basic-colors-red;
+		 color:$basic-colors-white;
+	}
+.orange, .orange[class^="fi-"]:before, .orange[class*=" fi-"]:before
+	{
+		 color: $basic-colors-orange;
+	}
+.fill-orange
+	{
+		 background-color: $basic-colors-orange;
+	}
+.yellow, .yellow[class^="fi-"]:before, .yellow[class*=" fi-"]:before
+	{
+		 color: $secondary-color;
+	}
+.fill-yellow
+	{
+		 background-color: $secondary-color;
+	}
+.green, .green[class^="fi-"]:before, .green[class*=" fi-"]:before
+	{
+		 color: $basic-colors-green;
+	}
+.fill-green
+	{
+		 background-color: $basic-colors-green;
+		 color:$basic-colors-white;
+	}
+.blue, .blue[class^="fi-"]:before, .blue[class*=" fi-"]:before
+	{
+		 color: $primary-color;
+	}
+.fill-blue
+	{
+		 background-color: $primary-color;
+		 color:$basic-colors-white;
+	}
+.indigo, .indigo[class^="fi-"]:before, .indigo[class*=" fi-"]:before
+	{
+		 color: $basic-colors-indigo;
+	}
+.fill-indigo
+	{
+		 background-color: $basic-colors-indigo;
+		 color:$basic-colors-white;
+	}
+.violet, .violet[class^="fi-"]:before, .violet[class*=" fi-"]:before
+	{
+		 color: $basic-colors-violet;
+	}
+.fill-violet
+	{
+		 background-color: $basic-colors-violet;
+		 color:$basic-colors-white;
+	}
+.black, .black[class^="fi-"]:before, .black[class*=" fi-"]:before
+	{
+		 color: $basic-colors-black;
+	}
+.fill-black
+	{
+		 background-color: $basic-colors-black;
+		 color:$basic-colors-white;
+	}
+.white, .white[class^="fi-"]:before, .white[class*=" fi-"]:before
+	{
+		 color: $basic-colors-white;
+	}
+.fill-white
+	{
+		 background-color: $basic-colors-white;
+		 color:$primary-color;
+	}
+
+.greybox, .graybox
+	{
+		 @extend .panel;
+                border-radius: 3px;
+	}
+	
+.mission
+	{	
+				
+			
+				@extend .alert-box.info;
+				padding:10px;
+	}	
+.message
+	{	
+				
+			
+				@extend .alert-box.success;
+				padding:10px;
+	}	
+.error
+	{								
+				@extend .alert-box.alert;
+	}	
+.float-left
+	{
+		@extend .left;
+	}
+.float-right
+	{
+		@extend .right;
+	}
+.float-center, .align-center
+	{
+		margin-left:auto !important;
+		margin-right:auto !important;
+		/*This isn't working for float-center*/
+	}
+	
+	
+.align-left
+	{
+		@extend .text-left;
+	}
+.align-right
+	{
+		@extend .text-right;
+	}
+.align-center
+	{
+		@extend .text-center;
+	}	
+.align-justify
+	{
+		@extend .text-justify;
+	}	
+	
+.smaller
+	{
+		font-size: rem-calc(12);
+	}
+.larger
+	{
+		font-size: rem-calc(16);
+	}
+	
+.plain
+	{
+		border: 0px solid !important;
+		text-decoration:none !important;
+		background:none transparent !important;
+	}
+ul.plain,ul.no-bullet
+	{
+		padding-left: 0;
+	}
+ul.plain>li, ul.no-bullet>li, li.plain, li.no-bullet 
+	{
+		list-style: none;
+		background: none;
+		padding-left: 0;
+	}
+
+.no-border
+	{
+		border: 0px solid !important;
+	}
+	
+.with-border
+	{
+		border:1px solid #d7d7d7;
+	}
+/* Imported List Styles */
+ol:not([type])>li,
+ol[type="1"]>li{
+    padding-left: 0em;
+    list-style-type: decimal;
+}
+ol ol:not([type])>li,
+ol[type="A"]>li {
+    padding-left: 0em;
+    list-style-type: upper-alpha;
+}
+ol ol ol:not([type])>li,
+ol[type="a"]>li {
+    padding-left: 0em;
+    list-style-type: lower-alpha;
+}
+.tight>li {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+/* Imported Table Styles */
+table.tight,
+table.tight td,
+table.tight th,
+td.tight,
+tr.tight td,
+tr.tight th,
+th.tight {
+        padding: 0px 0.5em;
+        margin: 0;
+}
+	
+table.plain,
+table.plain td,
+table.plain th,
+td.plain,
+tr.plain td,
+tr.plain th,
+th.plain {
+    background-color: transparent;
+    background: none;
+    border: 0 none;
+}
+	
+table.no-border,
+table.no-border td,
+table.no-border th {
+    border: 0 none;
+}
+	
+/* Imported Quotebox Style */
+.quote_box, .pullquote {
+   //  border-color: #EEEEEE!important;
+   //border-radius: 5px 5px 5px 5px!important;
+    //border-style: solid;
+    //border-width: 1px;
+    //box-shadow: 7px 7px 5px #BEBEBE;
+    margin-bottom: 1em;
+    padding: .5em 2em 0em 2em;
+    position: relative;
+    background-color: white!important;
+	letter-spacing:1px;
+}
+.quote_box p:first-child:before, .pullquote p:first-child:before{
+    content: "\201C";
+    font-size: 72px;
+    position:absolute;
+    font-style: normal;
+   top:-24px;
+    left:0px;
+    color:#CCC;
+}
+.quote_box p:first-child:after, .pullquote p:first-child:after{
+    content: "\00201D";
+    font-size: 72px;    
+    position:absolute;
+    line-height: 0px;
+    font-style: normal;
+    right:0px;
+    bottom: 0px;
+    color:#CCC;
+}
+.quote_box.cite p:first-child:after, .pullquotecite p:first-child:after{
+    bottom:30px;
+}
+.quote_box.float-left, .pullquote.float-left{
+    margin-right: 2em;  
+    margin-left: 8px;
+}
+.quote_box.float-right, .pullquote.float-right{
+    margin-left: 2em;   
+    margin-right: 14px;
+}
+.quote_box p.quote-author,.pullquote  p.quote-author{
+    clear: both;
+    text-align: right;
+    font-style: normal;
+    font-size: 80%;
+    color: #008;
+}	
+/* Box Styles via Extensions of New Styles */
+.inset
+		{ 
+			@extend .panel-primary-bottom-stripe;
+		}
+
+.announcements
+	{
+		@extend .admin-announce;
+                h3 {
+                  font-size: rem-calc(17);
+                }
+	}
+//.announcements div
+//	{
+//		border-top:1px solid #EEE;
+//		padding-top:0.5em;
+//	}
+
+/*  Imported Link Classes  */
+
+a.no-line {
+    text-decoration: none;
+}
+a.pdflink:after {
+    padding-left: 4px;
+    text-decoration: none;
+    border: 0 solid;
+    content: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2016.0.3%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2212px%22%20height%3D%2216px%22%20viewBox%3D%22299%20394%2012%2016%22%20enable-background%3D%22new%20299%20394%2012%2016%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpolygon%20fill%3D%22%237E7E7E%22%20points%3D%22311%2C410%20299%2C410%20299%2C394%20308.878%2C394%20311%2C396.179%20%22%2F%3E%0A%3Cpolyline%20fill%3D%22%23FFFFFF%22%20points%3D%22307.89%2C394.648%20307.89%2C396.877%20310.203%2C396.877%20%22%2F%3E%0A%3Cpolygon%20fill%3D%22%23FFFFFF%22%20points%3D%22307.136%2C397.503%20307.138%2C394.67%20299.755%2C394.67%20299.755%2C409.289%20305.326%2C409.289%20307.315%2C409.289%20%0A%09310.245%2C409.289%20310.245%2C397.502%20%22%2F%3E%0A%3Crect%20x%3D%22300.821%22%20y%3D%22395.609%22%20fill%3D%22%23A82622%22%20width%3D%225.212%22%20height%3D%221.979%22%2F%3E%0A%3Crect%20x%3D%22305.172%22%20y%3D%22398.563%22%20fill%3D%22%23A7A7A7%22%20width%3D%224.02%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22305.174%22%20y%3D%22400.642%22%20fill%3D%22%23A7A7A7%22%20width%3D%224.021%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22300.821%22%20y%3D%22398.563%22%20fill%3D%22%23A7A7A7%22%20width%3D%223.01%22%20height%3D%223.049%22%2F%3E%0A%3Crect%20x%3D%22306.183%22%20y%3D%22404.756%22%20fill%3D%22%23A7A7A7%22%20width%3D%223.009%22%20height%3D%223.049%22%2F%3E%0A%3Crect%20x%3D%22300.892%22%20y%3D%22404.756%22%20fill%3D%22%23A7A7A7%22%20width%3D%224.021%22%20height%3D%220.969%22%2F%3E%0A%3Crect%20x%3D%22300.894%22%20y%3D%22406.834%22%20fill%3D%22%23A7A7A7%22%20width%3D%224.021%22%20height%3D%220.971%22%2F%3E%0A%3Crect%20x%3D%22300.821%22%20y%3D%22402.68%22%20fill%3D%22%23A7A7A7%22%20width%3D%228.37%22%20height%3D%220.969%22%2F%3E%0A%3C%2Fsvg%3E');
+	line-height:10px !important;
+}
+a.extlink:after {
+    padding-left: 4px;
+    text-decoration: none;
+    border: 0 solid;
+    content: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2016.0.3%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2212px%22%20height%3D%2212px%22%20viewBox%3D%22400.038%20394%2012%2012%22%20enable-background%3D%22new%20400.038%20394%2012%2012%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpolyline%20fill%3D%22%23FFFFFF%22%20stroke%3D%22%231D5282%22%20stroke-width%3D%221.4455%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%2210%22%20points%3D%22%0A%09405.171%2C395.702%20400.901%2C395.702%20400.901%2C405.031%20410.232%2C405.031%20410.232%2C400.953%20%22%2F%3E%0A%3Cpolygon%20fill%3D%22none%22%20stroke%3D%22%231D5282%22%20stroke-width%3D%220.9637%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%2210%22%20points%3D%22%0A%09406.093%2C395.166%20407.273%2C396.346%20402.793%2C400.82%20405.21%2C403.282%20409.613%2C398.884%20410.792%2C400.022%20411.546%2C394.553%20%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+}
+a.feedlink:after {
+    padding-left: 4px;
+    text-decoration: none;
+    border: 0 solid;
+    content: url('http://www.usna.edu/CMS/_standard2.1.1/_files/images/feed-icon.png');
+}
+a.imglink:after {
+    padding-left: 4px;
+    text-decoration: none;
+    border: 0 solid;
+    content: url('http://www.usna.edu/CMS/_standard2.1.1/_files/images/img-icon.png');
+}
+a.txtlink:after {
+    padding-left: 4px;
+    text-decoration: none;
+    border: 0 solid;
+    content: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2016.0.3%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2212px%22%20height%3D%2216px%22%20viewBox%3D%22294%20392%2012%2016%22%20enable-background%3D%22new%20294%20392%2012%2016%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpolygon%20fill%3D%22%237E7E7E%22%20points%3D%22306%2C408%20294%2C408%20294%2C392%20303.879%2C392%20306%2C394.179%20%22%2F%3E%0A%3Cpolyline%20fill%3D%22%23FFFFFF%22%20points%3D%22302.891%2C392.647%20302.891%2C394.877%20305.204%2C394.877%20%22%2F%3E%0A%3Cpolygon%20fill%3D%22%23FFFFFF%22%20points%3D%22302.094%2C395.589%20302.097%2C392.756%20294.713%2C392.756%20294.713%2C407.376%20300.284%2C407.376%20302.273%2C407.376%20%0A%09305.204%2C407.376%20305.204%2C395.588%20%22%2F%3E%0A%3Crect%20x%3D%22295.761%22%20y%3D%22394.314%22%20fill%3D%22%237E7E7E%22%20width%3D%225.212%22%20height%3D%220.981%22%2F%3E%0A%3Crect%20x%3D%22301.033%22%20y%3D%22396.489%22%20fill%3D%22%23A7A7A7%22%20width%3D%222.896%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22300.443%22%20y%3D%22400.647%22%20fill%3D%22%23CCCCCC%22%20width%3D%223.485%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22299.105%22%20y%3D%22398.568%22%20fill%3D%22%23A7A7A7%22%20width%3D%224.825%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22295.881%22%20y%3D%22402.816%22%20fill%3D%22%23CCCCCC%22%20width%3D%222.043%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22295.822%22%20y%3D%22396.489%22%20fill%3D%22%23A7A7A7%22%20width%3D%224.206%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22295.822%22%20y%3D%22398.568%22%20fill%3D%22%23A7A7A7%22%20width%3D%222.103%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22295.822%22%20y%3D%22400.647%22%20fill%3D%22%23CCCCCC%22%20width%3D%223.445%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22302.891%22%20y%3D%22402.816%22%20fill%3D%22%23CCCCCC%22%20width%3D%220.958%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22299.105%22%20y%3D%22402.816%22%20fill%3D%22%23CCCCCC%22%20width%3D%222.676%22%20height%3D%220.97%22%2F%3E%0A%3C%2Fsvg%3E');
+}
+a.doclink:after {
+    padding-left: 4px;
+    text-decoration: none;
+    border: 0 solid;
+    content: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2016.0.3%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2212px%22%20height%3D%2216px%22%20viewBox%3D%22294%20392%2012%2016%22%20enable-background%3D%22new%20294%20392%2012%2016%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpolygon%20fill%3D%22%237E7E7E%22%20points%3D%22306%2C408%20294%2C408%20294%2C392%20303.879%2C392%20306%2C394.179%20%22%2F%3E%0A%3Cpolyline%20fill%3D%22%23FFFFFF%22%20points%3D%22302.891%2C392.648%20302.891%2C394.877%20305.204%2C394.877%20%22%2F%3E%0A%3Cpolygon%20fill%3D%22%23FFFFFF%22%20points%3D%22302.094%2C395.589%20302.097%2C392.757%20294.713%2C392.757%20294.713%2C407.376%20300.284%2C407.376%20302.273%2C407.376%20%0A%09305.204%2C407.376%20305.204%2C395.588%20%22%2F%3E%0A%3Crect%20x%3D%22295.822%22%20y%3D%22393.609%22%20fill%3D%22%230077BF%22%20width%3D%225.211%22%20height%3D%221.979%22%2F%3E%0A%3Crect%20x%3D%22295.822%22%20y%3D%22396.489%22%20fill%3D%22%23A7A7A7%22%20width%3D%222.928%22%20height%3D%225.128%22%2F%3E%0A%3Crect%20x%3D%22299.909%22%20y%3D%22396.489%22%20fill%3D%22%23A7A7A7%22%20width%3D%224.02%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22299.909%22%20y%3D%22400.647%22%20fill%3D%22%23A7A7A7%22%20width%3D%224.02%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22299.91%22%20y%3D%22398.568%22%20fill%3D%22%23A7A7A7%22%20width%3D%224.02%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22295.672%22%20y%3D%22402.882%22%20fill%3D%22%23A7A7A7%22%20width%3D%220.958%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22295.672%22%20y%3D%22404.865%22%20fill%3D%22%23A7A7A7%22%20width%3D%220.958%22%20height%3D%220.971%22%2F%3E%0A%3Crect%20x%3D%22297.647%22%20y%3D%22402.882%22%20fill%3D%22%23A7A7A7%22%20width%3D%226.281%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22297.647%22%20y%3D%22404.865%22%20fill%3D%22%23A7A7A7%22%20width%3D%226.281%22%20height%3D%220.971%22%2F%3E%0A%3C%2Fsvg%3E');
+} 
+.maillink:before
+{
+	@extend .fi-mail:before;
+	 padding-right: 4px;
+	 font-size: rem-calc(20);
+
+}
+a.pptlink:after {
+    padding-left: 4px;
+    text-decoration: none;
+    border: 0 solid;
+ 
+   content: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2016.0.3%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2220px%22%20height%3D%2216px%22%20viewBox%3D%22490%20392%2020%2016%22%20enable-background%3D%22new%20490%20392%2020%2016%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpolygon%20fill%3D%22%237E7E7E%22%20points%3D%22507.888%2C392%20499.834%2C392%20498.054%2C392%20490%2C392%20490%2C408%20498.054%2C408%20501.946%2C408%20510%2C408%20510%2C394.179%20%0A%09%22%2F%3E%0A%3Cpolygon%20fill%3D%22%23FFFFFF%22%20points%3D%22506.153%2C395.503%20506.155%2C392.67%20500.463%2C392.67%20498.807%2C392.67%20498.143%2C392.67%20493.113%2C392.67%20%0A%09490.792%2C392.67%20490.792%2C407.289%20493.113%2C407.289%20496.339%2C407.289%20498.319%2C407.289%20498.659%2C407.289%20498.807%2C407.289%20500.64%2C407.289%20%0A%09501.235%2C407.289%20503.556%2C407.289%20504.352%2C407.289%20506.332%2C407.289%20509.249%2C407.289%20509.249%2C395.502%20%22%2F%3E%0A%3Cpolyline%20fill%3D%22%23FFFFFF%22%20points%3D%22506.905%2C392.648%20506.905%2C394.877%20509.208%2C394.877%20%22%2F%3E%0A%3Crect%20x%3D%22491.852%22%20y%3D%22393.609%22%20fill%3D%22%23FF9600%22%20width%3D%2213.203%22%20height%3D%221.979%22%2F%3E%0A%3Crect%20x%3D%22491.852%22%20y%3D%22396.753%22%20fill%3D%22%23A7A7A7%22%20width%3D%2216.349%22%20height%3D%225.128%22%2F%3E%0A%3Crect%20x%3D%22491.852%22%20y%3D%22403.004%22%20fill%3D%22%23A7A7A7%22%20width%3D%2216.349%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22491.852%22%20y%3D%22405.008%22%20fill%3D%22%23A7A7A7%22%20width%3D%2216.349%22%20height%3D%220.97%22%2F%3E%0A%3C%2Fsvg%3E');
+}
+
+a.xlslink:after {
+    padding-left: 4px;
+    text-decoration: none;
+    border: 0 solid;
+    content: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2016.0.3%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20width%3D%2212px%22%20height%3D%2216px%22%20viewBox%3D%22294.147%20393.001%2012%2016%22%20enable-background%3D%22new%20294.147%20393.001%2012%2016%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpolygon%20fill%3D%22%237E7E7E%22%20points%3D%22306.147%2C408.989%20294.147%2C408.989%20294.147%2C393.012%20304.025%2C393.012%20306.147%2C395.188%20%22%2F%3E%0A%3Cpolyline%20fill%3D%22%23FFFFFF%22%20points%3D%22303.038%2C393.659%20303.038%2C395.884%20305.352%2C395.884%20%22%2F%3E%0A%3Cpolygon%20fill%3D%22%23FFFFFF%22%20points%3D%22302.241%2C396.595%20302.243%2C393.767%20294.861%2C393.767%20294.861%2C408.365%20300.431%2C408.365%20302.421%2C408.365%20%0A%09305.352%2C408.365%20305.352%2C396.595%20%22%2F%3E%0A%3Crect%20x%3D%22295.969%22%20y%3D%22394.618%22%20fill%3D%22%234E9A06%22%20width%3D%225.211%22%20height%3D%221.977%22%2F%3E%0A%3Crect%20x%3D%22295.969%22%20y%3D%22397.495%22%20fill%3D%22%23A7A7A7%22%20width%3D%228.226%22%20height%3D%229.923%22%2F%3E%0A%3Crect%20x%3D%22299.621%22%20y%3D%22398.325%22%20fill%3D%22%23FFFFFF%22%20width%3D%223.596%22%20height%3D%220.969%22%2F%3E%0A%3Crect%20x%3D%22296.987%22%20y%3D%22398.325%22%20fill%3D%22%23FFFFFF%22%20width%3D%221.72%22%20height%3D%220.969%22%2F%3E%0A%3Crect%20x%3D%22299.621%22%20y%3D%22400.182%22%20fill%3D%22%23FFFFFF%22%20width%3D%223.596%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22296.987%22%20y%3D%22400.182%22%20fill%3D%22%23FFFFFF%22%20width%3D%221.72%22%20height%3D%220.97%22%2F%3E%0A%3Crect%20x%3D%22299.621%22%20y%3D%22402.041%22%20fill%3D%22%23FFFFFF%22%20width%3D%223.596%22%20height%3D%220.969%22%2F%3E%0A%3Crect%20x%3D%22296.987%22%20y%3D%22402.041%22%20fill%3D%22%23FFFFFF%22%20width%3D%221.72%22%20height%3D%220.969%22%2F%3E%0A%3Crect%20x%3D%22299.621%22%20y%3D%22403.898%22%20fill%3D%22%23FFFFFF%22%20width%3D%223.596%22%20height%3D%220.969%22%2F%3E%0A%3Crect%20x%3D%22296.987%22%20y%3D%22403.898%22%20fill%3D%22%23FFFFFF%22%20width%3D%221.72%22%20height%3D%220.969%22%2F%3E%0A%3Crect%20x%3D%22299.621%22%20y%3D%22405.755%22%20fill%3D%22%23FFFFFF%22%20width%3D%223.596%22%20height%3D%220.969%22%2F%3E%0A%3Crect%20x%3D%22296.987%22%20y%3D%22405.755%22%20fill%3D%22%23FFFFFF%22%20width%3D%221.72%22%20height%3D%220.969%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+}
+
+a.poplink:after {
+    padding-left: 4px;
+    text-decoration: none;
+    border: 0 solid;
+    content: url('http://www.usna.edu/CMS/_standard2.1.1/_files/images/popup-icon.gif');
+}
+a.no-icon:after, a.no-icon:before {
+    content: normal;
+}
+//.post-info .date:before,
+.icon_date:before {
+    @extend .fi-clock:before;
+	padding-right:0.5em;
+}
+.icon_comments:before,
+.comments:before {
+	@extend .fi-comment:before;
+	padding-right:0.5em;
+}
+.icon_readmore:after, .readmore:after, .post-info .readmore:after{
+    @extend .fi-arrow-right:before;
+    padding-left:0.5em;
+}
+//.post-info .new:before,
+.icon_new:before {  
+	@extend .fi-burst-new:before;
+	padding-right:0.5em;
+}
+//.post-info .top:before,
+.icon_top:before {
+   @extend .fi-arrow-up:before;
+	padding-right:0.5em;
+}
+//.post-info .logoff:before,
+.icon_logoff:before{
+    @extend .fi-power:before;
+	padding-right:0.5em;
+}
+
+//.post-info .user:before,
+.icon_user:before {
+	@extend .fi-torso:before;
+	padding-right:0.5em;
+}
+//.post-info .phone:before,
+.icon_phone:before {
+    @extend .fi-telephone:before;
+	padding-right:0.5em;
+}
+//.post-info .office:before,
+.icon_office:before,
+//.post-info .map:before,
+.icon_map:before {
+    @extend .fi-marker:before;
+	padding-right:0.5em;
+}
+//.post-info .cal:before,
+.icon_cal:before {
+    @extend .fi-calendar:before;
+		padding-right:0.5em;
+}
+//
+//.post-info
+//	{
+//		color: white;
+//		background-color:$primary-color;
+//		padding:0.4em;
+//		font-size: 1.2em;
+//		a
+//			{
+//				color:white;
+//			}
+//	}
+//	
+//.post-info .cal:before, 
+//.post-info .map:before, 
+//.post-info .office:before, 
+//.post-info .phone:before, 
+//.post-info .logoff:before, 
+//.post-info .top:before, 
+//.post-info .new:before, 
+//.post-info .date:before
+//	{
+//	color:white !important;
+//	font-size: 1em;
+//	padding-left:1em;
+//	padding-right:0.3em;
+//	}
+//.post-info .readmore:after
+//	{
+//	color:white !important;
+//	font-size: 1em;
+//	padding-left:0.3em;
+//	padding-right:1em;
+//	}	
+blockquote
+		{
+			border-left:0px solid white;
+			color: black;
+			margin: 0 3em 1em 3em;
+		}
+
+//.sidebar support without breaking our sidebar class in Foundation's left side navigation
+.page-main-content {
+         .sidebar {
+                  @extend .panel;
+                  border-radius: 5px;
+                  text-transform: none;
+         }
+}

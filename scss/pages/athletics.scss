@@ -1,0 +1,114 @@
+/* Styles for the Athletics landing page */
+@import "../helpers/settings";
+$low-impact-color:#5d82a3;
+
+.athletics-content {
+	padding-top:1rem;	
+  }
+  
+.athletics-info {
+	li {
+		margin-top:rem-calc(13);
+		margin-bottom:rem-calc(13);
+		margin-left:1.3em;
+		font-size: 1rem;
+		a {
+			color:#ffffff;
+			font-weight:bold;
+		}
+	}
+}
+.athletics-info-border {
+	border-right:1px solid $low-impact-color;
+}
+.athletics-bkgd-color {
+	background-color: $primary-color;
+}
+.app {
+	background-color: #d7d7d6;
+	box-shadow: 2px 2px 3px #c3c3c3;
+	border: 2px solid #153a5e;
+	margin-bottom: 1rem;
+	border-radius: 5px;
+	a {
+		color:#153a5e;
+		font-weight:bold;
+		text-transform:uppercase;
+		font-size:1.1em;
+		vertical-align:middle;
+	}
+	i, img {
+		font-size:1.7em;
+		margin:0px 7px;
+	}
+}
+.navy-sports-button {
+	background-color:$low-impact-color;	
+	margin: 0 rem-calc(10) rem-calc(10) rem-calc(10);
+	padding:7px;
+	border-radius: 5px;
+	a {
+		color:#ffffff;
+		font-size:rem-calc(15);
+	}
+	i, img {
+		font-size: rem-calc(18);
+		margin:0px 7px;
+		vertical-align:middle;
+	}
+}
+
+.athletics-slider {
+  .slick-slider {
+    margin-bottom: 0;
+  }
+}
+
+.slick-prev:before, .slick-next:before {
+ color: #E8E8E8 !important;
+}
+
+/* Large Size screens */
+@media #{$large-up} {
+.navy-sports-button {
+	margin-top:1rem;
+	}
+
+.athletics-slider {
+  .slick-slider {
+    width: 98%;
+  }
+}
+}
+
+/* Portrait Size screens */
+@media #{$portrait} {
+.athletics-info {
+  margin-bottom: 0;
+  li
+    {
+      font-size: rem-calc(12);
+      margin-top: rem-calc(5);
+      margin-bottom:rem-calc(5);
+    }
+  }
+  .navy-sports-button {
+    margin: 0 rem-calc(7) rem-calc(5) rem-calc(7);
+    a {
+      font-size: rem-calc(13);
+    }
+  } 
+}
+/* Small only*/
+@media #{$small-only} {
+	.athletics-info {
+	li {
+		font-size: 1rem;
+	}
+	}
+	 .navy-sports-button {
+		a {
+		font-size: 1rem;
+		}
+	 }  
+}

@@ -11,7 +11,15 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'css/app.css': 'scss/app.scss'
+          'css/app.css': 'scss/app.scss',
+          'css/admissions.css': 'scss/pages/admissions.scss',
+          'css/alumni.css': 'scss/pages/alumni.scss',
+          'css/athletics.css': 'scss/pages/athletics.scss',
+          'css/faculty-directory.css': 'scss/pages/faculty-directory.scss',
+          'css/home.css': 'scss/pages/home.scss', 
+	  'css/error.css': 'scss/pages/error.scss',
+	  'css/pretty-photo.css': 'scss/pages/prettyphoto.scss',
+	  'css/intranet-home.css': 'scss/pages/intranet-home.scss'
         }        
       }
     },

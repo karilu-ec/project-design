@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Academics</title>
     <link rel="stylesheet" href="css/app.css" />
+<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
@@ -14,25 +15,37 @@
       <div class="row collapse">
 	    <div class="small-3 large-4 columns">
 	      <div class="logo-container">
-		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up">
-		 
+		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up" />		 
 	      </div>
 	    </div>
 	    <div class="small-9 large-8 columns">	      
 	      <div class="row collapse">
-		<div class="small-12 columns">		
+		<div class="small-12 columns">
+		  <ul class="utility-menu inline-list">
+		    <li class="has-form">
+		    <form action="http://wasp-new.usna.edu/texis/search/" method="get">
+		      <input name="dropXSL" type="HIDDEN" />
+		      <input name="pr" value="External Meta" type="hidden" />
+		      <input name="prox" value="page" type="hidden" />
+		      <input name="rorder" value="500" type="hidden" />
+		      <input name="rprox" value="500" type="hidden" />
+		      <input name="rdfreq" value="500" type="hidden" />
+		      <input name="rwfreq" value="500" type="hidden" />
+		      <input name="rlead" value="500" type="hidden" />
+		      <input name="sufs" value="3" type="hidden" />
+		      <input name="order" value="r" type="hidden" />
+		      <input name="rdepth" value="62" type="hidden" />
+		      <input class="queryAutocomplete" id="siteSearch" maxlength="2033" name="query" type="text" placeholder="Search USNA" />  
+		      <input type="submit" style="position: absolute; left: -9999px"/> 
+		    </form>
+		    </li>
+		  </ul>
 		  <ul class="utility-menu inline-list">
 		    <li><a href="#">Events</a></li>
 		    <li><a href="#">Maps</a></li>
 		    <li><a href="#">Directory</a></li>
-		    <li><a href="#">A-Z Index</a></li>
-		    <li class="has-form">
-		      
-			
-			  <input type="text" placeholder="Search USNA">
-			
-		    </li>
-		  </ul>
+		    <li><a href="#">A-Z Index</a></li>		    
+		  </ul>		  
 		</div>
 	      </div>
 	      <div class="row">
@@ -48,8 +61,7 @@
 		</ul>
 		</div>
 	      </div>
-	    </div>
-	    
+	    </div>	    
       </div>
 
     <!-- Top Main Navigation -->
@@ -65,17 +77,11 @@
         <section class="top-bar-section">
 	  <!-- Left Nav -->
 		<ul class="left">		   
-		  <li class="divider"></li>
 		  <li><a href="#">ABOUT</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ACADEMICS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ADMISSIONS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ATHLETICS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">VISIT</a></li>
-		  <li class="divider"></li>
 		</ul>
         </section>
       </nav>    
@@ -99,20 +105,21 @@
   <!-- Main Content Section -->  
   
   <!-- Side navigation for small screens in off-canvas -->
-  <div class="off-canvas-wrap">
+  <div class="off-canvas-wrap"  data-offcanvas>
       <div class="inner-wrap">	
        <nav class="tab-bar show-for-small">
 	 <section class="left-small">
 	   <a class="left-off-canvas-toggle menu-icon"><span></span></a>
 	 </section>
-	 <section class="right tab-bar-section"><h1 class="offcanvas-title">Academics</h1></section>
+	 <section class="right tab-bar-section"><h1 class="offcanvas-title">Division of Leadership Education and Development</h1></section>
        </nav>
        <aside class="left-off-canvas-menu">
        <!-- Navigation small screens -->
 	 <div class="sidebar">
 	   <ul class="side-nav off-canvas-list">	    
 	     <li><a href="#">Academics Home</a></li>
-	     <li class="active"><a href="#">Academic Dean <span class="arrow"></span></a></li>	     
+	     <li class="active"><a href="academics-sub1.html">Academic Dean <span class="arrow"></span></a></li>	     
+	     <li class="heading">Heading</li>
 	     <li><a href="#">Academic Facilities</a></li>
 	     <li><a href="#">Academic Resources</a></li>
 	     <li><a href="#">Calendar & Events</a></li>
@@ -132,7 +139,7 @@
        </aside>
        <!-- End Navigation small screens -->
               
-       <a class="exit-off-canvas"></a>
+
        
        <section class="main-section">
 	
@@ -143,55 +150,43 @@
 	    <div class="hide-for-small">
 	      <div class="sidebar">		
 		<nav>
-		  <ul class="side-nav">
+		  <ul class="side-nav medium-list-up">
 		    <li><a href="#">Academics Home</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Academic Dean <span class="arrow"></span></a>
+		    <li><a href="academics-sub1.html" style="border-bottom:0;">Academic Dean <span class="arrow"></span></a>
 		      <ul class="navFly">
-			<li class="active"><a href="#">Academic Dean Main</a></li>
-			<li class="divider"></li>
+			<li class="active"><a href="academics-sub1.html">Academic Dean Main</a></li>
 			<li><a href="#">Accreditation</a></li>
-			<li class="divider"></li>
-			<li><a href="#">Assessment</a></li>
-			<li class="divider"></li>
+			<li><a href="academics-sub2.html" data-dropdown="drop2" data-options="align:right; is_hover:true;">Dean <span class="arrow"></span></a>
+			  <ul id="drop2" class="navFly f-dropdown show-for-medium-up" data-dropdown-content>
+			    <li><a href="academics-sub1.html">Academic Dean Main</a></li>
+			    <li><a href="#">Accreditation</a></li>
+			    <li class="heading">Heading</li>
+			    <li><a href="#">Assessment</a></li>
+			    <li><a href="#">Directors & Chairs</a></li>
+			  </ul>
+		        </li>
 			<li><a href="#">Directors & Chairs</a></li>
-			<li class="divider"></li>
 			<li><a href="#">Divisions & Departments</a></li>
-			<li class="divider"></li>
+			<li class="heading">Heading</li>
 			<li><a href="#">Faculty Resources</a></li>
-			<li class="divider"></li>
 			<li><a href="#">Rules & Regulations</a></li>
-			<li class="divider"></li>
 			<li><a href="#">Talks</a></li>
-			<li class="divider"></li>
 			<li><a href="#">Additional Resources</a></li>
 		      </ul>
 		    </li>
-		    
+		    <li class="heading">Heading</li>
 		    <li><a href="#">Academic Facilities</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Academic Resources</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Calendar & Events</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Candidate Information</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Divisions & Departments</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Extended Academic Opportunites</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Faculty Information</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Majors & courses</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Midshipman Resources</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Registrar's Office</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Special Programs</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Strategic Plan</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">USNA Academic Rankins / Recognition</a></li>
 		  </ul>
 		</nav>
@@ -208,42 +203,48 @@
 	    <div class="row bgwhite hide-for-small">
 	      <div class="small-12 columns">
 		<div class="site-name">
-		  <h1>Academics</h1>
+		  <div>Division of Leadership Education and Development</div>
 		</div>
 	      </div>      
 	    </div>
 	    
 	    <!-- Masthead Slider -->
-	    <div class="row hide-for-small">
-	      <div class="small-12 columns">
-		<ul class="example-orbit" data-orbit>
-		  <li>
-		    <img src="http://placehold.it/720x250" />
-		    <div class="orbit-caption"> Caption One. </div>
-		  </li>
-		  <li>
-		    <img src="http://placehold.it/720x250" />
-		    <div class="orbit-caption"> Caption Two. </div>
-		  </li>
-		  <li>
-		    <img src="http://placehold.it/720x250" />
-		    <div class="orbit-caption"> Caption Three. </div>
-		  </li>
-		</ul>
-		
+	    <div class="row">
+	      <div class="small-12 columns masthead-slider-navigation">
+		  <div class="masthead-slider hide-for-small">
+		      <div>
+			  <img src="http://placehold.it/720x250" /> <span class="slick-slider-captions"> Caption One. </span>
+	  
+		      </div>
+		      <div>
+			  <img src="http://placehold.it/720x250" /> <span class="slick-slider-captions"> Caption One. </span>
+	  
+		      </div>
+		      <div>
+			  <img src="http://placehold.it/720x250" /> <span class="slick-slider-captions"> Caption One. </span>
+	  
+		      </div>
+		  </div>
 	      </div>
-	    </div>            
+	    </div>       
 	    <!-- End Masthead -->	    
 	  	    
 	    <div class="row">
-	      <div class="large-12 columns">
+	      <div class="large-12 columns page-main-content">
 		<h1>Office of the Academic Dean and Provost Personnel</h1>
+		<h2>Office of the Academic Dean and Provost Personnel</h2>
+		<h3>Office of the Academic Dean and Provost Personnel</h3>
+		<h4>Office of the Academic Dean and Provost Personnel</h4>
+		<h5>Office of the Academic Dean and Provost Personnel</h5>
+		<h6>Office of the Academic Dean and Provost Personnel</h6>
+
 		<p>Academic Dean and Provost<br />
 		<strong><a href="#">Dr. Andrew T. Phillips</a></strong></p>
 		<p>Executive Assistant<br />
 		<a href="#">Major Danny Rozek, USMC</a></p>
 		<p>Vice Academic Dean<br />
 		<a href="#">Dr. Boyd A. Waite</a></p>
+		<p class="sidebar align-center">Enpower leaders to make courageous ethical decisions.</p>
 		<p>Associate Dean for Academic Affairs<br />
 		<a href="#">Dr. Jennifer K. Waters</a></p>
 		<p>Associate Dean for Finance and Military Affairs<br />
@@ -263,41 +264,27 @@
 	    </div>	    
 	    
 	  <!-- SubNavigation shown in the menu dropdowns here at the bottom of the page for small screens -->
-	  <div class="mobile-sub-navigation show-for-small-only">
-	    <div class="row collapse">
-	      <div class="small-12 columns">		
-
-		  <ul class="subsection-navigation">
-		    <li><label>Academic Dean</label></li>
-		    <li class="active"><a href="#">Academic Dean Main</a></li>		    
-		    <li><a href="#">Accreditation</a></li>		    
-		    <li><a href="#">Assessment</a></li>		    
-		    <li><a href="#">Directors & Chairs</a></li>		    
-		    <li><a href="#">Divisions & Departments</a></li>		    
-		    <li><a href="#">Faculty Resources</a></li>		    
-		    <li><a href="#">Rules & Regulations</a></li>		    
-		    <li><a href="#">Talks</a></li>		    
-		    <li><a href="#">Additional Resources</a></li>
-		  </ul>
-		</div>
+	  <div class="row collapse">
+	    <div class="small-12 columns">
+	      <div class="mobile-sub-navigation" data-interchange="[blank.html, (default)], [subnavigation.html, (small)], [blank.html, (medium)]"> 
 	      </div>
 	    </div>
-	    
-	    <!-- Arrow go to top for small screens-->
-	    <a href="#top" class="show-for-small-only right"><img src="img/arrow.png" alt="go to Top"></a>
+	  </div>
+	  <!-- Arrow go to top for small screens-->
+	  <a href="#top" class="show-for-small-only right"><img src="img/arrow.png" alt="go to Top"></a>
 	  </div>
 	  <!-- End Content -->
 	</div>
   
   </section>
-       
+        <a class="exit-off-canvas"></a>
         <!-- End section role=main for off-canvas -->
       </div>
       <!-- End off canvas inner-wrap-->
     </div>
   <!-- End off canvas wrap-->
   
-  <!-- Footer -->
+<!-- Footer-->
   <footer>
     <div class="row collapse">
       <div class="medium-12 large-10 columns">
@@ -308,41 +295,37 @@
 		    <li>
 		      <h5>About USNA</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Mission</a></li>
-			<li><a href="#">Honor Concept</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li><a href="#">Public Affairs Office</a></li>
-			<li><a href="#">Chapel</a></li>
-			<li><a href="#">Employment Opportunities</a></li>
-			<li><a href="#">Inspector General Hotline</a></li>
-			<li><a href="mailto:webmaster@usna.edu">Contact USNA</a></li>			
-		      </ul>
-		    </li>
-		    <li>
-		      <h5>Student Life</h5>
-		      <ul class="no-bullet">
+			<li><a href="#">USNA Mission</a></li>
+			<li><a href="#">USNA News Center</a></li>
 			<li><a href="#">Commandant</a></li>
-			<li><a href="#">Athletic's Calendar</a></li>
-			<li><a href="#">Navy Sports</a></li>
-			<li><a href="#">Special Events</a></li>
-			<li><a href="#">Life in the Brigade</a></li>
+			<li><a href="#">Public Affairs Office</a></li>
+			<li><a href="#">FAQ</a></li>
 		      </ul>
 		    </li>
 		    <li>
 		      <h5>Academics</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Divisions and Departments</a></li>
+			<li><a href="#">Majors</a></li>
+			<li><a href="#">Divisions & Departments</a></li>
+                        <li><a href="#">Academics Calendar</a></li>
+			<li><a href="#">NAPS</a></li>
 			<li><a href="#">Library</a></li>
-			<li><a href="#">Academic Calendar</a></li>
-			<li><a href="#">Summer Programs</a></li>
-			<li><a href="#">Admissions</a></li>
-			<li><a href="#">Registrar</a></li>
 		      </ul>
 		    </li>
-		    <li>			    
+		    <li>
+		      <h5>Learn More</h5>
 		      <ul class="no-bullet">
-			<h5>Site Maintained by</h5>						
-			<li><a href="#">Academics Webmaster</a></li>			
+			<li><a href="#">Steps for Admission</a></li>
+			<li><a href="#">Student Life</a></li>
+			<li><a href="#">Summer Programs</a></li>
+			<li><a href="#">Chapel</a></li>
+			<li><a href="#">Employment Opportunities</a></li>
+		      </ul>
+		    </li>
+		    <li>
+		      <ul class="no-bullet">
+			<h5>Site Maintained by</h5>
+			<li><a href="#">Webmaster</a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -352,10 +335,11 @@
       </div>
       <div class="large-2 small-12 columns">
 	  <div class="footer-seal small-text-center">
-	    <img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" />
+	     <a href="#"><img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" /></a>
 	    <p>
 	      U.S. Naval Academy<br>
-	      121 Blake Road, Annapolis, MD 21402<br>	    
+	      121 Blake Road, Annapolis, MD 21402<br>
+	      <a href="#">Contact USNA</a>
 	    </p>
 	    <ul class="social-media">
 	      <li><a href="http://www.facebook.com/USNavalAcademy"><img src="img/facebook.png" /></a></li>
@@ -363,22 +347,26 @@
 	      <li><a href="http://www.flickr.com/photos/unitedstatesnavalacademy"><img src="img/flickr.png" /></a></li>
 	      <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
 	    </ul>
+	    <p><a href="#">Social media Index</a></p>
 	  </div>
-      </div>	    
+      </div>
     </div>
   </footer>
   <div class="footer-bottom">
     <div class="row collapse">
-      <div class="small-12 columns">	
+      <div class="small-12 columns">
 	<div class="url-bottom small-text-center">
-	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>		
+	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>
 	</div>
-      </div>      
+      </div>
     </div>
   </div>
-  <!-- End Footer and footer-bottom-->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
+  <!-- End Footer  and footer-bottom-->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script> 
+<script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/slick-carousel.js"></script>
   </body>
 </html>

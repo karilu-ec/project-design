@@ -1,0 +1,123 @@
+/* Left Side navigation bar styles*/
+.sidebar {
+  text-transform: uppercase;
+  line-height: rem-calc(18)!important;
+  .side-nav  li.heading {
+      padding: rem-calc(13)  rem-calc(10) rem-calc(8);
+      color: #fff;
+      background-color:#1a4870;
+      font-weight: normal;
+      text-align: center;
+    }
+  
+  .side-nav.medium-list-up{
+    li {
+
+	a {
+	   padding: rem-calc(11) rem-calc(10);
+	   border-bottom:1px solid #d3d3d3;
+	  }
+	}
+	li li
+	{
+	  margin-bottom:1px;
+	}
+
+	li li a
+	{
+	  padding:rem-calc(10);
+	}
+	.navFly li:first-child a
+	{
+	  border-top:1px solid #FFF;
+	}
+	.navFly li a
+	{
+	  border-bottom:1px solid #FFF;
+	}
+	li.heading {
+	  padding: rem-calc(13) rem-calc(10) rem-calc(8);
+	}
+  }
+  
+  .off-canvas-list {
+
+	li a
+	{
+	  padding: rem-calc(13) rem-calc(10);
+	}
+    li.heading {
+      padding: rem-calc(13)  rem-calc(10) rem-calc(8);
+    }
+    
+    .navFly {
+     li:not(.divider) {
+        padding: 0;
+      }
+    }
+    
+    a:hover {
+      background: #fff;
+    }
+    
+  }
+  
+  .arrow {
+    background: url('../img/bullet.png') no-repeat;
+    height: 9px;
+    width: 6px;
+    float: right;
+    margin-top:6px;
+  }
+  
+  /* Flyout menu for second level navigation*/
+  .navFly {
+    list-style: none;
+    margin-left: 0;
+    background: #f9f9f9;
+    
+    li {
+      &:not(.divider) {
+      text-transform: none;
+      font-variant: small-caps;
+      border-left: 4px solid scale-color($primary-color, $lightness: 10%);
+      }
+      &.heading {
+	border:none;
+      }
+      &.active {
+        border-left: 4px solid scale-color($primary-color, $lightness: 30%);        
+      }
+      &.divider {
+        border-color: #ffffff;
+      }
+      &:hover:not(.heading) {
+        border-left: 4px solid scale-color($primary-color, $lightness: 30%);        
+      }
+      a {
+        padding: rem-calc(10);
+      }
+    }
+
+    .has-dropdown:hover ul {
+	display: block;
+	position:absolute;
+	left:100%;
+	margin-top:-35px;
+	width:100%;
+    }
+  }
+}
+
+/* Off-canvas styles */
+h1.offcanvas-title {  
+  text-align: left;
+  padding-left: rem-calc(10);
+  
+}
+
+
+/* Left content styles */
+.left-nav-content {
+  margin: 20px 0 40px 10px;
+}

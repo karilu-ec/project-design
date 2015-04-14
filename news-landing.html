@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>USNA News :: PAO :: USNA</title>
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/foundation-icons.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
@@ -15,29 +15,53 @@
       <div class="row collapse">
 	    <div class="small-3 large-4 columns">
 	      <div class="logo-container">
-		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up">
-		 
+		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up" />		 
 	      </div>
 	    </div>
 	    <div class="small-9 large-8 columns">	      
 	      <div class="row collapse">
-		<div class="small-12 columns">		
+		<div class="small-12 columns">
+		  <ul class="utility-menu inline-list">
+		    <li class="has-form">
+		    <form action="http://wasp-new.usna.edu/texis/search/" method="get">
+		      <input name="dropXSL" type="HIDDEN" />
+		      <input name="pr" value="External Meta" type="hidden" />
+		      <input name="prox" value="page" type="hidden" />
+		      <input name="rorder" value="500" type="hidden" />
+		      <input name="rprox" value="500" type="hidden" />
+		      <input name="rdfreq" value="500" type="hidden" />
+		      <input name="rwfreq" value="500" type="hidden" />
+		      <input name="rlead" value="500" type="hidden" />
+		      <input name="sufs" value="3" type="hidden" />
+		      <input name="order" value="r" type="hidden" />
+		      <input name="rdepth" value="62" type="hidden" />
+		      <input class="queryAutocomplete" id="siteSearch" maxlength="2033" name="query" type="text" placeholder="Search USNA" />  
+		      <input type="submit" style="position: absolute; left: -9999px"/> 
+		    </form>
+		    </li>
+		  </ul>
 		  <ul class="utility-menu inline-list">
 		    <li><a href="#">Events</a></li>
 		    <li><a href="#">Maps</a></li>
 		    <li><a href="#">Directory</a></li>
-		    <li><a href="#">A-Z Index</a></li>
-		    <li class="has-form">
-		      
-			
-			  <input type="text" placeholder="Search USNA">
-			
-		    </li>
-		  </ul>
+		    <li><a href="#">A-Z Index</a></li>		    
+		  </ul>		  
 		</div>
 	      </div>
-	    </div>
-	    
+	      <div class="row">
+	      <div class="small-12 columns">
+		<ul class="audience-menu inline-list show-for-medium-up">
+		  <li><a href="#">Parents</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Prospective Students</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Faculty/Staff</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Alumni</a></li>
+		</ul>
+		</div>
+	      </div>
+	    </div>	    
       </div>
 
     <!-- Top Main Navigation -->
@@ -53,34 +77,29 @@
         <section class="top-bar-section">
 	  <!-- Left Nav -->
 		<ul class="left">		   
-		  <li class="divider"></li>
 		  <li><a href="#">ABOUT</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ACADEMICS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ADMISSIONS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ATHLETICS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">VISIT</a></li>
-		  <li class="divider"></li>
 		</ul>
         </section>
       </nav>    
     </div>
     <!-- End Top Main Navigation -->
   </header>  
-  <!-- End Header and Top Main Navigation -->
+  <!-- End Header and Top Main Navigation --> 
   
   
   <!-- Breadcrumbs -->
   <div class="row bgwhite">
     <div class="large-12 columns">
-      <ul class="breadcrumbs">
-	<li><a href="#">Home</a></li>
-	<li><a href="#">Public Affairs Office</a></li>
-	<li class="current"><a href="#">USNA News</i></a></li>
-      </ul>
+     <ul class="breadcrumbs">
+      <li><a href="http://www.usna.edu">Home</a></li>
+      <li><a href="../index.php">Chemistry Department</a></li>
+      <li><a href="index.php">Plebe Chemistry</a> </li>
+      <li class="current">Chemical Safety Information</li>
+    </ul>
     </div>
   </div>
   <!-- End Breadcrumbs -->
@@ -88,7 +107,7 @@
   <!-- Main Content Section -->
   
   <!-- Side navigation for small screens in off-canvas -->    
-  <div class="off-canvas-wrap">
+  <div class="off-canvas-wrap" data-offcanvas>
       <div class="inner-wrap">
        <nav class="tab-bar show-for-small">
 	 <section class="left-small">
@@ -113,7 +132,7 @@
        </aside>
        <!-- End Navigation small screens -->      
        
-       <a class="exit-off-canvas"></a>
+
        
        <section class="main-section">
 	
@@ -124,27 +143,17 @@
 	    <div class="hide-for-small">
 	      <div class="sidebar">
 		<nav>
-		  <ul class="side-nav">
+		  <ul class="side-nav medium-list-up">
 		    <li><a href="#">Public Affairs Office</a></li>
-		    <li class="divider"></li>
 		    <li class="active"><a href="#">USNA News</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Community Relations</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Multimedia</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Noteworthy Graduates</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Music/Performing Arts</a></li>
-		    <li class="divider"></li>
 		    <li><a href="#">Phone Directory</a></li>
-			 <li class="divider"></li>
 		    <li><a href="#">Photo Galleries</a></li>
-			 <li class="divider"></li>
 		    <li><a href="#">Press Releases</a></li>
-			 <li class="divider"></li>
 		    <li><a href="#">Visitor Information</a></li>
-			 <li class="divider"></li>
 		    <li><a href="#">USNA News</a></li>
 		  </ul>
 		</nav>
@@ -168,18 +177,22 @@
 	    </div>
 	    
 	    <!-- Masthead Slider -->
-	    <div class="row hide-for-small">
-	      <div class="small-12 columns">
-		<ul class="example-orbit" data-orbit>
-		  <li>
-		    <img src="img/mastheads/news-landing-masthead-001.jpg" />
-		    <div class="orbit-caption">Maryland General Assembly Recognizes Midshipman Community Service.</div>
-		  </li>		
-		  <li>
-		    <img src="img/mastheads/news-landing-masthead-002.jpg" />
-		    <div class="orbit-caption">U.S. Marine Corps Commandant, Medal of Honor Recipient Celebrate Future Marine Officers.</div>
-		  </li>			  
-		</ul>		
+	    <div class="row">
+	      <div class="small-12 columns masthead-slider-navigation">
+		<div class="masthead-slider hide-for-small">
+		  <div>
+		    <a href="http://www.usna.edu/PAO/news_articles/2014-07-22-naval-academy-mids-mentor-middle-school-girls.php">
+		      <img src="img/mastheads/news-landing-masthead-001.jpg" />
+		      <span class="slick-slider-captions">Caption Two is a longer one with lots of words so we can see how the words wrap or overflow or don't do anything at all and keep going where they are not supposed to. Whichever it is that actually happens.</span>
+		    </a>
+		  </div>
+		  <div>
+		    <a href="http://www.usna.edu/PAO/news_articles/2014-07-22-naval-academy-mids-mentor-middle-school-girls.php">
+		      <img src="img/mastheads/news-landing-masthead-002.jpg" />
+		      <span class="slick-slider-captions">U.S. Marine Corps Commandant, Medal of Honor Recipient Celebrate Future Marine Officers.</span>
+		    </a>
+		  </div>		  
+		</div>		
 	      </div>
 	    </div>            
 	    <!-- End Masthead -->
@@ -216,53 +229,45 @@
 			<h2 class="title-over-hr">USNA News</h2> 
 			<hr/>
 			<div class="row">
-				<div class="small-12 columns" class="text-center">
-					<img src="img/mastheads/news-landing-masthead-002.jpg">
-				</div>
-				</div>
-				<div class="row">
-				<div class="columns">
-					
-					<h3>U.S. Naval Academy Midshipmen View Premiere of “300: Rise of an Empire”</h3>
-					<p>
-					<span class="news-date-posted">Posted on: Jan 29, 2014 by Lt. Jessica Crownover</span><br>
-						U.S. Naval Academy Midshipmen received a special treat March 2 when they were invited to view a premiere of the new film “300: Rise of an Empire” at the Bowtie Cinemas in Annapolis, Md. </p><p class="read-more"><a href="">Read More <i class="fi-arrow-right"></i></a></p> 
-				</div>
-				</div>
-				<div class="row">
-				<div class="columns" class="text-center">
-					<img src="img/mastheads/news-landing-masthead-001.jpg">
-				</div>
-				</div>
-				<div class="row">
-				<div class="columns">
-					
-					<h3>NASA Launches Satellite Built By Naval Academy Midshipmen</h3>
-					<p>
-					<span class="news-date-posted">Posted on: Nov 20, 2013 by Jessica Clark</span><br>
-						A satellite constructed by Naval Academy midshipmen was one of 29 satellites on a rocket launched by NASA from Wallops Island, Va., Nov. 19.  </p><p class="read-more"><a href="">Read More <i class="fi-arrow-right"></i></a></p> 
-				</div>
-				</div>
-				<div class="row">
-				<div class="columns" class="text-center">
-					<img src="http://placehold.it/750x250">
-				</div>
-				</div>
-				<div class="row">
-				<div class="columns">
-					
-					<h3>Naval Academy Midshipmen Visit Georgia</h3>
-					<p>
-					<span class="news-date-posted">Posted on: Nov 19, 2013 by Midshipman 2nd Class Katherine Macvarish </span><br>
-					
-					Midshipman 2nd Class Katherine Macvarish is one of six midshipmen studying abroad this semester as part of the Russian Language Study Abroad Program. Here, she describes a nine-day trip the mids took to the country of Georgia.  </p><p class="read-more"><a href="">Read More <i class="fi-arrow-right"></i></a></p> 
-				</div>
-				</div>
-		
+			  <div class="small-12 columns" class="text-center">
+			    <img src="img/mastheads/news-landing-masthead-002.jpg">
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="small-12 columns">					
+			    <h3>U.S. Naval Academy Midshipmen View Premiere of “300: Rise of an Empire”</h3>					
+			      <div><span class="news-date-posted"><span class="fi-torso size-14">&nbsp;</span>Posted on: Jan 29, 2014 by Lt. Jessica Crownover</span></div>
+			      <p>U.S. Naval Academy Midshipmen received a special treat March 2 when they were invited to view a premiere of the new film “300: Rise of an Empire” at the Bowtie Cinemas in Annapolis, Md. </p><p class="read-more"><a href="#"  class="fi-arrow-right">Read More</a></p> 
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="columns" class="text-center">
+			    <img src="img/mastheads/news-landing-masthead-001.jpg">
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="small-12 columns">					
+			    <h3>U.S. Naval Academy Midshipmen View Premiere of “300: Rise of an Empire”</h3>					
+			      <div><span class="news-date-posted"><span class="fi-torso size-14">&nbsp;</span>Posted on: Jan 29, 2014 by Lt. Jessica Crownover</span></div>
+			      <p>U.S. Naval Academy Midshipmen received a special treat March 2 when they were invited to view a premiere of the new film “300: Rise of an Empire” at the Bowtie Cinemas in Annapolis, Md. </p><p class="read-more"><a href="#"  class="fi-arrow-right">Read More</a></p> 
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="columns" class="text-center">
+			    <img src="http://placehold.it/750x250">
+			  </div>
+		      	</div>
+			<div class="row">
+			  <div class="small-12 columns">					
+			    <h3>U.S. Naval Academy Midshipmen View Premiere of “300: Rise of an Empire”</h3>					
+			      <div><span class="news-date-posted"><span class="fi-torso size-14">&nbsp;</span>Posted on: Jan 29, 2014 by Lt. Jessica Crownover</span></div>
+			      <p>U.S. Naval Academy Midshipmen received a special treat March 2 when they were invited to view a premiere of the new film “300: Rise of an Empire” at the Bowtie Cinemas in Annapolis, Md. </p><p class="read-more"><a href="#"  class="fi-arrow-right">Read More</a></p> 
+			  </div>
+			</div>
 				
 			
 			<div class="row">
-				<div class="small-9 small-centered columns">
+				<div class="small-12 small-centered columns">
 					<ul class="pagination"> 
 						<li class="arrow unavailable">
 							<a href="">&laquo;</a>
@@ -310,14 +315,14 @@
 	</div>
   
   </section>
-       
+        <a class="exit-off-canvas"></a>   
         <!-- End section role=main for off-canvas -->
       </div>
       <!-- End off canvas inner-wrap-->
     </div>
   <!-- End off canvas wrap-->
   
-  <!-- Footer -->
+  <!-- Footer-->
   <footer>
     <div class="row collapse">
       <div class="medium-12 large-10 columns">
@@ -328,41 +333,37 @@
 		    <li>
 		      <h5>About USNA</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Mission</a></li>
-			<li><a href="#">Honor Concept</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li><a href="#">Public Affairs Office</a></li>
-			<li><a href="#">Chapel</a></li>
-			<li><a href="#">Employment Opportunities</a></li>
-			<li><a href="#">Inspector General Hotline</a></li>
-			<li><a href="mailto:webmaster@usna.edu">Contact USNA</a></li>			
-		      </ul>
-		    </li>
-		    <li>
-		      <h5>Student Life</h5>
-		      <ul class="no-bullet">
+			<li><a href="#">USNA Mission</a></li>
+			<li><a href="#">USNA News Center</a></li>
 			<li><a href="#">Commandant</a></li>
-			<li><a href="#">Athletic's Calendar</a></li>
-			<li><a href="#">Navy Sports</a></li>
-			<li><a href="#">Special Events</a></li>
-			<li><a href="#">Life in the Brigade</a></li>
+			<li><a href="#">Public Affairs Office</a></li>
+			<li><a href="#">FAQ</a></li>
 		      </ul>
 		    </li>
 		    <li>
 		      <h5>Academics</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Divisions and Departments</a></li>
+			<li><a href="#">Majors</a></li>
+			<li><a href="#">Divisions & Departments</a></li>
+                        <li><a href="#">Academics Calendar</a></li>
+			<li><a href="#">NAPS</a></li>
 			<li><a href="#">Library</a></li>
-			<li><a href="#">Academic Calendar</a></li>
-			<li><a href="#">Summer Programs</a></li>
-			<li><a href="#">Admissions</a></li>
-			<li><a href="#">Registrar</a></li>
 		      </ul>
 		    </li>
-		    <li>			    
+		    <li>
+		      <h5>Learn More</h5>
 		      <ul class="no-bullet">
-			<h5>Site Maintained by</h5>						
-			<li><a href="#">PAO Webmaster</a></li>			
+			<li><a href="#">Steps for Admission</a></li>
+			<li><a href="#">Student Life</a></li>
+			<li><a href="#">Summer Programs</a></li>
+			<li><a href="#">Chapel</a></li>
+			<li><a href="#">Employment Opportunities</a></li>
+		      </ul>
+		    </li>
+		    <li>
+		      <ul class="no-bullet">
+			<h5>Site Maintained by</h5>
+			<li><a href="#">Webmaster</a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -372,10 +373,11 @@
       </div>
       <div class="large-2 small-12 columns">
 	  <div class="footer-seal small-text-center">
-	    <img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" />
+	     <a href="#"><img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" /></a>
 	    <p>
 	      U.S. Naval Academy<br>
-	      121 Blake Road, Annapolis, MD 21402<br>	    
+	      121 Blake Road, Annapolis, MD 21402<br>
+	      <a href="#">Contact USNA</a>
 	    </p>
 	    <ul class="social-media">
 	      <li><a href="http://www.facebook.com/USNavalAcademy"><img src="img/facebook.png" /></a></li>
@@ -383,23 +385,26 @@
 	      <li><a href="http://www.flickr.com/photos/unitedstatesnavalacademy"><img src="img/flickr.png" /></a></li>
 	      <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
 	    </ul>
+	    <p><a href="#">Social media Index</a></p>
 	  </div>
-      </div>	    
+      </div>
     </div>
   </footer>
   <div class="footer-bottom">
     <div class="row collapse">
-      <div class="small-12 columns">	
+      <div class="small-12 columns">
 	<div class="url-bottom small-text-center">
-	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>		
+	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>
 	</div>
-      </div>      
+      </div>
     </div>
   </div>
-  <!-- End Footer and footer-bottom-->
-  
+  <!-- End Footer  and footer-bottom-->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/slick-carousel.js"></script>
   </body>
 </html>

@@ -1,23 +1,31 @@
-@import "settings";
+@import "helpers/settings";
 @import "foundation";
+@import "components/foundation-icons";
 
 // import our mixins
 @import "mixins/social-media-box";
-
+@import "mixins/fi-arrow-right";
+@import "mixins/boxes-callouts";
 
 // importanting our partials
-@import "components/header";
-@import "components/footer";
-@import "components/nav-side";
-@import "components/nav-second-level-mobile";
-@import "components/callouts";
-@import "components/faculty-directory";
-@import "components/events";
-@import "components/news";
-@import "components/featured-panel";
-@import "components/divisions";
+@import "components/usna";
+@import "layout/offcanvas";
+@import "layout/header";
+@import "layout/breadcrumbs";
+@import "layout/site-name";
+@import "layout/nav-second-level-mobile";
+@import "layout/nav-side";
+@import "layout/footer";
+@import "components/slick-slider";
+@import "components/accordion";
 @import "components/audience-based-price-tables";
-@import "components/alumni";
-@import "components/admissions";
-@import "components/athletics";
-@import "usna";
+@import "components/buttons";
+@import "components/callouts";
+@import "components/events";
+@import "components/featured-panel";
+@import "components/news";
+@import "components/tabs";
+@import "components/old";
+@import "pages/divisions";
+@import "pages/faculty";
+

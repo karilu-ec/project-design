@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
+    <title>Home Page</title>    
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/foundation-icons.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="css/home.css" />
+	<link rel="shortcut icon" href="favicon-Nb.ico" type="image/x-icon" />
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
@@ -15,42 +17,53 @@
       <div class="row collapse">
 	    <div class="small-3 large-4 columns">
 	      <div class="logo-container">
-		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up">
-		 
+		  <img src="img/logo.png" alt="The U.S. Naval Academy" class="show-for-medium-up" />		 
 	      </div>
 	    </div>
 	    <div class="small-9 large-8 columns">	      
 	      <div class="row collapse">
-		<div class="small-12 columns">		
+		<div class="small-12 columns">
+		  <ul class="utility-menu inline-list">
+		    <li class="has-form">
+		    <form action="http://wasp-new.usna.edu/texis/search/" method="get">
+		      <input name="dropXSL" type="HIDDEN" />
+		      <input name="pr" value="External Meta" type="hidden" />
+		      <input name="prox" value="page" type="hidden" />
+		      <input name="rorder" value="500" type="hidden" />
+		      <input name="rprox" value="500" type="hidden" />
+		      <input name="rdfreq" value="500" type="hidden" />
+		      <input name="rwfreq" value="500" type="hidden" />
+		      <input name="rlead" value="500" type="hidden" />
+		      <input name="sufs" value="3" type="hidden" />
+		      <input name="order" value="r" type="hidden" />
+		      <input name="rdepth" value="62" type="hidden" />
+		      <input class="queryAutocomplete" id="siteSearch" maxlength="2033" name="query" type="text" placeholder="Search USNA" />  
+		      <input type="submit" style="position: absolute; left: -9999px"/> 
+		    </form>
+		    </li>
+		  </ul>
 		  <ul class="utility-menu inline-list">
 		    <li><a href="#">Events</a></li>
 		    <li><a href="#">Maps</a></li>
 		    <li><a href="#">Directory</a></li>
-		    <li><a href="#">A-Z Index</a></li>
-		    <li class="has-form">
-		      
-			
-			  <input type="text" placeholder="Search USNA">
-			
-		    </li>
-		  </ul>
+		    <li><a href="#">A-Z Index</a></li>		    
+		  </ul>		  
 		</div>
 	      </div>
 	      <div class="row">
-		<div class="small-12 columns">
-		  <ul class="audience-menu inline-list show-for-medium-up">
-		    <li><a href="#">Parents</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Prospective Students</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Faculty/Staff</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Alumni</a></li>
-		  </ul>
-		  </div>
+	      <div class="small-12 columns">
+		<ul class="audience-menu inline-list show-for-medium-up">
+		  <li><a href="#">Parents</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Prospective Students</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Faculty/Staff</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Alumni</a></li>
+		</ul>
+		</div>
 	      </div>
-	    </div>
-	    
+	    </div>	    
       </div>
 
     <!-- Top Main Navigation -->
@@ -65,256 +78,193 @@
         </ul>
         <section class="top-bar-section">
 	  <!-- Left Nav -->
-		<ul class="left">		   
-		  <li class="divider"></li>
+		<ul class="left">
 		  <li><a href="#">ABOUT</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ACADEMICS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ADMISSIONS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">ATHLETICS</a></li>
-		  <li class="divider"></li>
 		  <li><a href="#">VISIT</a></li>
-		  <li class="divider"></li>
 		</ul>
         </section>
       </nav>    
     </div>
     <!-- End Top Main Navigation -->
   </header>  
-  <!-- End Header and Top Main Navigation -->
+  <!-- End Header and Top Main Navigation --> 
   
   
   <!-- Main Content Section -->
   
   <!-- Masthead Slider -->
   <div class="row collapse bgwhite">
-    <div class="small-12 columns">
-      <ul class="example-orbit" data-orbit data-options="bullets: true;">
-	<li>
-	  <img src="img/1-Slider.png" alt="slide 1" />
-	  <div class="orbit-caption"> Caption One. </div>
-	</li>
-	<li>
-	  <img src="img/2-Slider.png" alt="slide 2" />
-	  <div class="orbit-caption"> Caption Two. </div>
-	</li>
-	<li>
-	  <img src="img/3-Slider.png" alt="slide 3" />
-	  <div class="orbit-caption"> Caption Three. </div>
-	</li>
-      </ul>
+    <div class="small-12 columns masthead-slider-full-width">
+      <div class="masthead-slider">
+	<div>
+	  <a href="http://www.usna.edu/PlebeParentsWeekend/">
+	    <img src="img/1-Slider.png" alt="slide 1" />
+	    <span class="slick-slider-captions">Plebe Parents' Weekend, will run August 7th-10th. For schedules and information, please see the Plebe Parents' Weekend website.</span>
+	  </a>
+    </div>
+	<div>
+	  <a href="http://www.usna.edu/PlebeParentsWeekend/">
+	    <img src="img/2-Slider.png" alt="slide 2" />
+	    <span class="slick-slider-captions">Plebe Parents' Weekend, will run August 7th-10th. For schedules and information, please see the Plebe Parents' Weekend website</span>
+	  </a>
+	</div>
+	<div>
+	  <a href="http://www.usna.edu/PlebeParentsWeekend/">
+	    <img src="img/3-Slider.png" alt="slide 3" />
+	    <span class="slick-slider-captions">As part of Plebe Summer, the Naval Academy's newest plebes learn to sail in the Severn River. View the gallery.</span>
+	  </a>
+	</div>
+	
+      </div>
     </div>
   </div>
   <!-- End Masthead -->
   
   <div class="row bgwhite">
+    <div class="page-main-content large-8 medium-7 columns">
     
-    <div class="large-8 columns">
-      <!-- News section -->
-      <div class="news-listing">
-      <h1>News</h1>
-      <div class="news-item">
-	<div class="row collapse">
-	  <div class="small-5 medium-3 columns">
-	    <a href="#"><img src="http://placehold.it/200x150" /></a>
-	  </div>
-	  <div class="small-7 medium-9 columns">
-	    <dl>
-	      <dt><a href="#">Mids Rack Up Medals at Cyber Stakes</a></dt>
-	      <dd class="hide-for-small-only">A group of nine midshipmen recently took part in the inaugural DARPA-sponsored Cyber Stakes at Carnegie Mellon University, testing their hacking skills against their counterparts from USMA and USAFA, and bringing home a haul of medals. </dd>
-	    </dl>	  
-	  </div>
-	</div>
+       
+
+ <!-- News Section -->    
+<div class="news-listing">
+<h1>Top Stories</h1>
+<div class="news-item">
+                <div class="row collapse">
+        <div class="large-5 medium-12 columns">
+                    <a href="http://www.usna.edu/NewsCenter/2014/12/the-history-behind-the-ball-run.php"><img alt="Image for The History Behind the Ball Run" src="http://www.usna.edu/NewsCenter/2014/images/2012-2.jpg"></a>
+                </div>
+        <div class="large-7 medium-12 columns">
+            <dl>
+                <dt><a href="http://www.usna.edu/NewsCenter/2014/12/the-history-behind-the-ball-run.php">The History Behind the Ball Run</a></dt>
+                <dd class="hide-for-small-only">Each year, the midshipmen of 13th Company run the Army-Navy Game ball from T-Court to the stadium in time for the game. MIDN 1/C Eliud Martinez, a member of 13th Company, writes about how this... <div class="read-more"><a class="fi-arrow-right" href="http://www.usna.edu/NewsCenter/2014/12/the-history-behind-the-ball-run.php">Read more</a></div></dd>
+            </dl>        
+        </div>
+    </div>
+</div>
+<div class="news-item">
+                <div class="row collapse">
+        <div class="large-5 medium-12 columns">
+                    <a href="http://www.usna.edu/NewsCenter/2014/12/usna-represented-on-orion-launch.php"><img alt="Image for USNA Represented On Orion Launch" src="http://www.usna.edu/NewsCenter/2014/images/orion-3.jpg"></a>
+                </div>
+        <div class="large-7 medium-12 columns">
+            <dl>
+                <dt><a href="http://www.usna.edu/NewsCenter/2014/12/usna-represented-on-orion-launch.php">USNA Represented On Orion Launch</a></dt>
+                <dd class="hide-for-small-only">On board this morning’s successful launch of Orion were several items from the Naval Academy donated by Distinguished Professor and Robert A. Heinlein Chair Ken Reightler.
+
+NASA photo by... <div class="read-more"><a class="fi-arrow-right" href="http://www.usna.edu/NewsCenter/2014/12/usna-represented-on-orion-launch.php">Read more</a></div></dd>
+            </dl>        
+        </div>
+    </div>
+</div>
+<div class="news-item">
+                <div class="row collapse">
+        <div class="large-5 medium-12 columns">
+                    <a href="http://www.usna.edu/NewsCenter/2014/12/usna-spreads-holiday-cheer-in-annapolis.php"><img alt="Image for USNA Spreads Holiday Cheer in Annapolis" src="http://www.usna.edu/NewsCenter/2014/images/christmas.jpg"></a>
+                </div>
+        <div class="large-7 medium-12 columns">
+            <dl>
+                <dt><a href="http://www.usna.edu/NewsCenter/2014/12/usna-spreads-holiday-cheer-in-annapolis.php">USNA Spreads Holiday Cheer in Annapolis</a></dt>
+                <dd class="hide-for-small-only">Midshipmen from the U.S. Naval Academy’s 6th Company and representatives from the Annapolis chapter of the Salvation Army gathered in Bancroft Hall Dec. 2 for the 24th annual Giving Tree... <div class="read-more"><a class="fi-arrow-right" href="http://www.usna.edu/NewsCenter/2014/12/usna-spreads-holiday-cheer-in-annapolis.php">Read more</a></div></dd>
+            </dl>        
+        </div>
+    </div>
+</div>
+<div class="news-item">
+                <div class="row collapse">
+        <div class="large-5 medium-12 columns">
+                    <a href="http://www.usna.edu/NewsCenter/2014/11/service-selection-wrap-up.php"><img alt="Image for Service Selection Wrap-up" src="http://www.usna.edu/NewsCenter/2014/images/141120-N-TO519-0121.jpg"></a>
+                </div>
+        <div class="large-7 medium-12 columns">
+            <dl>
+                <dt><a href="http://www.usna.edu/NewsCenter/2014/11/service-selection-wrap-up.php">Service Selection Wrap-up</a></dt>
+                <dd class="hide-for-small-only">At noon today, the midshipmen of the Class of 2015 found out their service assignments - which communities they will serve in after graduation in May. It's an important milestone for the mids that... <div class="read-more"><a class="fi-arrow-right" href="http://www.usna.edu/NewsCenter/2014/11/service-selection-wrap-up.php">Read more</a></div></dd>
+            </dl>        
+        </div>
+    </div>
+</div>
+</div>
+  <div class="row home-featured-events">
+    <div class="small-12 columns feat-academy-events">
+      <div class="an-event">
+	<a href="http://www.usna.edu/LeadershipConference/"><img alt="USNA Leadership Conference" src="http://www.usna.edu/_files/images/featured-ads/usnalc250x220.jpg" /></a>
       </div>
-      <div class="news-item">
-	<div class="row collapse">
-	  <div class="small-5 medium-3 columns">
-	    <a href="#"><img src="http://placehold.it/200x150" /></a>
-	  </div>
-	  <div class="small-7 medium-9 columns">
-	    <dl>
-	     <dt><a href="#">Midshipmen’s “Gender Matters” Performances Inspire Discussion</a></dt>
-	     <dd class="hide-for-small-only">s six midshipmen stood on stage the crowd grew silent. Simply dressed in winter working blues, PT gear or Blue and Gold jogging suits, they looked as though they were taking a stroll to do homework or meet a friend.</dd>
-	    </dl>
-	  </div>
-	</div>
+      <div class="an-event">
+	<a href="http://www.usna.edu/Admissions/Programs/NASS/"><img alt="Summer Seminar Application opens on January 15" src="http://www.usna.edu/_files/images/featured-ads/summerseminar250x220.jpg" /></a>
       </div>
-      <div class="news-item">
-	<div class="row collapse">
-	  <div class="small-5 medium-3 columns">
-	    <a href="#"><img src="http://placehold.it/200x150" /></a>
-	  </div>
-	  <div class="small-7 medium-9 columns">
-	    <dl>
-	      <dt><a href="#">Stanley Cup Comes to Naval Academy</a></dt>
-	      <dd class="hide-for-small-only">The Naval Academy hockey coach Mike Fox surprised the men’s hockey team when he teamed up with the National Hockey League and others to bring the Stanley Cup to the Naval Academy arena April 22.</dd>
-	    </dl>
-	  </div>
-	</div>
+      <div class="an-event">
+	<a href="http://www.usna.edu/Admissions/Programs/STEM"><img alt="Summer STEM applications opens on January 5" src="http://www.usna.edu/_files/images/featured-ads/stem250x220.jpg" /></a>
       </div>
-      <p class="read-more"><a href="news-landing.html">View all News <i class="fi-arrow-right"></i></a></p>
+      <div class="an-event">
+	<a href="http://www.usna.edu/Admissions/Programs/STEM"><img alt="Summer STEM applications opens on January 5" src="http://www.usna.edu/_files/images/featured-ads/stem250x220.jpg" /></a>
       </div>
-      <!-- End News -->
-      
-      <!-- Ad blocks -->
-      <div class="home-featured-ads">
-        <div class="row">	
-	  <div class="small-4 columns">
-	    <a href="#"><img src="http://placehold.it/300x250" /></a>
-	  </div>
-	  <div class="small-4 columns">
-	    <a href="#"><img src="http://placehold.it/300x250" /></a>
-	  </div>
-	  <div class="small-4 columns">
-	    <a href="#"><img src="http://placehold.it/300x250" /></a>
-	  </div>
-	</div>
-      </div>
-      <!-- End Ad blocks -->
+    </div>
+  </div>
+
+   </div>
+
+   <div class="large-4 medium-5 columns">
+<!-- Start Announcements -->
+<h1 style="display: none;">Announcements<a href="http://www.usna.edu/rss.php?dept=PAO" class="plain feedlink"></a></h1>
+	<div id="news" class="announcements" style="display: none;">
+<p>There are no announcements at this time.</p>
+</div>
+<!-- End Announcements -->
+
+<div>
+  <h2>Events</h2>
+<div id="cal-wrapper"><div class="fc-mini" data-limit="4" data-listype="Listing" data-type="events"><div data-timestamp="1420849800000" data-guid="debate-on-future-of-aircraft-carriers.php" class="small-12 columns">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/01/debate-on-future-of-aircraft-carriers.php"><div class="event-date-month"><span>Jan</span></div>        <div class="event-date-day">09</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/01/debate-on-future-of-aircraft-carriers.php">Debate on Future of Aircraft Carriers</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1420866000000" data-guid="navy-at-army-basketball-game.php" class="small-12 columns">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/01/navy-at-army-basketball-game.php"><div class="event-date-month"><span>Jan</span></div>        <div class="event-date-day">10</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/01/navy-at-army-basketball-game.php">Navy Basketball @ Army</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1421427600000" data-guid="mlk-day-concert-tour.php" class="small-12 columns">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/01/mlk-day-concert-tour.php"><div class="event-date-month"><span>Jan</span></div>        <div class="event-date-day">16</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/01/mlk-day-concert-tour.php">MLK Day Concert Tour</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1421456400000" data-guid="crowe-warken-debate-tournament.php" class="small-12 columns">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/01/crowe-warken-debate-tournament.php"><div class="event-date-month"><span>Jan</span></div>        <div class="event-date-day">16</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/01/crowe-warken-debate-tournament.php">Crowe-Warken Debate Tournament</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1422059400000" data-guid="midshipmen-classical-instrumental-recital.php" class="small-12 columns" style="display: none;">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/01/midshipmen-classical-instrumental-recital.php"><div class="event-date-month"><span>Jan</span></div>        <div class="event-date-day">23</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/01/midshipmen-classical-instrumental-recital.php">Midshipmen Classical Instrumental Recital</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1422216000000" data-guid="2015-usna-leadership-conference.php" class="small-12 columns" style="display: none;">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/01/2015-usna-leadership-conference.php"><div class="event-date-month"><span>Jan</span></div>        <div class="event-date-day">25</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/01/2015-usna-leadership-conference.php">2015 USNA Leadership Conference</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1422658800000" data-guid="sponsor-appreciation-dinner.php" class="small-12 columns" style="display: none;">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/01/sponsor-appreciation-dinner.php"><div class="event-date-month"><span>Jan</span></div>        <div class="event-date-day">30</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/01/sponsor-appreciation-dinner.php">Sponsor Appreciation Dinner</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1422723600000" data-guid="gasparilla-festival-parade.php" class="small-12 columns" style="display: none;">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/01/gasparilla-festival-parade.php"><div class="event-date-month"><span>Jan</span></div>        <div class="event-date-day">31</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/01/gasparilla-festival-parade.php">Gasparilla Festival Parade</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1422820800000" data-guid="black-history-month-concert.php" class="small-12 columns" style="display: none;">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/02/black-history-month-concert.php"><div class="event-date-month"><span>Feb</span></div>        <div class="event-date-day">01</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/02/black-history-month-concert.php">Black History Month Concert</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1424737800000" data-guid="tango-buenos-aires.php" class="small-12 columns" style="display: none;">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/02/tango-buenos-aires.php"><div class="event-date-month"><span>Feb</span></div>        <div class="event-date-day">23</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/02/tango-buenos-aires.php">Tango Buenos Aires</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1425085200000" data-guid="usna-winter-musical-pirates-of-penzance.php" class="small-12 columns" style="display: none;">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/02/usna-winter-musical-pirates-of-penzance.php"><div class="event-date-month"><span>Feb</span></div>        <div class="event-date-day">27</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/02/usna-winter-musical-pirates-of-penzance.php">USNA Winter Musical - Pirates of Penzance!</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1425315600000" data-guid="patriot-league-basketball-tournament.php" class="small-12 columns" style="display: none;">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/03/patriot-league-basketball-tournament.php"><div class="event-date-month"><span>Mar</span></div>        <div class="event-date-day">02</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/03/patriot-league-basketball-tournament.php">Patriot League Basketball Tournament</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1426219200000" data-guid="spring-concert-tour-gospel-choir.php" class="small-12 columns" style="display: none;">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/03/spring-concert-tour-gospel-choir.php"><div class="event-date-month"><span>Mar</span></div>        <div class="event-date-day">13</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/03/spring-concert-tour-gospel-choir.php">Spring Concert Tour</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1426219200000" data-guid="spring-concert-tour-womens-glee.php" class="small-12 columns" style="display: none;">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/03/spring-concert-tour-womens-glee.php"><div class="event-date-month"><span>Mar</span></div>        <div class="event-date-day">13</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/03/spring-concert-tour-womens-glee.php">Spring Concert Tour</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div><div data-timestamp="1426219200000" data-guid="spring-concert-tour.php" class="small-12 columns" style="display: none;">  <div class="event-column">   <ul class="event-list row plain">     <li class="column small-2"><div class="events"><a href="http://www.usna.edu/PAO/events/2015/03/spring-concert-tour.php"><div class="event-date-month"><span>Mar</span></div>        <div class="event-date-day">13</div></a></div>     </li>     <li class="column small-10">      <div class="description">        <h5 class="title"><a href="http://www.usna.edu/PAO/events/2015/03/spring-concert-tour.php">Spring Concert Tour</a></h5>        <p>&nbsp;</p>      </div>     </li>   </ul>  </div></div></div></div>
+<p class="read-more"><a class="fi-arrow-right" href="http://www.usna.edu/PAO/calendars.php">More Events</a></p>
+</div>
+    <div class="featured-article-home">
+      <h2>Featured Staff</h2>
+      <img alt="Ms. Anna Ward" class="left" src="http://www.usna.edu/_files/images/featured-people/anna_ward.jpg">
+      <h4><a href="https://www.youtube.com/watch?v=rwd2mzEpxvE">Ms. Anna Ward</a>      </h4>
+      <p>Ms. Anna Ward, secretary to the Commandant, is retiring after 25 years of service to the U.S. Naval Academy. In this episode of "Faces of the U.S. Naval Academy," she talks about her experiences working here, memorable moments, and what she will miss most.</p>
+      <p class="read-more"><a class="fi-arrow-right" href="http://www.usna.edu/NewsCenter/people.php">Read more Featured</a></p>
     </div>
 
-    
-    <!-- Events and social media box -->    
-    <div class="large-4 columns">
       
-      <!-- Events section -->      
-      <h1>Events</h1>
-      <div class="row">
-	<div class="small-12 columns event-column">
-	  <ul class="event-list small-block-grid-2">
-		<li>
-		  <div class="events">
-			<a href="#">
-			  <div class="event-date-month">
-				<span>FEB</span>
-			  </div>
-			  <div class="event-date-day">12</div>
-			</a>
-		  </div>
-		</li>
-		<li>
-		  <div class="description">
-			<h5 class="title"><a href="#">Title Event 1</a></h5>
-			<p>Lorem ipsum dolor  amet, consectetur elit.</p>
-		  </div>
-		</li>
-	  </ul>
-	  <hr />
-	</div>
-      </div>
-      <div class="row">
-	<div class="small-12 columns event-column">
-	  <ul class="event-list small-block-grid-2">
-		<li>
-		  <div class="events">
-			<a href="#">
-			  <div class="event-date-month">
-				<span>FEB</span>
-			  </div>
-			  <div class="event-date-day">11</div>
-			</a>
-		  </div>
-		</li>
-		<li>
-		  <div class="description">
-			<h5 class="title"><a href="#">Title Event 2</a></h5>
-			<p>Lorem ipsum dolor, adipisicing elit.</p>
-		  </div>
-		</li>
-	  </ul>
-	  <hr />
-	</div>
-      </div>
-      <div class="row">
-	<div class="small-12 columns">
-	  <div class="event-column">
-	    <ul class="event-list small-block-grid-2">
-		<li>
-		  <div class="events">
-			<a href="#">
-			  <div class="event-date-month">
-				<span>FEB</span>
-			  </div>
-			  <div class="event-date-day">11</div>
-			</a>
-		  </div>
-		</li>
-		<li>
-		  <div class="description">
-			<h5 class="title"><a href="#">Title Event 3</a></h5>
-			<p>Lorem ipsum dolor sit, tetur adipisicing.</p>
-		  </div>
-		</li>
-	    </ul>
-	   
-	  </div>
-	</div>
-      </div>
-      <div class="row">
-	  <div class="small-12 columns">
-	      <p class="read-more"><a href="#">View all Events <i class="fi-arrow-right"></i></a></p>
-	  </div>
-	</div>
-      <!--  End Events section -->
-      
-      <!--  Featured article Home -->
-      <div class="row">	
-	<div class="small-12 columns">
-	  <div class="featured-article-home">
-	    <h2>Friday Featured Firstie</h2>
-    
-	    <img src="img/fridayFirstie2.jpg" class="left circular-image" />
-	     <h4><a href="#">MIDN CDR Julie Stabile</a></h4>
-	     <p> Our Friday's Featured Firstie is Julie Stabile. she is an Aeronautical Engineering AND Honors History Major! Commissioning as a Submariner, we know Julie is off to do some even more AMAZING things! 
-	     <p class="read-more"><a href="#">Read more Friday Firsties <i class="fi-arrow-right"></i></a></p>
-	  </div>
-	</div>
-      </div>
-      <!-- End Featured article Home -->
-      
-      <!-- Social media box -->
-      <div class="row">	
-	<div class="small-12 columns">
-	  <div class="social-media-box">		
-	    <ul class="social-feeds-list" data-orbit data-options="bullets: true; timer_speed: 30000">
-	      <li>
-		<div class="feed-container">
-		  <div class="title">
-		    <h4><img src="img/facebook-color.png" />USNA Facebook</h4>
-		    <span class="timestamp">2 hours ago</span>
-		  </div>		      
-		  <p>Commandant of the Marine Corps Gen. James F. Amos and Medal of Honor recipient Sgt. Dakota Meyer attended the dinner at USNA earlier
-		   this week honoring the midshipmen of the Class of 2014. here: <a href="http://www.navy.mil/submit/display.asp?story_id=79024">http://www.navy.mil/submit/display.asp?story_id=79024</a>
-		  </p>		      
-		</div>
-	      </li>
-	      <li>
-		<div class="feed-container">
-		  <div class="title">
-		    <h4><img src="img/twitter-color.png" />USNA Twitter</h4>
-		    <span class="timestamp">19 hours ago</span>
-		  </div>
-		  <p>Historian Jan Herman will speak at the USNA Museum tomorrow at 12:30 p.m. Part of the Shifley Lecture series. Free and open to the public.</a>
-		  </p>
-		</div>
-	      </li>
-	    </ul>
-	  </div>
-	</div>
-      </div>    
-      <!-- End Social media box -->   
-    </div>    
-    <!-- End the Event and social media box-->
-    
+<div class="social-media-box" id="usna-social-media-box">
+<div class="feed-container">
+<div class="title"><h4><img src="http://www.usna.edu/CMS/_standard3.0/_files/img/facebook-color.png" alt="FB logo" />USNavalAcademy</h4><span class="timestamp">1 hour ago</span></div>
+ <p> We have some crazy talented mids around here. They've put together an awesome video highlighting what's been going on within the brigade lately. Leadership Conference, Ship Selection, the Super Bowl, ... <a href="http://youtu.be/AMIXMSH8PoU"><img class="FBphoto" src="https://fbexternal-a.akamaihd.net/safe_image.php?d=AQB1hP_h14B_JArH&w=130&h=130&url=http%3A%2F%2Fi.ytimg.com%2Fvi%2FAMIXMSH8PoU%2Fmaxresdefault.jpg" alt="FB image" /></a></p>
+</div>
+<div class="feed-container">
+<div class="title"><h4><img src="http://www.usna.edu/CMS/_standard3.0/_files/img/facebook-color.png" alt="FB logo" />USNavalAcademy</h4><span class="timestamp">17 hours ago</span></div>
+ <p> Janie Mines, the first black female graduate of the U.S. Naval Academy, was the guest of honor at USNA's luncheon in King Hall earlier this week celebrating Black History Month. http://usnatrident.blo... <a href="http://usnatrident.blogspot.com/2015/02/usna-welcomes-back-first-black-female.html"><img class="FBphoto" src="https://fbexternal-a.akamaihd.net/safe_image.php?d=AQAYJsD-s3kzJ5W2&w=158&h=158&url=http%3A%2F%2F1.bp.blogspot.com%2F-TNtpkaNbtR4%2FVNPhwbq3IDI%2FAAAAAAAAArA%2FXZu2bxa0iAI%2Fs1600%2F150202-N-SQ432-034.jpg" alt="FB image" /></a></p>
+</div>
+<div class="feed-container">
+<div class="title"><h4><img src="http://www.usna.edu/CMS/_standard3.0/_files/img/facebook-color.png" alt="FB logo" />USNavalAcademy</h4><span class="timestamp">19 hours ago</span></div>
+ <p> The Midshipman Action Group <a href="https://www.facebook.com/MidshipmanActionGroup/posts/1539436532995066"><img class="FBphoto" src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/p100x100/10984086_1539435692995150_8382696979421041641_n.jpg?oh=08c1f47674a584607ebcf8839e864bdd&oe=5552DECB&__gda__=1435943520_9973dc0c9d76e9684c9b4eb108ac017a" alt="FB image" /></a></p>
+</div>
+<div class="feed-container">
+<div class="title"><h4><img src="http://www.usna.edu/CMS/_standard3.0/_files/img/facebook-color.png" alt="FB logo" />USNavalAcademy</h4><span class="timestamp">22 hours ago</span></div>
+ <p> USNA partners with a local business in a program designed to encourage midshipmen to drink alcohol responsibly and look out for each other. http://usnatrident.blogspot.com/2015/02/usna-organizes-make-... <a href="http://usnatrident.blogspot.com/2015/02/usna-organizes-make-it-back-home-night.html"><img class="FBphoto" src="https://fbexternal-a.akamaihd.net/safe_image.php?d=AQANITVFuxRLh5ac&w=158&h=158&url=http%3A%2F%2F2.bp.blogspot.com%2F-t_dzIjjGHXQ%2FVNIksl-k9QI%2FAAAAAAAAAqw%2FAoF1IyVPvxc%2Fs1600%2Fgalway_bay.jpg" alt="FB image" /></a></p>
+</div>
+<div class="feed-container">
+<div class="title"><h4><img src="http://www.usna.edu/CMS/_standard3.0/_files/img/facebook-color.png" alt="FB logo" />USNavalAcademy</h4><span class="timestamp">1 day ago</span></div>
+ <p> USNA Superintendent VADM Ted Carter recently spoke to the Naval Attaches Association at the Fort Myer Officers Club in Fort Myer, Va. The vision of the association is to enhance mutual understanding o... <a href="https://www.facebook.com/USNavalAcademy/photos/pcb.10152640723068091/10152640722133091/?type=1&relevant_count=2"><img class="FBphoto" src="https://scontent-a.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/p75x225/10959417_10152640722133091_1601335882831440890_n.jpg?oh=dfcac7a1c49776f4a8c4d1ffe80ca687&oe=556BD8D0" alt="Fb image post" /></a></p>
+</div>
+<div class="feed-container">
+<div class="title"><h4><img src="http://www.usna.edu/CMS/_standard3.0/_files/img/facebook-color.png" alt="FB logo" />USNavalAcademy</h4><span class="timestamp">1 day ago</span></div>
+ <p> Be in attendance THIS Saturday as the Army-Navy Basketball Doubleheader returns to Annapolis! Help Navy Basketball set an ALL TIME Alumni Hall attendance record! Limited tickets remain. Call 1-800-US4... </p>
+</div>
+
+
+</div> 
   </div>
-  <!-- End Main content -->
+  <!-- End Side boxes -->
+ </div>
+ 
+<!-- End Main content -->
   
   <!-- Footer: Home Page contains Navy mandated logos-->
   <footer>
     <div class="row collapse">
-      <div class="medium-12 large-10 columns">
+      <div class="medium-12 large-9 columns">
 	  <div class="footer-links">
 	    <div class="row">
 	      <div class="large-12 columns">
@@ -322,89 +272,108 @@
 		    <li>
 		      <h5>About USNA</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Mission</a></li>
-			<li><a href="#">Honor Concept</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li><a href="#">Public Affairs Office</a></li>
-			<li><a href="#">Chapel</a></li>
-			<li><a href="#">Employment Opportunities</a></li>
-			<li><a href="#">Inspector General Hotline</a></li>
-			<li><a href="mailto:webmaster@usna.edu">Contact USNA</a></li>			
-		      </ul>
-		    </li>
-		    <li>
-		      <h5>Student Life</h5>
-		      <ul class="no-bullet">
+			<li><a href="#">USNA Mission</a></li>
+			<li><a href="#">USNA News Center</a></li>
 			<li><a href="#">Commandant</a></li>
-			<li><a href="#">Athletic's Calendar</a></li>
-			<li><a href="#">Navy Sports</a></li>
-			<li><a href="#">Special Events</a></li>
-			<li><a href="#">Life in the Brigade</a></li>
+			<li><a href="#">Public Affairs Office</a></li>
+			<li><a href="#">FAQ</a></li>
 		      </ul>
 		    </li>
 		    <li>
 		      <h5>Academics</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Divisions and Departments</a></li>
+			<li><a href="#">Majors</a></li>
+			<li><a href="#">Divisions & Departments</a></li>
+			<li><a href="#">NAPS</a></li>
 			<li><a href="#">Library</a></li>
-			<li><a href="#">Academic Calendar</a></li>
-			<li><a href="#">Summer Programs</a></li>
-			<li><a href="#">Admissions</a></li>
-			<li><a href="#">Registrar</a></li>
 		      </ul>
 		    </li>
-		    <li>			    
+		    <li>
+		      <h5>Learn More</h5>
 		      <ul class="no-bullet">
-			<h5>Admin</h5>			
-			<li><a href="#">USNA FOIA Program</a></li>			
+			<li><a href="#">Steps for Admission</a></li>
+			<li><a href="#">Student Life</a></li>
+			<li><a href="#">Summer Programs</a></li>
+			<li><a href="#">Chapel</a></li>
+			<li><a href="#">Employment Opportunities</a></li>
+		      </ul>
+		    </li>
+		    <li>
+		      <ul class="no-bullet">
+			<h5>Admin</h5>
+			<li><a href="#">Inspector General</a></li>
+			<li><a href="#">USNA FOIA Program</a></li>
 			<li><a href="#">Privacy Policy Notice</a></li>
 			<li><a href="#">No Fear Act</a></li>
-			<li><a href="#">Accessibility/Section 508</a></li>			    
-			<li>
-			  <div class="navy-images">
-			    <ul class="navy-images" data-orbit data-options="navigation_arrows: false; slide_number: false; bullets: true; timer_speed: 40000">
-			      <li><img src="img/life.png" alt="Suicidal" /></li>
-			      <li><img src="img/atfp_seal.png" alt="Suicidal" /></li>
-			    </ul>
-			  </div>
-			</li>
+			<li><a href="#">Accessibility/Section 508</a></li>
 		      </ul>
 		    </li>
 		  </ul>
-	      </div> 
+	      </div>
+	    </div>
+	  </div>
+	  <div class="row collapse">
+	    <div class="small-12 columns">
+	      <div class="navy-images">
+		<div><a href="https://www.safehelpline.org/"><img alt="Sexual Assault Support" src="img/Safehelpline-009.png"/></a></div>
+		<div><a href="http://itsonus.org/"><img alt="It's on us campaign logo" src="img/onusfooter.png"/></a></div>
+		<div><a href="http://www.usna.edu/SAPRO/"><img alt="USNA SAPRO Logo" src="img/SAPR.png"/></a></div>
+		<div><a href="http://www.suicidepreventionlifeline.org/"><img alt="Suicidal prevention logo" src="img/life.png"/></a></div>
+		<div><a href="http://www.usna.edu/ATFP/"><img alt="Anti-Terrorism Force Protection" src="img/atfp_seal.png"/></a></div>
+	      </div>
 	    </div>
 	  </div>
       </div>
-      <div class="large-2 small-12 columns">
+      <div class="large-3 small-12 columns">
 	  <div class="footer-seal small-text-center">
-	    <img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" />
+	    <a href="#"><img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" /></a>
 	    <p>
+		<div class="footer-address">
 	      U.S. Naval Academy<br>
-	      121 Blake Road, Annapolis, MD 21402<br>	    
+	      121 Blake Road, <br>
+		  Annapolis, MD 21402<br>
+		  </div>
+		  <div class="footer-contact">
+	      <a href="#"><i class="fi-mail white-icon"></i> Contact USNA </a>
+		  </div>
 	    </p>
 	    <ul class="social-media">
 	      <li><a href="http://www.facebook.com/USNavalAcademy"><img src="img/facebook.png" /></a></li>
 	      <li><a href="https://twitter.com/#!/NavalAcademy"><img src="img/twitter.png" /></a></li>
 	      <li><a href="http://www.flickr.com/photos/unitedstatesnavalacademy"><img src="img/flickr.png" /></a></li>
 	      <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
+		  <li><a href="#"><img src="img/instagram.png" /></a></li>
 	    </ul>
+	    <p class="more-social-media"><a href="#">Social media Index</a></p>
 	  </div>
-      </div>	    
-    </div>
+      </div>
+
+    
   </footer>
   <div class="footer-bottom">
     <div class="row collapse">
-      <div class="small-12 columns">	
+      <div class="small-12 columns">
 	<div class="url-bottom small-text-center">
-	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>		
+	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>
 	</div>
-      </div>      
+      </div>
     </div>
   </div>
   <!-- End Footer  and footer-bottom-->
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/slick-carousel.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      if ($("div#news.announcements > p").length != 0 ) {
+    $("div#news.announcements").prev("h1").hide();    
+    $("div#news.announcements").hide();
+      }
+    });
+    </script>
   </body>
 </html>

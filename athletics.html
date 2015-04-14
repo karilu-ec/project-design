@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Athletics</title>
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/foundation-icons.css" />
+<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="css/athletics.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
+<link rel="icon" type="image/x-icon" href="img/favicon.ico ?v=2">
   </head>
+  
   <body>
     <a id="top"></a>
     <!-- Header and Top Main Navigation -->
@@ -15,350 +18,411 @@
       <div class="row collapse">
 	    <div class="small-3 large-4 columns">
 	      <div class="logo-container">
-		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up">
-		 
+		  <img src="img/logo.svg" alt="The U.S. Naval Academy" class="show-for-medium-up" />		 
 	      </div>
 	    </div>
 	    <div class="small-9 large-8 columns">	      
 	      <div class="row collapse">
-		<div class="small-12 columns">		
+		<div class="small-12 columns">
+		  <ul class="utility-menu inline-list">
+		    <li class="has-form">
+		    <form action="http://wasp-new.usna.edu/texis/search/" method="get">
+		      <input name="dropXSL" type="HIDDEN" />
+		      <input name="pr" value="External Meta" type="hidden" />
+		      <input name="prox" value="page" type="hidden" />
+		      <input name="rorder" value="500" type="hidden" />
+		      <input name="rprox" value="500" type="hidden" />
+		      <input name="rdfreq" value="500" type="hidden" />
+		      <input name="rwfreq" value="500" type="hidden" />
+		      <input name="rlead" value="500" type="hidden" />
+		      <input name="sufs" value="3" type="hidden" />
+		      <input name="order" value="r" type="hidden" />
+		      <input name="rdepth" value="62" type="hidden" />
+		      <input class="queryAutocomplete" id="siteSearch" maxlength="2033" name="query" type="text" placeholder="Search USNA" />  
+		      <input type="submit" style="position: absolute; left: -9999px"/> 
+		    </form>
+		    </li>
+		  </ul>
 		  <ul class="utility-menu inline-list">
 		    <li><a href="#">Events</a></li>
 		    <li><a href="#">Maps</a></li>
 		    <li><a href="#">Directory</a></li>
-		    <li><a href="#">A-Z Index</a></li>
-		    <li class="has-form">
-		      
-			
-			  <input type="text" placeholder="Search USNA">
-			
-		    </li>
-		  </ul>
+		    <li><a href="#">A-Z Index</a></li>		    
+		  </ul>		  
 		</div>
 	      </div>
 	      <div class="row">
-		<div class="small-12 columns">
-		  <ul class="audience-menu inline-list show-for-medium-up">
-		    <li><a href="#">Parents</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Prospective Students</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Faculty/Staff</a></li>
-		    <li class="divider"></li>
-		    <li><a href="#">Alumni</a></li>
-		  </ul>
-		  </div>
+	      <div class="small-12 columns">
+		<ul class="audience-menu inline-list show-for-medium-up">
+		  <li><a href="#">Parents</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Prospective Students</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Faculty/Staff</a></li>
+		  <li class="divider"></li>
+		  <li><a href="#">Alumni</a></li>
+		</ul>
+		</div>
 	      </div>
-	    </div>
-	    
+	    </div>	    
       </div>
-  <!-- Top Main Navigation -->
-  <div class="top-navigation contain-to-grid">
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <!-- Title Area -->
-        <li class="name show-for-small-only">
-          <h1><a href="#">U.S. Naval Academy</a></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>MAIN MENU</span></a></li>
-      </ul>
-      <section class="top-bar-section"> 
-        <!-- Left Nav -->
-        <ul class="left">
-          <li class="divider"></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li class="divider"></li>
-          <li><a href="academics.html">ACADEMICS</a></li>
-          <li class="divider"></li>
-          <li><a href="#">ADMISSIONS</a></li>
-          <li class="divider"></li>
-          <li><a href="#">ATHLETICS</a></li>
-          <li class="divider"></li>
-          <li><a href="visit.html">VISIT</a></li>
-          <li class="divider"></li>
+
+    <!-- Top Main Navigation -->
+    <div class="top-navigation contain-to-grid">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <!-- Title Area -->
+          <li class="name show-for-small-only">
+            <h1><a href="#">U.S. Naval Academy</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>MAIN MENU</span></a></li>
         </ul>
-      </section>
-    </nav>
-  </div>
-  <!-- End Top Main Navigation --> 
+        <section class="top-bar-section">
+	  <!-- Left Nav -->
+		<ul class="left">		   
+		  <li><a href="#">ABOUT</a></li>
+		  <li><a href="#">ACADEMICS</a></li>
+		  <li><a href="#">ADMISSIONS</a></li>
+		  <li><a href="#">ATHLETICS</a></li>
+		  <li><a href="#">VISIT</a></li>
+		</ul>
+        </section>
+      </nav>    
+    </div>
+    <!-- End Top Main Navigation -->
   </header>  
+  <!-- End Header and Top Main Navigation --> 
   
-  <!-- End Header and Top Main Navigation -->
   
   <!-- Main Content Section -->
-  
-<!--Background for athletics -->
 
-<div class="row">
-  <div class="large-12 columns banner" data-interchange="[img/default.jpg, (default)], [img/athletics/gonavy.jpg, (medium)]">
-      <!-- Breadcrumbs --> 
-      <div class="row">
-	<div class="large-12 columns">
-	  <ul class="breadcrumbs">
-	    <li><a href="home.html">Home</a></li>
-	    <li><a href="academics.html">Athletics</a></li>
-	  </ul>
-	</div>
-      </div>
-       <!-- End Breadcrumbs -->
-       
-       <!-- Site name Full width pages-->
-	<div class="row hide-for-small full-title">      
-	  <div class="site-name" >
-	    <h1>Athletics</h1>
-	  </div>      
-	</div>
-	  <nav class="tab-bar show-for-small">
-	    <section class="right tab-bar-section">
-	      <h1 class="offcanvas-title">Athletics</h1>
-	    </section>
-	  </nav>  
-	<!-- End Site name Full width pages-->
-    </div>
+ <!-- Breadcrumbs --> 
+<div class="row bgwhite">
+  <div class="large-12 columns">
+    <ul class="breadcrumbs">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="athletics.html">Athletics</a></li>
+    </ul>
   </div>
-  <!-- End Background for athletics -->
-  
-  <!-- Masthead Slider -->
-  <div class="row collapse bgwhite hide-for-small">
-  <div class="row hide-for-small">
-      <ul class="example-orbit" data-orbit data-options="bullets: true;">
-	<li>
-	  <img src="img/athletics/1-Slider.png" alt="slide 1" />
-	  <div class="orbit-caption"> Caption One. </div>
-	</li>
-	<li>
-	  <img src="img/athletics/2-Slider.png" alt="slide 2" />
-	  <div class="orbit-caption"> Caption Two. </div>
-	</li>
-	<li>
-	  <img src="img/athletics/3-Slider.png" alt="slide 3" />
-	  <div class="orbit-caption"> Caption Three. </div>
-	</li>
-      </ul>
-    </div>
-  </div>
-    </div>
-  
-  <!-- End Masthead -->
-  
-
-<!-- main content goes here -->
-<div class="row bgwhite"> 
-    <div class="medium-8 columns">       
-      <p>Just as the Naval Academy promotes the professional and intellectual development of Midshipmen, so also must it fulfill its responsibility for each Midshipmen's physical development. This is met through a sports program that is one of the broadest in the nation.</p>
-      <p> In addition to Club and Varsity Sports programs USNA also offers a number of student run <a href="#">Intramural Sports.</a> Further information about USNA's commitment to Physical readiness is available through the <a href="#">Physical Education Department.</a></p><br>
-      <!-- Search Form -->
-      <form>		  
-	<div class="row">
-	  <div class="small-3 medium-2 columns">
-	    <label for="right-label" class="right inline">Search</label>
-	  </div>
-	  <div class="small-8 medium-8 end columns">
-	    <div class="row collapse">
-	      <div class="small-10 columns">
-		<input type="text" placeholder="Search Navy Sports">
-	      </div>
-	      <div class="small-2 columns">
-		<a href="#" class="button postfix">Go</a>
-	      </div>
-	    </div>
-	  </div>  
-	</div> 
-      </form>
-      <!-- end Search form --> 
-    </div>
-    <div class="medium-4 columns">
-      <div class="news-categories-container">
-	<h4>Offical Navy Sports Quick Links</h4>
-	<ul class="side-nav-indent side-nav">
-	  <li><a href="#">Navy Athletic Facilities <em>(with directions)</em></a></li>
-	  <li class="divider"></li>
-	  <li><a href="#">Club Sports</a></li>
-	  <li class="divider"></li>
-	  <li><a href="#">Navy Sports Camps</a></li>
-	  <li class="divider"></li>
-	  <li><a href="#">Sports Scores</a></li>
-	  <li class="divider"></li>
-	  <li><a href="#">Facilities</a></li>
-	</ul>
-      </div>
-    </div>
 </div>
-      
-<div class="row bgwhite"> 
-  <div class="large-8 columns"> 
-   <div class="row collapse">
-    <hr>
-      <div class="small-12 columns">
-	<h3>Men's Varsity Sports</h3>
-	  <ul>
-	    <div class="large-4 columns">
-	     <li><a href="#">Baseball</a> </li> 
-	     <li> <a href="#">Basketball</a> </li>
-	      <li><a href="#">Crew, Heavyweight</a></li>
-	     <li><a href="#">Crew, Lightweight</a></li>
-	     <li><a href="#">Cross Country</a></li>
-	     <li><a href="#">Football</a></li>
-	    </div> 
-	    <div class="large-4 columns">
-	     <li><a href="#">Golf</a></li>
-	     <li><a href="#">Gymnastics</a></li>
-	     <li><a href="#">Lacrosse</a></li>
-	     <li><a href="#">Soccer</a></li>
-	     <li><a href="#">Sprint Football</a></li>
-	     <li><a href="#">Squash</a></li>
-	    </div>
-	    <div class="large-4 columns">
-	     <li><a href="#">Swimming and Diving</a></li>
-	     <li><a href="#">Tennis</a></li>
-	     <li><a href="#">Track - Indoor & Outdoor</a></li>
-	      <li><a href="#">Water Polo</a></li>
-	     <li><a href="#">Wrestling</a></li>
-	    </div>
-	  </ul>	  
-      </div>
+ <!-- End Breadcrumbs -->
+ 
+  <!-- Site name Full width pages-->
+  <div class="row hide-for-small bgwhite full-title">
+    <div class="site-name">
+      <h1>Athletics</h1>
     </div>
-    <hr>
-    <div class="row collapse">
-      <div class="small-12 columns">	
-	<h3>Women's Varsity Sports</h3>
-	  <ul>
-	   <div class="large-4 columns">
-	    <li> <a href="#">Basketball</a> </li>
-	    <li><a href="#">Crew</a></li>
-	    <li><a href="#">Cross Country</a></li>
-	    <li><a href="#">Golf</a></li>
-	   </div> 
-	   <div class="large-4 columns">
-	    <li><a href="#">Lacrosse</a></li>
-	    <li><a href="#">Soccer</a></li>
-	    <li><a href="#">Swimming and Diving</a></li>
-	    <li><a href="#">Tennis</a></li>
-	   </div>
-	   <div class="large-4 columns">
-	    <li><a href="#">Track - Indoor & Outdoor</a></li>
-	    <li><a href="#">Volleyball</a></li>
-	   </div>
-	  </ul>
+  </div>
+  <div class="row bgwhite show-for-small">
+    <div class="small-12 columns">
+      <h1>Athletics</h1>
+    </div>
+  </div>
+  <!-- End Site name Full width pages-->
+  
+    <!-- Masthead Slider -->
+  <div class="row collapse athletics-bkgd-color">
+	<div class="medium-7 large-8 columns athletics-slider masthead-slider-navigation">
+	  <div class="masthead-slider">
+	    <div>
+	      <img src="img/athletics/10171011.jpeg" alt="slide 1" /> <span class="slick-slider-captions"> Caption One. </span>
+      
+	    </div>
+	    <div>
+	      <img src="img/athletics/10171011.jpeg" alt="slide 1" /> <span class="slick-slider-captions">Caption Two is a longer one with lots of words so we can see how the words wrap or overflow or don't do anything at all and keep going where they are not supposed to. Whichever it is that actually happens </span>
+      
+	    </div>
+	  </div>
 	</div>
-     </div>
-      <hr>
-    <div class="row collapse">
-      <div class="small-12 columns">	    
-       <h3>Co-Ed Varsity Sports</h3>
-	<ul>
-	 <div class="large-4 columns">
-	  <li> <a href="#">Rifle</a></li>
-	 </div> 
-	 <div class="large-4 columns">
-	  <li><a href="#">Sailing - Intercollegiate</a></li> 
-	 </div>
-	 <div class="large-4 columns">
-	  <li><a href="#">Sailing - Offshore</a></li>
-	 </div>
+     
+	<div class="medium-5 large-4 columns ">
+		<div class="text-center"><a href="http://www.navysports.com/index-main.html"><img src="img/athletics/navysportlogo.png" /></a></div>
+		<div class="row collapse"> 
+		  <div class="small-7 columns">
+		    <ul class="no-bullet athletics-info athletics-info-border">
+			<li><a href="#">Navy Athletic Facilities</a>
+			</li>
+			<li><a href="#">Schedule/Results</a>
+			</li>
+			<li><a href="#">Game Day Information</a>
+			</li>
+			<li><a href="http://www.navysports.com/this-is-navy/">This is Navy</a>
+			</li>
+			<li><a href="http://www.navysports.com/this-is-navy/athletic-excellence.html">Athletic Excellence</a>
+			</li>
+		    </ul>
+		  </div>
+	
+		  <div class="small-5 columns">
+		    <ul class="no-bullet athletics-info">
+			<li><a href="#">Club Sports</a>
+			</li>
+			<li><a href="#">Sports Camps</a>
+			</li>
+			<li><a href="#">Staff Directory</a>
+			</li>
+			<li><a href="http://www.navysports.com/recruiting/navy-recruiting.html">Recruiting</a>
+			</li>
+		    </ul>
+		  </div>
+		</div>	
+		<div class="navy-sports-button">
+		  <i class="fi-mail white-icon"> </i><a href="#">Sign Up for Navy Sports Emails</a>
+		</div>    
+	  </div>
+  </div>
+    <!-- End Masthead Slider -->
+    
+  <div class="row bgwhite athletics-content">
+    
+    <!-- Content section -->
+    <div class="large-8 medium-7 columns">
+		<p>Just as the Naval Academy promotes the professional and intellectual development of Midshipmen, so also must it fulfill its responsibility for each Midshipmen's physical development. This is met through a sports program that is one of the broadest in the nation.</p>
+        <p>Information about USNA Varsity sports, scores, tickets and more is available through the official USNA Sports website; <a href="#">NavySports.com</a></p>
+		<!-- Search Form -->
+		<form>		  
+		<div class="row">
+			  <div class="small-3 medium-2 columns">
+				<label for="right-label" class="right inline">Search</label>
+			  </div>
+			  <div class="small-8 medium-8 end columns">
+				<div class="row collapse">
+				  <div class="small-10 columns">
+					<input type="text" placeholder="Search Navy Sports">
+				  </div>
+				  <div class="small-2 columns">
+					<a href="#" class="button postfix">Go</a>
+				  </div>
+				</div>
+			  </div>  
+		  </div> 
+		</form>
+		<!-- end Search form --> 
+		<hr>
+        <div class="row collapse">
+		  <div class="small-12 columns">
+		    <h3>Men's Varsity Sports</h3>
+		    <div class="row">
+			<div class="medium-4 columns">
+			    <ul class="stacking-lists">
+				<li> <a href="#">Baseball</a> 
+				</li>
+				<li><a href="#">Basketball</a>
+				</li>
+				<li><a href="#">Crew, Heavyweight</a>
+				</li>
+				<li><a href="#">Crew, Lightweight</a>
+				</li>
+                <li><a href="#">Cross Country</a>
+				</li>
+                <li><a href="#">Football</a>
+				</li>
+			    </ul>
+			</div>
+			<div class="medium-4 columns">
+			    <ul class="stacking-lists">
+				<li><a href="#">Golf</a>
+				</li>
+				<li><a href="#">Gymnastics</a>
+				</li>
+				<li><a href="#">Lacrosse</a>
+				</li>
+				<li><a href="#">Soccer</a>
+				</li>
+                <li><a href="#">Sprint Football</a>
+				</li>
+                <li><a href="#">Squash</a>
+				</li>
+			    </ul>
+			</div>
+			<div class="medium-4 columns">
+			    <ul class="stacking-lists">
+				<li><a href="#">Swimming and Diving</a>
+				</li>
+				<li><a href="#">Tennis</a>
+				</li>
+                <li><a href="#">Track - Indoor & Outdoor</a>
+				</li>
+                <li><a href="#">Water Polo</a>
+				</li>
+                <li><a href="#">Wrestling</a>
+				</li>
+			    </ul>
+			</div>
+		    </div>
+		    <hr>
+		  </div>
+		</div>
+		<div class="row collapse">
+		  <div class="small-12 columns">
+		    <h3>Women's Varsity Sports</h3>
+		    <div class="row">
+			<div class="medium-4 columns">
+			    <ul class="stacking-lists">
+				<li> <a href="#">Basketball</a> 
+				</li>
+				<li><a href="#">Crew</a>
+				</li>
+				<li><a href="#">Cross Country</a>
+				</li>
+				<li><a href="#">Golf</a>
+				</li>
+			    </ul>
+			</div>
+			<div class="medium-4 columns">
+			    <ul class="stacking-lists">
+				<li><a href="#">Lacrosse</a>
+				</li>
+				<li><a href="#">Soccer</a>
+				</li>
+				<li><a href="#">Swimming and Diving</a>
+				</li>
+				<li><a href="#">Tennis</a>
+				</li>
+			    </ul>
+			</div>
+			<div class="medium-4 columns">
+			    <ul class="stacking-lists">
+				<li><a href="#">Track - Indoor & Outdoor</a>
+				</li>
+				<li><a href="#">Volleyball</a>
+				</li>
+			    </ul>
+			</div>
+		    </div>
+		    <hr>
+		  </div>
+		</div>
+						  
+		<div class="row collapse">
+			<div class="small-12 columns">	    
+				<h3>Co-Ed Varsity Sports</h3>
+					<div class="row"> 
+						<div class="medium-4 columns">
+							<ul class="stacking-lists">
+							  <li><a href="#">Rifle</a></li>
+							</ul>
+						</div>
+						<div class="medium-4 columns">
+							<ul class="stacking-lists">
+								<li><a href="#">Sailing - Intercollegiate</a></li>
+							</ul> 
+						</div>
+						<div class="medium-4 columns">
+							<ul class="stacking-lists">
+								<li><a href="#">Sailing - Offshore</a></li>
+							</ul>
+					  </div>
+					</div>	
+				<hr> 
+			</div>
+		</div>	
+						 
+		<div class="row collapse">
+		  <div class="small-12 columns">
+		      <h3>Club Sports</h3>
+	      
+		      <div class="row">
+			  <div class="medium-4 columns">
+			      <h5> Men's </h5>
+			      <ul class="stacking-lists">
+				  <li><a href="#">Boxing</a></li>
+				  <li><a href="#">Ice Hockey</a></li>
+				  <li><a href="#">Lacrosse</a> </li>
+				  <li><a href="#">Rugby</a> </li>
+				  <li><a href="#">Volleyball</a></li>
+			      </ul>
+			  </div>
+			  <div class="medium-4 columns">
+			       <h5> Women's </h5>
+	      
+			      <ul class="stacking-lists">
+				  <li><a href="#">Ice Hockey</a></li>
+				  <li><a href="#">Rugby</a></li>
+				  <li><a href="#">Softball</a></li>
+			      </ul>
+			  </div>
+			  <div class="medium-4 columns">
+			      <h5> Co-Ed </h5>
+			      <ul class="stacking-lists">
+				  <li><a href="#">Cycling</a></li>
+				  <li><a href="#">Fencing</a></li>
+				  <li><a href="#">Judo</a></li>
+				  <li><a href="#">Karate</a></li>
+				  <li><a href="#">Marathon</a></li>
+				  <li><a href="#">Pistol</a></li>
+				  <li><a href="#">Powerlifting</a></li>
+				  <li><a href="#">Triathlon</a></li>
+			      </ul>
+			      <br>
+			      <br>
+			  </div>
+		      </div>
+		  </div>
+	      </div>
+    </div>
+  
+   <!-- PE Department -->
+    <div class="large-4 medium-5 columns">
+      <div class="news-categories-container">
+	<h4>Physical Education Department</h4>
+	<ul class="side-nav-indent side-nav">
+	  <li><a href="#">Physical Education Website</a></li>
+	  <li class="divider"></li>
+	  <li> <a href="#">PE Instructions</a> </li>
+	  <li class="divider"></li>
+	  <li><a href="#">Marking Office</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#">PRT Standards</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#">Intramurals Information</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#">PE Facilities Button Information</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#">Facility Hours</a></li>
 	</ul>
       </div>
-     </div>
-     <hr> 
-    <div class="row collapse">
-      <div class="small-12 columns">
-        <h3>Club Sports</h3>
-          <ul>
-            <div class="large-4 columns">
-              <h5> Men's </h5>
-              <li><a href="#">Boxing</a></li>
-              <li><a href="#">Ice Hockey</a></li>
-              <li><a href="#">Lacrosse</a></li>
-              <li><a href="#">Rugby</a></li>
-              <li><a href="#">Volleyball</a></li>
-            </div>
-            <div class="large-4 columns">
-              <h5> Women's </h5>
-              <li><a href="#">Ice Hockey</a></li>
-              <li><a href="#">Rugby</a></li>
-              <li><a href="#">Softball</a></li>
-            </div>
-	    <div class="large-4 columns">
-	      <h5> Co-Ed </h5>
-	      <li><a href="#">Cycling</a></li>
-	      <li><a href="#">Fencing</a></li>
-	      <li><a href="#">Judo</a></li>
-	      <li><a href="#">Karate</a></li>
-	      <li><a href="#">Marathon</a></li>
-	      <li><a href="#">Pistol</a></li>
-	      <li><a href="#">Powerlifting</a></li>
-	      <li><a href="#">Triathlon</a></li>
-	   </div>
-	  </ul>	  
+      <!-- end PE Department -->
+      <!-- navy app -->
+      <div class="app">
+	  <img src="img/navyap.svg" alt="navy logo app" /> <a href="#">Navy Sports Mobile Apps</a>
+      
       </div>
-    </div>
-    <hr>
-    <p>For Ticket Information please call 1-800-US-4-NAVY</p>
-  </div>
-        
-  
-  <!-- E-mail and social media box -->    
-  <div class="large-4 columns">
-    <div style="background-color:#5d82a3; border-radius:150px; height:65px; width:65px; color:#FFF; margin:auto; text-align:center;"><i class="fi-mail white-icon" style="font-size:4em;"> </i></div>
-    
-      <p class="text-center" style="color:#5d82a3; font-size:1em;"><a href="#">Sign Up for Navy Sports Emails!</a></p>
-      
-      <div style="background-color:#5d82a3; border-radius:150px; height:65px; width:65px; color:#FFF; margin:auto; text-align:center; "><img src="img/navyap.svg" "margin-top:200px;" alt="navy logo app" />
-      </div><p class="text-center" style="color:#5d82a3; font-size:1em;"><a href="#">Navy Sports Mobile Apps</a></p>
-      
-      
-      <!--  youtube video  -->
-      <div class="row">	
-	<div class="small-12 columns">
-	  <div class="featured-article-home">
-	    <h4>Latest from Navy Sports</h4>
-    
-	    <iframe width="300" height="169" src="http://www.youtube.com/embed/P5auXjJ8Fto" frameborder="0" allowfullscreen></iframe>
-        <p></p>
-	  </div>
-	</div>
-    </div>
-      <!-- End youtube video -->
-
-      <br>
+      <!-- end navy app -->  
       <!-- Social media box -->
-      <div class="row">	
-	    <div class="small-12 columns">
-	      <div class="social-media-box">		
-		<ul class="social-feeds-list" data-orbit data-options="bullets: true; timer_speed: 30000">
-		  <li>
-		    <div class="feed-container">
-		      <div class="title">
-			<h4><img src="img/facebook-color.png" />USNA Facebook</h4>
-			<span class="timestamp">2 hours ago</span>
-		      </div>		      
-		      <p>Any track and field coach will tell you that depth, versatility and experience are critical component to success in the sport: <a href="http://www.capitalgazette.com/sports/college_sports/depth-versatility-and-experience-leads-to-banner-year-for-navy/article_42a9747a-039f-55c5-9e99-e96de7fbe7bf.html">http://www.navy.mil/submit/display.asp?story_id=79024</a>
-		      </p>		      
-		    </div>
-		  </li>
-		  <li>
-		    <div class="feed-container">
-		      <div class="title">
-			<h4><img src="img/twitter-color.png" />USNA Twitter</h4>
-			<span class="timestamp">19 hours ago</span>
-		      </div>
-		      <p>Navy men’s track and field was blessed with all three in 2013-2014, and the result was a banner year.</a>
-		      </p></div>
-	      </li>
-	    </ul>
-	  </div>
-	</div>
-      </div>    
-      <!-- End Social media box -->   
-    </div>    
-    <!-- End the email and social media box-->
+<div class="social-media-box">		
+		  <div class="feed-container">
+			<div class="title">
+			  <h4><img src="img/facebook-color.png" />USNA Facebook</h4>
+			  <span class="timestamp">2 hours ago</span>
+			</div>		      
+			<p>Commandant of the Marine Corps Gen. James F. Amos and Medal of Honor recipient Sgt. Dakota Meyer attended the dinner at USNA earlier
+			   this week honoring the midshipmen of the Class of 2014. here: <a href="http://www.navy.mil/submit/display.asp?story_id=79024">http://www.navy.mil/submit/display.asp?story_id=79024</a>
+			</p>
+		  </div>
+		  <div class="feed-container">
+			<div class="title">
+			  <h4><img src="img/twitter-color.png" />USNA Twitter</h4>
+			  <span class="timestamp">19 hours ago</span>
+			</div>
+			<p>Historian Jan Herman will speak at the USNA Museum tomorrow at 12:30 p.m. Part of the Shifley Lecture series. Free and open to the public.
+			</p>
+		  </div>
+		</div>
+      <!-- End Social media box -->
 
-    <!-- Arrow go to top for small screens-->
-   <a href="#top" class="show-for-small-only right"><img src="img/arrow.png" alt="go to Top"></a>
+
+    <!--  youtube video  -->
+      <h4>Latest from Navy Sports</h4>
+      <div class="custom-flex-video">
+        <iframe width="300" height="169" src="http://www.youtube.com/embed/P5auXjJ8Fto" frameborder="0" allowfullscreen></iframe>
+      </div>
+    <!-- End youtube video --> 
   </div>
+</div>
   <!-- End Main content -->
-   
-  <!-- Footer -->
+  
+<!-- Footer-->
   <footer>
     <div class="row collapse">
       <div class="medium-12 large-10 columns">
@@ -369,41 +433,37 @@
 		    <li>
 		      <h5>About USNA</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Mission</a></li>
-			<li><a href="#">Honor Concept</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li><a href="#">Public Affairs Office</a></li>
-			<li><a href="#">Chapel</a></li>
-			<li><a href="#">Employment Opportunities</a></li>
-			<li><a href="#">Inspector General Hotline</a></li>
-			<li><a href="mailto:webmaster@usna.edu">Contact USNA</a></li>			
-		      </ul>
-		    </li>
-		    <li>
-		      <h5>Student Life</h5>
-		      <ul class="no-bullet">
+			<li><a href="#">USNA Mission</a></li>
+			<li><a href="#">USNA News Center</a></li>
 			<li><a href="#">Commandant</a></li>
-			<li><a href="#">Athletic's Calendar</a></li>
-			<li><a href="#">Navy Sports</a></li>
-			<li><a href="#">Special Events</a></li>
-			<li><a href="#">Life in the Brigade</a></li>
+			<li><a href="#">Public Affairs Office</a></li>
+			<li><a href="#">FAQ</a></li>
 		      </ul>
 		    </li>
 		    <li>
 		      <h5>Academics</h5>
 		      <ul class="no-bullet">
-			<li><a href="#">Divisions and Departments</a></li>
+			<li><a href="#">Majors</a></li>
+			<li><a href="#">Divisions & Departments</a></li>
+                        <li><a href="#">Academics Calendar</a></li>
+			<li><a href="#">NAPS</a></li>
 			<li><a href="#">Library</a></li>
-			<li><a href="#">Academic Calendar</a></li>
-			<li><a href="#">Summer Programs</a></li>
-			<li><a href="#">Admissions</a></li>
-			<li><a href="#">Registrar</a></li>
 		      </ul>
 		    </li>
-		    <li>			    
+		    <li>
+		      <h5>Learn More</h5>
 		      <ul class="no-bullet">
-			<h5>Site Maintained by</h5>						
-			<li><a href="#">Webmaster</a></li>			
+			<li><a href="#">Steps for Admission</a></li>
+			<li><a href="#">Student Life</a></li>
+			<li><a href="#">Summer Programs</a></li>
+			<li><a href="#">Chapel</a></li>
+			<li><a href="#">Employment Opportunities</a></li>
+		      </ul>
+		    </li>
+		    <li>
+		      <ul class="no-bullet">
+			<h5>Site Maintained by</h5>
+			<li><a href="#">Webmaster</a></li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -413,10 +473,11 @@
       </div>
       <div class="large-2 small-12 columns">
 	  <div class="footer-seal small-text-center">
-	    <img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" />
+	     <a href="#"><img src="img/logo--footer.svg" alt="U.S. Naval Academy Seal" /></a>
 	    <p>
 	      U.S. Naval Academy<br>
-	      121 Blake Road, Annapolis, MD 21402<br>	    
+	      121 Blake Road, Annapolis, MD 21402<br>
+	      <a href="#">Contact USNA</a>
 	    </p>
 	    <ul class="social-media">
 	      <li><a href="http://www.facebook.com/USNavalAcademy"><img src="img/facebook.png" /></a></li>
@@ -424,24 +485,56 @@
 	      <li><a href="http://www.flickr.com/photos/unitedstatesnavalacademy"><img src="img/flickr.png" /></a></li>
 	      <li><a href="http://www.youtube.com/user/usnapao"><img src="img/youtube.png" /></a></li>
 	    </ul>
+	    <p><a href="#">Social media Index</a></p>
 	  </div>
-      </div>	    
+      </div>
     </div>
   </footer>
   <div class="footer-bottom">
     <div class="row collapse">
-      <div class="small-12 columns">	
+      <div class="small-12 columns">
 	<div class="url-bottom small-text-center">
-	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>		
+	  This is an official U.S. Navy Web Site. URL: <a href="http://www.usna.edu">http://www.usna.edu</a>
 	</div>
-      </div>      
+      </div>
     </div>
   </div>
-  <!-- End Footer and footer-bottom-->
-
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="bower_components/foundation/js/foundation/foundation.interchange.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+  <!-- End Footer  and footer-bottom-->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script> 
+<script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/slick-carousel.js"></script>
+<script type="text/javascript">
+$.get("/templates/standard/goodbye.php?redirect=http://www.navysports.com/index-main.html",function(data){
+	try{
+		eval($("script:contains('START bsiArray')",data).html());
+	} catch(e){
+		console.log(e);
+	}
+	for(l=bsiCompleteArray.length,i=l-1;i>=0;i--){
+		var caption = $('#relativeFrame #frm' + i, data).html();
+		caption = caption.replace(/href="\//ig,'target="_blank" href="http://www.navysports.com/');
+		var headline = $('h1', $(caption)).text();
+		var newSlide = '<div style="width: 653px;">' +
+					   '<img alt="' + headline + '" src="' + bsiCompleteArray[i].photoSource + '"> ' +
+					   '<span class="slick-slider-captions">' +
+						caption +
+					   '</span></div>';
+		console.log(caption);
+		$('.masthead-slider-navigation>.masthead-slider').slickAdd(newSlide,0,true);
+	}
+	
+})
+</script>
+<style>
+.masthead-slider-navigation>.masthead-slider .slick-slider-captions h1,
+.masthead-slider-navigation>.masthead-slider .slick-slider-captions .pubdate {
+	display: none;
+}
+.masthead-slider-navigation>.masthead-slider .slick-slider-captions .synopsis a{
+	color: yellow;
+}
+</body>
 </html>
