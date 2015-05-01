@@ -17,9 +17,11 @@ module.exports = function(grunt) {
           'css/athletics.css': 'scss/pages/athletics.scss',
           'css/faculty-directory.css': 'scss/pages/faculty-directory.scss',
           'css/home.css': 'scss/pages/home.scss', 
-	  'css/error.css': 'scss/pages/error.scss',
-	  'css/pretty-photo.css': 'scss/pages/prettyphoto.scss',
-	  'css/intranet-home.css': 'scss/pages/intranet-home.scss'
+		  'css/error.css': 'scss/pages/error.scss',
+		  'css/pretty-photo.css': 'scss/pages/prettyphoto.scss',
+		  'css/intranet-home.css': 'scss/pages/intranet-home.scss',
+		  'css/netNutrition.css': 'scss/pages/netNutrition.scss',
+		  'css/netNutritionIE8.css': 'scss/pages/netNutritionIE8.scss'
         }        
       }
     },
