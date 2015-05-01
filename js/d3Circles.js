@@ -50,8 +50,26 @@ $("#canvas").click(function() {
 	
 	var circles = canvas
 		.selectAll('circle')
-		.data(data);
-	
+		.data(data);	
+		
+	// update (x,y) coordinates with a transition. Chaining more than one transition
+	circles
+		.transition()
+		.attr('cx', function(d) {
+			return d.x;
+		})
+		.attr('cy', function(d) {
+			return d.y;
+		})
+		.each('end', function(d) {
+			//transition 2
+			d3.select(this)
+				.transition()
+				.attr('r', function(d) {
+					return d.r;
+				});
+		});
+		
 	//for the new circle added to my data
 	circles
 		.enter()
@@ -68,14 +86,5 @@ $("#canvas").click(function() {
 		})
 		.attr('r', function(d) {
 			return d.r;
-		});
-		
-	// update (x,y) coordinates:
-	circles
-		.attr('cx', function(d) {
-			return d.x;
-		})
-		.attr('cy', function(d) {
-			return d.y;
-		});
+		});S		
 });
