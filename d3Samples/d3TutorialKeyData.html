@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick.css" />
     <script src="../bower_components/modernizr/modernizr.js"></script>
 	<style type="text/css">
-	  #canvas {
+	  svg {
 		width: 100%;
+		height: 400px;
+	  }
+	  svg rect {
+		fill: #ccc;
+		stroke:gray;
+		stroke-width:2px;
 	  }
 	</style>
   </head>
@@ -124,10 +130,14 @@
   <!-- Masthead Slider -->
 
   <!-- End Masthead -->
+  
+  <!-- Start main content -->
 <div class="row bgwhite">
   <div class="page-main-content large-12 columns">
-  <h2>Test Circles</h2>
-  <svg id="canvas"></svg>
+  <h2>Test Rect</h2>
+  <div><button id="run">Run More</button></div>
+  <svg>
+  </svg>
   </div>
 </div>
   <!-- End Main content -->
@@ -217,6 +227,6 @@
 <script src="../bower_components/d3/d3.min.js"></script>
 <script src="../js/app.js"></script>
 <script src="../js/slick-carousel.js"></script>
-<script src="../js/d3CirclesStep2.js"></script>
+<script src="../js/d3TutorialKeyData.js"></script>
   </body>
 </html>
