@@ -15,28 +15,37 @@ function update(data) {
 	//DATA JOIN
 	// join new data with old elements, if any.
 	var text = svg.selectAll("text")
-		.data(data);
+		.data(data, function(d) { return d; });
 	
 	//UPDATE
 	// Update old elements as needed
-	text.attr("class", "update");
+	text.attr("class", "update")
+		.transition()
+			.duration(750)
+			.attr("x", function(d,i) { return i*32; });
 	
 	//ENTER
 	//create new elements as needed
 	text.enter().append("text")
 		.attr("class", "enter")
-		.attr("x", function(d,i) { return i*32; })
-		.attr("dy", ".35em");
-		
-	//ENTER + UPDATE
-	// Appending to the enter selection expands the update selection to include
-	// entering elements; so, operations on the update selection after appending to
-	// the enter selection will apply to both entering and updating nodes.
-	text.text(function(d) { return d; });
+		.attr("dy", ".35em")
+		.attr("y", -60)
+		.attr("x", function(d,i) { return i * 32; })
+		.text(function(d) { return d; })
+	  .transition()
+		.duration(750)
+		.attr("y", 0)
+		.style("fill-opacity", 1);		
 	
 	//EXIT
 	// Remove old elements as needed
-	text.exit().remove();
+	text.exit()
+		.attr("class", "exit")
+	  .transition()
+		.duration(750)
+		.attr("y", 60)
+		.style("fill-opacity", 1e-6)
+		.remove();
 }
 
 //Ghe initial alphabel display
