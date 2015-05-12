@@ -7,24 +7,42 @@
     <link rel="stylesheet" href="../css/app.css" />
     <link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick.css" />
     <script src="../bower_components/modernizr/modernizr.js"></script>
-	<style>
-.bar {
+	<style type="text/css">
+/*
+.chart rect {
   fill: steelblue;
 }
-
-.axis text {
-  font: 10px sans-serif;
+*/
+.chart .legend {
+  fill: black;
+  font: 14px sans-serif;
+  text-anchor: start;
+  font-size: 12px;
 }
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart .chartlabel {
+  fill: black;
+  font: 14px sans-serif;
+  text-anchor: end;
+}
+
+/*.bar:hover {
+  fill: brown;
+}*/
+
 .axis path,
 .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
-}
-.x.axis path {
-  display:none;
-}
-</style>
+}     
+	</style>
   </head>
   <body>
     <a id="top"></a>
@@ -41,7 +59,7 @@
 		<div class="small-12 columns">
 		  <ul class="utility-menu inline-list">
 		    <li class="has-form">
-		    <form action="http://wasp-new.usna.edu/texis/search/" method="get">
+		    <form action="http://www.usna.edu/texis/search/" method="get">
 		      <input name="dropXSL" type="HIDDEN" />
 		      <input name="pr" value="External Meta" type="hidden" />
 		      <input name="prox" value="page" type="hidden" />
@@ -124,12 +142,12 @@
    <!-- Site name Full width pages-->
   <div class="row hide-for-small full-title bgwhite">      
     <div class="site-name" >
-      <div>D3.js Sample</div>
+      <div>Horizontal data</div>
     </div>      
   </div>
    <div class="row bgwhite show-for-small">
     <div class="small-12 columns">
-      <h1>D3.js Sample</h1>
+      <h1>Horizontal data</h1>
     </div>
   </div> 
   <!-- End Site name Full width pages-->
@@ -137,10 +155,13 @@
   <!-- Masthead Slider -->
 
   <!-- End Masthead -->
+  
+  <!-- Start main content -->
 <div class="row bgwhite">
   <div class="page-main-content large-12 columns">
-  <h2>Test Bar page</h2>
-  <svg class="chart"></svg>
+  <h2>Horizontal group  data</h2>
+   <svg class="chart"></svg>
+
   </div>
 </div>
   <!-- End Main content -->
@@ -227,11 +248,10 @@
 <script src="../bower_components/fastclick/lib/fastclick.js"></script>
 <script src="../bower_components/foundation/js/foundation.min.js"></script> 
 <script src="../bower_components/slick-carousel/slick/slick.min.js"></script>
-<script src="../bower_components/slick-carousel/slick/slick.min.js"></script>
 <script src="../bower_components/d3/d3.min.js"></script>
+<script src="../bower_components/queue-async/queue.min.js"></script>
 <script src="../js/app.js"></script>
 <script src="../js/slick-carousel.js"></script>
-<script src="../js/d3SampleBarOrdinalScale.js"></script>
-
+<script src="../js/d3Applicants.js"></script>
   </body>
 </html>

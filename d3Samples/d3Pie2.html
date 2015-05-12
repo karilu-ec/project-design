@@ -7,24 +7,38 @@
     <link rel="stylesheet" href="../css/app.css" />
     <link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick.css" />
     <script src="../bower_components/modernizr/modernizr.js"></script>
-	<style>
-.bar {
-  fill: steelblue;
+	<style type="text/css">
+	 rect {
+    stroke-width: 2;
+  }
+  #chart{
+	height:360px;
+	margin: 0 auto; 
+	position: relative;
+	width: 360px;
+  }
+  .tooltip {
+  background: #eee;
+  box-shadow: 0 0 5px #999999;
+  color: #333;
+  display: none;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 95px;
+  width: 80px;
+  z-index: 10;
 }
-
-.axis text {
-  font: 10px sans-serif;
+rect {
+  cursor: pointer;                           /* NEW */
+  stroke-width: 2;
 }
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-.x.axis path {
-  display:none;
-}
-</style>
+rect.disabled {                              /* NEW */
+  fill: transparent !important;              /* NEW */
+}       
+	</style>
   </head>
   <body>
     <a id="top"></a>
@@ -41,7 +55,7 @@
 		<div class="small-12 columns">
 		  <ul class="utility-menu inline-list">
 		    <li class="has-form">
-		    <form action="http://wasp-new.usna.edu/texis/search/" method="get">
+		    <form action="http://www.usna.edu/texis/search/" method="get">
 		      <input name="dropXSL" type="HIDDEN" />
 		      <input name="pr" value="External Meta" type="hidden" />
 		      <input name="prox" value="page" type="hidden" />
@@ -129,7 +143,8 @@
   </div>
    <div class="row bgwhite show-for-small">
     <div class="small-12 columns">
-      <h1>D3.js Sample</h1>
+      <h1>Toronto Parking Tickets by Weekday in 2012</h1>
+	  <svg></svg>
     </div>
   </div> 
   <!-- End Site name Full width pages-->
@@ -137,10 +152,13 @@
   <!-- Masthead Slider -->
 
   <!-- End Masthead -->
+  
+  <!-- Start main content -->
 <div class="row bgwhite">
   <div class="page-main-content large-12 columns">
-  <h2>Test Bar page</h2>
-  <svg class="chart"></svg>
+  <h2>CSV to objects js</h2>
+  <div id="chart"></div>
+
   </div>
 </div>
   <!-- End Main content -->
@@ -227,11 +245,10 @@
 <script src="../bower_components/fastclick/lib/fastclick.js"></script>
 <script src="../bower_components/foundation/js/foundation.min.js"></script> 
 <script src="../bower_components/slick-carousel/slick/slick.min.js"></script>
-<script src="../bower_components/slick-carousel/slick/slick.min.js"></script>
 <script src="../bower_components/d3/d3.min.js"></script>
+<script src="../bower_components/queue-async/queue.min.js"></script>
 <script src="../js/app.js"></script>
 <script src="../js/slick-carousel.js"></script>
-<script src="../js/d3SampleBarOrdinalScale.js"></script>
-
+<script src="../js/d3Pie2.js"></script>
   </body>
 </html>

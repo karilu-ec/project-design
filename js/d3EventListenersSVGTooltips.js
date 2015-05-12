@@ -1,7 +1,6 @@
-var data = [54, 61, 30, 38, 90, 23, 45 ,13 ,99, 88, 34, 47, 16, 25];
+var data = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
 
 var y = function(d,i) { return 200-d; };
-var y_up = function(d,i) {return 180-d;};
 
 var formatRect = function(sel) {
 	sel.attr("x", function(d,i) { return i*50 +30; })
@@ -16,16 +15,6 @@ svg.selectAll("rect")
 	.data(data)
 	.enter().append("rect")
 		.call(formatRect)
-		.on('mouseover', function(){
-			d3.select(this)
-				.attr("y", y_up);
-		})
-		.on('mouseout', function() {
-			d3.select(this)
-				.attr("y", y)
-		})
-		.on("click", function() {
-			d3.select(this)
-				.style("stroke", "red")
-				.style("fill", "yellow");
-		});
+		.style("fill", "steelblue")
+		.append("svg:title")
+			.text(function(d,i) { return d; });
