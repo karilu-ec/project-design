@@ -14,13 +14,13 @@ var marginTop= 40;
 
 		
 //declaring Scales
-var x = d3.scale.linear()
-	.domain([0,data.length]) //my data minimum and maximum
-	.range([0,width]); //the pixels to map. the width of the diagram.
+var x = d3.scale.ordinal()
+	.domain(data.map(function(d) { return d.year; }))
+	.rangeRoundBands([0,width], 0.05); //the pixels to map. the width of the diagram.
 
 var y = d3.scale.linear()
 	.domain([0, d3.max(data, function(d) { return d.books; })])
-	.rangeRound([0, height]);
+	.range([height, 0]);
 
 //xAxis Scale
 var xAxis = d3.svg.axis()
@@ -41,12 +41,12 @@ rect_demo.selectAll("rect")
 	.data(data)
 	.enter()
 	.append("svg:rect")
-    .attr("x", function(d, i) { return x(i); })
+    .attr("x", function(d, i) { return x(d.year); })
     .attr("y", function(d) { return height - y(d.books); })
     .attr("width", barWidth)
     .attr("height", function(d) { return y(d.books); })
 	.attr("fill", "#2d578b");
-
+/*
 //Adding text
 rect_demo.selectAll("text")
 	.data(data)
@@ -59,17 +59,7 @@ rect_demo.selectAll("text")
 	.attr("text-anchor", "middle")
 	.text(function(d) { return d.books; })
 	.attr("fill", "white");
-	
+	*/
 //Adding the xAxis
-rect_demo.selectAll("text.yAxis")
-	.data(data)
-	.enter()
-	.append("svg:text")
-	.attr("x", function(d, i) { return x(i) + barWidth; })
-	.attr("y", height)
-	.attr("dx", -barWidth/2)
-	.attr("text-anchor", "middle")
-	.text(function(d) { return d.year; })
-	.attr("transform", "translate(0,18)")
-	.attr("class", "yAxis");
+
 	
