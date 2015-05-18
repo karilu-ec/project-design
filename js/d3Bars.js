@@ -1,4 +1,4 @@
-http://www.d3noob.org/2014/02/making-bar-chart-in-d3js.html?spref=pi
+//http://www.d3noob.org/2014/02/making-bar-chart-in-d3js.html?spref=pi
 var margin = {top: 20, right: 20, bottom: 70, left: 40},
     width = 600 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
