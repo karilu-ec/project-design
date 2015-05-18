@@ -1,6 +1,6 @@
-d3.csv("expenses.csv", function(expenses) {
-  expenses.forEach(function(d) {    
-    d.amount= +d.amount;
+d3.csv("maleFemalePortrait.csv", function(data) {
+  data.forEach(function(d) {    
+    d.quantity= +d.quantity;
   });  
     
    var expensesByName = d3.nest()

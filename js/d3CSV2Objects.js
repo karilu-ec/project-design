@@ -7,7 +7,7 @@
 });*/
 
 // Another way to accomplish the same thing above
-d3.csv("cities.csv", function(d) {
+/*d3.csv("cities.csv", function(d) {
   return {
     city: d.city,
     state: d.state,
@@ -20,7 +20,7 @@ d3.csv("cities.csv", function(d) {
 
 d3.json("employees.json", function(data) {
   console.log(data[0]);
-});
+});*/
 queue()
   .defer(d3.csv, "cities.csv")
   .defer(d3.tsv, "animals.tsv")
