@@ -1,15 +1,17 @@
 //Simple d3.js barchart example to illustrate d3 selections
 var w = 400;
 var h = 400;
+var dataCities;
+
 init();
-/*var data1 = [
+var data1 = [
     5,
     20,
     55,
     60,
     89
-]*/
-/*
+]
+
 var data2 = [
     35,
     80,
@@ -18,7 +20,7 @@ var data2 = [
     19,
     39,
     99
-]*/
+]
 
 
 function bars(data) {
@@ -70,16 +72,6 @@ function bars(data) {
 }
 
 function init() {
-	//http://learnjsdata.com/read_data.html
-	queue()
-		.defer(d3.json, "barsData.json")
-		.defer(d3.json, "barsData2.json")
-		.await(analyze);
-function analyze(error, data1, data2) {
-  if (error) {     console.log(error);  }
-  console.log(data1);
-  console.log(data2);
-}
 	//setup the svg
 	var svg = d3.select("#chart").append("svg")
 		.attr("width", w+100)
@@ -93,7 +85,7 @@ function analyze(error, data1, data2) {
 	svg.append("svg:g")
 		.attr("id", "barchart")
 		.attr("transform", "translate(50, 50)");
-		
+
 	//setup the ui event listeners
 	d3.select("#data1")
 		.on("click", function(d,i) {
