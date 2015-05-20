@@ -18,6 +18,29 @@ axis {
    stroke: #000;
    shape-rendering: crispEdges;
  }
+  .textBar {
+  font-size:16px;
+ }
+ #tooltip {
+	position: absolute;
+	width: 225px;
+	height: auto;
+	padding: 10px;
+	background-color: white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+	pointer-events: none;
+}
+
+#tooltip p {
+	margin: 0;
+	font-size:16px;
+
+}
 	</style>
   </head>
   <body>
@@ -137,9 +160,14 @@ axis {
   <div class="page-main-content large-12 columns">
   <h2>Portrait chart</h2>
    
-  <button class="radius" id="data1">Data 1</button>
-  <button class="radius" id="data2">Data 2</button>
-  <button class="radius" id="random">Data 3</button>
+  <button class="radius" id="applications">Number of Applications</button>
+  <button class="radius" id="offersAppointment">Offers of Appointment</button>
+  <button class="radius" id="classSize">Class Size</button>
+  
+  <div id="tooltip" class="hide">
+		<p><strong><span id="title">Title heading</span></strong></p>
+		<p><span id="value">value</span></p>
+	</div>
 <div class="container" id="chart"></div>
 
   </div>
