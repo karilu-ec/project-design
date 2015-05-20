@@ -61,18 +61,23 @@ function maleFemalebars(data) {
 
   
   //Bind with data
- var bars= svg.selectAll("rect.bar")
-    .data(data)
-    .enter();
-  
-  bars
+ var barsData= svg.selectAll("rect.bar")
+    .data(data);
+ var bars = barsData.enter();
+   
+   //update
+   barsData
+   .attr("fill", function(d,i) { return color(i); } );
+    
+  //enter()
+  barsData.enter()
       .append("rect")
       .attr("class", "bar")    
-      .attr("fill", function(d,i) { return color(i); } )
-      .attr("x", function(d) { return x(d.gender); })
-      .attr("y", function(d) { return y(d.value); })
-      .attr("width", x.rangeBand())
-      .attr("height", function(d) { return height - y(d.value); });
+      .attr("fill", function(d,i) { return color(i); } );
+      //.attr("x", function(d) { return x(d.gender); })
+      //.attr("y", function(d) { return y(d.value); })
+      //.attr("width", x.rangeBand())
+      //.attr("height", function(d) { return height - y(d.value); });
   
   //exit
  // bars.exit()
@@ -83,16 +88,16 @@ function maleFemalebars(data) {
 	  .attr("width", 0)
 	  .remove()*/
 	  
-  /*bars
+  barsData.attr("stroke-width", 4)
 	.transition()
 	.duration(300)
 	.ease("quad")
-	  .attr("x", function(d) { return x(d.gender); })
-	  .attr("y", function(d) { return y(d.value); })
-	  .attr("width", x.rangeBand())
-	  .attr("height", function(d) { return height - y(d.value); });
+	.attr("x", function(d) { return x(d.gender); })
+        .attr("y", function(d) { return y(d.value); })
+        .attr("width", x.rangeBand())
+        .attr("height", function(d) { return height - y(d.value); });
  
-  */
+
   bars
       .append("text")
       .attr("x", function(d) { return x(d.gender); })
