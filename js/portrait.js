@@ -46,17 +46,17 @@ function putAxis(titleY, x, y) {
 }
 
 //Bars maker.
-function maleFemalebars(data, dataTitle) {
+function maleFemalebars(data, dataTitle, x, y) {
   //Remove previous Bar Text
   d3.select("#chart").selectAll("text.textBar").remove();
   
   // X and Y scale range
-  var x = d3.scale.ordinal().rangeRoundBands([0, width], .5);
+  /*var x = d3.scale.ordinal().rangeRoundBands([0, width], .5);
   var y = d3.scale.linear().range([height, 0]);
   
   // X and Y scale  domain.
   x.domain(data.map(function(d) { return d.gender; })); // x domain in male and female
-  y.domain([0, d3.max(data, function(d) { return d.value; }) ]);
+  y.domain([0, d3.max(data, function(d) { return d.value; }) ]);*/
   
   //Color scale
   var color = d3.scale.category10();
@@ -156,20 +156,28 @@ function init(error, applications, offersAppointments, classSize) {
     d.value= +d.value;
   });
   
-  //Default to first chart
-  maleFemalebars(applications, "Number of Applications")
+  //Default to first chart male/female chart.
+  // X and Y scale range
+  var x = d3.scale.ordinal().rangeRoundBands([0, width], .5);
+  var y = d3.scale.linear().range([height, 0]);
+  
+  // X and Y scale  domain of the number of applications.
+  x.domain(applications.map(function(d) { return d.gender; })); // x domain in male and female
+  y.domain([0, d3.max(applications, function(d) { return d.value; }) ]);
+  
+  maleFemalebars(applications, "Number of Applications", x, y)
     
   //Event listeners
   d3.select("#applications")
 	.on("click", function(d,i) {
-	  maleFemalebars(applications, "Number of Applications")
+	  maleFemalebars(applications, "Number of Applications", x, y)
 	});
   d3.select("#offersAppointment")
 	.on("click", function(d,i) {
-	  maleFemalebars(offersAppointments, "Offers of Appointment")
+	  maleFemalebars(offersAppointments, "Offers of Appointment", x, y)
 	});
   d3.select("#classSize")
 	.on("click", function(d,i) {
-	  maleFemalebars(classSize, "Class Size")
+	  maleFemalebars(classSize, "Class Size", x, y)
 	});
 }
