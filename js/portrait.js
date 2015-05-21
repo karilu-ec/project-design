@@ -121,6 +121,7 @@ function maleFemalebars(data, dataTitle, x, y) {
 	})
 	.attr("stroke-width", 4)
 	.transition()
+	.delay(100)
 	.duration(800)
 	.ease("quad")
 	.attr("x", function(d) { return x(d.gender); })
@@ -133,11 +134,14 @@ function maleFemalebars(data, dataTitle, x, y) {
 	  .attr("x", function(d) { return x(d.gender); })
       .attr("y", function(d) { return y(d.value); })
       .attr("dx", x.rangeBand()/2)
-      .attr("dy", "1.2em")
+      .attr("dy", "-.5em")
       .attr("text-anchor", "middle")
+      .transition()
+      .delay(500)
+      .duration(400)
       .text(function(d) { return d.value; })
       .attr("class", "textBar")
-      .attr("fill", "white");
+      .attr("fill", "black");
   
 
 }
@@ -146,13 +150,20 @@ queue()
 	.defer(d3.csv, "application.csv")
 	.defer(d3.csv, "offersAppointment.csv")
 	.defer(d3.csv, "classSize.csv")
+	.defer(d3.csv, "nominatingCategory.csv")
 	.await(init);
-function init(error, applications, offersAppointments, classSize) {
+function init(error, applications, offersAppointments, classSize, nominatingCategory) {
   if (error) {     console.log(error);  }
   applications.forEach(function(d) {   
     d.value= +d.value;
   });
   offersAppointments.forEach(function(d) {   
+    d.value= +d.value;
+  });
+  classSize.forEach(function(d) {   
+    d.value= +d.value;
+  });
+  nominatingCategory.forEach(function(d) {   
     d.value= +d.value;
   });
   
@@ -177,6 +188,10 @@ function init(error, applications, offersAppointments, classSize) {
 	  maleFemalebars(offersAppointments, "Offers of Appointment", x, y)
 	});
   d3.select("#classSize")
+	.on("click", function(d,i) {
+	  maleFemalebars(classSize, "Class Size", x, y)
+	});
+  d3.select("#nominatingCategory")
 	.on("click", function(d,i) {
 	  maleFemalebars(classSize, "Class Size", x, y)
 	});
