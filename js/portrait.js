@@ -1,6 +1,7 @@
 var margins= {top:50, right:40, bottom:30, left:100};
 var width = 1000 - margins.left - margins.right;
 var height = 500 - margins.top - margins.bottom;
+var chartNode = d3.select("#chart").node();
 //Add the canvas to the DOM
 var svg = d3.select("#chart").append("svg")   
     .attr("width", width + margins.left + margins.right)
@@ -45,18 +46,10 @@ function putAxis(titleY, x, y) {
     .text(titleY);
 }
 
-//Bars maker.
+//Male and Female Bars maker.
 function maleFemalebars(data, dataTitle, x, y) {
   //Remove previous Bar Text
   d3.select("#chart").selectAll("text.textBar").remove();
-  
-  // X and Y scale range
-  /*var x = d3.scale.ordinal().rangeRoundBands([0, width], .5);
-  var y = d3.scale.linear().range([height, 0]);
-  
-  // X and Y scale  domain.
-  x.domain(data.map(function(d) { return d.gender; })); // x domain in male and female
-  y.domain([0, d3.max(data, function(d) { return d.value; }) ]);*/
   
   //Color scale
   var color = d3.scale.category10();
@@ -81,7 +74,6 @@ function maleFemalebars(data, dataTitle, x, y) {
    //update
    barsData
    .attr("fill", function(d,i) { return color(i); } )
-
     
   //enter()
   barsData.enter()
@@ -109,8 +101,9 @@ function maleFemalebars(data, dataTitle, x, y) {
 		.style("top", yPosition + "px");
 	  tooltip.select("#title")
 		  .text(dataTitle)
-	  tooltip.select("#value")
-		  .text("Total: " + total);
+	  tooltip.append("div")
+		  .attr("class", "total");		  
+	  tooltip.select(".total").html("<strong>Total: </strong>" + total)
 	  
 	  //show the tooltip
 	  d3.select("#tooltip").classed("hide", false);	  
@@ -120,8 +113,7 @@ function maleFemalebars(data, dataTitle, x, y) {
 	  d3.select("#tooltip").classed("hide", true);
 	})
 	.attr("stroke-width", 4)
-	.transition()
-	.delay(100)
+	.transition()	
 	.duration(800)
 	.ease("quad")
 	.attr("x", function(d) { return x(d.gender); })
@@ -142,9 +134,72 @@ function maleFemalebars(data, dataTitle, x, y) {
       .text(function(d) { return d.value; })
       .attr("class", "textBar")
       .attr("fill", "black");
+}
+
+//Pie Nominating Categories.
+function nominationsPie(data) {
+  var outerRadius = Math.min(width, (height+margins.top))/2;
+  var donutWidth = 65;
+
+  //http://bl.ocks.org/mbostock/5577023 <- color brewer pallete
+  var color = d3.scale.ordinal()
+	.range(["#66c2a5","#8da0cb","#e78ac3","#a6d854","#ffd92f","#e5c494","#b3b3b3"]);
   
+  //remove canvas svg from previous charts
+  d3.select("svg").remove();
+  
+  //Add svg to the DOM
+  var svg = d3.select("#chart").append("svg")
+	  .attr("width", width + margins.left + margins.right)
+	  .attr("height", height + margins.top + margins.bottom)
+	.append("g")
+	  .attr("transform", "translate(" + width/2 +","+ ((height+margins.top+margins.bottom)/2) +" )"); //centering the group
+  
+  //Define the radius with the outerRadius variable and set innerRadius because it's a donut.
+  var arc = d3.svg.arc()
+	  .outerRadius(outerRadius)
+	  .innerRadius(outerRadius - donutWidth);
+	  
+  //For the start and end angles of the segments function
+  var pie = d3.layout.pie()
+	  .value(function(d) { return d.value; })
+	  .sort(null);
+  // for the Legends
+  var tooltip	= d3.select("#tooltip");
+	tooltip.select("#title")
+		.text("Nominating Categories");
+	tooltip.append("div")
+		.attr("class", "category");
+	tooltip.append("div")
+		.attr("class", "count");
+	tooltip.append("div")
+		.attr("class", "percent");
+
+/*ToDo Try*/		
+  //Add the background of arc//Try the transition http://bl.ocks.org/mbostock/5100636
+  //http://codepen.io/tpalmer/pen/jqlFG/
+  //http://bl.ocks.org/mbostock/1346410
+  //http://bl.ocks.org/mbostock/5100636//
+  var background = svg.append("path")
+	.datum({engAngle: (2*Math.Pi)})
+	.style("fill", "#ddd")
+	.attr("d", arc)
+	.each(function(d) { this._current = d; }); // store the initial angles;
+		
+  //Set the arc and draw the paths for the donut
+	/*var	path = svg.selectAll("path")
+		.data(pie(data)) //data is receiving the pie function
+		.enter()
+		.append("path")
+		.attr("d", arc)
+		.attr("fill", function(d, i) {
+			return color(d.data.category);
+		})
+		.transition()
+		.duration(800);*/
 
 }
+
 
 queue()
 	.defer(d3.csv, "application.csv")
@@ -193,6 +248,6 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
 	});
   d3.select("#nominatingCategory")
 	.on("click", function(d,i) {
-	  maleFemalebars(classSize, "Class Size", x, y)
+	  nominationsPie(nominatingCategory)
 	});
 }
