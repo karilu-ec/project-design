@@ -1,3 +1,9 @@
+/*ToDo Try*/		
+  //Add the background of arc//Try the transition http://bl.ocks.org/mbostock/5100636
+  //http://codepen.io/tpalmer/pen/jqlFG/
+  //http://bl.ocks.org/mbostock/1346410
+  //http://bl.ocks.org/mbostock/5100636//	
+
 var margins= {top:50, right:40, bottom:30, left:100};
 var width = 1000 - margins.left - margins.right;
 var height = 500 - margins.top - margins.bottom;
@@ -44,6 +50,7 @@ d3.csv("nominatingCategory.csv", function(error, data) {
 	data.forEach(function(d) {
 		d.value = +d.value
 	});
+	
 	
 	//Set the arc and draw the paths for the donut
 	var	path = svg.selectAll("path")

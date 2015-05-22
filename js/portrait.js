@@ -7,11 +7,12 @@ var svg = d3.select("#chart").append("svg")
     .attr("width", width + margins.left + margins.right)
     .attr("height", height + margins.top + margins.bottom)
   .append("g")
+	.attr("class", "mainG")
     .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
   
 // Get the right Axis for the chart.
 function putAxis(titleY, x, y) {
-  //Remove previus axis
+  //Remove previous axis
   d3.select("#chart").selectAll("g.axis").remove();
     //xAxis Scale
   var xAxis = d3.svg.axis()
@@ -23,9 +24,9 @@ function putAxis(titleY, x, y) {
 	  .scale(y)
 	  .orient("left")
 	  .ticks(20);
-
-   //Adding the xAxis
-  var xAxisGroup = svg.append("g")
+ var mainG = d3.select(".mainG");
+   //Adding the xAxis   
+  var xAxisGroup = mainG.append("g")
 	  .attr("class", "x axis")
 	  .attr("transform", "translate(0," + height + ")")
 	  .call(xAxis)
@@ -35,7 +36,7 @@ function putAxis(titleY, x, y) {
       .attr("dy", ".80em");
       
   //Adding the yAxis
-  var yAxisGroup = svg.append("g")
+  var yAxisGroup = mainG.append("g")
     .attr("class", "y axis")
     .call(yAxis)
   .append("text")
@@ -50,6 +51,10 @@ function putAxis(titleY, x, y) {
 function maleFemalebars(data, dataTitle, x, y) {
   //Remove previous Bar Text
   d3.select("#chart").selectAll("text.textBar").remove();
+  //Remove previous Pie charts
+  d3.select("#chart").selectAll("path").remove();
+  var mainG = d3.select(".mainG")
+    .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
   
   //Color scale
   var color = d3.scale.category10();
@@ -138,6 +143,11 @@ function maleFemalebars(data, dataTitle, x, y) {
 
 //Pie Nominating Categories.
 function nominationsPie(data) {
+  //Remove previous Charts components.
+  d3.select("#chart").selectAll("text.textBar").remove();
+  d3.select("#chart").selectAll("g.axis").remove();
+  d3.select("#chart").selectAll("rect.bar").remove();
+  
   var outerRadius = Math.min(width, (height+margins.top))/2;
   var donutWidth = 65;
 
@@ -145,26 +155,21 @@ function nominationsPie(data) {
   var color = d3.scale.ordinal()
 	.range(["#66c2a5","#8da0cb","#e78ac3","#a6d854","#ffd92f","#e5c494","#b3b3b3"]);
   
-  //remove canvas svg from previous charts
-  d3.select("svg").remove();
+  //Centering the group
+  d3.select(".mainG")	  
+	  .attr("transform", "translate(" + width/2 +","+ ((height+margins.top+margins.bottom)/2) +" )");
   
-  //Add svg to the DOM
-  var svg = d3.select("#chart").append("svg")
-	  .attr("width", width + margins.left + margins.right)
-	  .attr("height", height + margins.top + margins.bottom)
-	.append("g")
-	  .attr("transform", "translate(" + width/2 +","+ ((height+margins.top+margins.bottom)/2) +" )"); //centering the group
-  
-  //Define the radius with the outerRadius variable and set innerRadius because it's a donut.
+  //Define the outerRadius variable and set innerRadius because it's a donut.
   var arc = d3.svg.arc()
 	  .outerRadius(outerRadius)
 	  .innerRadius(outerRadius - donutWidth);
-	  
+	  	  
   //For the start and end angles of the segments function
   var pie = d3.layout.pie()
 	  .value(function(d) { return d.value; })
 	  .sort(null);
-  // for the Legends
+	  
+  // Set the divs for the Legends
   var tooltip	= d3.select("#tooltip");
 	tooltip.select("#title")
 		.text("Nominating Categories");
@@ -175,30 +180,90 @@ function nominationsPie(data) {
 	tooltip.append("div")
 		.attr("class", "percent");
 
-/*ToDo Try*/		
-  //Add the background of arc//Try the transition http://bl.ocks.org/mbostock/5100636
-  //http://codepen.io/tpalmer/pen/jqlFG/
-  //http://bl.ocks.org/mbostock/1346410
-  //http://bl.ocks.org/mbostock/5100636//
-  var background = svg.append("path")
-	.datum({engAngle: (2*Math.Pi)})
-	.style("fill", "#ddd")
-	.attr("d", arc)
-	.each(function(d) { this._current = d; }); // store the initial angles;
-		
   //Set the arc and draw the paths for the donut
-	/*var	path = svg.selectAll("path")
-		.data(pie(data)) //data is receiving the pie function
+	var	path = svg.selectAll("path")
+		.data(pie(data)) //data is receiving the pie function with the actual data.
 		.enter()
 		.append("path")
 		.attr("d", arc)
+		.attr("fill", "#ddd")
+		.each(function(d) { this._current = d; }); //store the initial angles.
+	
+    d3.map(data, function(d) { return color(d.category);});	
+	var timeout = setTimeout(function() {
+	  clearTimeout(timeout);
+	  fillPie()
+	}, 200);
+	
+	// Update the pie with colors from the domain.
+	function fillPie() {	  
+	  path = path.data(pie(data));
+	  path		
+		.transition()		
+		.duration(750)
 		.attr("fill", function(d, i) {
 			return color(d.data.category);
 		})
-		.transition()
-		.duration(800);*/
+		.attrTween("d", arcTween);//Redraw the arcs.
+	}
+	
+	//Store the displayed angles in _current. _current has the stored angles. see path.
+	// Interpolates from _current to the new angles.
+	// During the transition, _current is updated in-place by d3.interpolate.
+	function arcTween(a) {
+	  var i = d3.interpolate(this._current, a);
+	  this._current = i(0);
+	  return function(t) {
+		return arc(i(t));
+	  };
+	}
+	
+	//Donut Labels
+	var legendRectSize = 20;
+	var legendSpacing = 5;
+	var donutLegend =svg.selectAll(".donutLegend")
+		.data(color.domain()) //color.domain() refers to the array of labels defined in the fill of the arc. color(d.data.category)
+		.enter()
+		.append("g")
+		.attr("class", "donutLegend")
+		.attr("transform", function(d, i) {
+			//centering the legend.
+			var height = legendRectSize + legendSpacing;
+			var offset = height * color.domain().length/2;// vertical offset of the entire legend
+			var horz = -7 * legendRectSize; //left edge of the element
+			var vert= i * height - offset; //top edge of the element
+			return "translate(" + horz + "," + vert + ")";
+		});
+	//Add the coloured square and label
+	donutLegend.append("rect")
+		.attr("width", legendRectSize)
+		.attr("height", legendRectSize)
+		.attr("fill", color)
+		.attr("stroke", color);
+	//labels
+	donutLegend.append("text")
+		.attr("x", legendRectSize + legendSpacing)
+		.attr("y", legendRectSize - legendSpacing)
+		.text(function(d) { return d; });
+	
+	var donutLegendTitle = svg.append("g")
+		.attr("class", "donutLegendTitle")
+		.attr("transform", function(d) {
+			//centering the legend title.
+			var height = legendRectSize + legendSpacing;
+			var offset = height * (color.domain().length+3)/2;// vertical offset of the entire legend
+			var horz = -5*legendRectSize; //left edge of the element
+			var vert=  - offset; //top edge of the element
+			return "translate(" + horz + "," + vert + ")";			
+		})
+		.append("text")
+			.attr("x", legendRectSize + legendSpacing)
+			.attr("y", legendRectSize - legendSpacing)
+			.text("Nominating Categories");
 
 }
+
+
 
 
 queue()
