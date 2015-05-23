@@ -10,7 +10,7 @@
 	<style type="text/css">
 .container {
 	width:100%;
-	height: 500px;
+	height: 500px;;
 	position: relative;
 }
 axis {
@@ -40,7 +40,7 @@ axis {
 	z-index: 10;
 }
 
-#tooltip p {
+#tooltip p, .chartTitle {
 	margin: 0;
 	font-size:16px;
 
@@ -48,7 +48,7 @@ axis {
 .donutLegend {
 	font-size: 1em;
 }
-.count, .percent , .donutLegendTitle {
+.count, .percent , .donutLegendTitle, .chartTitle{
 	font-weight: bold;
 }
 .donutLegend rect {
@@ -175,13 +175,14 @@ axis {
    
   <button class="radius chartButtons" id="applications">Number of Applications</button>
   <button class="radius chartButtons" id="offersAppointment">Offers of Appointment</button>
-  <button class="radius chartButtons" id="classSize">Class Size</button>
   <button class="radius chartButtons" id="nominatingCategory">Nominating Categories</button>
-  
+    <br /><br />
+  <button class="radius chartButtons" id="classSize">Class Size</button>
+  <button class="radius chartButtons" id="racialBreakdown">Racial and Background Breakdown</button>
   <div id="tooltip" class="hide">
-		<p><strong><span id="title">Title heading</span></strong></p>
-	</div>
-<div class="container" id="chart"></div>
+    <p><strong><span id="title">Title heading</span></strong></p>
+  </div>
+  <div class="container" id="chart"></div>
 
   </div>
 </div>
