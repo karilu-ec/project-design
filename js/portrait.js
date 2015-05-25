@@ -1,6 +1,6 @@
 var margins= {top:50, right:40, bottom:30, left:50};
 var width = 1000 - margins.left - margins.right;
-var height = 500 - margins.top - margins.bottom;
+var height = 700 - margins.top - margins.bottom;
 var chartNode = d3.select("#chart").node();
 //Add the canvas to the DOM
 var svg = d3.select("#chart").append("svg")   
@@ -161,6 +161,64 @@ function maleFemalebars(data, dataTitle, x, y) {
       .attr("class", "textBar")
       .attr("fill", "black");
 }
+//Calculate Percent
+function calcPercent(percent) {
+  return [percent, 100-percent];
+}
+//Composition Donut
+function compositionDonut(data) {
+  //Remove previousj Charts components.
+  d3.select("#chart").selectAll("text.textBar").remove();
+  d3.select("#chart").selectAll("g.axis").remove();
+  d3.select("#chart").selectAll("rect.bar").remove();
+  svgTitle.selectAll("text").remove();
+
+  var widthDonut =  200;
+  var heightDonut = 200;
+  text_y = "-.10em";
+  var radius = Math.min(widthDonut, heightDonut) / 2;
+  var pie = d3.layout.pie().sort(null);
+  var format = d3.format(".0%");
+ 
+  var arc = d3.svg.arc()
+    .innerRadius(radius - 20)
+    .outerRadius(radius);
+  
+  //Placing the main group
+  d3.select(".mainG")	  
+	  .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
+  
+  var maxItems = 4;
+  var spaceBetween = 100;
+  var j=0, k = 0;
+  var dist = widthDonut/2 + spaceBetween;
+  var donuts = svg.selectAll(".donuts")
+    .data(data)
+    .enter().append("g")
+    .attr("class", "donuts")
+    .attr("transform", function(d,i) {
+      var horz, vert;
+      if ((i!= 0) && (i  % maxItems == 0)) {
+	j=0; k++;
+	horz = widthDonut/2 + (j*dist);
+	vert = heightDonut/2 + (k*dist);
+	j++;
+      }else {
+	horz = widthDonut/2 +  (j * dist);
+	vert = heightDonut/2 + (k * dist);
+	j++;
+      }
+     return "translate(" + horz + "," + vert + ")";  
+    });
+
+  var paths = donuts.selectAll("path")
+    .data(pie([0,100]))
+    .enter().append("path")
+    .attr("class", function(d,i) { return "color"+i; } )
+    .attr("d", arc)
+    .each(function(d) { return this._current = d; }); //storing initial values
+    
+}
 
 //Pie Nominating Categories.
 function nominationsPie(data) {
@@ -319,8 +377,9 @@ queue()
 	.defer(d3.csv, "classSize.csv")
 	.defer(d3.csv, "nominatingCategory.csv")
 	.defer(d3.csv, "raceBreakdown.csv")
+	.defer(d3.csv, "composition.csv")
 	.await(init);
-function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown) {
+function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown, composition) {
   if (error) {     console.log(error);  }
   applications.forEach(function(d) {   
     d.value= +d.value;
@@ -336,6 +395,17 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
   });
   raceBreakdown.forEach(function(d) {   
     d.value= +d.value;
+  });
+  
+  var compositionDataset = [];
+  composition.forEach(function(d) {
+    d.value= +d.value;
+    var dataset = {
+      lower: calcPercent(0),
+      upper:calcPercent(d.value),
+      category: d.category
+    };
+     compositionDataset.push(dataset);
   });
   
   //Default to first chart male/female chart.
@@ -355,31 +425,35 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
 	  // X and Y scale  domain of the number of applications.
 	  x.domain(applications.map(function(d) { return d.category; })); // x domain in male and female applicants
 	  y.domain([0, d3.max(applications, function(d) { return d.value; }) ]);
-	  maleFemalebars(applications, "Number of Applications", x, y)
+	  maleFemalebars(applications, "Number of Applications", x, y);
 	});
   d3.select("#offersAppointment")
 	.on("click", function(d,i) {
 	  // X and Y scale  domain of the number of applications and offers of appointment.
 	  x.domain(offersAppointments.map(function(d) { return d.category; })); // x domain in male and female
 	  y.domain([0, d3.max(applications, function(d) { return d.value; }) ]);
-	  maleFemalebars(offersAppointments, "Offers of Appointment", x, y)
+	  maleFemalebars(offersAppointments, "Offers of Appointment", x, y);
 	});
   d3.select("#nominatingCategory")
 	.on("click", function(d,i) {
-	  nominationsPie(nominatingCategory)
+	  nominationsPie(nominatingCategory);
 	});
   d3.select("#classSize")
 	.on("click", function(d,i) {
 	   // X and Y scale  domain of the class size.
 	  x.domain(classSize.map(function(d) { return d.category; }));
 	  y.domain([0, d3.max(classSize, function(d) { return d.value; }) ]);
-	  maleFemalebars(classSize, "Class Size", x, y)
+	  maleFemalebars(classSize, "Class Size", x, y);
 	});
   d3.select("#racialBreakdown")
 	.on("click", function(d,i) {
 	   // X and Y scale  domain of the race breakdown.
 	  x.domain(raceBreakdown.map(function(d) { return d.category; }));
 	  y.domain([0, d3.max(classSize, function(d) { return d.value; }) ]);
-	  maleFemalebars(raceBreakdown, "Racial Breakdown", x, y)
+	  maleFemalebars(raceBreakdown, "Racial Breakdown", x, y);
+	});
+  d3.select("#composition")
+	.on("click", function(d,i) {
+	  compositionDonut(compositionDataset);
 	});
 }

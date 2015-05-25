@@ -33,7 +33,7 @@ function drawDonutChart(element, percent, width, height, text_y) {
         .attr("height", height)
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
+console.log(dataset.lower);
   var path = svg.selectAll("path")
         .data(pie(dataset.lower))
         .enter().append("path")

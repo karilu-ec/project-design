@@ -10,7 +10,7 @@
 	<style type="text/css">
 .container {
 	width:100%;
-	height: 500px;;
+	height: 700px;;
 	position: relative;
 }
 axis {
@@ -53,6 +53,28 @@ axis {
 }
 .donutLegend rect {
 	stroke-width:2;
+}
+
+.donuts text {
+  font-family: "RamaGothicM-Heavy",Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black",sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 8rem;
+  fill: #1072b8;
+}
+
+#donut {
+  width: 29rem;
+  height: 29rem;
+  margin: 0 auto;
+}
+
+.donuts path.color0 {
+  fill: #1072b8;
+}
+
+.donuts path.color1 {
+  fill: #35526b;
 }
 	</style>
   </head>
@@ -179,6 +201,7 @@ axis {
     <br /><br />
   <button class="radius chartButtons" id="classSize">Class Size</button>
   <button class="radius chartButtons" id="racialBreakdown">Racial and Background Breakdown</button>
+  <button class="radius chartButtons" id="composition">Composition</button>
   <div id="tooltip" class="hide">
     <p><strong><span id="title">Title heading</span></strong></p>
   </div>
