@@ -1,6 +1,6 @@
 var margins= {top:50, right:40, bottom:30, left:50};
 var width = 1000 - margins.left - margins.right;
-var height = 700 - margins.top - margins.bottom;
+var height = 500 - margins.top - margins.bottom;
 var chartNode = d3.select("#chart").node();
 //Add the canvas to the DOM
 var svg = d3.select("#chart").append("svg")   
@@ -172,10 +172,13 @@ function compositionDonut(data) {
   d3.select("#chart").selectAll("g.axis").remove();
   d3.select("#chart").selectAll("rect.bar").remove();
   svgTitle.selectAll("text").remove();
+  heightC = 800;
+  d3.select("svg")
+    .attr("height", heightC + margins.top + margins.bottom);
 
-  var widthDonut =  200;
-  var heightDonut = 200;
-  text_y = "-.10em";
+  var widthDonut =  130;
+  var heightDonut = 130;
+  var text_y = "-.10em";
   var radius = Math.min(widthDonut, heightDonut) / 2;
   var pie = d3.layout.pie().sort(null);
   var format = d3.format(".0%");
@@ -189,7 +192,7 @@ function compositionDonut(data) {
 	  .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
   
   var maxItems = 4;
-  var spaceBetween = 100;
+  var spaceBetween = 160;
   var j=0, k = 0;
   var dist = widthDonut/2 + spaceBetween;
   var donuts = svg.selectAll(".donuts")
@@ -211,13 +214,37 @@ function compositionDonut(data) {
      return "translate(" + horz + "," + vert + ")";  
     });
 
-  var paths = donuts.selectAll("path")
-    .data(pie([0,100]))
+  var path = donuts.selectAll("path")
+    .data(function(d,i) { return pie(d.lower); })
     .enter().append("path")
     .attr("class", function(d,i) { return "color"+i; } )
     .attr("d", arc)
     .each(function(d) { return this._current = d; }); //storing initial values
-    
+ 
+  var txt = donuts.append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", text_y);
+   if (typeof(percent) === "string") {
+    text.text(percent);
+  }
+  else {
+    var progress = 0;
+    var timeout = setTimeout(function () {
+      clearTimeout(timeout);
+      path = path.data(function(d,i) { return pie(d.upper); }); // update the data
+      path.transition().duration(duration).attrTween("d", function (a) {
+        // Store the displayed angles in _current.
+        // Then, interpolate from _current to the new angles.
+        // During the transition, _current is updated in-place by d3.interpolate.
+        var i  = d3.interpolate(this._current, a);
+        var i2 = d3.interpolate(progress, percent)
+        this._current = i(0);
+        return function(t) {
+          text.text( format(i2(t) / 100) );
+          return arc(i(t));
+        };
+      }); // redraw the arcs
+    }, 200);
 }
 
 //Pie Nominating Categories.
