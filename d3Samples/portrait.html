@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick.css" />
     <script src="../bower_components/modernizr/modernizr.js"></script>
 	<style type="text/css">
+	  .chartButtons{
+		font-size:0.9rem;
+		padding:0.5rem;
+	  }
 .container {
 	width:100%;
 	position: relative;
@@ -41,8 +45,10 @@ axis {
 
 #tooltip p, .chartTitle {
 	margin: 0;
-	font-size:16px;
-
+	font-size:1rem;
+}
+.chartSubtitle {
+  font-size:0.7rem;
 }
 .donutLegend {
 	font-size: 1em;
@@ -56,10 +62,13 @@ axis {
 
 .donuts text {
   font-family: "RamaGothicM-Heavy",Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black",sans-serif;
-  font-size: 3rem;
-  font-weight: 400;
+  font-size: 2.5em;
   line-height: 8rem;
   fill: #1072b8;
+}
+.donuts text.title {
+  font-size: 1em;
+
 }
 
 #donut {
@@ -197,10 +206,10 @@ axis {
   <button class="radius chartButtons" id="applications">Number of Applications</button>
   <button class="radius chartButtons" id="offersAppointment">Offers of Appointment</button>
   <button class="radius chartButtons" id="nominatingCategory">Nominating Categories</button>
-    <br /><br />
   <button class="radius chartButtons" id="classSize">Class Size</button>
-  <button class="radius chartButtons" id="racialBreakdown">Racial and Background Breakdown</button>
+  <button class="radius chartButtons" id="racialBreakdown">Racial Breakdown</button>
   <button class="radius chartButtons" id="composition">Composition</button>
+  <button class="radius chartButtons" id="militaryBackground">Military Background</button>
   <div id="tooltip" class="hide">
     <p><strong><span id="title">Title heading</span></strong></p>
   </div>

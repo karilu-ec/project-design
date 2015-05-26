@@ -53,12 +53,15 @@ function drawDonutChart(element, percent, width, height, text_y) {
     var timeout = setTimeout(function () {
       clearTimeout(timeout);
       path = path.data(pie(dataset.upper)); // update the data
+      //var percentUpper;
       path.transition().duration(duration).attrTween("d", function (a) {
         // Store the displayed angles in _current.
         // Then, interpolate from _current to the new angles.
         // During the transition, _current is updated in-place by d3.interpolate.
+      /*  if (typeof percentUpper === 'undefined' ) { percentUpper= a.value; }*///testing for many values.
         var i  = d3.interpolate(this._current, a);
         var i2 = d3.interpolate(progress, percent)
+        //var i2 = d3.interpolate(progress, percentUpper)
         this._current = i(0);
         return function(t) {
           text.text( format(i2(t) / 100) );

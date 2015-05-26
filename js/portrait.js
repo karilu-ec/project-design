@@ -1,4 +1,4 @@
-var margins= {top:50, right:40, bottom:30, left:50};
+var margins= {top:40, right:40, bottom:40, left:50};
 var width = 1000 - margins.left - margins.right;
 var height = 500 - margins.top - margins.bottom;
 var chartNode = d3.select("#chart").node();
@@ -21,6 +21,32 @@ var svgTitle = d3.select("svg").append("g")
     .attr("class", "total");
   tooltip.append("p")
     .attr("class", "percent");		
+
+//Helper function to wrap text elements
+function wrap(text, width) {
+  text.each(function() {
+    var text = d3.select(this),
+        words = text.text().split(/\s+/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0,
+        lineHeight = 1.3, // ems
+        y = text.attr("y"),
+        dy = parseFloat(text.attr("dy")),
+        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+    while (word = words.pop()) {
+      line.push(word);
+      tspan.text(line.join(" "));
+      if (tspan.node().getComputedTextLength() > width) {
+        line.pop();
+        tspan.text(line.join(" "));
+        line = [word];
+        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+      }
+    }
+  });
+}
+
   
 // Get the right Axis for the chart.
 function putAxis(titleY, x, y) {
@@ -35,7 +61,7 @@ function putAxis(titleY, x, y) {
   var yAxis = d3.svg.axis()
 	  .scale(y)
 	  .orient("left")
-	  .ticks(20);
+	  .ticks(15);
  var mainG = d3.select(".mainG");
    //Adding the xAxis   
   var xAxisGroup = mainG.append("g")
@@ -45,7 +71,8 @@ function putAxis(titleY, x, y) {
     .selectAll("text")
       .attr("text-anchor", "end")
       .attr("dx", ".5em")
-      .attr("dy", ".80em");
+      .attr("dy", ".80em")
+	  .call(wrap, x.rangeBand());
       
   //Adding the yAxis
   var yAxisGroup = mainG.append("g")
@@ -58,14 +85,25 @@ function putAxis(titleY, x, y) {
     .attr("dy", "1em")
     .text(titleY);
 }
+//Add chart Subtitle
+function chartSubtitle(data) {
+  console.log(data);
+  var svgSubtitle = svgTitle.append("text")
+	.attr("class", "chartSubtitle")
+	.attr("y", 40)
+	.attr("dy", "1em")
+	.text(data[0].info)
+	.call(wrap, 200);
+}
 
-//Male and Female Bars maker.
-function maleFemalebars(data, dataTitle, x, y) {
+//Bars maker.
+function barCharts(data, dataTitle, x, y) {
   //Remove previous charts elements
   d3.select("#chart").selectAll("text.textBar").remove();
   d3.select("#chart").selectAll("path").remove();
   d3.select("#chart").selectAll("g.donutLegend").remove();
   d3.select("#chart").selectAll("g.donutLegendTitle").remove();
+  d3.select("#chart").selectAll("g.donuts").remove();
   svgTitle.selectAll("text").remove();
   var mainG = d3.select(".mainG")
     .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
@@ -82,6 +120,8 @@ function maleFemalebars(data, dataTitle, x, y) {
 	.rollup(function(d) {
 	  return d3.sum(d, function(g) { return g.value; })
 	}).entries(data);
+ 
+ //console.log(data);
  
   //Set chart title
   svgTitle.append("text").text(dataTitle);
@@ -167,21 +207,32 @@ function calcPercent(percent) {
 }
 //Composition Donut
 function compositionDonut(data) {
-  //Remove previousj Charts components.
+  //Remove previous Charts components.
   d3.select("#chart").selectAll("text.textBar").remove();
   d3.select("#chart").selectAll("g.axis").remove();
   d3.select("#chart").selectAll("rect.bar").remove();
+  d3.select("#chart").selectAll("path").remove();
+  d3.select("#chart").selectAll("g.donutLegend").remove();
+  d3.select("#chart").selectAll("g.donutLegendTitle").remove();
   svgTitle.selectAll("text").remove();
-  heightC = 800;
+  
+  heightC = 900;
   d3.select("svg")
     .attr("height", heightC + margins.top + margins.bottom);
 
+// variables configuration
   var widthDonut =  130;
   var heightDonut = 130;
-  var text_y = "-.10em";
+  var duration   = 500,
+    transition = 200;
+  var text_y = ".3em";
+  var title_dy = "-5em";
+  var title_y = -15;
+  var maxItemsPerRow = 4;
+  var spaceBetween = 180;
+  
   var radius = Math.min(widthDonut, heightDonut) / 2;
   var pie = d3.layout.pie().sort(null);
-  var format = d3.format(".0%");
  
   var arc = d3.svg.arc()
     .innerRadius(radius - 20)
@@ -191,8 +242,7 @@ function compositionDonut(data) {
   d3.select(".mainG")	  
 	  .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
   
-  var maxItems = 4;
-  var spaceBetween = 160;
+  
   var j=0, k = 0;
   var dist = widthDonut/2 + spaceBetween;
   var donuts = svg.selectAll(".donuts")
@@ -201,7 +251,7 @@ function compositionDonut(data) {
     .attr("class", "donuts")
     .attr("transform", function(d,i) {
       var horz, vert;
-      if ((i!= 0) && (i  % maxItems == 0)) {
+      if ((i!= 0) && (i  % maxItemsPerRow == 0)) {
 	j=0; k++;
 	horz = widthDonut/2 + (j*dist);
 	vert = heightDonut/2 + (k*dist);
@@ -222,29 +272,50 @@ function compositionDonut(data) {
     .each(function(d) { return this._current = d; }); //storing initial values
  
   var txt = donuts.append("text")
+	.attr("class", "value")
     .attr("text-anchor", "middle")
     .attr("dy", text_y);
-   if (typeof(percent) === "string") {
-    text.text(percent);
+  var title = donuts.append("text")
+	.attr("class", "title")
+    .attr("text-anchor", "middle")
+	.attr("y", title_y)
+    .attr("dy", title_dy);
+	
+  var timeout = setTimeout(function() {
+	  clearTimeout(timeout);
+	  fillDonuts();
+	  textDonuts();	  
+	}, 200);
+  
+  function fillDonuts() {
+	path = path.data(function(d,i) {
+		return pie(d.upper);
+	  }); // update the data	
+    path
+	  .transition()
+	  .duration(duration)
+	  .call(arcTween);
   }
-  else {
-    var progress = 0;
-    var timeout = setTimeout(function () {
-      clearTimeout(timeout);
-      path = path.data(function(d,i) { return pie(d.upper); }); // update the data
-      path.transition().duration(duration).attrTween("d", function (a) {
-        // Store the displayed angles in _current.
-        // Then, interpolate from _current to the new angles.
-        // During the transition, _current is updated in-place by d3.interpolate.
-        var i  = d3.interpolate(this._current, a);
-        var i2 = d3.interpolate(progress, percent)
-        this._current = i(0);
-        return function(t) {
-          text.text( format(i2(t) / 100) );
-          return arc(i(t));
-        };
-      }); // redraw the arcs
-    }, 200);
+  function textDonuts() {
+	d3.selectAll(".donuts > text.value")
+	  .data(data)
+	  .text(function(d) { return (d.value + "%"); });
+	d3.selectAll(".donuts > text.title")
+	  .data(data)
+	  .text(function(d) { return d.category; })
+	  .call(wrap, (widthDonut+spaceBetween/2));
+	
+  }
+  /* Transition to get the porcentage numbers and arc colored*/
+  function arcTween(transition) {
+	transition.attrTween("d", function(d) {	  	  
+	  var i  = d3.interpolate(this._current, d);	  
+	  this._current = i(0);
+	  return function(t) {
+		return arc(i(t));
+	  };
+	})
+  } // redraw the arcs
 }
 
 //Pie Nominating Categories.
@@ -253,6 +324,7 @@ function nominationsPie(data) {
   d3.select("#chart").selectAll("text.textBar").remove();
   d3.select("#chart").selectAll("g.axis").remove();
   d3.select("#chart").selectAll("rect.bar").remove();
+  d3.select("#chart").selectAll("g.donuts").remove();
   svgTitle.selectAll("text").remove();
   
   var outerRadius = Math.min(width, (height+margins.top))/2;
@@ -404,9 +476,11 @@ queue()
 	.defer(d3.csv, "classSize.csv")
 	.defer(d3.csv, "nominatingCategory.csv")
 	.defer(d3.csv, "raceBreakdown.csv")
-	.defer(d3.csv, "composition.csv")
+	.defer(d3.tsv, "composition.tsv")
+	.defer(d3.csv, "militaryBackground.csv")
+	.defer(d3.tsv, "militaryBackgroundMoreInfo.tsv")
 	.await(init);
-function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown, composition) {
+function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown, composition, militaryBackground, militaryBackgroundInfo ) {
   if (error) {     console.log(error);  }
   applications.forEach(function(d) {   
     d.value= +d.value;
@@ -422,19 +496,21 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
   });
   raceBreakdown.forEach(function(d) {   
     d.value= +d.value;
-  });
-  
+  });  
   var compositionDataset = [];
   composition.forEach(function(d) {
     d.value= +d.value;
     var dataset = {
       lower: calcPercent(0),
       upper:calcPercent(d.value),
-      category: d.category
+      category: d.category,
+	  value: d.value
     };
      compositionDataset.push(dataset);
   });
-  
+  militaryBackground.forEach(function(d) {   
+    d.value= +d.value;
+  });
   //Default to first chart male/female chart.
   // X and Y scale range
   var x = d3.scale.ordinal().rangeRoundBands([0, width], .5);
@@ -444,7 +520,7 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
   x.domain(applications.map(function(d) { return d.category; })); // x domain in male and female applicants
   y.domain([0, d3.max(applications, function(d) { return d.value; }) ]);
   
-  maleFemalebars(applications, "Number of Applications", x, y)
+  barCharts(applications, "Number of Applications", x, y)
     
   //Event listeners
   d3.select("#applications")
@@ -452,14 +528,14 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
 	  // X and Y scale  domain of the number of applications.
 	  x.domain(applications.map(function(d) { return d.category; })); // x domain in male and female applicants
 	  y.domain([0, d3.max(applications, function(d) { return d.value; }) ]);
-	  maleFemalebars(applications, "Number of Applications", x, y);
+	  barCharts(applications, "Number of Applications", x, y);
 	});
   d3.select("#offersAppointment")
 	.on("click", function(d,i) {
 	  // X and Y scale  domain of the number of applications and offers of appointment.
 	  x.domain(offersAppointments.map(function(d) { return d.category; })); // x domain in male and female
 	  y.domain([0, d3.max(applications, function(d) { return d.value; }) ]);
-	  maleFemalebars(offersAppointments, "Offers of Appointment", x, y);
+	  barCharts(offersAppointments, "Offers of Appointment", x, y);
 	});
   d3.select("#nominatingCategory")
 	.on("click", function(d,i) {
@@ -470,17 +546,25 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
 	   // X and Y scale  domain of the class size.
 	  x.domain(classSize.map(function(d) { return d.category; }));
 	  y.domain([0, d3.max(classSize, function(d) { return d.value; }) ]);
-	  maleFemalebars(classSize, "Class Size", x, y);
+	  barCharts(classSize, "Class Size", x, y);
 	});
   d3.select("#racialBreakdown")
 	.on("click", function(d,i) {
 	   // X and Y scale  domain of the race breakdown.
 	  x.domain(raceBreakdown.map(function(d) { return d.category; }));
 	  y.domain([0, d3.max(classSize, function(d) { return d.value; }) ]);
-	  maleFemalebars(raceBreakdown, "Racial Breakdown", x, y);
+	  barCharts(raceBreakdown, "Racial Breakdown", x, y);
 	});
   d3.select("#composition")
 	.on("click", function(d,i) {
 	  compositionDonut(compositionDataset);
+	});
+  d3.select("#militaryBackground")
+	.on("click", function(d,i) {
+	   // X and Y scale  domain of the race breakdown.
+	  x.domain(militaryBackground.map(function(d) { return d.category; }));
+	  y.domain([0, d3.max(militaryBackground, function(d) { return d.value; }) ]);
+	  barCharts(militaryBackground, "Military Background", x, y);
+	  chartSubtitle(militaryBackgroundInfo);
 	});
 }
