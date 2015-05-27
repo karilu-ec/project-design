@@ -55,6 +55,7 @@ d3.csv("educationalBackground.csv", function(data) {
     .data(nodes)
     .enter()
     .append("text")
+    .attr("class", ".textbar")
     .attr("x", function(d) { return d.x; })
     .attr("y", function(d) { return d.y; })
     .attr("text-anchor", "middle")

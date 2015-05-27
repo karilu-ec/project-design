@@ -87,7 +87,7 @@ function putAxis(titleY, x, y) {
 }
 //Add chart Subtitle
 function chartSubtitle(data) {
-  console.log(data);
+  //console.log(data);
   var svgSubtitle = svgTitle.append("text")
 	.attr("class", "chartSubtitle")
 	.attr("y", 40)
@@ -104,7 +104,10 @@ function barCharts(data, dataTitle, x, y) {
   d3.select("#chart").selectAll("g.donutLegend").remove();
   d3.select("#chart").selectAll("g.donutLegendTitle").remove();
   d3.select("#chart").selectAll("g.donuts").remove();
+  d3.select("#chart").selectAll("circle").remove();
   svgTitle.selectAll("text").remove();
+  d3.select("svg")
+    .attr("height", height + margins.top + margins.bottom);
   var mainG = d3.select(".mainG")
     .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
   
@@ -214,6 +217,7 @@ function compositionDonut(data) {
   d3.select("#chart").selectAll("path").remove();
   d3.select("#chart").selectAll("g.donutLegend").remove();
   d3.select("#chart").selectAll("g.donutLegendTitle").remove();
+  d3.select("#chart").selectAll("circle").remove();
   svgTitle.selectAll("text").remove();
   
   heightC = 900;
@@ -325,6 +329,7 @@ function nominationsPie(data) {
   d3.select("#chart").selectAll("g.axis").remove();
   d3.select("#chart").selectAll("rect.bar").remove();
   d3.select("#chart").selectAll("g.donuts").remove();
+  d3.select("#chart").selectAll("circle").remove();
   svgTitle.selectAll("text").remove();
   
   var outerRadius = Math.min(width, (height+margins.top))/2;
@@ -337,6 +342,8 @@ function nominationsPie(data) {
   //Define color domain
   d3.map(data, function(d) { return color(d.category);});
   
+  d3.select("svg")
+    .attr("height", height + margins.top + margins.bottom);//define height for most charts.
   //Centering the group
   d3.select(".mainG")	  
 	  .attr("transform", "translate(" + width/2 +","+ ((height+margins.top+margins.bottom)/2) +" )");
@@ -467,6 +474,117 @@ function nominationsPie(data) {
 
 }
 
+//educational background. Bubble Chart
+function bubbles(data, dataTitle) {
+  //Remove previous Charts components.
+  d3.select("#chart").selectAll("text.textBar").remove();
+  d3.select("#chart").selectAll("g.axis").remove();
+  d3.select("#chart").selectAll("rect.bar").remove();
+  d3.select("#chart").selectAll("g.donuts").remove();
+  d3.select("#chart").selectAll("g.donutLegend").remove();
+  d3.select("#chart").selectAll("g.donutLegendTitle").remove();
+  svgTitle.selectAll("text").remove();
+  d3.select("svg")
+    .attr("height", height + margins.top + margins.bottom);
+  var diameter1 = 900;
+  var diameter2 = 500;
+  var duration = 200; var delay = 0;
+  var color = d3.scale.category10();
+  
+  // Set the divs for the Legends
+  var tooltip	= d3.select("#tooltip");
+	tooltip.select("#title")
+		.text("Educational Background");
+
+   
+  var pack = d3.layout.pack();
+  pack = pack.padding(4)
+    .size([diameter1, diameter2])
+    .value(function(d) { return d.value; }) // new data will be loaded to bubble layout;
+    .sort(function(a,b) { return b.value - a.value });
+
+  var nodes = pack.nodes(data)
+    .filter(function(d) { return !d.children;  });
+	
+    //Calculate totals
+  var total = d3.nest()
+	//.key(function(d) { return d.keyColumn})  //For this particular example I don't have a key column.
+	.rollup(function(d) {
+	  return d3.sum(d, function(g) { return g.value; })
+	}).entries(nodes);
+    //Set chart title
+  svgTitle.append("text").text(dataTitle);
+  svgTitle.append("text")
+    .attr("y", 20)
+    .text("Total: " + total);
+  
+  
+  var circles = svg.selectAll("circle")
+    .data(nodes, function(d) { return d.category; });
+  //update
+  circles.transition()
+    .duration(duration)
+    .delay(function(d,i) { return i*7 ; })
+    .attr('r', function(d) {return d.r;});
+    
+  //enter
+  circles.enter()
+    .append("circle")
+    .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+    .attr("r", function(d) { return d.r; })
+    .attr("fill", function(d) { return color(d.category); })
+    .attr("stroke", "#444")
+    .style("opacity", 0)
+    .transition()
+    .duration(duration *2.2)
+    .style("opacity", 1);
+  //exit
+  circles.exit()
+    .transition()
+    .duration(duration)
+    .style('opacity', 0)
+    .remove();
+	
+  //Event handler for the donut sections
+  circles.on("mouseover", function(d) {
+		var total = d.value;
+		var percent = Math.round((100*d.value)/total);
+		
+		//Calculate the absolute coordinates
+		var absoluteMousePos = d3.mouse(chartNode);
+		
+		var xPos = absoluteMousePos[0];
+		var yPos = absoluteMousePos[1]+150;
+		
+		tooltip.select(".category").html(d.category);
+		tooltip.select(".total").html("<strong>Total: </strong>"  + d.value);
+		
+		//show the tooltip
+		tooltip.classed("hide", false);
+		//update the tooltip's position
+		tooltip.style("left", xPos + "px");
+		tooltip.style("top", yPos + "px");
+	});
+  circles.on("mouseout", function(d) {
+		//hide the tooltip
+		tooltip.classed("hide", true);
+		tooltip.select(".category").html("");
+		tooltip.select(".total").html("");
+	});
+    
+  var txt = svg.selectAll("text")
+    .data(nodes)
+    .enter()
+    .append("text")
+	.attr("class", "textBar bubbles")
+    .attr("x", function(d) { return d.x; })
+    .attr("y", function(d) { return d.y; })
+	.attr("dy", ".1em")
+    .attr("text-anchor", "middle")
+    .text(function(d) { return d.category; });
+	
+}
+
 
 
 
@@ -479,8 +597,9 @@ queue()
 	.defer(d3.tsv, "composition.tsv")
 	.defer(d3.csv, "militaryBackground.csv")
 	.defer(d3.tsv, "militaryBackgroundMoreInfo.tsv")
+	.defer(d3.csv, "educationalBackground.csv")
 	.await(init);
-function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown, composition, militaryBackground, militaryBackgroundInfo ) {
+function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown, composition, militaryBackground, militaryBackgroundInfo, educationBackground ) {
   if (error) {     console.log(error);  }
   applications.forEach(function(d) {   
     d.value= +d.value;
@@ -511,6 +630,12 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
   militaryBackground.forEach(function(d) {   
     d.value= +d.value;
   });
+  var educationDataset = [];
+  educationBackground.forEach(function(d) {   
+    d.value= +d.value;
+	educationDataset =  { children: educationBackground };
+  });  
+  
   //Default to first chart male/female chart.
   // X and Y scale range
   var x = d3.scale.ordinal().rangeRoundBands([0, width], .5);
@@ -566,5 +691,9 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
 	  y.domain([0, d3.max(militaryBackground, function(d) { return d.value; }) ]);
 	  barCharts(militaryBackground, "Military Background", x, y);
 	  chartSubtitle(militaryBackgroundInfo);
+	});
+  d3.select("#educationBackground")
+	.on("click", function(d,i) {
+	  bubbles(educationDataset, "Educational Background");
 	});
 }
