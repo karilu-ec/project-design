@@ -588,6 +588,8 @@ function bubbles(data, dataTitle) {
     .text(function(d) { return d.category; });
 	
 }
+
+//SAT scores
 function collegeData(data, dataTitle) {
    //Remove previous Charts components.
   d3.select("#chart").selectAll("text.textBar").remove();
@@ -677,8 +679,47 @@ function collegeData(data, dataTitle) {
     .text(function(d) { return d.category; });
 }
 
-
-
+//Alumni kids
+function alumniKidsDisplay(data, dataTitle) {
+    //Remove previous Charts components.
+  d3.select("#chart").selectAll("text.textBar").remove();
+  d3.select("#chart").selectAll("g.axis").remove();
+  d3.select("#chart").selectAll("rect.bar").remove();
+  d3.select("#chart").selectAll("rect.rectangle").remove();
+  d3.select("#chart").selectAll("g.donuts").remove();
+  d3.select("#chart").selectAll("path").remove();
+  d3.select("#chart").selectAll("g.donutLegend").remove();
+  d3.select("#chart").selectAll("g.donutLegendTitle").remove();
+  d3.select("#chart").selectAll("circle").remove();
+  svgTitle.selectAll("text").remove();
+  
+  d3.select("svg")
+    .attr("height", height + margins.top + margins.bottom);
+  var mainG = d3.select(".mainG")
+    .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
+  
+  var radius = 5;
+  
+    //Calculate totals
+  var total = d3.nest()
+	//.key(function(d) { return d.keyColumn})  //For this particular example I don't have a key column.
+	.rollup(function(d) {
+	  return d3.sum(d, function(g) { return g.value; })
+	}).entries(data);
+  
+  console.log(total);
+  //bind data
+  var kids = svg.selectAll("circle")
+    .data(data);
+    
+  kids
+    .enter()
+    .append("circle")
+    .attr("cx", 10)
+    .attr("cy" , 20)
+    .attr("r", radius);
+  
+}
 
 queue()
 	.defer(d3.csv, "application.csv")
@@ -693,8 +734,9 @@ queue()
 	.defer(d3.tsv, "educationalBackgroundMoreInfo.tsv")
 	.defer(d3.csv, "collegeBoardData.csv")
     .defer(d3.tsv, "collegeBoardDataMoreInfo.tsv")
+    .defer(d3.csv, "alumniSonsDaughters.csv")
 	.await(init);
-function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown, composition, militaryBackground, militaryBackgroundInfo, educationBackground, educationalBackgroundInfo, collegeBoardData, collegeBoardDataInfo ) {
+function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown, composition, militaryBackground, militaryBackgroundInfo, educationBackground, educationalBackgroundInfo, collegeBoardData, collegeBoardDataInfo, alumniKids ) {
   if (error) {     console.log(error);  }
   applications.forEach(function(d) {   
     d.value= +d.value;
@@ -729,7 +771,10 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
   educationBackground.forEach(function(d) {   
     d.value= +d.value;
 	educationDataset =  { children: educationBackground };
-  });  
+  });
+  alumniKids.forEach(function(d) {   
+    d.value= +d.value;
+  }); 
   
   //Default to first chart male/female chart.
   // X and Y scale range
@@ -796,5 +841,9 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
 	.on("click", function(d,i) {
 	  collegeData(collegeBoardData, "College Board Data");
 	  chartSubtitle(collegeBoardDataInfo);
+	});
+  d3.select("#alumniKids")
+	.on("click", function(d,i) {
+	  alumniKidsDisplay(alumniKids, "Alumni Sons and Daughters");
 	});
 }
