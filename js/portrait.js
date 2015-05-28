@@ -1,4 +1,4 @@
-var margins= {top:40, right:40, bottom:40, left:50};
+var margins= {top:40, right:40, bottom:60, left:50};
 var width = 1000 - margins.left - margins.right;
 var height = 500 - margins.top - margins.bottom;
 var chartNode = d3.select("#chart").node();
@@ -30,7 +30,7 @@ function wrap(text, width) {
         word,
         line = [],
         lineNumber = 0,
-        lineHeight = 1.3, // ems
+        lineHeight = 1.2, // ems
         y = text.attr("y"),
         dy = parseFloat(text.attr("dy")),
         tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
@@ -493,9 +493,6 @@ function bubbles(data, dataTitle) {
   
   // Set the divs for the Legends
   var tooltip	= d3.select("#tooltip");
-	tooltip.select("#title")
-		.text("Educational Background");
-
    
   var pack = d3.layout.pack();
   pack = pack.padding(4)
@@ -548,7 +545,6 @@ function bubbles(data, dataTitle) {
   //Event handler for the donut sections
   circles.on("mouseover", function(d) {
 		var total = d.value;
-		var percent = Math.round((100*d.value)/total);
 		
 		//Calculate the absolute coordinates
 		var absoluteMousePos = d3.mouse(chartNode);
@@ -556,7 +552,7 @@ function bubbles(data, dataTitle) {
 		var xPos = absoluteMousePos[0];
 		var yPos = absoluteMousePos[1]+150;
 		
-		tooltip.select(".category").html(d.category);
+		tooltip.select("#title").html(d.longName);
 		tooltip.select(".total").html("<strong>Total: </strong>"  + d.value);
 		
 		//show the tooltip
@@ -584,6 +580,18 @@ function bubbles(data, dataTitle) {
     .text(function(d) { return d.category; });
 	
 }
+function collegeBoardData(data) {
+   //Remove previous Charts components.
+  d3.select("#chart").selectAll("text.textBar").remove();
+  d3.select("#chart").selectAll("g.axis").remove();
+  d3.select("#chart").selectAll("rect.bar").remove();
+  d3.select("#chart").selectAll("g.donuts").remove();
+  d3.select("#chart").selectAll("g.donutLegend").remove();
+  d3.select("#chart").selectAll("g.donutLegendTitle").remove();
+  d3.select("#chart").selectAll("circle").remove();
+  svgTitle.selectAll("text").remove();
+  //http://h4rrydog.github.io/placeMe/
+}
 
 
 
@@ -598,8 +606,10 @@ queue()
 	.defer(d3.csv, "militaryBackground.csv")
 	.defer(d3.tsv, "militaryBackgroundMoreInfo.tsv")
 	.defer(d3.csv, "educationalBackground.csv")
+	.defer(d3.tsv, "educationalBackgroundMoreInfo.tsv")
+	.defer(d3.csv, "collegeBoardData.csv")
 	.await(init);
-function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown, composition, militaryBackground, militaryBackgroundInfo, educationBackground ) {
+function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown, composition, militaryBackground, militaryBackgroundInfo, educationBackground, educationalBackgroundInfo, collegeBoardData ) {
   if (error) {     console.log(error);  }
   applications.forEach(function(d) {   
     d.value= +d.value;
@@ -695,5 +705,6 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
   d3.select("#educationBackground")
 	.on("click", function(d,i) {
 	  bubbles(educationDataset, "Educational Background");
+	  chartSubtitle(educationalBackgroundInfo);
 	});
 }
