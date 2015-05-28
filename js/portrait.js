@@ -100,6 +100,8 @@ function chartSubtitle(data) {
 function barCharts(data, dataTitle, x, y) {
   //Remove previous charts elements
   d3.select("#chart").selectAll("text.textBar").remove();
+  d3.select("#chart").selectAll("text.rectangle").remove();
+  d3.select("#chart").selectAll("rect.rectangle").remove();
   d3.select("#chart").selectAll("path").remove();
   d3.select("#chart").selectAll("g.donutLegend").remove();
   d3.select("#chart").selectAll("g.donutLegendTitle").remove();
@@ -212,8 +214,10 @@ function calcPercent(percent) {
 function compositionDonut(data) {
   //Remove previous Charts components.
   d3.select("#chart").selectAll("text.textBar").remove();
+  d3.select("#chart").selectAll("text.rectangle").remove();
   d3.select("#chart").selectAll("g.axis").remove();
   d3.select("#chart").selectAll("rect.bar").remove();
+  d3.select("#chart").selectAll("rect.rectangle").remove();
   d3.select("#chart").selectAll("path").remove();
   d3.select("#chart").selectAll("g.donutLegend").remove();
   d3.select("#chart").selectAll("g.donutLegendTitle").remove();
@@ -326,8 +330,10 @@ function compositionDonut(data) {
 function nominationsPie(data) {
   //Remove previous Charts components.
   d3.select("#chart").selectAll("text.textBar").remove();
+  d3.select("#chart").selectAll("text.rectangle").remove();
   d3.select("#chart").selectAll("g.axis").remove();
   d3.select("#chart").selectAll("rect.bar").remove();
+  d3.select("#chart").selectAll("rect.rectangle").remove();
   d3.select("#chart").selectAll("g.donuts").remove();
   d3.select("#chart").selectAll("circle").remove();
   svgTitle.selectAll("text").remove();
@@ -478,14 +484,20 @@ function nominationsPie(data) {
 function bubbles(data, dataTitle) {
   //Remove previous Charts components.
   d3.select("#chart").selectAll("text.textBar").remove();
+  d3.select("#chart").selectAll("text.rectangle").remove();
   d3.select("#chart").selectAll("g.axis").remove();
   d3.select("#chart").selectAll("rect.bar").remove();
+  d3.select("#chart").selectAll("rect.rectangle").remove();
+  d3.select("#chart").selectAll("path").remove();
   d3.select("#chart").selectAll("g.donuts").remove();
   d3.select("#chart").selectAll("g.donutLegend").remove();
   d3.select("#chart").selectAll("g.donutLegendTitle").remove();
-  svgTitle.selectAll("text").remove();
+  svgTitle.selectAll("text").remove();   
   d3.select("svg")
     .attr("height", height + margins.top + margins.bottom);
+  var mainG = d3.select(".mainG")
+    .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
+    
   var diameter1 = 900;
   var diameter2 = 500;
   var duration = 200; var delay = 0;
@@ -580,17 +592,86 @@ function bubbles(data, dataTitle) {
     .text(function(d) { return d.category; });
 	
 }
-function collegeBoardData(data) {
+function collegeData(data, dataTitle) {
    //Remove previous Charts components.
   d3.select("#chart").selectAll("text.textBar").remove();
   d3.select("#chart").selectAll("g.axis").remove();
   d3.select("#chart").selectAll("rect.bar").remove();
   d3.select("#chart").selectAll("g.donuts").remove();
+  d3.select("#chart").selectAll("path").remove();
   d3.select("#chart").selectAll("g.donutLegend").remove();
   d3.select("#chart").selectAll("g.donutLegendTitle").remove();
   d3.select("#chart").selectAll("circle").remove();
   svgTitle.selectAll("text").remove();
-  //http://h4rrydog.github.io/placeMe/
+  
+  d3.select("svg")
+    .attr("height", height + margins.top + margins.bottom);
+  var mainG = d3.select(".mainG")
+    .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
+  var widthRect = 300;
+  var heightRect= 200;
+  var spacing = 5;
+  var extraTitle;
+  
+  //color range
+  var color = d3.scale.ordinal()
+    .range(["#0570b0", "#006d2c"]);
+    
+  //color domain
+  d3.map(data, function(d) {
+    extraTitle = d.longName;
+    return color(d.category);
+    });
+  
+  //set title
+  svgTitle.append("text")
+    .text(dataTitle);
+  svgTitle.append("text")
+    .attr("dy", 25)
+    .text(extraTitle);
+  
+  //Bind with data
+  var rectangle = svg.selectAll("rect.rectangle")
+    .data(data);
+  
+  rectangle.enter().append("rect")
+    .attr("class", "rectangle")
+    .attr("x", function(d, i) {
+      var xcoord = widthRect + spacing;
+      var offset = xcoord * i;
+      return offset; })
+    .attr("y", spacing)
+    .attr("fill" , function(d) { return color(d.category); })
+    .attr("width", widthRect)
+    .attr("height", heightRect);
+  
+  var txt = svg.selectAll("text.rectangle")
+    .data(data);
+  txt
+    .enter().append("text")
+      .attr("class", "rectangle")
+      .attr("x", function(d,i) {
+        var length = widthRect + spacing;
+        var xcoord = widthRect/4;
+        var offset = (i * length) + xcoord;
+        return offset;
+      })
+      .attr("y", heightRect/2)
+      .attr("dx", -30)
+      .attr("dy", 20)
+      .text(function(d) { return d.value; });
+  txt
+  .enter().append("text")
+    .attr("class", "rectangle")
+    .attr("x", function(d,i) {
+        var length = widthRect + spacing;
+        var xcoord = 20;
+        var offset = (i * length) + xcoord;
+        return offset;
+      })
+    .attr("y", heightRect/4)
+    .style("font-size", "2em")    
+    .text(function(d) { return d.category; });
 }
 
 
@@ -608,8 +689,9 @@ queue()
 	.defer(d3.csv, "educationalBackground.csv")
 	.defer(d3.tsv, "educationalBackgroundMoreInfo.tsv")
 	.defer(d3.csv, "collegeBoardData.csv")
+    .defer(d3.tsv, "collegeBoardDataMoreInfo.tsv")
 	.await(init);
-function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown, composition, militaryBackground, militaryBackgroundInfo, educationBackground, educationalBackgroundInfo, collegeBoardData ) {
+function init(error, applications, offersAppointments, classSize, nominatingCategory, raceBreakdown, composition, militaryBackground, militaryBackgroundInfo, educationBackground, educationalBackgroundInfo, collegeBoardData, collegeBoardDataInfo ) {
   if (error) {     console.log(error);  }
   applications.forEach(function(d) {   
     d.value= +d.value;
@@ -706,5 +788,10 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
 	.on("click", function(d,i) {
 	  bubbles(educationDataset, "Educational Background");
 	  chartSubtitle(educationalBackgroundInfo);
+	});
+  d3.select("#collegeBoardData")
+	.on("click", function(d,i) {
+	  collegeData(collegeBoardData, "College Board Data");
+	  chartSubtitle(collegeBoardDataInfo);
 	});
 }
