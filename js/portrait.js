@@ -100,7 +100,6 @@ function chartSubtitle(data) {
 function barCharts(data, dataTitle, x, y) {
   //Remove previous charts elements
   d3.select("#chart").selectAll("text.textBar").remove();
-  d3.select("#chart").selectAll("text.rectangle").remove();
   d3.select("#chart").selectAll("rect.rectangle").remove();
   d3.select("#chart").selectAll("path").remove();
   d3.select("#chart").selectAll("g.donutLegend").remove();
@@ -214,7 +213,6 @@ function calcPercent(percent) {
 function compositionDonut(data) {
   //Remove previous Charts components.
   d3.select("#chart").selectAll("text.textBar").remove();
-  d3.select("#chart").selectAll("text.rectangle").remove();
   d3.select("#chart").selectAll("g.axis").remove();
   d3.select("#chart").selectAll("rect.bar").remove();
   d3.select("#chart").selectAll("rect.rectangle").remove();
@@ -330,7 +328,6 @@ function compositionDonut(data) {
 function nominationsPie(data) {
   //Remove previous Charts components.
   d3.select("#chart").selectAll("text.textBar").remove();
-  d3.select("#chart").selectAll("text.rectangle").remove();
   d3.select("#chart").selectAll("g.axis").remove();
   d3.select("#chart").selectAll("rect.bar").remove();
   d3.select("#chart").selectAll("rect.rectangle").remove();
@@ -484,7 +481,6 @@ function nominationsPie(data) {
 function bubbles(data, dataTitle) {
   //Remove previous Charts components.
   d3.select("#chart").selectAll("text.textBar").remove();
-  d3.select("#chart").selectAll("text.rectangle").remove();
   d3.select("#chart").selectAll("g.axis").remove();
   d3.select("#chart").selectAll("rect.bar").remove();
   d3.select("#chart").selectAll("rect.rectangle").remove();
@@ -642,14 +638,16 @@ function collegeData(data, dataTitle) {
       return offset; })
     .attr("y", spacing)
     .attr("fill" , function(d) { return color(d.category); })
+    .style("stroke", "#ccc")
+    .style("stroke-width", 2)
     .attr("width", widthRect)
     .attr("height", heightRect);
   
-  var txt = svg.selectAll("text.rectangle")
+  var txt = svg.selectAll("text.textBar")
     .data(data);
   txt
     .enter().append("text")
-      .attr("class", "rectangle")
+      .attr("class", "textBar")
       .attr("x", function(d,i) {
         var length = widthRect + spacing;
         var xcoord = widthRect/4;
@@ -659,10 +657,13 @@ function collegeData(data, dataTitle) {
       .attr("y", heightRect/2)
       .attr("dx", -30)
       .attr("dy", 20)
+      .style("font-size", "3.8em")
+      .style("font-family","RamaGothicM-Heavy,Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans-serif")
+      .style("fill", "#fff")
       .text(function(d) { return d.value; });
   txt
   .enter().append("text")
-    .attr("class", "rectangle")
+    .attr("class", "textBar")
     .attr("x", function(d,i) {
         var length = widthRect + spacing;
         var xcoord = 20;
@@ -670,7 +671,9 @@ function collegeData(data, dataTitle) {
         return offset;
       })
     .attr("y", heightRect/4)
-    .style("font-size", "2em")    
+    .style("font-size", "2em")
+    .style("font-family", "RamaGothicM-Heavy,Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans-serif")
+    .style("fill", "#fff")
     .text(function(d) { return d.category; });
 }
 
