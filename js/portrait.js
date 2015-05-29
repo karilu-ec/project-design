@@ -699,26 +699,56 @@ function alumniKidsDisplay(data, dataTitle) {
     .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
   
   var radius = 5;
+  var maxItemsPerRow = 10;
+  var spaceBetween = 20;
+  var sons, daughters;
+  var kidsData = [];
+  var k,j=0,offsety; 
+  var I = function(d) { return d; };
+
+  d3.map(data, function(d) {
+    if (d.category == "Sons") {
+	  sons = d.value;
+	}else {
+      daughters = d.value;
+    }
+  });
+  var total = sons + daughters;
   
-    //Calculate totals
-  var total = d3.nest()
-	//.key(function(d) { return d.keyColumn})  //For this particular example I don't have a key column.
-	.rollup(function(d) {
-	  return d3.sum(d, function(g) { return g.value; })
-	}).entries(data);
-  
-  console.log(total);
+  for (var i =0 ; i<total; i++) {
+    kidsData.push(i);
+  }
+
   //bind data
   var kids = svg.selectAll("circle")
-    .data(data);
+    .data(kidsData, I);
     
   kids
     .enter()
     .append("circle")
-    .attr("cx", 10)
-    .attr("cy" , 20)
-    .attr("r", radius);
+    .attr("transform", function (d,i) {
+      var offsetx;     
+      if (i % maxItemsPerRow == 0){
+        k=0;
+        offsety = spaceBetween*j;
+        j++;
+      }
+      offsetx = spaceBetween*k + 30;
+      k++;
+      
+      return  "translate(" + offsetx + "," + offsety + ")";            
+    })
+    .attr("r", radius)
+    .attr("fill", "#02818a");
   
+ /* var timeout = setTimeout(function() {
+	  clearTimeout(timeout);
+	  separateGender()
+	}, 200);
+  
+  function separateGender() {
+    
+  }*/
 }
 
 queue()
