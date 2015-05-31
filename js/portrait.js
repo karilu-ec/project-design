@@ -11,7 +11,7 @@ var svg = d3.select("#chart").append("svg")
     .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
 var svgTitle = d3.select("svg").append("g")
     .attr("class", "chartTitle")
-    .attr("transform", "translate("+ (width-4*margins.right)+","+ margins.top + ")");
+    .attr("transform", "translate("+ (width-5*margins.right)+","+ margins.top + ")");
 
 // Set the p for the Charts Legends
   var tooltip	= d3.select("#tooltip");
@@ -111,7 +111,7 @@ function barCharts(data, dataTitle, x, y) {
     .attr("height", height + margins.top + margins.bottom);
   var mainG = d3.select(".mainG")
     .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
-  
+
   //Color scale
   var color = d3.scale.category10();
   
@@ -494,7 +494,7 @@ function bubbles(data, dataTitle) {
   var mainG = d3.select(".mainG")
     .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
     
-  var diameter1 = 900;
+  var diameter1 = 800;
   var diameter2 = 500;
   var duration = 200; var delay = 0;
   var color = d3.scale.category10();
@@ -696,16 +696,18 @@ function alumniKidsDisplay(data, dataTitle) {
   d3.select("svg")
     .attr("height", height + margins.top + margins.bottom);
   var mainG = d3.select(".mainG")
-    .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
+    .attr("transform", "translate(" + margins.left + "," + margins.top*2 + ")");
   
   var radius = 5;
   var maxItemsPerRow = 10;
   var spaceBetween = 20;
+  var startX=30;
+  var startY=40;
   var sons, daughters;
   var kidsData = [];
   var k,j=0,offsety; 
   var I = function(d) { return d; };
-
+  
   d3.map(data, function(d) {
     if (d.category == "Sons") {
 	  sons = d.value;
@@ -714,6 +716,13 @@ function alumniKidsDisplay(data, dataTitle) {
     }
   });
   var total = sons + daughters;
+  
+  //set title
+  svgTitle.append("text")
+    .text(dataTitle);
+  svgTitle.append("text")
+    .attr("dy", 20)
+    .text("Total: " + total);
   
   for (var i =0 ; i<total; i++) {
     kidsData.push(i);
@@ -730,10 +739,10 @@ function alumniKidsDisplay(data, dataTitle) {
       var offsetx;     
       if (i % maxItemsPerRow == 0){
         k=0;
-        offsety = spaceBetween*j;
+        offsety = spaceBetween*j + startY;
         j++;
       }
-      offsetx = spaceBetween*k + 30;
+      offsetx = spaceBetween*k + startX;
       k++;
       
       return  "translate(" + offsetx + "," + offsety + ")";            
@@ -741,14 +750,53 @@ function alumniKidsDisplay(data, dataTitle) {
     .attr("r", radius)
     .attr("fill", "#02818a");
   
- /* var timeout = setTimeout(function() {
+  var timeout = setTimeout(function() {
 	  clearTimeout(timeout);
 	  separateGender()
+	  setTitles()
 	}, 200);
   
   function separateGender() {
+    offsety=0;j=0;
+    var daughterData = kidsData.splice(sons, daughters);
+    d3.selectAll("circle")
+      .data(daughterData, I)
+      .transition()
+      .duration(1500)
+      .attr("transform", function(d,i) {
+	var offsetx;     
+	if (i % maxItemsPerRow == 0){
+	  k=0;
+	  offsety = spaceBetween*j + startY;
+	  j++;
+	}
+	offsetx = spaceBetween*k + (startX+350);
+	k++;
+	
+	return  "translate(" + offsetx + "," + offsety + ")";
+    })
+    .attr("fill", "#88419d");
     
-  }*/
+  }
+  function setTitles() {
+    svg.selectAll("text")
+      .data(data)
+      .enter()
+      .append("text")
+      .attr("class", "textBar")
+      .attr("x", function(d,i) {
+	var coordx = (startX+300) * i + (startX+100);
+	return coordx;
+      })
+      .attr("y",  startY-20)
+      .attr("text-anchor", "middle")
+      .transition()
+      .delay(500)
+      .duration(1000)
+      .text(function(d) {return d.category + ": " + d.value ;})
+      .style("font-weight", "bold")
+      ;
+  }
 }
 
 queue()
@@ -771,18 +819,42 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
   applications.forEach(function(d) {   
     d.value= +d.value;
   });
+  //sort data
+  applications.sort(function(a,b) {
+    return b.value - a.value;
+  });
+  
   offersAppointments.forEach(function(d) {   
     d.value= +d.value;
   });
+  //sort data
+  offersAppointments.sort(function(a,b) {
+    return b.value - a.value;
+  });
+  
   classSize.forEach(function(d) {   
     d.value= +d.value;
   });
+  //sort data
+  classSize.sort(function(a,b) {
+    return b.value - a.value;
+  });
+  
   nominatingCategory.forEach(function(d) { 
     d.value= +d.value;
   });
+  //sort data
+  nominatingCategory.sort(function(a,b) {
+    return b.value - a.value;
+  });
+  
   raceBreakdown.forEach(function(d) {   
     d.value= +d.value;
-  });  
+  });
+  //sort data
+  raceBreakdown.sort(function(a,b) {
+    return b.value - a.value;
+  });
   var compositionDataset = [];
   composition.forEach(function(d) {
     d.value= +d.value;
@@ -790,18 +862,27 @@ function init(error, applications, offersAppointments, classSize, nominatingCate
       lower: calcPercent(0),
       upper:calcPercent(d.value),
       category: d.category,
-	  value: d.value
+      value: d.value
     };
-     compositionDataset.push(dataset);
+    compositionDataset.push(dataset);
+    //sort data
+    compositionDataset.sort(function(a,b) {
+      return b.value - a.value;
+    });
   });
   militaryBackground.forEach(function(d) {   
     d.value= +d.value;
   });
+  //sort data
+  militaryBackground.sort(function(a,b) {
+   return b.value - a.value;
+  });
+  
   var educationDataset = [];
   educationBackground.forEach(function(d) {   
     d.value= +d.value;
-	educationDataset =  { children: educationBackground };
   });
+  educationDataset =  { children: educationBackground };
   alumniKids.forEach(function(d) {   
     d.value= +d.value;
   }); 
