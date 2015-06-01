@@ -1,4 +1,4 @@
-var margins= {top:40, right:40, bottom:60, left:50};
+var margins= {top:40, right:40, bottom:70, left:50};
 var width = 1000 - margins.left - margins.right;
 var height = 500 - margins.top - margins.bottom;
 var chartNode = d3.select("#chart").node();
@@ -30,7 +30,7 @@ function wrap(text, width) {
         word,
         line = [],
         lineNumber = 0,
-        lineHeight = 1.2, // ems
+        lineHeight = 1, // ems
         y = text.attr("y"),
         dy = parseFloat(text.attr("dy")),
         tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
@@ -93,7 +93,7 @@ function chartSubtitle(data) {
 	.attr("y", 40)
 	.attr("dy", "1em")
 	.text(data[0].info)
-	.call(wrap, 200);
+	.call(wrap, 250);
 }
 
 //Bars maker.
@@ -444,7 +444,7 @@ function nominationsPie(data) {
 			//centering the legend.
 			var height = legendRectSize + legendSpacing;
 			var offset = height * color.domain().length/2;// vertical offset of the entire legend
-			var horz = -7 * legendRectSize; //left edge of the element
+			var horz = -6 * legendRectSize; //left edge of the element
 			var vert= i * height - offset; //top edge of the element
 			return "translate(" + horz + "," + vert + ")";
 		});
@@ -494,7 +494,7 @@ function bubbles(data, dataTitle) {
   var mainG = d3.select(".mainG")
     .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
     
-  var diameter1 = 800;
+  var diameter1 = 700;
   var diameter2 = 500;
   var duration = 200; var delay = 0;
   var color = d3.scale.category10();
@@ -503,7 +503,7 @@ function bubbles(data, dataTitle) {
   var tooltip	= d3.select("#tooltip");
    
   var pack = d3.layout.pack();
-  pack = pack.padding(4)
+  pack = pack.padding(20)
     .size([diameter1, diameter2])
     .value(function(d) { return d.value; }) // new data will be loaded to bubble layout;
     .sort(function(a,b) { return b.value - a.value });
