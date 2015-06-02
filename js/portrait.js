@@ -131,7 +131,7 @@ function barCharts(data, dataTitle, x, y) {
   svgTitle.append("text").text(dataTitle);
   svgTitle.append("text")
     .attr("y", 20)
-    .text("Total: " + total);
+    .text("Total: " + d3.format(",")(total));
     
   //Bind with data
  var barsData= svg.selectAll("rect.bar")
@@ -181,7 +181,7 @@ function barCharts(data, dataTitle, x, y) {
 	    .style("top", yPosition + "px");
 	  tooltip.select("#title")
 	    .text(dataTitle)		  
-	  tooltip.select(".total").text(d.category +": "+d.value);
+	  tooltip.select(".total").text(d.category +": "+  d3.format(",")(d.value));
 	  
 	  //show the tooltip
 	  d3.select("#tooltip").classed("hide", false);	  
@@ -201,7 +201,7 @@ function barCharts(data, dataTitle, x, y) {
       .transition()
       .delay(500)
       .duration(400)
-      .text(function(d) { return d.value; })
+      .text(function(d) { return  d3.format(",")(d.value); })
       .attr("class", "textBar")
       .attr("fill", "black");
 }
@@ -388,7 +388,7 @@ function nominationsPie(data) {
 		var yPos = absoluteMousePos[1]+150;
 		
 		tooltip.select(".category").html(d.data.category.toUpperCase());
-		tooltip.select(".total").html("<strong>Total: </strong>"  + d.data.value);
+		tooltip.select(".total").html("<strong>Total: </strong>"  +  d3.format(",")(d.data.value));
 		tooltip.select(".percent").html(percent + "%");
 		//show the tooltip
 		tooltip.classed("hide", false);
@@ -521,7 +521,7 @@ function bubbles(data, dataTitle) {
   svgTitle.append("text").text(dataTitle);
   svgTitle.append("text")
     .attr("y", 20)
-    .text("Total: " + total);
+    .text("Total: " +  d3.format(",")(total));
   
   
   var circles = svg.selectAll("circle")
@@ -561,7 +561,7 @@ function bubbles(data, dataTitle) {
 		var yPos = absoluteMousePos[1]+150;
 		
 		tooltip.select("#title").html(d.longName);
-		tooltip.select(".total").html("<strong>Total: </strong>"  + d.value);
+		tooltip.select(".total").html("<strong>Total: </strong>"  +  d3.format(",")(d.value));
 		
 		//show the tooltip
 		tooltip.classed("hide", false);
@@ -791,7 +791,7 @@ function alumniKidsDisplay(data, dataTitle) {
       .attr("y",  startY-20)
       .attr("text-anchor", "middle")
       .transition()
-      .delay(500)
+      .delay(300)
       .duration(1000)
       .text(function(d) {return d.category + ": " + d.value ;})
       .style("font-weight", "bold")
