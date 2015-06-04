@@ -68,11 +68,11 @@ function horizontalBarChart(data) {
 		.style("text-anchor", "end")
 		.text("Class Size");
 	
-	var gender = d3.selectAll(".genderGroup")
+	var gender = svg.selectAll(".genderGroup")
 		.data(data)
 		.enter().append("g")
 			.attr("class", "genderGroup")
-			.attr("transfrom", function(d) { return "translate(" + x0(d.Year) + ",0 )"; });
+			.attr("transform", function(d) { return "translate(" + x0(d.Year) + ",0 )"; });
 	
 	gender.selectAll("rect")
 		.data(function(d) { return d.gender; })
