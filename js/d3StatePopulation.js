@@ -35,7 +35,8 @@ d3.csv("StatePopulation.csv", function(error, data) {
   data.forEach(function(d) {
     d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
   });
-  //console.log(JSON.stringify(ageNames));
+  console.log(JSON.stringify(ageNames));
+  console.log(data);
 
   x0.domain(data.map(function(d) { return d.State; }));
   x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);

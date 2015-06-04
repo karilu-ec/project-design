@@ -1,5 +1,5 @@
-d3.csv("maleFemalePortrait.csv", function(data) {
-  data.forEach(function(d) {    
+d3.csv("maleFemalePortrait.csv", function(expenses) {
+  expenses.forEach(function(d) {    
     d.quantity= +d.quantity;
   });  
     
