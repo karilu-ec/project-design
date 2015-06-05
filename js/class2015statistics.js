@@ -16,21 +16,21 @@ function horizontalBarChart(data) {
 		d.gender = genderLabel.map(function(name) {
 			return { name: name, value: +d[name]}; });
 	})
-	console.log(data);	
+//	console.log(data);	
 	
 	var margins= {top:20, right:20, bottom:30, left:40};
 	var width = 600 - margins.left - margins.right;
 	var height = 400 - margins.top - margins.bottom;
 	
 	var color = d3.scale.ordinal()
-		.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+		.range(["#74a9cf", "#bf812d"]);
 	
 	var x0 = d3.scale.ordinal()
-		.rangeRoundBands([0,width], .1)
+		.rangeRoundBands([0,width], .2 )
 		.domain(data.map(function(d) { return d.Year; }));
 		
 	var x1 = d3.scale.ordinal()
-		.rangeRoundBands([0, x0.rangeBand()])
+		.rangeRoundBands([0, x0.rangeBand()],.3)
 		.domain(genderLabel);		
 		
 	var y = d3.scale.linear()
@@ -66,7 +66,7 @@ function horizontalBarChart(data) {
 		.attr("y", 6)
 		.attr("dy", ".71em")
 		.style("text-anchor", "end")
-		.text("Class Size");
+		.text("Class of 2015");
 	
 	var gender = svg.selectAll(".genderGroup")
 		.data(data)
@@ -81,9 +81,65 @@ function horizontalBarChart(data) {
 		.attr("x", function(d) { return x1(d.name); })
 		.attr("y", function(d) { return y(d.value); })
 		.attr("height", function(d) { return height - y(d.value) ; })
-		.style("fill", function(d) { return color(d.name); })
-			
+		.style("fill", function(d) { return color(d.name); });
 		
+	//add text to bars
+	gender.selectAll("text")
+		.data(function(d) { return d.gender; })
+	  .enter().append("text")
+		.attr("x", function(d) { return x1(d.name)+20; })
+		.attr("y", function(d) { return y(d.value)+10; })
+		.attr("dy", ".4em")
+		.text(function(d) { return d.value; });
+	
+	var legend = svg.selectAll(".legend")
+		.data(genderLabel.slice().reverse())
+		.enter().append("g")
+			.attr("class", "legend")
+			.attr("transform", function(d,i) { return "translate(0, " + i*20 + ")"; });
+	
+	legend.append("rect")
+		.attr("x", width-18)
+		.attr("width", 18)
+		.attr("height", 18)
+		.style("fill", color);
+	
+	legend.append("text")
+		.attr("x", width-24)
+		.attr("y", 9)
+		.attr("dy", ".35em")
+		.style("text-anchor", "end")
+		.text(function(d) { return d; })
+			
+//	console.log(data);
+	//calculate totals
+	var total = d3.nest()
+		.key(function(d) { return d.Year; })
+		.rollup(function(d) {
+			return d3.sum(d, function(d) {
+				return d3.sum(d.gender , function(d) { return d.value; });
+			});
+		}).entries(data);
+//	console.log(total);
+
+	var legend2 = svg.selectAll(".legend2")
+		.data(total)
+		.enter().append("g")
+			.attr("class", "legend2")
+			.attr("transform", function(d,i) { return "translate(0," + ((i*20) + 60) + ")"; });
+	legend2.append("text")
+		.attr("x", width-70)
+		.attr("y", 9)
+		.attr("dy", ".35em")
+		.style("text-anchor", "middle")
+		.text(function (d,i) {
+			if (i == 0) {
+				return "Total " + d.key + " graduates: " + d.values;
+			}else{
+				return "Total in I-day " + d.key + ": " + d.values;	
+			}		
+			
+		});
 		
 
 

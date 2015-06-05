@@ -71,7 +71,17 @@ d3.csv("StatePopulation.csv", function(error, data) {
       .attr("y", function(d) { return y(d.value); })
       .attr("height", function(d) { return height - y(d.value); })
       .style("fill", function(d) { return color(d.name); });
-
+      
+  //add text to bars
+  state.selectAll("text")
+      .data(function(d) { return d.ages; })
+    .enter().append("text")
+      .attr("x", function(d) { return x1(d.name)/2; })
+      .attr("y", function(d) { return y(d.value)+10; })
+      .attr("dy", ".4em")
+      .text("tesy");
+      
+  //Add legends
   var legend = svg.selectAll(".legend")
       .data(ageNames.slice().reverse())
     .enter().append("g")
